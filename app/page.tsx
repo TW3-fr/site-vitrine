@@ -421,7 +421,7 @@ export default function HomePage() {
           <div className="text-center max-w-3xl mx-auto mb-10">
             <h2 className="flex flex-col justify-center items-center">
               <TextGenerateEffect words="Ils témoignent" duration={0.3} />
-              <TextGenerateEffect words="de leur parcours." delay={0.5} className="font-serif italic font-normal text-primary" />
+              <TextGenerateEffect words="de leurs parcours." delay={0.5} className="font-serif italic font-normal text-primary" />
             </h2>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed mt-4 md:mt-6">
               Élèves et mentors partagent leur expérience au sein de l'Institut TW3.
