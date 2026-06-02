@@ -31,7 +31,7 @@ export default function HomePage() {
     {
       quote: "Un projet ambitieux et intéressant, tant du point de vue des élèves que des mentors. TW3 est un tremplin pour la réussite de nos élèves et pour créer un réseau entre futurs cadres.",
       author: "Doctorante à l'ENS Ulm",
-      image: "/testimonials/veiled_student.png"
+      image: "/site-vitrine/testimonials/veiled_student.png"
     }
   ];
 
@@ -39,34 +39,34 @@ export default function HomePage() {
     { name: "MIT", url: "https://www.mit.edu/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/MIT_2023_red_logo.svg?width=400" },
     { name: "HEC Paris", url: "https://www.hec.edu/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/HEC_Paris.svg?width=400" },
     { name: "EPFL", url: "https://www.epfl.ch/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_EPFL_2019.svg?width=400" },
-    { name: "École Polytechnique", url: "https://www.polytechnique.edu/", logo: "/logos/polytechnique.png" },
-    { name: "Stanford", url: "https://www.stanford.edu/", logo: "/logos/logo-stanford.webp", className: "h-16 md:h-24" },
+    { name: "École Polytechnique", url: "https://www.polytechnique.edu/", logo: "/site-vitrine/logos/polytechnique.png" },
+    { name: "Stanford", url: "https://www.stanford.edu/", logo: "/site-vitrine/logos/logo-stanford.webp", className: "h-16 md:h-24" },
     { name: "ENS Ulm", url: "https://www.ens.psl.eu/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_École_normale_supérieure_-_PSL_(ENS-PSL).svg?width=400" },
     { name: "Harvard", url: "https://www.harvard.edu/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Harvard_University_logo.svg?width=400" },
     { name: "ESSEC", url: "https://www.essec.edu/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/ESSEC_Logo.svg?width=400" },
     { name: "Imperial College", url: "https://www.imperial.ac.uk/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Imperial_College_London_new_logo.png?width=400" },
     { name: "Sciences Po Paris", url: "https://www.sciencespo.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_Sciences_Po.svg?width=400" },
     { name: "ETH Zürich", url: "https://ethz.ch/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/ETH_Z%C3%BCrich_Logo_black.svg?width=400" },
-    { name: "ENS Paris-Saclay", url: "https://ens-paris-saclay.fr/", logo: "/logos/ens-paris-saclay.png" },
-    { name: "Oxford", url: "https://www.ox.ac.uk/", logo: "/logos/logo-oxford.svg", className: "h-16 md:h-24" },
+    { name: "ENS Paris-Saclay", url: "https://ens-paris-saclay.fr/", logo: "/site-vitrine/logos/ens-paris-saclay.png" },
+    { name: "Oxford", url: "https://www.ox.ac.uk/", logo: "/site-vitrine/logos/logo-oxford.svg", className: "h-16 md:h-24" },
     { name: "CentraleSupélec", url: "https://www.centralesupelec.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Ecole_Centrale_Supelec_logo.svg?width=400" },
-    { name: "Panthéon-Sorbonne", url: "https://www.pantheonsorbonne.fr/", logo: "/logos/sorbonne.svg" },
+    { name: "Panthéon-Sorbonne", url: "https://www.pantheonsorbonne.fr/", logo: "/site-vitrine/logos/sorbonne.svg" },
     { name: "ENS Lyon", url: "https://www.ens-lyon.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_ENS_de_Lyon_2010.png?width=400" },
-    { name: "Panthéon-Assas", url: "https://www.assas-universite.fr/", logo: "/logos/assas.webp" },
+    { name: "Panthéon-Assas", url: "https://www.assas-universite.fr/", logo: "/site-vitrine/logos/assas.webp" },
   ];
 
   const integrationSchools = [
-    { name: "École Polytechnique", url: "https://www.polytechnique.edu/", logo: "/logos/polytechnique.png" },
-    { name: "Lycée Henri-IV", url: "https://lycee-henri4.com/", logo: "/logos/henri-iv.png" },
+    { name: "École Polytechnique", url: "https://www.polytechnique.edu/", logo: "/site-vitrine/logos/polytechnique.png" },
+    { name: "Lycée Henri-IV", url: "https://lycee-henri4.com/", logo: "/site-vitrine/logos/henri-iv.png" },
     { name: "Sciences Po Paris", url: "https://www.sciencespo.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_Sciences_Po.svg?width=400" },
-    { name: "Lycée Louis-le-Grand", url: "https://www.louislegrand.fr/", logo: "/logos/louis-le-grand.png" },
+    { name: "Lycée Louis-le-Grand", url: "https://www.louislegrand.fr/", logo: "/site-vitrine/logos/louis-le-grand.png" },
     { name: "ENS Lyon", url: "https://www.ens-lyon.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_ENS_de_Lyon_2010.png?width=400" },
-    { name: "Lycée Hoche", url: "https://lyc-hoche-versailles.ac-versailles.fr/", logo: "/logos/hoche.png" },
+    { name: "Lycée Hoche", url: "https://lyc-hoche-versailles.ac-versailles.fr/", logo: "/site-vitrine/logos/hoche.png" },
     { name: "CentraleSupélec", url: "https://www.centralesupelec.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Ecole_Centrale_Supelec_logo.svg?width=400" },
-    { name: "Lycée Saint-Louis", url: "https://pia.ac-paris.fr/serail/jcms/s1_2080084/fr/accueil", logo: "/logos/saint-louis.jpg" },
-    { name: "Mines ParisTech", url: "https://minesparis.psl.eu/", logo: "/logos/mines-paris.png" },
-    { name: "Lycée Le Parc", url: "https://lyceeduparc.fr/", logo: "/logos/le-parc.png" },
-    { name: "Panthéon-Sorbonne", url: "https://www.pantheonsorbonne.fr/", logo: "/logos/sorbonne.svg" },
+    { name: "Lycée Saint-Louis", url: "https://pia.ac-paris.fr/serail/jcms/s1_2080084/fr/accueil", logo: "/site-vitrine/logos/saint-louis.jpg" },
+    { name: "Mines ParisTech", url: "https://minesparis.psl.eu/", logo: "/site-vitrine/logos/mines-paris.png" },
+    { name: "Lycée Le Parc", url: "https://lyceeduparc.fr/", logo: "/site-vitrine/logos/le-parc.png" },
+    { name: "Panthéon-Sorbonne", url: "https://www.pantheonsorbonne.fr/", logo: "/site-vitrine/logos/sorbonne.svg" },
   ];
 
   const bottomAnimation = {

@@ -40,7 +40,7 @@ export function PublicNavbar({ currentPage = 'home' }: { currentPage?: string })
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 border-b ${isScrolled ? 'bg-background/90 backdrop-blur-md border-border shadow-xs py-3' : 'bg-transparent border-transparent py-4 lg:py-6'}`}>
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2.5 font-semibold text-xl text-foreground hover:opacity-80 transition-opacity" onClick={() => setMobileOpen(false)}>
-            <Image src="/logos/logo-tw3.svg" alt="Institut TW3" width={36} height={36} className="lg:w-10 lg:h-10" />
+            <Image src="/site-vitrine/logos/logo-tw3.svg" alt="Institut TW3" width={36} height={36} className="lg:w-10 lg:h-10" />
             <span className="tracking-tight text-xl lg:text-3xl">
               <span className="font-sans font-extrabold">Institut </span>
               <span className="font-serif italic text-primary">TW3</span>

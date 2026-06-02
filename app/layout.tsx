@@ -23,12 +23,12 @@ export const metadata: Metadata = {
   icons: [
     {
       rel: 'icon',
-      url: '/logos/logo TW3.svg',
+      url: '/site-vitrine/logos/logo TW3.svg',
       media: '(prefers-color-scheme: light)',
     },
     {
       rel: 'icon',
-      url: '/logos/logo TW3 blanc.svg',
+      url: '/site-vitrine/logos/logo TW3 blanc.svg',
       media: '(prefers-color-scheme: dark)',
     },
   ],
