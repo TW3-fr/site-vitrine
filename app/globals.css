@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 298 39% 34%; /* TW3 violet: #7a3477 */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 60 100% 91%; /* TW3 accent: #fffdd1 */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 298 39% 34%;
+
+    --radius: 0.5rem;
+    
+    /* TW3 native variables for legacy */
+    --tw3-primary: #7a3477;
+    --tw3-primary-dark: #391457;
+    --tw3-accent: #fffdd1;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  h1 {
+    @apply font-serif lg:text-8xl md:text-7xl text-5xl leading-tight font-medium text-foreground;
+  }
+
+  h2 {
+    @apply font-serif text-4xl md:text-5xl font-medium text-foreground;
+  }
+
+  h3 {
+    @apply font-serif text-5xl font-medium text-foreground;
+  }
+
+  h4 {
+    @apply font-serif text-2xl font-medium text-foreground;
+  }
+
+  h5 {
+    @apply font-serif text-xl font-medium;
+  }
+
+  h6 {
+    @apply font-serif text-lg lg:text-xl font-medium;
+  }
+  
+  .hero-mask {
+    -webkit-mask-image: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+    mask-image: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  }
+}
+
+/* Typographie style Moodle - pour la compatibilité avec l'existant */
+.heading-moodle {
+  font-weight: 800;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  color: #1a202c;
+}
+
+.subtitle-moodle {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #4a5568;
+}
+
+/* Charte graphique TW3 legacy */
+.text-tw3-accent { color: var(--tw3-accent); }
+.bg-tw3-primary { background-color: var(--tw3-primary); }
+.bg-tw3-primary-dark { background-color: var(--tw3-primary-dark); }
+
+/* Animations */
+@keyframes shimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+.animate-shimmer {
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* Infinite Scroll Carousel */
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-scroll {
+  animation: scrollLeft 30s linear infinite;
+}
