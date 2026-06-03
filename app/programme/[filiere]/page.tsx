@@ -53,7 +53,8 @@ const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]
     ],
     integrationSchools: [
       { name: "LLG", url: "https://www.louislegrand.fr/", logo: "/logos/louis-le-grand.png" },
-      { name: "H4", url: "https://lycee-henri4.com/", logo: "/logos/henri-iv.png" }
+      { name: "H4", url: "https://lycee-henri4.com/", logo: "/logos/henri-iv.png" },
+      { name: "Saint Louis", url: "https://pia.ac-paris.fr/serail/jcms/s1_2080084/fr/accueil", logo: "/logos/saint-louis.jpg" }
     ]
   },
   'droit-sciences-po': {
@@ -139,7 +140,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
           </div>
 
           {/* Content cards */}
-          <div className="md:col-span-2 space-y-6 md:space-y-12">
+          <div className="md:col-span-2 space-y-6 md:space-y-8">
 
             {content.integrationSchools && (
               <InfiniteScroller schools={content.integrationSchools} />
