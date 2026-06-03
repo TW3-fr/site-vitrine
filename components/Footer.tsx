@@ -32,9 +32,9 @@ export function Footer() {
             <div>
               <h4 className="font-sans font-bold text-foreground mb-5 tracking-tight text-lg">Documents</h4>
               <ul className="space-y-3 text-sm text-muted-foreground font-medium">
-                <li><a href="/documents/statuts-tw3.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Statuts TW3</a></li>
-                <li><a href="/documents/reglement-interieur.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Règlement Intérieur</a></li>
-                <li><a href="/documents/charte-ethique.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Charte Éthique</a></li>
+                <li><a href="/documents/Statuts_2025_TW3.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Statuts TW3</a></li>
+                <li><a href="/documents/Reglement-interieur-TW3.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Règlement Intérieur</a></li>
+                <li><a href="/documents/Charte_TW3.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Charte Éthique</a></li>
               </ul>
             </div>
             
