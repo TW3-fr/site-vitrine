@@ -8,7 +8,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-8 mb-10 md:mb-16">
           <div className="md:col-span-5 lg:col-span-4">
             <Link href="/" className="flex items-center gap-3 font-semibold text-xl text-foreground mb-6">
-              <Image src="/logos/logo-tw3.svg" alt="Institut TW3" width={44} height={44} className="" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logos/logo-tw3.svg" alt="Institut TW3" className="w-11 h-11" />
               <span className="tracking-tight text-2xl md:text-3xl">
                 <span className="font-sans font-extrabold">Institut </span>
                 <span className="font-serif italic text-primary">TW3</span>

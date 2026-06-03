@@ -140,7 +140,7 @@ const FILIERE_CONTENT: Record<string, {
         ]
       },
     ],
-    ressourceNote: 'Les ressources disponibles pour les Secondes sont supposées maîtrisées par les Premières, et celles des Premières par les Terminales — qui peut le plus peut le moins. Par ailleurs, si des notions ne vous sont pas familières ou vous paraissent compliquées : apprenez-les et maîtrisez-les. N\'ayez pas peur d\'aller au-delà du programme, il ne faut pas s\'y enfermer. Nous évaluons également votre capacité à prendre des initiatives.',
+    ressourceNote: 'Les ressources disponibles pour les 2nde sont supposées maîtrisées par les 1ères, et celles des 1ères par les Tles (qui peut le plus peut le moins). Par ailleurs, si des notions ne vous sont pas familières ou vous paraissent compliquées : apprenez-les et maîtrisez-les. N\'ayez pas peur d\'aller au-delà du programme, il ne faut pas s\'y enfermer. Nous évaluons également votre capacité à prendre des initiatives.',
     integrationSchools: [
       { name: "LLG", url: "https://www.louislegrand.fr/", logo: "/logos/louis-le-grand.png" },
       { name: "H4", url: "https://lycee-henri4.com/", logo: "/logos/henri-iv.png" },
