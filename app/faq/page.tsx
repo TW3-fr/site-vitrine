@@ -4,8 +4,6 @@ import { PublicNavbar } from '@/components/PublicNavbar'
 import { Footer } from '@/components/Footer'
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
-import { PlusIcon } from 'lucide-react'
-
 const faqs = [
   { question: "L'Institut TW3 est-il vraiment 100% gratuit ?", answer: "Oui, tous nos programmes, stages et accompagnements sont entièrement gratuits pour les étudiants sélectionnés. Notre mission est de lever les barrières financières à l'excellence." },
   { question: "Qui peut postuler à vos programmes ?", answer: "Nos programmes s'adressent aux lycéens (de la Seconde à la Terminale) et aux étudiants du supérieur (Prépas, Universités) extrêmement motivés, travailleurs et souhaitant intégrer les filières les plus sélectives (Grandes Écoles d'ingénieurs, de commerce, Sciences Po)." },
@@ -42,11 +40,8 @@ export default function FAQPage() {
                     value={`item-${index}`}
                     className="p-6 border border-border rounded-2xl flex flex-col gap-3 bg-card shadow-xs"
                   >
-                    <AccordionTrigger className="p-0 text-xl font-medium hover:no-underline **:data-[slot=accordion-trigger-icon]:hidden group">
+                    <AccordionTrigger className="p-0 text-xl font-medium hover:no-underline group">
                       <h4 className="text-foreground text-left">{faq.question}</h4>
-                      <div className="w-10 h-10 rounded-full flex items-center justify-center bg-accent/30 text-primary group-aria-expanded:bg-primary group-aria-expanded:text-primary-foreground transition-colors shrink-0 ml-4">
-                        <PlusIcon className="w-5 h-5 shrink-0 transition-transform duration-200 group-aria-expanded:rotate-45" />
-                      </div>
                     </AccordionTrigger>
                     <AccordionContent className="p-0 text-muted-foreground text-base pt-4">
                       <p className="text-base font-normal text-muted-foreground leading-relaxed">
