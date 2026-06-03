@@ -49,7 +49,7 @@ export function InfiniteScroller({ schools }: { schools: School[] }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={school.name}
-                className="inline-flex items-center justify-center shrink-0 group/logo mx-6 md:mx-10 pointer-events-none"
+                className="inline-flex items-center justify-center shrink-0 group/logo mx-6 md:mx-10"
                 onDragStart={(e) => e.preventDefault()}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}

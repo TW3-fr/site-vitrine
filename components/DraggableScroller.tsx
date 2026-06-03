@@ -8,6 +8,7 @@ export function DraggableScroller({ children, speed = 1, reverse = false, classN
   const [isTouch, setIsTouch] = useState(false)
   const [startX, setStartX] = useState(0)
   const [scrollLeft, setScrollLeft] = useState(0)
+  const hasDragged = useRef(false)
 
   useEffect(() => {
     let animationId: number;
@@ -33,6 +34,7 @@ export function DraggableScroller({ children, speed = 1, reverse = false, classN
 
   const handleMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true)
+    hasDragged.current = false
     setStartX(e.pageX - (scrollRef.current?.offsetLeft || 0))
     setScrollLeft(scrollRef.current?.scrollLeft || 0)
   }
@@ -49,8 +51,18 @@ export function DraggableScroller({ children, speed = 1, reverse = false, classN
     if (!isDragging || !scrollRef.current) return
     e.preventDefault()
     const x = e.pageX - (scrollRef.current.offsetLeft || 0)
+    if (Math.abs(x - startX) > 5) {
+      hasDragged.current = true
+    }
     const walk = (x - startX) * 2 // Scroll speed multiplier
     scrollRef.current.scrollLeft = scrollLeft - walk
+  }
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (hasDragged.current) {
+      e.preventDefault()
+      e.stopPropagation()
+    }
   }
 
   return (
@@ -62,6 +74,7 @@ export function DraggableScroller({ children, speed = 1, reverse = false, classN
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}
       onMouseMove={handleMouseMove}
+      onClickCapture={handleClick}
       onTouchStart={() => setIsTouch(true)}
       onTouchEnd={() => setIsTouch(false)}
       onTouchCancel={() => setIsTouch(false)}

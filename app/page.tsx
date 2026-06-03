@@ -328,7 +328,7 @@ export default function HomePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={school.name}
-                  className="inline-flex items-center justify-center shrink-0 group/logo mx-6 md:mx-10 pointer-events-none"
+                  className="inline-flex items-center justify-center shrink-0 group/logo mx-6 md:mx-10"
                   onDragStart={(e) => e.preventDefault()}
                 >
                   <img
@@ -393,7 +393,7 @@ export default function HomePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={school.name}
-                  className="inline-flex items-center justify-center shrink-0 group/logo mx-6 md:mx-10 pointer-events-none"
+                  className="inline-flex items-center justify-center shrink-0 group/logo mx-6 md:mx-10"
                   onDragStart={(e) => e.preventDefault()}
                 >
                   <img
