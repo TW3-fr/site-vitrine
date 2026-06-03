@@ -52,9 +52,6 @@ const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]
       { label: '50 dérivées', url: '#' },
     ],
     integrationSchools: [
-      { name: "HEC Paris", url: "https://www.hec.edu/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/HEC_Paris.svg?width=400" },
-      { name: "ESSEC", url: "https://www.essec.edu/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/ESSEC_Logo.svg?width=400" },
-      { name: "ESCP", url: "https://escp.eu/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/ESCP_Business_School_logo.svg?width=400" },
       { name: "LLG", url: "https://www.louislegrand.fr/", logo: "/logos/louis-le-grand.png" },
       { name: "H4", url: "https://lycee-henri4.com/", logo: "/logos/henri-iv.png" }
     ]
@@ -104,9 +101,6 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
             <div className="flex flex-wrap justify-center items-center gap-3">
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-accent/50 text-foreground text-xs font-bold uppercase tracking-wider rounded-full border border-border/50">
                 Cursus d'excellence
-              </span>
-              <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-full border border-primary/20">
-                100% en Visio (CM & Khôlles)
               </span>
             </div>
             <h1 className="flex flex-col">
