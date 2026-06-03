@@ -32,7 +32,9 @@ const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]
       { name: "Le Parc", url: "https://lyceeduparc.fr/", logo: "/logos/le-parc.png" },
       { name: "LLG", url: "https://www.louislegrand.fr/", logo: "/logos/louis-le-grand.png" },
       { name: "H4", url: "https://lycee-henri4.com/", logo: "/logos/henri-iv.png" },
-      { name: "Saint Louis", url: "https://pia.ac-paris.fr/serail/jcms/s1_2080084/fr/accueil", logo: "/logos/saint-louis.jpg" }
+      { name: "Saint Louis", url: "https://pia.ac-paris.fr/serail/jcms/s1_2080084/fr/accueil", logo: "/logos/saint-louis.jpg" },
+      { name: "Lycée Hoche", url: "https://lyc-hoche-versailles.ac-versailles.fr/", logo: "/logos/hoche.png" },
+      { name: "Télécom Paris", url: "https://www.telecom-paris.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Telecom_Paris_2019.svg?width=400" }
     ]
   },
   commerce: {
@@ -43,7 +45,14 @@ const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]
     ],
     matieres: ['Économie', 'Mathématiques', 'Culture générale', 'Langues', 'Géopolitique'],
     esprit: 'Ouverture sur le monde, esprit d\'analyse et de synthèse. Formation par des professeurs de l\'ESSEC et de l\'ENS.',
-    deadline: '15 Septembre'
+    deadline: '15 Septembre',
+    integrationSchools: [
+      { name: "HEC Paris", url: "https://www.hec.edu/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/HEC_Paris.svg?width=400" },
+      { name: "ESSEC", url: "https://www.essec.edu/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/ESSEC_Logo.svg?width=400" },
+      { name: "ESCP", url: "https://escp.eu/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/ESCP_Business_School_logo.svg?width=400" },
+      { name: "LLG", url: "https://www.louislegrand.fr/", logo: "/logos/louis-le-grand.png" },
+      { name: "H4", url: "https://lycee-henri4.com/", logo: "/logos/henri-iv.png" }
+    ]
   },
   'droit-sciences-po': {
     objectives: [
