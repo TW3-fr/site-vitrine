@@ -14,43 +14,43 @@ export interface LocalEvent {
 export const eventsData: LocalEvent[] = [
   {
     id: "evt-1",
-    title: "Webinaire : Comment intégrer une grande école d'ingénieurs ?",
-    date: "2025-10-15T18:00:00Z",
-    location: "En ligne (Zoom)",
-    description: "Rejoignez-nous pour ce webinaire exclusif où nos mentors de Polytechnique et CentraleSupélec partageront leurs secrets de réussite aux concours CPGE.",
-    isPast: false,
-    tags: ["Webinaire", "Ingénieur", "Conseils"],
-    registrationLink: "https://www.helloasso.com/",
-    // image: "/evenements/affiche-ingenieur.png" // Décommentez et ajoutez le lien vers l'image
+    title: "Conférence : L'Intelligence Artificielle",
+    date: "2024-03-15T18:00:00Z",
+    location: "En ligne",
+    description: "Une conférence exceptionnelle pour comprendre les enjeux de l'Intelligence Artificielle et son impact sur les filières d'excellence et le monde de demain.",
+    isPast: true,
+    tags: ["Conférence", "IA", "Tech"],
+    image: "/evenements/Conf IA 15_03 1.png"
   },
   {
     id: "evt-2",
-    title: "Forum de l'Orientation TW3 - Édition 2025",
-    date: "2025-11-20T14:00:00Z",
-    location: "Paris (Lieu à confirmer)",
-    description: "Une journée entière dédiée à l'orientation avec des stands animés par des étudiants des meilleures filières françaises (Droit, Commerce, Ingénieur, Sciences Po).",
-    isPast: false,
-    tags: ["Présentiel", "Forum", "Orientation"],
-    registrationLink: "https://www.helloasso.com/",
+    title: "Conférence NASA : Ingénierie et Espace",
+    date: "2024-02-16T19:00:00Z",
+    location: "En ligne",
+    description: "Plongez dans le domaine de l'ingénierie spatiale avec une conférence inspirante sur les missions de la NASA et les parcours pour y accéder.",
+    isPast: true,
+    tags: ["Webinaire", "Espace", "Ingénieur"],
+    image: "/evenements/Conf NASA 16_02 1.png"
   },
   {
     id: "evt-3",
-    title: "Stage Intensif de Mathématiques - Vacances d'Hiver",
-    date: "2025-02-15T09:00:00Z",
-    location: "Lycée partenaire, Paris",
-    description: "Un stage de perfectionnement en mathématiques pour les élèves de Terminale souhaitant intégrer une CPGE scientifique. Places limitées.",
-    isPast: true,
-    tags: ["Stage", "Mathématiques"],
-    replayLink: "https://youtube.com/",
+    title: "Conférence : Droit et Sciences Politiques",
+    date: "2026-02-07T18:00:00Z",
+    location: "En ligne",
+    description: "Découvrez les parcours en Droit et à Sciences Po. Nos intervenants vous donneront tous les conseils pour réussir vos admissions et vos études.",
+    isPast: false,
+    tags: ["Conférence", "Droit", "Sciences Po"],
+    image: "/evenements/Conf droit 07_02_26 1.png"
   },
   {
     id: "evt-4",
-    title: "Webinaire : Sciences Po Paris et IEP",
-    date: "2024-11-10T19:00:00Z",
+    title: "Conférence Spéciale avec Laymoon",
+    date: "2024-11-06T19:00:00Z",
     location: "En ligne",
-    description: "Nos mentors étudiants à Sciences Po Paris reviennent sur la procédure d'admission, le dossier et l'oral.",
+    description: "Un échange riche et exclusif pour comprendre les clés de la réussite académique et professionnelle.",
     isPast: true,
-    tags: ["Webinaire", "Sciences Po"],
+    tags: ["Conférence", "Inspiration"],
+    image: "/evenements/Conf laymoon 6_11 1.png"
   }
 ];
 
