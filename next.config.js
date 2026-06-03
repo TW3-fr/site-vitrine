@@ -5,7 +5,6 @@ const nextConfig = {
   outputFileTracingRoot: path.join(__dirname, '../../'),
   reactStrictMode: true,
   output: 'export',
-  basePath: '/site-vitrine',
   images: {
     unoptimized: true,
   },

@@ -23,13 +23,17 @@ export const metadata: Metadata = {
   icons: [
     {
       rel: 'icon',
-      url: '/site-vitrine/logos/logo TW3.svg',
+      url: '/logos/logo TW3.svg',
       media: '(prefers-color-scheme: light)',
     },
     {
       rel: 'icon',
-      url: '/site-vitrine/logos/logo TW3 blanc.svg',
+      url: '/logos/logo TW3 blanc.svg',
       media: '(prefers-color-scheme: dark)',
+    },
+    {
+      rel: 'shortcut icon',
+      url: '/favicon.ico',
     },
   ],
 }
