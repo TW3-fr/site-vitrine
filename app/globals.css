@@ -117,3 +117,28 @@
 .animate-scroll {
   animation: scrollLeft 30s linear infinite;
 }
+
+/* ═══════════════════════════════════════════════════════
+   FIX: Mobile double-tap / long-press issue
+   On touch devices, browsers require a second tap on elements
+   with :hover styles that change visibility/layout. This
+   removes the "sticky" hover state on touch-only devices.
+═══════════════════════════════════════════════════════ */
+@media (hover: none) {
+  a, button, [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Reset ALL hover background/color changes on touch devices */
+  .group:hover .group-hover\:rotate-45,
+  .group:hover .group-hover\:gap-4,
+  .group:hover .group-hover\:text-primary,
+  .group\/btn:hover .group-hover\/btn\:rotate-45,
+  .group\/logo:hover .group-hover\/logo\:scale-110 {
+    /* Let the base (non-hover) styles apply */
+  }
+}
+
+/* Ensure all interactive elements respond instantly on touch */
+a, button, [role="button"], input[type="submit"] {
+  touch-action: manipulation;
+}
