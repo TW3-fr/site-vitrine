@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   icons: [
     {
       rel: 'icon',
-      url: '/logos/Logos 2025.jpg',
+      url: '/favicon.jpg',
     },
     {
       rel: 'shortcut icon',
-      url: '/logos/Logos 2025.jpg',
+      url: '/favicon.jpg',
     },
   ],
 }
