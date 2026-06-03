@@ -30,7 +30,7 @@ export default function HomePage() {
       image: "https://randomuser.me/api/portraits/men/22.jpg"
     },
     {
-      quote: "Un projet ambitieux et intéressant, tant du point de vue des élèves que des mentors. TW3 est un tremplin pour la réussite de nos élèves et pour créer un réseau entre futurs cadres.",
+      quote: "Un projet ambitieux et intéressant, tant du point de vue des élèves que des mentors. TW3 est un tremplin pour la réussite de nos élèves.",
       author: "Doctorante à l'ENS Ulm",
       image: "/testimonials/veiled_student.png"
     }
@@ -119,7 +119,7 @@ export default function HomePage() {
                 />
               </h1>
               <motion.p {...bottomAnimation} className="max-w-2xl text-base md:text-xl text-muted-foreground mt-2">
-                Une formation 100% gratuite pour accéder aux filières les plus prestigieuses et bâtir un réseau intergénérationnel fort.
+                Une formation 100% gratuite pour accéder aux filières les plus prestigieuses.
               </motion.p>
             </div>
             <motion.div

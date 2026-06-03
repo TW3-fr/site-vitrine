@@ -19,7 +19,7 @@ export function EvenementsPublic() {
         viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <Card className={`group overflow-hidden border-border bg-card/60 backdrop-blur-md shadow-sm hover:shadow-xl hover:border-primary/40 transition-all duration-500 flex flex-col md:flex-row ${isPast ? 'opacity-90' : ''}`}>
+        <Card className={`group overflow-hidden border-border bg-card/60 backdrop-blur-md shadow-sm hover:shadow-xl hover:border-primary/40 transition-all duration-500 flex flex-col md:flex-row`}>
           
           {/* Conteneur de l'Affiche (Poster) */}
           <div className={`relative w-full md:w-2/5 shrink-0 bg-muted/50 overflow-hidden min-h-[250px] md:min-h-[350px] flex items-center justify-center ${isImageRight ? 'md:order-2' : ''}`}>
@@ -46,7 +46,7 @@ export function EvenementsPublic() {
               ))}
             </div>
             
-            {isPast && <div className="absolute inset-0 bg-background/20 backdrop-blur-[1px] group-hover:opacity-0 transition-opacity duration-500"></div>}
+            
           </div>
 
           {/* Conteneur du Contenu (Texte) */}
@@ -95,28 +95,19 @@ export function EvenementsPublic() {
 
   return (
     <div className="space-y-24 max-w-5xl mx-auto">
-      <section>
-        <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-8 mb-12">
-          <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-none">À venir</h2>
-          <div className="h-px bg-border flex-grow mb-2"></div>
-        </div>
-        
-        {upcomingEvents.length === 0 ? (
-          <div className="bg-card/50 backdrop-blur-sm rounded-3xl p-16 text-center border border-border shadow-xs">
-            <div className="w-20 h-20 bg-accent/30 rounded-full flex items-center justify-center mx-auto mb-6">
-              <CalendarDays className="w-10 h-10 text-primary" />
-            </div>
-            <p className="text-xl text-foreground font-bold mb-3 font-sans">Aucun événement prévu</p>
-            <p className="text-muted-foreground text-lg">Revenez très bientôt pour découvrir notre nouveau programme !</p>
+      {upcomingEvents.length > 0 && (
+        <section>
+          <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-8 mb-12">
+            <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-none">À venir</h2>
+            <div className="h-px bg-border flex-grow mb-2"></div>
           </div>
-        ) : (
           <div className="flex flex-col gap-8 md:gap-12">
             {upcomingEvents.map((e, idx) => (
               <EventCard key={e.id} event={e} index={idx} />
             ))}
           </div>
-        )}
-      </section>
+        </section>
+      )}
 
       {pastEvents.length > 0 && (
         <section>
