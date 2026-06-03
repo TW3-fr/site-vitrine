@@ -19,7 +19,7 @@ export function EvenementsPublic() {
         viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        <Card className={`group overflow-hidden border-border bg-card/60 backdrop-blur-md shadow-sm hover:shadow-xl hover:border-primary/40 transition-all duration-500 flex flex-col md:flex-row ${isPast ? 'opacity-80 grayscale hover:grayscale-0' : ''}`}>
+        <Card className={`group overflow-hidden border-border bg-card/60 backdrop-blur-md shadow-sm hover:shadow-xl hover:border-primary/40 transition-all duration-500 flex flex-col md:flex-row ${isPast ? 'opacity-90' : ''}`}>
           
           {/* Conteneur de l'Affiche (Poster) */}
           <div className={`relative w-full md:w-2/5 shrink-0 bg-muted/50 overflow-hidden min-h-[250px] md:min-h-[350px] flex items-center justify-center ${isImageRight ? 'md:order-2' : ''}`}>

@@ -7,7 +7,6 @@ export interface LocalEvent {
   image?: string
   registrationLink?: string
   replayLink?: string
-  isPast: boolean
   tags?: string[]
 }
 
@@ -18,7 +17,6 @@ export const eventsData: LocalEvent[] = [
     date: "2025-03-15T22:30:00Z",
     location: "En ligne (Visioconférence)",
     description: "Intervention de Houssam Zenati, Chercheur en IA. Thème : « Le Problème des Idées dans le Monde Musulman à l'Ère Numérique ». Évènement en ligne tout public.",
-    isPast: true,
     tags: ["Conférence", "IA", "Numérique"],
     image: "/evenements/Conf IA 15_03 1.png"
   },
@@ -28,7 +26,6 @@ export const eventsData: LocalEvent[] = [
     date: "2025-02-16T18:30:00Z",
     location: "En ligne (Visioconférence)",
     description: "Rencontre exceptionnelle avec Noureddine Melikechi, Professeur de Physique, Doyen du Kennedy Collège des Sciences à l'University of Massachusetts et Ambassadeur de la Planète Mars. Évènement en ligne tout public.",
-    isPast: true,
     tags: ["Conférence", "Espace", "Sciences"],
     image: "/evenements/Conf NASA 16_02 1.png"
   },
@@ -38,7 +35,6 @@ export const eventsData: LocalEvent[] = [
     date: "2026-02-07T20:00:00Z",
     location: "En ligne (Visioconférence Discord)",
     description: "Intervention d'Atéka Vasram, Avocate en Droit des Étrangers. Venez échanger et poser vos questions lors de cet évènement en ligne tout public.",
-    isPast: true,
     tags: ["Conférence", "Droit", "Orientation"],
     image: "/evenements/Conf droit 07_02_26 1.png"
   },
@@ -48,11 +44,12 @@ export const eventsData: LocalEvent[] = [
     date: "2024-12-06T19:00:00Z",
     location: "En ligne (Canal Discord TW3)",
     description: "Rencontre avec Anass El Adly, CEO de Laymoon et entrepreneur musulman engagé en France. Annonce d'une offre spéciale : gratuité pendant 1 an ! Réservé aux membres de TW3.",
-    isPast: true,
     tags: ["Conférence", "Entrepreneuriat"],
     image: "/evenements/Conf laymoon 6_11 1.png"
   }
 ];
 
-export const upcomingEvents = eventsData.filter(e => !e.isPast).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-export const pastEvents = eventsData.filter(e => e.isPast).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+const now = new Date();
+// Ordre chronologique pour tous les événements (du plus ancien au plus récent)
+export const upcomingEvents = eventsData.filter(e => new Date(e.date) >= now).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+export const pastEvents = eventsData.filter(e => new Date(e.date) < now).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
