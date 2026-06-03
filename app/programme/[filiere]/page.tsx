@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { InfiniteScroller } from '@/components/InfiniteScroller'
 import { ArrowLeft, Target, BookOpen, Heart, Link as LinkIcon, CalendarDays, ArrowUpRight, CheckCircle2, Info } from 'lucide-react'
+import { CollapsibleLevel } from '@/components/CollapsibleLevel'
 
 interface RessourceGroup {
   niveau: string
@@ -40,6 +41,8 @@ const FILIERE_CONTENT: Record<string, {
           { label: 'Calcul algébrique 4 — Racines', url: '/ressources/calcul_algebrique_4_seconde.pdf' },
           { label: 'Calcul algébrique 5 — Factorisation avancée', url: '/ressources/calcul_algebrique_5_seconde.pdf' },
           { label: 'Calcul algébrique 6 — Résolution d\'équations', url: '/ressources/calcul_algebrique_6_seconde.pdf' },
+          { label: 'Seconde 7', url: '/ressources/seconde_7.pdf' },
+          { label: 'Seconde 8', url: '/ressources/seconde_8.pdf' },
           { label: 'Contrôle 1 Seconde', url: '/ressources/controle_1_seconde.pdf' },
           { label: 'Examen Seconde TW3 (année précédente)', url: '/ressources/exam_seconde_tw3.pdf' },
         ]
@@ -47,13 +50,20 @@ const FILIERE_CONTENT: Record<string, {
       {
         niveau: 'Première',
         items: [
+          { label: 'Première 1', url: '/ressources/premiere_1.pdf' },
+          { label: 'Première 2', url: '/ressources/premiere_2.pdf' },
           { label: 'Seconde avancée → Première', url: '/ressources/seconde_avancee_premiere.pdf' },
+          { label: 'Première avancée → Terminale', url: '/ressources/premiere_avancee_term.pdf' },
           { label: 'Examen Première TW3 (année précédente)', url: '/ressources/exam_premiere_tw3.pdf' },
         ]
       },
       {
         niveau: 'Terminale',
         items: [
+          { label: 'Terminale 1', url: '/ressources/term1.pdf' },
+          { label: 'Terminale 2', url: '/ressources/term2.pdf' },
+          { label: 'Terminale 3', url: '/ressources/term3.pdf' },
+          { label: 'Terminale avancée', url: '/ressources/terminale_avancee.pdf' },
           { label: 'Première avancée → Terminale', url: '/ressources/premiere_avancee_term.pdf' },
           { label: 'Examen Terminale TW3 (année précédente)', url: '/ressources/exam_terminale_tw3.pdf' },
           { label: 'Feuilleter le Poly LLG corrigé (WikiPrépa)', url: 'https://wikiprepa.fr/poly-llg-corrige/' },
@@ -93,18 +103,27 @@ const FILIERE_CONTENT: Record<string, {
           { label: 'Calcul algébrique 4 — Racines', url: '/ressources/calcul_algebrique_4_seconde.pdf' },
           { label: 'Calcul algébrique 5 — Factorisation avancée', url: '/ressources/calcul_algebrique_5_seconde.pdf' },
           { label: 'Calcul algébrique 6 — Résolution d\'équations', url: '/ressources/calcul_algebrique_6_seconde.pdf' },
+          { label: 'Seconde 7', url: '/ressources/seconde_7.pdf' },
+          { label: 'Seconde 8', url: '/ressources/seconde_8.pdf' },
           { label: 'Contrôle 1 Seconde', url: '/ressources/controle_1_seconde.pdf' },
         ]
       },
       {
         niveau: 'Première',
         items: [
+          { label: 'Première 1', url: '/ressources/premiere_1.pdf' },
+          { label: 'Première 2', url: '/ressources/premiere_2.pdf' },
           { label: 'Seconde avancée → Première', url: '/ressources/seconde_avancee_premiere.pdf' },
+          { label: 'Première avancée → Terminale', url: '/ressources/premiere_avancee_term.pdf' },
         ]
       },
       {
         niveau: 'Terminale',
         items: [
+          { label: 'Terminale 1', url: '/ressources/term1.pdf' },
+          { label: 'Terminale 2', url: '/ressources/term2.pdf' },
+          { label: 'Terminale 3', url: '/ressources/term3.pdf' },
+          { label: 'Terminale avancée', url: '/ressources/terminale_avancee.pdf' },
           { label: 'Première avancée → Terminale', url: '/ressources/premiere_avancee_term.pdf' },
         ]
       },
@@ -233,32 +252,13 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-8">
+                  <div className="space-y-3">
                     {content.ressourceGroups.map((group) => (
-                      <div key={group.niveau}>
-                        <h4 className="text-lg font-bold text-foreground mb-3 font-sans flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-primary shrink-0"></span>
-                          {group.niveau}
-                        </h4>
-                        <div className="space-y-2 ml-4">
-                          {group.items.map((res, i) => (
-                            <a
-                              key={i}
-                              href={res.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center justify-between bg-background p-3 md:p-4 rounded-xl border border-border hover:border-primary/50 hover:shadow-xs transition group"
-                            >
-                              <span className="font-medium text-sm md:text-base text-foreground group-hover:text-primary transition">{res.label}</span>
-                              <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground group-hover:text-primary group-hover:rotate-45 transition-all shrink-0 ml-3" />
-                            </a>
-                          ))}
-                        </div>
-                      </div>
+                      <CollapsibleLevel key={group.niveau} niveau={group.niveau} items={group.items} />
                     ))}
 
                     {content.ressourceNote && (
-                      <div className="flex gap-3 bg-primary/5 border border-primary/20 rounded-xl p-4 mt-6">
+                      <div className="flex gap-3 bg-primary/5 border border-primary/20 rounded-xl p-4 mt-4">
                         <Info className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                         <p className="text-sm text-muted-foreground leading-relaxed">
                           {content.ressourceNote}
