@@ -29,9 +29,9 @@ export function PublicNavbar({ currentPage = 'home' }: { currentPage?: string })
 
   const navLinks = [
     { href: '/programme', label: 'Programmes', id: 'programme' },
+    { href: '/rejoindre', label: 'Candidater', id: 'rejoindre' },
     { href: '/evenements', label: 'Événements', id: 'evenements' },
     { href: '/faq', label: 'FAQ', id: 'faq' },
-    { href: '/rejoindre', label: 'Rejoindre TW3', id: 'rejoindre' },
     { href: '/contact', label: 'Contact', id: 'contact' },
   ]
 

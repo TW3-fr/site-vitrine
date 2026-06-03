@@ -205,6 +205,14 @@ export default function HomePage() {
                       <p>
                         Nos élèves bénéficient d'un accompagnement pédagogique rigoureux qui représenterait <strong>environ 7 000 € de valeur</strong> s'il était commercialisé dans le secteur privé : cours particuliers, stages intensifs, entraînements aux concours et mentorat individuel inclus.
                       </p>
+                      <div className="bg-accent/30 p-4 md:p-5 rounded-2xl border border-border/50">
+                        <h4 className="font-bold text-foreground font-sans mb-1.5 flex items-center gap-2">
+                          Pour qui ?
+                        </h4>
+                        <p className="text-sm md:text-base text-muted-foreground">
+                          Nos programmes s'adressent <strong>aux lycéens (de la Seconde à la Terminale)</strong> ainsi qu'aux <strong>étudiants du supérieur</strong> (prépas, universités) désireux d'intégrer les filières les plus sélectives.
+                        </p>
+                      </div>
                     </div>
 
                     <Link href="/programme" className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-4 transition-all duration-300 mt-2 w-fit">
