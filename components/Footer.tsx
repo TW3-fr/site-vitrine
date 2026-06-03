@@ -51,10 +51,15 @@ export function Footer() {
               <h4 className="font-sans font-bold text-foreground mb-5 tracking-tight text-lg">Contact</h4>
               <ul className="space-y-3 text-sm text-muted-foreground font-medium">
                 <li><Link href="/contact" className="hover:text-primary transition-colors">Nous contacter</Link></li>
-                <li><a href="https://www.helloasso.com/associations/ta3alamawa3alama/formulaires/1/" target="_blank" rel="noopener noreferrer" className="text-primary hover:opacity-80 transition-opacity inline-flex items-center gap-1">
-                  Faire un don 
-                  <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-                </a></li>
+                <li>
+                  <a href="https://www.helloasso.com/associations/ta3alamawa3alama/formulaires/1/" target="_blank" rel="noopener noreferrer" className="text-primary hover:opacity-80 transition-opacity inline-flex items-center gap-1">
+                    Faire un don 
+                    <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                  <p className="text-[11px] text-muted-foreground mt-0.5 italic leading-tight">
+                    Déductible des impôts à 66%
+                  </p>
+                </li>
               </ul>
             </div>
           </div>

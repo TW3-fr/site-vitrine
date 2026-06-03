@@ -472,6 +472,8 @@ export default function HomePage() {
               <h2 className="text-2xl md:text-4xl font-serif mb-3 md:mb-4">Soutenez l'excellence.</h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Nos programmes sont 100% gratuits pour les étudiants. Votre générosité nous permet de maintenir et développer nos actions.
+                <br />
+                <span className="text-sm italic font-medium mt-2 inline-block opacity-90">Vos dons sont déductibles des impôts à hauteur de 66%.</span>
               </p>
               <Button asChild size="lg" className="rounded-full h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-medium group">
                 <a href="https://www.helloasso.com/associations/ta3alamawa3alama/formulaires/1/" target="_blank" rel="noopener noreferrer">
