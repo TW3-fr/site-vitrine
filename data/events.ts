@@ -14,42 +14,42 @@ export interface LocalEvent {
 export const eventsData: LocalEvent[] = [
   {
     id: "evt-1",
-    title: "Conférence : L'Intelligence Artificielle",
-    date: "2024-03-15T18:00:00Z",
-    location: "En ligne",
-    description: "Une conférence exceptionnelle pour comprendre les enjeux de l'Intelligence Artificielle et son impact sur les filières d'excellence et le monde de demain.",
+    title: "Conférence avec un Chercheur en IA",
+    date: "2025-03-15T22:30:00Z",
+    location: "En ligne (Visioconférence)",
+    description: "Intervention de Houssam Zenati, Chercheur en IA. Thème : « Le Problème des Idées dans le Monde Musulman à l'Ère Numérique ». Évènement en ligne tout public.",
     isPast: true,
-    tags: ["Conférence", "IA", "Tech"],
+    tags: ["Conférence", "IA", "Numérique"],
     image: "/evenements/Conf IA 15_03 1.png"
   },
   {
     id: "evt-2",
-    title: "Conférence NASA : Ingénierie et Espace",
-    date: "2024-02-16T19:00:00Z",
-    location: "En ligne",
-    description: "Plongez dans le domaine de l'ingénierie spatiale avec une conférence inspirante sur les missions de la NASA et les parcours pour y accéder.",
+    title: "Conférence avec un Physicien à la NASA",
+    date: "2025-02-16T18:30:00Z",
+    location: "En ligne (Visioconférence)",
+    description: "Rencontre exceptionnelle avec Noureddine Melikechi, Professeur de Physique, Doyen du Kennedy Collège des Sciences à l'University of Massachusetts et Ambassadeur de la Planète Mars. Évènement en ligne tout public.",
     isPast: true,
-    tags: ["Webinaire", "Espace", "Ingénieur"],
+    tags: ["Conférence", "Espace", "Sciences"],
     image: "/evenements/Conf NASA 16_02 1.png"
   },
   {
     id: "evt-3",
-    title: "Conférence : Droit et Sciences Politiques",
-    date: "2026-02-07T18:00:00Z",
-    location: "En ligne",
-    description: "Découvrez les parcours en Droit et à Sciences Po. Nos intervenants vous donneront tous les conseils pour réussir vos admissions et vos études.",
-    isPast: false,
-    tags: ["Conférence", "Droit", "Sciences Po"],
+    title: "Conférence avec une Avocate en Droit des Étrangers",
+    date: "2026-02-07T20:00:00Z",
+    location: "En ligne (Visioconférence Discord)",
+    description: "Intervention d'Atéka Vasram, Avocate en Droit des Étrangers. Venez échanger et poser vos questions lors de cet évènement en ligne tout public.",
+    isPast: true,
+    tags: ["Conférence", "Droit", "Orientation"],
     image: "/evenements/Conf droit 07_02_26 1.png"
   },
   {
     id: "evt-4",
-    title: "Conférence Spéciale avec Laymoon",
-    date: "2024-11-06T19:00:00Z",
-    location: "En ligne",
-    description: "Un échange riche et exclusif pour comprendre les clés de la réussite académique et professionnelle.",
+    title: "Conférence avec le CEO de Laymoon",
+    date: "2024-12-06T19:00:00Z",
+    location: "En ligne (Canal Discord TW3)",
+    description: "Rencontre avec Anass El Adly, CEO de Laymoon et entrepreneur musulman engagé en France. Annonce d'une offre spéciale : gratuité pendant 1 an ! Réservé aux membres de TW3.",
     isPast: true,
-    tags: ["Conférence", "Inspiration"],
+    tags: ["Conférence", "Entrepreneuriat"],
     image: "/evenements/Conf laymoon 6_11 1.png"
   }
 ];
