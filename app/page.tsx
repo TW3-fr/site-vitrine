@@ -320,7 +320,7 @@ export default function HomePage() {
             <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
-            <DraggableScroller speed={0.8} reverse className="w-max">
+            <DraggableScroller speed={0.8} reverse>
               {[...mentorsSchools, ...mentorsSchools].map((school, i) => (
                 <a
                   key={i}
@@ -385,7 +385,7 @@ export default function HomePage() {
             <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
-            <DraggableScroller speed={0.8} className="w-max">
+            <DraggableScroller speed={0.8}>
               {[...integrationSchools, ...integrationSchools].map((school, i) => (
                 <a
                   key={i}
@@ -430,7 +430,7 @@ export default function HomePage() {
             <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-card/50 to-transparent z-10 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-card/50 to-transparent z-10 pointer-events-none"></div>
 
-            <DraggableScroller speed={1} reverse className="w-max py-6">
+            <DraggableScroller speed={1} reverse className="py-6">
               {[...testimonials, ...testimonials].map((testimonial, i) => (
                 <motion.div
                   key={i}
