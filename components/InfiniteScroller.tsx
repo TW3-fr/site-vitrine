@@ -41,7 +41,7 @@ export function InfiniteScroller({ schools }: { schools: School[] }) {
         <div className="relative w-full overflow-hidden flex py-6">
           <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
           <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
-          <DraggableScroller speed={0.64}>
+          <DraggableScroller speed={0.77}>
             {[...schools, ...schools].map((school, i) => (
               <a
                 key={i}
