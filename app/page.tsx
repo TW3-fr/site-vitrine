@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button'
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { ArrowUpRight, GraduationCap, Users, CalendarDays, BookOpen, Award, Sparkles, Quote, ChevronRight, Globe, Calculator, TrendingUp, Scale } from "lucide-react";
+import { DraggableScroller } from '@/components/DraggableScroller'
 
 export default function HomePage() {
   const ref = useRef(null);
@@ -386,11 +387,7 @@ export default function HomePage() {
             <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
-            <motion.div
-              className="flex gap-4 md:gap-6 w-max px-4"
-              animate={{ x: ["-50%", "0%"] }}
-              transition={{ repeat: Infinity, ease: "linear", duration: 50 }}
-            >
+            <DraggableScroller speed={0.8} className="w-max">
               {[...integrationSchools, ...integrationSchools].map((school, i) => (
                 <a
                   key={i}
@@ -398,16 +395,18 @@ export default function HomePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={school.name}
-                  className="inline-flex items-center justify-center shrink-0 group/logo mx-6 md:mx-10"
+                  className="inline-flex items-center justify-center shrink-0 group/logo mx-6 md:mx-10 pointer-events-none"
+                  onDragStart={(e) => e.preventDefault()}
                 >
                   <img
                     src={school.logo}
                     alt={school.name}
                     className={`${(school as any).className || "h-12 md:h-16"} w-auto max-w-[120px] md:max-w-[160px] object-contain group-hover/logo:scale-110 transition-transform duration-300 opacity-90 hover:opacity-100`}
+                    draggable={false}
                   />
                 </a>
               ))}
-            </motion.div>
+            </DraggableScroller>
           </div>
         </div>
 
@@ -433,15 +432,13 @@ export default function HomePage() {
             <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-card/50 to-transparent z-10 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-card/50 to-transparent z-10 pointer-events-none"></div>
 
-            <motion.div
-              className="flex gap-6 w-max"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
-            >
+            <DraggableScroller speed={1} reverse className="w-max py-6">
               {[...testimonials, ...testimonials].map((testimonial, i) => (
-                <div
+                <motion.div
                   key={i}
-                  className="w-[300px] md:w-[400px] bg-background border border-border rounded-2xl p-6 flex flex-col gap-5 shadow-xs hover:border-primary/40 transition-colors shrink-0"
+                  animate={{ y: [0, -8, 0] }}
+                  transition={{ repeat: Infinity, duration: 4 + (i % 3), ease: "easeInOut", delay: i * 0.2 }}
+                  className="w-[300px] md:w-[400px] bg-background border border-border rounded-2xl p-6 flex flex-col gap-5 shadow-xs hover:border-primary/40 transition-colors shrink-0 pointer-events-none"
                 >
                   <div className="flex-1 whitespace-normal">
                     <Quote className="w-8 h-8 text-primary/20 mb-4 rotate-180" />
@@ -452,15 +449,15 @@ export default function HomePage() {
 
                   <div className="flex items-center gap-4 pt-6 border-t border-border/50 whitespace-normal mt-auto">
                     <div className="w-10 h-10 rounded-full overflow-hidden border border-border shrink-0">
-                      <img src={(testimonial as any).image} alt={testimonial.author} className="w-full h-full object-cover" />
+                      <img src={(testimonial as any).image} alt={testimonial.author} className="w-full h-full object-cover" draggable={false} />
                     </div>
                     <div>
                       <p className="font-semibold text-muted-foreground text-xs md:text-sm">{testimonial.author}</p>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </motion.div>
+            </DraggableScroller>
           </div>
         </div>
       </section>
