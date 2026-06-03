@@ -6,9 +6,22 @@ import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { InfiniteScroller } from '@/components/InfiniteScroller'
-import { ArrowLeft, Target, BookOpen, Heart, Link as LinkIcon, CalendarDays, ArrowUpRight, CheckCircle2 } from 'lucide-react'
+import { ArrowLeft, Target, BookOpen, Heart, Link as LinkIcon, CalendarDays, ArrowUpRight, CheckCircle2, Info } from 'lucide-react'
 
-const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]; esprit: string; deadline?: string; ressources?: { label: string, url: string }[]; integrationSchools?: { name: string, url: string, logo: string, className?: string }[] }> = {
+interface RessourceGroup {
+  niveau: string
+  items: { label: string; url: string }[]
+}
+
+const FILIERE_CONTENT: Record<string, {
+  objectives: string[];
+  matieres: string[];
+  esprit: string;
+  deadline?: string;
+  ressourceGroups?: RessourceGroup[];
+  ressourceNote?: string;
+  integrationSchools?: { name: string; url: string; logo: string; className?: string }[]
+}> = {
   scientifique: {
     objectives: [
       'Accompagnement de la Seconde à la Spé',
@@ -18,11 +31,36 @@ const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]
     matieres: ['Mathématiques', 'Physique', 'Anglais', 'Arabe'],
     esprit: 'Rigueur scientifique, esprit d\'excellence et entraide. Formation dispensée par des professeurs agrégés, normaliens et polytechniciens.',
     deadline: '15 Septembre',
-    ressources: [
-      { label: 'Polycopié Louis-Le-Grand (WikiPrépa)', url: '#' },
-      { label: 'Cahier de calcul', url: '#' },
-      { label: '50 dérivées', url: '#' },
+    ressourceGroups: [
+      {
+        niveau: 'Seconde',
+        items: [
+          { label: 'Calcul algébrique 1 — Puissance, fraction, signe', url: '/ressources/calcul_algebrique_1_seconde.pdf' },
+          { label: 'Calcul algébrique 2 — Distributivité et factorisation', url: '/ressources/calcul_algebrique_2_seconde.pdf' },
+          { label: 'Calcul algébrique 4 — Racines', url: '/ressources/calcul_algebrique_4_seconde.pdf' },
+          { label: 'Calcul algébrique 5 — Factorisation avancée', url: '/ressources/calcul_algebrique_5_seconde.pdf' },
+          { label: 'Calcul algébrique 6 — Résolution d\'équations', url: '/ressources/calcul_algebrique_6_seconde.pdf' },
+          { label: 'Contrôle 1 Seconde', url: '/ressources/controle_1_seconde.pdf' },
+          { label: 'Examen Seconde TW3 (année précédente)', url: '/ressources/exam_seconde_tw3.pdf' },
+        ]
+      },
+      {
+        niveau: 'Première',
+        items: [
+          { label: 'Seconde avancée → Première', url: '/ressources/seconde_avancee_premiere.pdf' },
+          { label: 'Examen Première TW3 (année précédente)', url: '/ressources/exam_premiere_tw3.pdf' },
+        ]
+      },
+      {
+        niveau: 'Terminale',
+        items: [
+          { label: 'Première avancée → Terminale', url: '/ressources/premiere_avancee_term.pdf' },
+          { label: 'Examen Terminale TW3 (année précédente)', url: '/ressources/exam_terminale_tw3.pdf' },
+          { label: 'Feuilleter le Poly LLG corrigé (WikiPrépa)', url: 'https://wikiprepa.fr/poly-llg-corrige/' },
+        ]
+      },
     ],
+    ressourceNote: 'Les ressources disponibles pour les Secondes sont supposées maîtrisées par les Premières, et celles des Premières par les Terminales — qui peut le plus peut le moins. Par ailleurs, si des notions ne vous sont pas familières ou vous paraissent compliquées : apprenez-les et maîtrisez-les. N\'ayez pas peur d\'aller au-delà du programme, il ne faut pas s\'y enfermer. Nous évaluons également votre capacité à prendre des initiatives.',
     integrationSchools: [
       { name: "X", url: "https://www.polytechnique.edu/", logo: "/logos/polytechnique.png" },
       { name: "ENS Lyon", url: "https://www.ens-lyon.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_ENS_de_Lyon_2010.png?width=400" },
@@ -46,11 +84,32 @@ const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]
     matieres: ['Économie', 'Mathématiques', 'Anglais', 'Arabe', 'Géopolitique'],
     esprit: 'Ouverture sur le monde, esprit d\'analyse et de synthèse. Formation par des professeurs de l\'ESSEC et de l\'ENS.',
     deadline: '15 Septembre',
-    ressources: [
-      { label: 'Polycopié Louis-Le-Grand (WikiPrépa)', url: '#' },
-      { label: 'Cahier de calcul', url: '#' },
-      { label: '50 dérivées', url: '#' },
+    ressourceGroups: [
+      {
+        niveau: 'Seconde',
+        items: [
+          { label: 'Calcul algébrique 1 — Puissance, fraction, signe', url: '/ressources/calcul_algebrique_1_seconde.pdf' },
+          { label: 'Calcul algébrique 2 — Distributivité et factorisation', url: '/ressources/calcul_algebrique_2_seconde.pdf' },
+          { label: 'Calcul algébrique 4 — Racines', url: '/ressources/calcul_algebrique_4_seconde.pdf' },
+          { label: 'Calcul algébrique 5 — Factorisation avancée', url: '/ressources/calcul_algebrique_5_seconde.pdf' },
+          { label: 'Calcul algébrique 6 — Résolution d\'équations', url: '/ressources/calcul_algebrique_6_seconde.pdf' },
+          { label: 'Contrôle 1 Seconde', url: '/ressources/controle_1_seconde.pdf' },
+        ]
+      },
+      {
+        niveau: 'Première',
+        items: [
+          { label: 'Seconde avancée → Première', url: '/ressources/seconde_avancee_premiere.pdf' },
+        ]
+      },
+      {
+        niveau: 'Terminale',
+        items: [
+          { label: 'Première avancée → Terminale', url: '/ressources/premiere_avancee_term.pdf' },
+        ]
+      },
     ],
+    ressourceNote: 'Les ressources disponibles pour les Secondes sont supposées maîtrisées par les Premières, et celles des Premières par les Terminales — qui peut le plus peut le moins. Par ailleurs, si des notions ne vous sont pas familières ou vous paraissent compliquées : apprenez-les et maîtrisez-les. N\'ayez pas peur d\'aller au-delà du programme, il ne faut pas s\'y enfermer. Nous évaluons également votre capacité à prendre des initiatives.',
     integrationSchools: [
       { name: "LLG", url: "https://www.louislegrand.fr/", logo: "/logos/louis-le-grand.png" },
       { name: "H4", url: "https://lycee-henri4.com/", logo: "/logos/henri-iv.png" },
@@ -101,7 +160,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
           <div className="flex flex-col items-center gap-3 md:gap-4">
             <div className="flex flex-wrap justify-center items-center gap-3">
               <span className="inline-flex items-center gap-2 px-3 py-1 bg-accent/50 text-foreground text-xs font-bold uppercase tracking-wider rounded-full border border-border/50">
-                Cursus d'excellence
+                Cursus d&apos;excellence
               </span>
             </div>
             <h1 className="flex flex-col">
@@ -122,7 +181,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
               <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 md:mb-6 font-sans">Candidature</h3>
 
               <div className="mb-6 md:mb-8">
-                <p className="text-sm text-muted-foreground mb-2">Date limite d'envoi des dossiers</p>
+                <p className="text-sm text-muted-foreground mb-2">Date limite d&apos;envoi des dossiers</p>
                 <div className="flex items-center gap-3 text-emerald-600 font-bold bg-emerald-600/10 p-3 md:p-4 rounded-xl border border-emerald-600/20">
                   <CalendarDays className="w-5 h-5 md:w-6 md:h-6" />
                   {content.deadline ? content.deadline : 'Prochainement'}
@@ -165,7 +224,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
               </CardContent>
             </Card>
 
-            {content.ressources && (
+            {content.ressourceGroups && (
               <Card className="border-border shadow-xs bg-card/50">
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans">
@@ -174,13 +233,38 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-3">
-                    {content.ressources.map((res, i) => (
-                      <a key={i} href={res.url} className="flex items-center justify-between bg-background p-4 rounded-xl border border-border hover:border-primary/50 hover:shadow-xs transition group">
-                        <span className="font-medium text-foreground group-hover:text-primary transition">{res.label}</span>
-                        <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:rotate-45 transition-all" />
-                      </a>
+                  <div className="space-y-8">
+                    {content.ressourceGroups.map((group) => (
+                      <div key={group.niveau}>
+                        <h4 className="text-lg font-bold text-foreground mb-3 font-sans flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-primary shrink-0"></span>
+                          {group.niveau}
+                        </h4>
+                        <div className="space-y-2 ml-4">
+                          {group.items.map((res, i) => (
+                            <a
+                              key={i}
+                              href={res.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="flex items-center justify-between bg-background p-3 md:p-4 rounded-xl border border-border hover:border-primary/50 hover:shadow-xs transition group"
+                            >
+                              <span className="font-medium text-sm md:text-base text-foreground group-hover:text-primary transition">{res.label}</span>
+                              <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground group-hover:text-primary group-hover:rotate-45 transition-all shrink-0 ml-3" />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
                     ))}
+
+                    {content.ressourceNote && (
+                      <div className="flex gap-3 bg-primary/5 border border-primary/20 rounded-xl p-4 mt-6">
+                        <Info className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {content.ressourceNote}
+                        </p>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
