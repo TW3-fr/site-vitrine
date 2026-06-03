@@ -320,11 +320,7 @@ export default function HomePage() {
             <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
-            <motion.div
-              className="flex gap-4 md:gap-6 w-max px-4"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ repeat: Infinity, ease: "linear", duration: 50 }}
-            >
+            <DraggableScroller speed={0.8} reverse className="w-max">
               {[...mentorsSchools, ...mentorsSchools].map((school, i) => (
                 <a
                   key={i}
@@ -332,16 +328,18 @@ export default function HomePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   title={school.name}
-                  className="inline-flex items-center justify-center shrink-0 group/logo mx-6 md:mx-10"
+                  className="inline-flex items-center justify-center shrink-0 group/logo mx-6 md:mx-10 pointer-events-none"
+                  onDragStart={(e) => e.preventDefault()}
                 >
                   <img
                     src={school.logo}
                     alt={school.name}
                     className={`${(school as any).className || "h-12 md:h-16"} w-auto max-w-[120px] md:max-w-[160px] object-contain group-hover/logo:scale-110 transition-transform duration-300 opacity-90 hover:opacity-100`}
+                    draggable={false}
                   />
                 </a>
               ))}
-            </motion.div>
+            </DraggableScroller>
           </div>
         </div>
 
