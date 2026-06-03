@@ -11,11 +11,11 @@ import { ArrowLeft, Target, BookOpen, Heart, Link as LinkIcon, CalendarDays, Arr
 const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]; esprit: string; deadline?: string; ressources?: {label: string, url: string}[]; integrationSchools?: {name: string, url: string, logo: string}[] }> = {
   scientifique: {
     objectives: [
+      'Accompagnement de la Seconde à la Spé',
       'Intégrer les grandes écoles d\'ingénieurs (Polytechnique, Centrale, Mines)',
-      'Préparer l\'ENS et les prépas scientifiques',
-      'Excellence en mathématiques et physique',
+      'Développer la méthodologie, l\'esprit d\'analyse et les automatismes',
     ],
-    matieres: ['Mathématiques', 'Physique'],
+    matieres: ['Mathématiques', 'Physique', 'Anglais', 'Arabe'],
     esprit: 'Rigueur scientifique, esprit d\'excellence et entraide. Formation dispensée par des professeurs agrégés, normaliens et polytechniciens.',
     deadline: '15 Septembre',
     ressources: [
@@ -34,18 +34,23 @@ const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]
       { name: "H4", url: "https://lycee-henri4.com/", logo: "/logos/henri-iv.png" },
       { name: "Saint Louis", url: "https://pia.ac-paris.fr/serail/jcms/s1_2080084/fr/accueil", logo: "/logos/saint-louis.jpg" },
       { name: "Lycée Hoche", url: "https://lyc-hoche-versailles.ac-versailles.fr/", logo: "/logos/hoche.png" },
-      { name: "Télécom Paris", url: "https://www.telecom-paris.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Telecom_Paris_2019.svg?width=400" }
+      { name: "Télécom Paris", url: "https://www.telecom-paris.fr/", logo: "/logos/logo-vectoriel-telecom-paris.webp" }
     ]
   },
   commerce: {
     objectives: [
+      'Accompagnement de la Seconde à la Spé',
       'Intégrer HEC, ESSEC, ESCP et les grandes écoles de commerce',
-      'Préparer les concours ECG, ECT et D2',
-      'Développer une culture économique et géopolitique',
+      'Développer la méthodologie, l\'esprit d\'analyse et les automatismes',
     ],
-    matieres: ['Économie', 'Mathématiques', 'Culture générale', 'Langues', 'Géopolitique'],
+    matieres: ['Économie', 'Mathématiques', 'Culture générale', 'Anglais', 'Arabe', 'Géopolitique'],
     esprit: 'Ouverture sur le monde, esprit d\'analyse et de synthèse. Formation par des professeurs de l\'ESSEC et de l\'ENS.',
     deadline: '15 Septembre',
+    ressources: [
+      { label: 'Polycopié Louis-Le-Grand (WikiPrépa)', url: '#' },
+      { label: 'Cahier de calcul', url: '#' },
+      { label: '50 dérivées', url: '#' },
+    ],
     integrationSchools: [
       { name: "HEC Paris", url: "https://www.hec.edu/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/HEC_Paris.svg?width=400" },
       { name: "ESSEC", url: "https://www.essec.edu/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/ESSEC_Logo.svg?width=400" },
@@ -56,11 +61,11 @@ const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]
   },
   'droit-sciences-po': {
     objectives: [
+      'Accompagnement jusqu\'à la L3',
       'Intégrer Sciences Po Paris et les IEP',
-      'Accéder aux meilleures formations de droit (Panthéon-Sorbonne, Assas)',
-      'Développer la méthodologie, l\'esprit d\'analyse et de synthèse',
+      'Développer la méthodologie, l\'esprit d\'analyse et les automatismes',
     ],
-    matieres: ['Droit privé', 'Droit public', 'Sciences politiques', 'Langues'],
+    matieres: ['Droit privé', 'Droit public', 'Sciences politiques', 'Anglais', 'Arabe'],
     esprit: 'Excellence humaniste, esprit critique et engagement. Formation par des professeurs de Sciences Po Paris, ENS et Panthéon-Sorbonne.',
     deadline: '22 Septembre',
     integrationSchools: [
@@ -96,9 +101,14 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
             Retour aux programmes
           </Link>
           <div className="flex flex-col items-center gap-3 md:gap-4">
-            <span className="inline-flex items-center gap-2 px-3 py-1 bg-accent/50 text-foreground text-xs font-bold uppercase tracking-wider rounded-full border border-border/50">
-              Cursus d'excellence
-            </span>
+            <div className="flex flex-wrap justify-center items-center gap-3">
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-accent/50 text-foreground text-xs font-bold uppercase tracking-wider rounded-full border border-border/50">
+                Cursus d'excellence
+              </span>
+              <span className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-full border border-primary/20">
+                100% en Visio (CM & Khôlles)
+              </span>
+            </div>
             <h1 className="flex flex-col">
                <TextGenerateEffect words="Filière" duration={0.2} />
                <TextGenerateEffect words={label} delay={0.4} className="font-serif italic font-normal text-primary" />
@@ -160,36 +170,6 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
               </CardContent>
             </Card>
 
-            <Card className="border-border shadow-xs bg-card/50">
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary"><BookOpen className="w-6 h-6" /></div>
-                  Matières enseignées
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-3">
-                  {content.matieres.map((m) => (
-                    <span key={m} className="bg-background border border-border text-foreground font-medium px-4 py-2 rounded-xl shadow-xs">
-                      {m}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-border shadow-xs bg-card/50">
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary"><Heart className="w-6 h-6" /></div>
-                  L'esprit TW3
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                 <p className="text-muted-foreground leading-relaxed">{content.esprit}</p>
-              </CardContent>
-            </Card>
-            
             {content.ressources && (
               <Card className="border-border shadow-xs bg-card/50">
                 <CardHeader>
@@ -210,6 +190,24 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                 </CardContent>
               </Card>
             )}
+
+            <Card className="border-border shadow-xs bg-card/50">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans">
+                  <div className="p-2 bg-primary/10 rounded-lg text-primary"><BookOpen className="w-6 h-6" /></div>
+                  Matières enseignées
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-3">
+                  {content.matieres.map((m) => (
+                    <span key={m} className="bg-background border border-border text-foreground font-medium px-4 py-2 rounded-xl shadow-xs">
+                      {m}
+                    </span>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
