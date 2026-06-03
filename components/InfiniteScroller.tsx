@@ -41,7 +41,7 @@ export function InfiniteScroller({ schools }: { schools: School[] }) {
         <div className="relative w-full overflow-hidden flex py-6">
           <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
           <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
-          <DraggableScroller speed={1.6}>
+          <DraggableScroller speed={0.64}>
             {[...schools, ...schools].map((school, i) => (
               <a
                 key={i}
@@ -56,7 +56,7 @@ export function InfiniteScroller({ schools }: { schools: School[] }) {
                 <img
                   src={school.logo}
                   alt={school.name}
-                  className={`${school.className || "h-10 md:h-14"} w-auto max-w-[120px] md:max-w-[160px] object-contain group-hover/logo:scale-110 transition-transform duration-300 opacity-90 hover:opacity-100`}
+                  className={`${school.className || "h-14 md:h-16"} w-auto max-w-[140px] md:max-w-[180px] object-contain group-hover/logo:scale-110 transition-transform duration-300 opacity-90 hover:opacity-100`}
                   draggable={false}
                 />
               </a>

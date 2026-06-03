@@ -133,6 +133,12 @@ const FILIERE_CONTENT: Record<string, {
           { label: 'Première avancée → Terminale', url: '/ressources/premiere_avancee_term.pdf' },
         ]
       },
+      {
+        niveau: 'Sup',
+        items: [
+          { label: 'Finir entièrement le Poly LLG corrigé (WikiPrépa)', url: 'https://wikiprepa.fr/poly-llg-corrige/' },
+        ]
+      },
     ],
     ressourceNote: 'Les ressources disponibles pour les Secondes sont supposées maîtrisées par les Premières, et celles des Premières par les Terminales — qui peut le plus peut le moins. Par ailleurs, si des notions ne vous sont pas familières ou vous paraissent compliquées : apprenez-les et maîtrisez-les. N\'ayez pas peur d\'aller au-delà du programme, il ne faut pas s\'y enfermer. Nous évaluons également votre capacité à prendre des initiatives.',
     integrationSchools: [
@@ -197,8 +203,8 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
         </div>
       </header>
 
-      <section className="py-8 md:py-12 px-4 md:px-12 bg-background">
-        <div className="container mx-auto max-w-5xl flex flex-col md:grid md:grid-cols-3 gap-8 md:gap-12">
+      <section className="py-4 md:py-12 px-4 md:px-12 bg-background">
+        <div className="container mx-auto max-w-5xl flex flex-col md:grid md:grid-cols-3 gap-5 md:gap-12">
 
           {/* Candidature sidebar - shows FIRST on mobile */}
           <div className="order-first md:order-last md:col-span-1">
@@ -224,7 +230,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
           </div>
 
           {/* Content cards */}
-          <div className="md:col-span-2 space-y-6 md:space-y-8">
+          <div className="md:col-span-2 space-y-4 md:space-y-8">
 
             {content.integrationSchools && (
               <InfiniteScroller schools={content.integrationSchools} />
