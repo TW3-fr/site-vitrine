@@ -50,6 +50,6 @@ export const eventsData: LocalEvent[] = [
 ];
 
 const now = new Date();
-// Ordre chronologique pour tous les événements (du plus ancien au plus récent)
-export const upcomingEvents = eventsData.filter(e => new Date(e.date) >= now).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
-export const pastEvents = eventsData.filter(e => new Date(e.date) < now).sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
+// Ordre chronologique inverse pour tous les événements (du plus récent au plus ancien)
+export const upcomingEvents = eventsData.filter(e => new Date(e.date) >= now).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+export const pastEvents = eventsData.filter(e => new Date(e.date) < now).sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());

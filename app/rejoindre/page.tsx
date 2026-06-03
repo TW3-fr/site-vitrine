@@ -57,7 +57,7 @@ export default function RejoindrePage() {
 
             <Button asChild size="lg" className="w-full rounded-xl py-6 text-base group mt-auto">
               <a href="https://tw3projet.fillout.com/benevoles" target="_blank" rel="noopener noreferrer">
-                Candidater comme bénévole
+                Être bénévole
                 <ArrowUpRight className="ml-2 w-5 h-5 group-hover:rotate-45 transition-transform" />
               </a>
             </Button>
@@ -91,7 +91,7 @@ export default function RejoindrePage() {
 
             <Button asChild size="lg" className="w-full rounded-xl py-6 text-base group mt-auto">
               <a href="https://tw3projet.fillout.com/eleves" target="_blank" rel="noopener noreferrer">
-                Candidater comme élève
+                Candidater
                 <ArrowUpRight className="ml-2 w-5 h-5 group-hover:rotate-45 transition-transform" />
               </a>
             </Button>
