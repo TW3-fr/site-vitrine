@@ -70,13 +70,13 @@ const FILIERE_CONTENT: Record<string, {
         ]
       },
       {
-        niveau: 'Primo-entrant (Sup)',
+        niveau: 'Sup',
         items: [
           { label: 'Finir entièrement le Poly LLG corrigé (WikiPrépa)', url: 'https://wikiprepa.fr/poly-llg-corrige/' },
         ]
       },
     ],
-    ressourceNote: 'Les ressources disponibles pour les Secondes sont supposées maîtrisées par les Premières, et celles des Premières par les Terminales (qui peut le plus peut le moins) Par ailleurs, si des notions ne vous sont pas familières ou vous paraissent compliquées : apprenez-les et maîtrisez-les. N\'ayez pas peur d\'aller au-delà du programme, il ne faut pas s\'y enfermer. Nous évaluons également votre capacité à prendre des initiatives.',
+    ressourceNote: 'Les ressources disponibles pour les 2nde sont supposées maîtrisées par les 1ères, et celles des 1ères par les Tles (qui peut le plus peut le moins). Par ailleurs, si des notions ne vous sont pas familières ou vous paraissent compliquées : apprenez-les et maîtrisez-les. N\'ayez pas peur d\'aller au-delà du programme, il ne faut pas s\'y enfermer. Nous évaluons également votre capacité à prendre des initiatives.',
     integrationSchools: [
       { name: "X", url: "https://www.polytechnique.edu/", logo: "/logos/polytechnique.png" },
       { name: "ENS Lyon", url: "https://www.ens-lyon.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_ENS_de_Lyon_2010.png?width=400" },
