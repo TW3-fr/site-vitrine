@@ -17,7 +17,7 @@ export default function EvenementsPage() {
              <TextGenerateEffect words="Nos" duration={0.2} />
              <TextGenerateEffect words="événements" delay={0.4} className="font-serif italic font-normal text-primary" />
           </h1>
-          <p className="mt-3 md:mt-4 text-base md:text-xl text-muted-foreground leading-relaxed">Découvrez nos stages intensifs, forums de l'orientation, conférences et remises de bourses d'excellence.</p>
+          <p className="mt-3 md:mt-4 text-base md:text-xl text-muted-foreground leading-relaxed">Découvrez nos événements inspirants et webinaires conçus pour vous guider vers l'excellence.</p>
         </div>
       </header>
 
