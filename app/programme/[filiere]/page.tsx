@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { InfiniteScroller } from '@/components/InfiniteScroller'
 import { ArrowLeft, Target, BookOpen, Heart, Link as LinkIcon, CalendarDays, ArrowUpRight, CheckCircle2 } from 'lucide-react'
 
-const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]; esprit: string; deadline?: string; ressources?: {label: string, url: string}[]; integrationSchools?: {name: string, url: string, logo: string, className?: string}[] }> = {
+const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]; esprit: string; deadline?: string; ressources?: { label: string, url: string }[]; integrationSchools?: { name: string, url: string, logo: string, className?: string }[] }> = {
   scientifique: {
     objectives: [
       'Accompagnement de la Seconde à la Spé',
@@ -43,7 +43,7 @@ const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]
       'Intégrer HEC, ESSEC, ESCP et les grandes écoles de commerce',
       'Développer la méthodologie, l\'esprit d\'analyse et les automatismes',
     ],
-    matieres: ['Économie', 'Mathématiques', 'Culture générale', 'Anglais', 'Arabe', 'Géopolitique'],
+    matieres: ['Économie', 'Mathématiques', 'Anglais', 'Arabe', 'Géopolitique'],
     esprit: 'Ouverture sur le monde, esprit d\'analyse et de synthèse. Formation par des professeurs de l\'ESSEC et de l\'ENS.',
     deadline: '15 Septembre',
     ressources: [
@@ -58,7 +58,7 @@ const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]
   },
   'droit-sciences-po': {
     objectives: [
-      'Accompagnement jusqu\'à la L3',
+      'Accompagnement de la 2nd à la L3',
       'Intégrer Sciences Po Paris et les IEP',
       'Développer la méthodologie, l\'esprit d\'analyse et les automatismes',
     ],
@@ -89,7 +89,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
   return (
     <div className="min-h-screen bg-background font-sans">
       <PublicNavbar currentPage="programme" />
-      
+
       <header className="pt-20 pb-8 md:pb-12 border-b border-border bg-card/30 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background -z-10"></div>
         <div className="container mx-auto px-4 md:px-6 max-w-4xl relative z-10 text-center">
@@ -104,8 +104,8 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
               </span>
             </div>
             <h1 className="flex flex-col">
-               <TextGenerateEffect words="Filière" duration={0.2} />
-               <TextGenerateEffect words={label} delay={0.4} className="font-serif italic font-normal text-primary" />
+              <TextGenerateEffect words="Filière" duration={0.2} />
+              <TextGenerateEffect words={label} delay={0.4} className="font-serif italic font-normal text-primary" />
             </h1>
             <p className="mt-2 md:mt-4 text-base md:text-xl text-muted-foreground max-w-2xl leading-relaxed">100% gratuit – Formation d&apos;excellence</p>
           </div>
@@ -114,12 +114,12 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
 
       <section className="py-8 md:py-12 px-4 md:px-12 bg-background">
         <div className="container mx-auto max-w-5xl flex flex-col md:grid md:grid-cols-3 gap-8 md:gap-12">
-          
+
           {/* Candidature sidebar - shows FIRST on mobile */}
           <div className="order-first md:order-last md:col-span-1">
             <div className="md:sticky md:top-32 bg-card rounded-2xl md:rounded-3xl p-6 md:p-8 border border-border shadow-md">
               <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 md:mb-6 font-sans">Candidature</h3>
-              
+
               <div className="mb-6 md:mb-8">
                 <p className="text-sm text-muted-foreground mb-2">Date limite d'envoi des dossiers</p>
                 <div className="flex items-center gap-3 text-emerald-600 font-bold bg-emerald-600/10 p-3 md:p-4 rounded-xl border border-emerald-600/20">
@@ -128,7 +128,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                 </div>
                 <p className="text-xs text-muted-foreground mt-2 md:mt-3 leading-relaxed">Après cette date, les candidatures ne seront plus prises en compte.</p>
               </div>
-              
+
               <Button asChild className="w-full rounded-xl py-5 md:py-6 text-base group">
                 <a href="https://tw3projet.fillout.com/eleves" target="_blank" rel="noopener noreferrer">
                   Candidater
@@ -140,11 +140,11 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
 
           {/* Content cards */}
           <div className="md:col-span-2 space-y-6 md:space-y-12">
-            
+
             {content.integrationSchools && (
               <InfiniteScroller schools={content.integrationSchools} />
             )}
-            
+
             <Card className="border-border shadow-xs bg-card/50">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans">
@@ -205,7 +205,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   )
