@@ -142,7 +142,7 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          VISION — VERSET CORANIQUE
+          VISION — HADITH
       ═══════════════════════════════════════════════════════════ */}
       <section className="py-8 md:py-16 bg-card/50 border-t border-border">
         <div className="container mx-auto px-4 md:px-6">
@@ -162,12 +162,15 @@ export default function HomePage() {
               </div>
 
               <div className="bg-background border border-border/60 rounded-2xl p-5 md:p-8 shadow-sm">
-                <p className="text-xl md:text-3xl leading-relaxed font-serif text-foreground" dir="rtl" lang="ar">
-                  ﴿ وَإِذْ قَالَ رَبُّكَ لِلْمَلَائِكَةِ إِنِّي جَاعِلٌ فِي الْأَرْضِ خَلِيفَةً ﴾
+                <p className="text-xl md:text-3xl leading-relaxed font-serif text-foreground mb-4" dir="rtl" lang="ar">
+                  « مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ »
+                </p>
+                <p className="text-lg md:text-xl leading-relaxed text-muted-foreground italic font-serif">
+                  « Celui qui emprunte un chemin à la recherche d'un savoir, Allah lui facilite par cela un chemin vers le Paradis. »
                 </p>
                 <div className="mt-8 pt-6 border-t border-border/50">
                   <p className="text-sm font-semibold text-primary tracking-wide uppercase">
-                    Sourate Al-Baqara — Verset 30
+                    Hadith — Rapporté par Muslim
                   </p>
                 </div>
               </div>
