@@ -324,7 +324,7 @@ export default function HomePage() {
         <div className="w-full relative flex flex-col gap-6">
           <h3 className="text-center font-sans font-bold text-muted-foreground uppercase tracking-widest text-sm px-6">Nos mentors sont passés par</h3>
 
-          <div className="relative w-full overflow-hidden flex pt-2 pb-2">
+          <div className="relative w-full overflow-hidden flex py-6">
             <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
@@ -389,7 +389,7 @@ export default function HomePage() {
         <div className="w-full relative flex flex-col gap-6">
           <h3 className="text-center font-sans font-bold text-muted-foreground uppercase tracking-widest text-sm px-6">Nos élèves ont intégré</h3>
 
-          <div className="relative w-full overflow-hidden flex pt-2 pb-2">
+          <div className="relative w-full overflow-hidden flex py-6">
             <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
 

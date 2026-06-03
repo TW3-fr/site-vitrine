@@ -19,7 +19,7 @@ export function InfiniteScroller({ schools }: { schools: School[] }) {
       <h3 className="text-center font-sans font-bold text-muted-foreground uppercase tracking-widest text-sm px-6">Nos élèves ont intégré</h3>
       
       {isStatic ? (
-        <div className="w-full flex justify-center items-center gap-8 md:gap-16 pt-2 pb-2 px-4 flex-wrap">
+        <div className="w-full flex justify-center items-center gap-8 md:gap-16 py-6 px-4 flex-wrap">
           {schools.map((school, i) => (
             <a
               key={i}
@@ -38,7 +38,7 @@ export function InfiniteScroller({ schools }: { schools: School[] }) {
           ))}
         </div>
       ) : (
-        <div className="relative w-full overflow-hidden flex pt-2 pb-2">
+        <div className="relative w-full overflow-hidden flex py-6">
           <div className="absolute inset-y-0 left-0 w-12 md:w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
           <div className="absolute inset-y-0 right-0 w-12 md:w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
           <DraggableScroller speed={0.8}>
