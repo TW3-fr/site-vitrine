@@ -6,6 +6,7 @@ interface School {
   name: string
   url: string
   logo: string
+  className?: string
 }
 
 export function InfiniteScroller({ schools }: { schools: School[] }) {
@@ -35,7 +36,7 @@ export function InfiniteScroller({ schools }: { schools: School[] }) {
               <img
                 src={school.logo}
                 alt={school.name}
-                className="h-10 md:h-14 w-auto max-w-[120px] md:max-w-[160px] object-contain group-hover/logo:scale-110 transition-transform duration-300 opacity-90 hover:opacity-100"
+                className={`${school.className || "h-10 md:h-14"} w-auto max-w-[120px] md:max-w-[160px] object-contain group-hover/logo:scale-110 transition-transform duration-300 opacity-90 hover:opacity-100`}
               />
             </a>
           ))}

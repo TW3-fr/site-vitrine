@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 import { InfiniteScroller } from '@/components/InfiniteScroller'
 import { ArrowLeft, Target, BookOpen, Heart, Link as LinkIcon, CalendarDays, ArrowUpRight, CheckCircle2 } from 'lucide-react'
 
-const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]; esprit: string; deadline?: string; ressources?: {label: string, url: string}[]; integrationSchools?: {name: string, url: string, logo: string}[] }> = {
+const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]; esprit: string; deadline?: string; ressources?: {label: string, url: string}[]; integrationSchools?: {name: string, url: string, logo: string, className?: string}[] }> = {
   scientifique: {
     objectives: [
       'Accompagnement de la Seconde à la Spé',
@@ -34,7 +34,7 @@ const FILIERE_CONTENT: Record<string, { objectives: string[]; matieres: string[]
       { name: "H4", url: "https://lycee-henri4.com/", logo: "/logos/henri-iv.png" },
       { name: "Saint Louis", url: "https://pia.ac-paris.fr/serail/jcms/s1_2080084/fr/accueil", logo: "/logos/saint-louis.jpg" },
       { name: "Lycée Hoche", url: "https://lyc-hoche-versailles.ac-versailles.fr/", logo: "/logos/hoche.png" },
-      { name: "Télécom Paris", url: "https://www.telecom-paris.fr/", logo: "/logos/logo-vectoriel-telecom-paris.webp" }
+      { name: "Télécom Paris", url: "https://www.telecom-paris.fr/", logo: "/logos/logo-vectoriel-telecom-paris.webp", className: "h-20 md:h-28" }
     ]
   },
   commerce: {
