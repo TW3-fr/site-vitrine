@@ -170,7 +170,7 @@ export default function HomePage() {
                 </p>
                 <div className="mt-8 pt-6 border-t border-border/50">
                   <p className="text-sm font-semibold text-primary tracking-wide uppercase">
-                    Hadith — Rapporté par Muslim
+                    Hadith — Sahih Muslim (2699)
                   </p>
                 </div>
               </div>
