@@ -68,7 +68,7 @@ export function DraggableScroller({ children, speed = 1, reverse = false, classN
   return (
     <div
       ref={scrollRef}
-      className={`w-full overflow-x-auto flex gap-4 md:gap-6 px-4 cursor-grab active:cursor-grabbing ${className}`}
+      className={`w-full overflow-x-auto flex items-center py-6 gap-4 md:gap-6 px-4 cursor-grab active:cursor-grabbing ${className}`}
       style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       onMouseLeave={handleMouseLeave}
       onMouseDown={handleMouseDown}
