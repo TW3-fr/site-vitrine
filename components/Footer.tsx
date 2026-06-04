@@ -69,8 +69,8 @@ export function Footer() {
         <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground font-medium text-center md:text-left">© Institut TW3 {new Date().getFullYear()}. Tous droits réservés.</p>
           <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
-            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Mentions légales</Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Confidentialité</Link>
+            <Link href="/mentions-legales" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Mentions légales</Link>
+            <Link href="/mentions-legales#confidentialite" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Confidentialité</Link>
           </div>
         </div>
       </div>
