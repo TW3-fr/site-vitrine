@@ -66,9 +66,22 @@ export function Footer() {
           </div>
         </div>
         
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground font-medium text-center md:text-left">© Institut TW3 {new Date().getFullYear()}. Tous droits réservés.</p>
-          <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end">
+        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-6 md:gap-4">
+          <p className="text-sm text-muted-foreground font-medium text-center md:text-left order-3 md:order-1">© Institut TW3 {new Date().getFullYear()}. Tous droits réservés.</p>
+          
+          <div className="flex items-center gap-5 md:gap-6 order-2 md:order-2">
+            <a href="https://www.instagram.com/ta3alamawa3alama/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://x.com/Ta3alamaWa3alam" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="X (Twitter)">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4l11.733 16h4.267l-11.733 -16z" /><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" /></svg>
+            </a>
+            <a href="https://www.youtube.com/@projetTW3" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="YouTube">
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+            </a>
+          </div>
+
+          <div className="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-end order-1 md:order-3">
             <Link href="/mentions-legales" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Mentions légales</Link>
             <Link href="/mentions-legales#confidentialite" className="text-muted-foreground hover:text-primary transition-colors text-sm font-medium">Confidentialité</Link>
           </div>
