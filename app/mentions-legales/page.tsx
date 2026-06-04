@@ -137,13 +137,6 @@ export default function MentionsLegalesPage() {
 
                 <div className="space-y-3">
                   <div>
-                    <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">Siège social</p>
-                    <p className="text-foreground flex items-start gap-2">
-                      <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
-                      1 rue des Onchères, 69120 Vaulx-en-Velin
-                    </p>
-                  </div>
-                  <div>
                     <p className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-1">Contact</p>
                     <p className="text-foreground flex items-start gap-2">
                       <Mail className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
@@ -446,10 +439,6 @@ export default function MentionsLegalesPage() {
                     <p className="flex items-start gap-2">
                       <Mail className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
                       <span>Par e-mail : <a href="mailto:mail@tw3.fr" className="text-primary font-semibold hover:underline">mail@tw3.fr</a></span>
-                    </p>
-                    <p className="flex items-start gap-2">
-                      <MapPin className="w-4 h-4 shrink-0 mt-0.5 text-primary" />
-                      <span>Par courrier : TA3ALAMA WA 3ALAMA – 1 rue des Onchères, 69120 Vaulx-en-Velin</span>
                     </p>
                   </div>
                   <p className="text-xs text-muted-foreground mt-3">
