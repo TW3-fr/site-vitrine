@@ -39,7 +39,7 @@ export default function ProgrammePage() {
                 <div className="w-16 h-16 bg-accent/30 rounded-2xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>
                 </div>
-                <CardTitle className="text-2xl font-bold font-sans">Filière Scientifique</CardTitle>
+                <CardTitle className="text-2xl font-bold font-sans">Scientifique</CardTitle>
                 <CardDescription className="text-base mt-4">
                   Intégrer le top écoles d'ingénieurs et ENS. Pour lycéens (2nde à Tle) et étudiants (prépas scientifiques). Destiné aux élèves motivés et travailleurs.
                 </CardDescription>
@@ -59,7 +59,7 @@ export default function ProgrammePage() {
                 <div className="w-16 h-16 bg-accent/30 rounded-2xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>
                 </div>
-                <CardTitle className="text-2xl font-bold font-sans">Filière Commerce</CardTitle>
+                <CardTitle className="text-2xl font-bold font-sans">Commerce</CardTitle>
                 <CardDescription className="text-base mt-4">
                   Intégrer le top écoles de commerce. Pour lycéens (2nde à Tle) et étudiants (prépas ECG, ECT et D2). Destiné aux élèves motivés et travailleurs.
                 </CardDescription>
