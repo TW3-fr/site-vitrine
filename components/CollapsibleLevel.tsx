@@ -31,8 +31,8 @@ export function CollapsibleLevel({ niveau, items }: { niveau: string; items: { l
               rel="noopener noreferrer"
               className="flex items-center justify-between bg-card p-3 md:p-4 rounded-xl border border-border hover:border-primary/50 hover:shadow-xs transition group"
             >
-              <span className="font-medium text-sm md:text-base text-foreground group-hover:text-primary transition">{res.label}</span>
-              <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground group-hover:text-primary group-hover:rotate-45 transition-all shrink-0 ml-3" />
+              <span className="font-medium text-sm md:text-base text-foreground md:group-hover:text-primary transition">{res.label}</span>
+              <ArrowUpRight className="w-4 h-4 md:w-5 md:h-5 text-muted-foreground md:group-hover:text-primary md:group-hover:rotate-45 transition-all shrink-0 ml-3" />
             </a>
           ))}
         </div>

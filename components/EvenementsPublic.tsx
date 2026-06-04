@@ -25,10 +25,10 @@ export function EvenementsPublic() {
           <div className={`relative w-full md:w-2/5 shrink-0 bg-muted/50 overflow-hidden min-h-[250px] md:min-h-[350px] flex items-center justify-center ${isImageRight ? 'md:order-2' : ''}`}>
             {event.image ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={event.image} alt={event.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={event.image} alt={event.title} className="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-700" />
             ) : (
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/10 flex items-center justify-center">
-                <CalendarDays className="w-20 h-20 text-primary/10 group-hover:scale-110 transition-transform duration-700" />
+                <CalendarDays className="w-20 h-20 text-primary/10 md:group-hover:scale-110 transition-transform duration-700" />
               </div>
             )}
             
@@ -56,7 +56,7 @@ export function EvenementsPublic() {
               {new Date(event.date).toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' })}
             </div>
             
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-sans leading-tight group-hover:text-primary transition-colors duration-300">
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-sans leading-tight md:group-hover:text-primary transition-colors duration-300">
               {event.title}
             </h2>
             

@@ -53,7 +53,7 @@ export default function ContactPage() {
             </div>
 
             <div className="p-8 bg-card border border-border rounded-3xl relative overflow-hidden group hover:border-primary/50 transition-colors">
-              <div className="absolute -right-8 -top-8 w-32 h-32 bg-primary rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity"></div>
+              <div className="absolute -right-8 -top-8 w-32 h-32 bg-primary rounded-full blur-3xl opacity-20 md:group-hover:opacity-40 transition-opacity"></div>
               <h3 className="text-xl font-bold mb-3 relative z-10 font-sans text-foreground">Soutenir TW3</h3>
               <p className="text-muted-foreground text-sm leading-relaxed mb-8 relative z-10">Votre contribution nous permet d'organiser plus d'événements et d'accompagner plus d'élèves gratuitement. Vos dons sont déductibles des impôts à hauteur de 66%.
 

@@ -131,7 +131,7 @@ export default function HomePage() {
                   <span className="relative z-10 transition-all duration-500">
                     Découvrir nos programmes
                   </span>
-                  <div className="absolute right-1.5 md:right-2 w-9 h-9 md:w-10 md:h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 group-hover:right-[calc(100%-44px)] group-hover:rotate-45">
+                  <div className="absolute right-1.5 md:right-2 w-9 h-9 md:w-10 md:h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 md:group-hover:right-[calc(100%-44px)] md:group-hover:rotate-45">
                     <ArrowUpRight size={18} />
                   </div>
                 </Link>
@@ -191,7 +191,7 @@ export default function HomePage() {
                   {/* Left column: Title & description */}
                   <div className="lg:w-1/2 flex flex-col gap-6">
                     <div className="flex items-center gap-3">
-                      <div className="p-2.5 bg-primary/10 rounded-xl text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-500">
+                      <div className="p-2.5 bg-primary/10 rounded-xl text-primary md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-500">
                         <GraduationCap className="w-6 h-6" />
                       </div>
                       <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Nos programmes</span>
@@ -218,7 +218,7 @@ export default function HomePage() {
                       </div>
                     </div>
 
-                    <Link href="/programme" className="inline-flex items-center gap-2 text-primary font-semibold group-hover:gap-4 transition-all duration-300 mt-2 w-fit">
+                    <Link href="/programme" className="inline-flex items-center gap-2 text-primary font-semibold md:group-hover:gap-4 transition-all duration-300 mt-2 w-fit">
                       Découvrir tous nos programmes <ChevronRight className="w-5 h-5" />
                     </Link>
                   </div>
@@ -275,43 +275,43 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-6xl mx-auto items-stretch">
             {/* Réseau intergénérationnel */}
             <div className="bg-background p-6 md:p-8 rounded-2xl shadow-xs border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col group">
-              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
                 <Users className="w-6 h-6" />
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Réseau intergénérationnel</h3>
               <p className="text-muted-foreground leading-relaxed flex-1">
                 Développement d'échanges et création de liens solides entre lycéens, étudiants et professionnels. Un réseau qui vous accompagne bien au-delà de vos études.
               </p>
-              <Link href="/rejoindre" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 group-hover:gap-4 transition-all duration-300 w-fit">
-                Rejoindre TW3 <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform" />
+              <Link href="/rejoindre" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
+                Rejoindre TW3 <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
               </Link>
             </div>
 
             {/* Évènements inspirants */}
             <div className="bg-background p-6 md:p-8 rounded-2xl shadow-xs border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col group">
-              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
                 <CalendarDays className="w-6 h-6" />
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Évènements inspirants</h3>
               <p className="text-muted-foreground leading-relaxed flex-1">
                 Fédérer la communauté autour de forums de l'orientation, stages intensifs et conférences thématiques animées par des professionnels d'excellence.
               </p>
-              <Link href="/evenements" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 group-hover:gap-4 transition-all duration-300 w-fit">
-                Voir les événements <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform" />
+              <Link href="/evenements" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
+                Voir les événements <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
               </Link>
             </div>
 
             {/* Portée internationale */}
             <div className="bg-background p-6 md:p-8 rounded-2xl shadow-xs border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col group">
-              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
+              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
                 <Globe className="w-6 h-6" />
               </div>
               <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Portée internationale</h3>
               <p className="text-muted-foreground leading-relaxed flex-1">
                 Une formation accessible à distance et en présentiel à Paris, qui rassemble des élèves et encadrants de France, du Maroc, de Suisse, du Luxembourg et d'ailleurs.
               </p>
-              <Link href="/contact" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 group-hover:gap-4 transition-all duration-300 w-fit">
-                Nous contacter <ArrowUpRight className="w-5 h-5 group-hover:rotate-45 transition-transform" />
+              <Link href="/contact" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
+                Nous contacter <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
               </Link>
             </div>
           </div>
@@ -489,7 +489,7 @@ export default function HomePage() {
               <Button asChild size="lg" className="rounded-full h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-medium group">
                 <a href="https://www.helloasso.com/associations/ta3alamawa3alama/formulaires/1/" target="_blank" rel="noopener noreferrer">
                   Faire un don
-                  <ArrowUpRight className="ml-2 w-5 h-5 group-hover:rotate-45 transition-transform" />
+                  <ArrowUpRight className="ml-2 w-5 h-5 md:group-hover:rotate-45 transition-transform" />
                 </a>
               </Button>
             </div>

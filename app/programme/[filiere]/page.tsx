@@ -185,7 +185,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background -z-10"></div>
         <div className="container mx-auto px-4 md:px-6 max-w-4xl relative z-10 text-center">
           <Link href="/programme" className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-primary mb-6 md:mb-8 transition-colors group">
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+            <ArrowLeft className="w-4 h-4 md:group-hover:-translate-x-1 transition-transform" />
             Retour aux programmes
           </Link>
           <div className="flex flex-col items-center gap-3 md:gap-4">
@@ -223,7 +223,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
               <Button asChild className="w-full rounded-xl py-5 md:py-6 text-base group">
                 <a href="https://tw3projet.fillout.com/eleves" target="_blank" rel="noopener noreferrer">
                   Candidater
-                  <ArrowUpRight className="ml-2 w-5 h-5 group-hover:rotate-45 transition-transform" />
+                  <ArrowUpRight className="ml-2 w-5 h-5 md:group-hover:rotate-45 transition-transform" />
                 </a>
               </Button>
             </div>
