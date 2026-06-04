@@ -268,68 +268,17 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          CARTES D'ACCUEIL — Réseau, Évènements, International
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="py-6 md:py-12 bg-card/50 border-t border-border">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-6xl mx-auto items-stretch">
-            {/* Réseau intergénérationnel */}
-            <div className="bg-background p-6 md:p-8 rounded-2xl shadow-xs border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col group">
-              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
-                <Users className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Réseau intergénérationnel</h3>
-              <p className="text-muted-foreground leading-relaxed flex-1">
-                Développement d'échanges et création de liens solides entre lycéens, étudiants et professionnels. Un réseau qui vous accompagne bien au-delà de vos études.
-              </p>
-              <Link href="/rejoindre" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
-                Rejoindre TW3 <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
-              </Link>
-            </div>
-
-            {/* Évènements inspirants */}
-            <div className="bg-background p-6 md:p-8 rounded-2xl shadow-xs border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col group">
-              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
-                <CalendarDays className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Évènements inspirants</h3>
-              <p className="text-muted-foreground leading-relaxed flex-1">
-                Fédérer la communauté autour de forums de l'orientation, stages intensifs et conférences thématiques animées par des professionnels d'excellence.
-              </p>
-              <Link href="/evenements" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
-                Voir les événements <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
-              </Link>
-            </div>
-
-            {/* Portée internationale */}
-            <div className="bg-background p-6 md:p-8 rounded-2xl shadow-xs border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col group">
-              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
-                <Globe className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Portée internationale</h3>
-              <p className="text-muted-foreground leading-relaxed flex-1">
-                Une formation accessible à distance et en présentiel à Paris, qui rassemble des élèves et encadrants de France, du Maroc, de Suisse, du Luxembourg et d'ailleurs.
-              </p>
-              <Link href="/contact" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
-                Nous contacter <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
           IMPACT & RÉSULTATS
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-10 md:py-24 bg-background border-t border-border overflow-hidden flex flex-col gap-8 md:gap-20">
+      <section className="py-10 md:py-24 bg-card/50 border-t border-border overflow-hidden flex flex-col gap-8 md:gap-20">
 
         {/* Mentor Origins - Scrolling RTL */}
         <div className="w-full relative flex flex-col gap-6">
           <h3 className="text-center font-sans font-bold text-muted-foreground uppercase tracking-widest text-sm px-6">Nos mentors sont passés par</h3>
 
           <div className="relative w-full overflow-hidden flex py-6">
-            <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-card/50 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-card/50 to-transparent z-10 pointer-events-none"></div>
 
             <DraggableScroller speed={0.77} reverse>
               {[...mentorsSchools, ...mentorsSchools].map((school, i) => (
@@ -393,8 +342,8 @@ export default function HomePage() {
           <h3 className="text-center font-sans font-bold text-muted-foreground uppercase tracking-widest text-sm px-6">Nos élèves ont intégré</h3>
 
           <div className="relative w-full overflow-hidden flex py-6">
-            <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-card/50 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-card/50 to-transparent z-10 pointer-events-none"></div>
 
             <DraggableScroller speed={0.77}>
               {[...integrationSchools, ...integrationSchools].map((school, i) => (
@@ -419,6 +368,57 @@ export default function HomePage() {
           </div>
         </div>
 
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          CARTES D'ACCUEIL — Réseau, Évènements, International
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="py-6 md:py-12 bg-background border-t border-border">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-6xl mx-auto items-stretch">
+            {/* Réseau intergénérationnel */}
+            <div className="bg-card p-6 md:p-8 rounded-2xl shadow-xs border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col group">
+              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
+                <Users className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Réseau intergénérationnel</h3>
+              <p className="text-muted-foreground leading-relaxed flex-1">
+                Développement d'échanges et création de liens solides entre lycéens, étudiants et professionnels. Un réseau qui vous accompagne bien au-delà de vos études.
+              </p>
+              <Link href="/rejoindre" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
+                Rejoindre TW3 <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
+              </Link>
+            </div>
+
+            {/* Évènements inspirants */}
+            <div className="bg-card p-6 md:p-8 rounded-2xl shadow-xs border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col group">
+              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
+                <CalendarDays className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Évènements inspirants</h3>
+              <p className="text-muted-foreground leading-relaxed flex-1">
+                Fédérer la communauté autour de forums de l'orientation, stages intensifs et conférences thématiques animées par des professionnels d'excellence.
+              </p>
+              <Link href="/evenements" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
+                Voir les événements <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
+              </Link>
+            </div>
+
+            {/* Portée internationale */}
+            <div className="bg-card p-6 md:p-8 rounded-2xl shadow-xs border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col group">
+              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
+                <Globe className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Portée internationale</h3>
+              <p className="text-muted-foreground leading-relaxed flex-1">
+                Une formation accessible à distance et en présentiel à Paris, qui rassemble des élèves et encadrants de France, du Maroc, de Suisse, du Luxembourg et d'ailleurs.
+              </p>
+              <Link href="/contact" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
+                Nous contacter <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════

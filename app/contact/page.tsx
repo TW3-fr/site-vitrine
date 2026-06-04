@@ -76,11 +76,11 @@ export default function ContactPage() {
               const email = formData.get('email');
               const sujet = formData.get('sujet');
               const message = formData.get('message');
-              
+
               const mailtoUrl = `mailto:mail@tw3.fr?subject=${encodeURIComponent(`[Contact] ${sujet}`)}&body=${encodeURIComponent(
-                `${message}\n\nCordialement,\n${prenom} ${nom}`
+                `${message}\n${prenom} ${nom}`
               )}`;
-              
+
               window.location.href = mailtoUrl;
             }}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
