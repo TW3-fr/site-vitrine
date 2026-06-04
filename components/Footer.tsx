@@ -40,7 +40,7 @@ export function Footer() {
             </div>
             
             <div>
-              <h4 className="font-sans font-bold text-foreground mb-5 tracking-tight text-lg">Institut TW3</h4>
+              <h4 className="font-sans font-bold text-foreground mb-5 tracking-tight text-lg">Divers</h4>
               <ul className="space-y-3 text-sm text-muted-foreground font-medium">
                 <li><Link href="/evenements" className="hover:text-primary transition-colors">Événements</Link></li>
                 <li><Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link></li>
@@ -48,7 +48,7 @@ export function Footer() {
               </ul>
             </div>
             
-            <div className="col-span-2 md:col-span-1 mt-4 md:mt-0">
+            <div>
               <h4 className="font-sans font-bold text-foreground mb-5 tracking-tight text-lg">Contact</h4>
               <ul className="space-y-3 text-sm text-muted-foreground font-medium">
                 <li><Link href="/contact" className="hover:text-primary transition-colors">Nous contacter</Link></li>

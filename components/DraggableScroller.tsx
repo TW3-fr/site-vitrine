@@ -10,20 +10,32 @@ export function DraggableScroller({ children, speed = 1, reverse = false, classN
   const [scrollLeft, setScrollLeft] = useState(0)
   const hasDragged = useRef(false)
 
+  const exactPosition = useRef<number | null>(null)
+
   useEffect(() => {
     let animationId: number;
     const scroll = () => {
       if (scrollRef.current && !isDragging && !isTouch) {
+        if (exactPosition.current === null) {
+          exactPosition.current = scrollRef.current.scrollLeft;
+        }
+        
         if (reverse) {
-          scrollRef.current.scrollLeft -= speed;
-          if (scrollRef.current.scrollLeft <= 0) {
-            scrollRef.current.scrollLeft = scrollRef.current.scrollWidth / 2;
+          exactPosition.current -= speed;
+          if (exactPosition.current <= 0) {
+            exactPosition.current = scrollRef.current.scrollWidth / 2;
           }
         } else {
-          scrollRef.current.scrollLeft += speed;
-          if (scrollRef.current.scrollLeft >= scrollRef.current.scrollWidth / 2) {
-            scrollRef.current.scrollLeft = 0;
+          exactPosition.current += speed;
+          if (exactPosition.current >= scrollRef.current.scrollWidth / 2) {
+            exactPosition.current = 0;
           }
+        }
+        scrollRef.current.scrollLeft = exactPosition.current;
+      } else {
+        // Sync exactPosition if user scrolled manually
+        if (scrollRef.current) {
+          exactPosition.current = scrollRef.current.scrollLeft;
         }
       }
       animationId = requestAnimationFrame(scroll);
