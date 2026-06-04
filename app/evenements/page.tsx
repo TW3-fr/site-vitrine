@@ -10,7 +10,7 @@ export default function EvenementsPage() {
     <div className="min-h-screen bg-background font-sans">
       <PublicNavbar currentPage="evenements" />
 
-      <header className="pt-20 pb-8 md:pb-12 border-b border-border bg-card/30 relative overflow-hidden">
+      <header className="pt-20 pb-6 md:pb-8 border-b border-border bg-card/30 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background -z-10"></div>
         <div className="container mx-auto px-4 md:px-6 max-w-4xl relative z-10 text-center">
           <h1 className="flex flex-col mb-4 md:mb-6 items-center">
@@ -21,7 +21,7 @@ export default function EvenementsPage() {
         </div>
       </header>
 
-      <main className="container mx-auto py-8 md:py-12 px-4 md:px-6 max-w-5xl">
+      <main className="container mx-auto py-6 md:py-8 px-4 md:px-6 max-w-5xl">
         <EvenementsPublic />
       </main>
       

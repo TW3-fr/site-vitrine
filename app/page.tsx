@@ -92,7 +92,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════
           HERO SECTION
       ═══════════════════════════════════════════════════════════ */}
-      <section ref={ref} className="relative w-full pt-24 md:pt-28 2xl:pb-12 pb-8 md:pb-10 overflow-hidden">
+      <section ref={ref} className="relative w-full pt-24 md:pt-28 2xl:pb-8 pb-6 md:pb-6 overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
           <div className="absolute -top-[10%] -left-[10%] w-[50vw] h-[50vw] bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
@@ -144,7 +144,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════
           VISION — HADITH
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-8 md:py-16 bg-card/50 border-t border-border">
+      <section className="py-6 md:py-10 bg-card/50 border-t border-border">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="flex flex-col justify-center items-center mb-10">
@@ -182,7 +182,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════
           ACCÈS À L'EXCELLENCE — Section enrichie & cliquable
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-8 md:py-16 bg-background border-t border-border">
+      <section className="py-6 md:py-10 bg-background border-t border-border">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto group">
             <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/40 transition-all duration-500">
@@ -270,7 +270,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════
           IMPACT & RÉSULTATS
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-10 md:py-24 bg-card/50 border-t border-border overflow-hidden flex flex-col gap-8 md:gap-20">
+      <section className="py-6 md:py-16 bg-card/50 border-t border-border overflow-hidden flex flex-col gap-8 md:gap-20">
 
         {/* Mentor Origins - Scrolling RTL */}
         <div className="w-full relative flex flex-col gap-6">
@@ -373,7 +373,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════
           CARTES D'ACCUEIL — Réseau, Évènements, International
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-6 md:py-12 bg-background border-t border-border">
+      <section className="py-4 md:py-8 bg-background border-t border-border">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-6xl mx-auto items-stretch">
             {/* Réseau intergénérationnel */}
@@ -424,7 +424,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════
           TÉMOIGNAGES — Structure prête (contenu à fournir)
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-8 md:py-16 bg-card/50 border-t border-border overflow-hidden">
+      <section className="py-6 md:py-10 bg-card/50 border-t border-border overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
           <div className="text-center max-w-3xl mx-auto mb-10">
             <h2 className="flex flex-col justify-center items-center">
@@ -474,7 +474,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════
           CTA — Soutien & Newsletter
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-6 md:py-10 bg-background relative overflow-hidden border-t border-border">
+      <section className="py-4 md:py-6 bg-background relative overflow-hidden border-t border-border">
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="max-w-5xl mx-auto flex flex-col gap-5 md:flex-row md:gap-6 items-stretch">
 

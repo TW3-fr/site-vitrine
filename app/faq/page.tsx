@@ -17,7 +17,7 @@ export default function FAQPage() {
     <div className="min-h-screen bg-background font-sans">
       <PublicNavbar currentPage="faq" />
       
-      <section className="pt-20 pb-8 md:pb-12 px-4 md:px-12 bg-background">
+      <section className="pt-20 pb-6 md:pb-8 px-4 md:px-12 bg-background">
         <div className="container mx-auto">
           <div className="flex flex-col gap-8 md:gap-12">
             <div className="max-w-2xl text-center mx-auto">

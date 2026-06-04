@@ -11,7 +11,7 @@ export default function ContactPage() {
     <div className="min-h-screen bg-background font-sans">
       <PublicNavbar currentPage="contact" />
 
-      <header className="pt-20 pb-8 md:pb-12 border-b border-border bg-card/30 relative overflow-hidden">
+      <header className="pt-20 pb-6 md:pb-8 border-b border-border bg-card/30 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background -z-10"></div>
         <div className="container mx-auto px-4 md:px-6 text-center max-w-4xl relative z-10">
           <h1 className="flex flex-col mb-4 md:mb-6 items-center">
@@ -22,7 +22,7 @@ export default function ContactPage() {
         </div>
       </header>
 
-      <section className="py-8 md:py-12 px-4 md:px-12 bg-background">
+      <section className="py-6 md:py-8 px-4 md:px-12 bg-background">
         <div className="container mx-auto max-w-5xl grid md:grid-cols-2 gap-8 md:gap-10">
 
           <div className="space-y-12">

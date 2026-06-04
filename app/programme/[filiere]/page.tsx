@@ -182,7 +182,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
     <div className="min-h-screen bg-background font-sans">
       <PublicNavbar currentPage="programme" />
 
-      <header className="pt-28 md:pt-32 pb-8 md:pb-12 border-b border-border bg-card/30 relative overflow-hidden">
+      <header className="pt-28 md:pt-32 pb-6 md:pb-8 border-b border-border bg-card/30 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background -z-10"></div>
         <div className="container mx-auto px-4 md:px-6 max-w-4xl relative z-10 text-center">
           <Link href="/programme" className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-primary mb-6 md:mb-8 transition-colors group">
@@ -204,7 +204,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
         </div>
       </header>
 
-      <section className="py-4 md:py-12 px-4 md:px-12 bg-background">
+      <section className="py-4 md:py-8 px-4 md:px-12 bg-background">
         <div className="container mx-auto max-w-5xl flex flex-col md:grid md:grid-cols-3 gap-5 md:gap-12">
 
           {/* Candidature sidebar - shows FIRST on mobile */}

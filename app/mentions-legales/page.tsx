@@ -64,7 +64,7 @@ export default function MentionsLegalesPage() {
       <PublicNavbar />
 
       {/* Hero */}
-      <header className="pt-24 md:pt-32 pb-8 md:pb-12 px-4 md:px-12 bg-background border-b border-border">
+      <header className="pt-24 md:pt-32 pb-6 md:pb-8 px-4 md:px-12 bg-background border-b border-border">
         <div className="container mx-auto max-w-5xl text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent/50 text-foreground text-xs font-bold uppercase tracking-wider rounded-full border border-border/50 mb-6">
             <Shield className="w-3.5 h-3.5" />
