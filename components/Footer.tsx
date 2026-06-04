@@ -9,7 +9,7 @@ export function Footer() {
           <div className="md:col-span-5 lg:col-span-4">
             <Link href="/" className="flex items-center gap-3 font-semibold text-xl text-foreground mb-6">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logos/logo-tw3.svg" alt="Institut TW3" className="w-11 h-11" />
+              <img src="/logos/logo-2026.png" alt="Institut TW3" className="w-11 h-11" />
               <span className="tracking-tight text-2xl md:text-3xl">
                 <span className="font-sans font-extrabold">Institut </span>
                 <span className="font-serif italic text-primary">TW3</span>

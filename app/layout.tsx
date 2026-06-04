@@ -29,11 +29,11 @@ export const metadata: Metadata = {
   icons: [
     {
       rel: 'icon',
-      url: '/favicon.jpg',
+      url: '/favicon.png',
     },
     {
       rel: 'shortcut icon',
-      url: '/favicon.jpg',
+      url: '/favicon.png',
     },
   ],
 }

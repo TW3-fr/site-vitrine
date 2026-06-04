@@ -50,7 +50,7 @@ export function PublicNavbar({ currentPage = 'home' }: { currentPage?: string })
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2.5 font-semibold text-xl text-foreground hover:opacity-80 transition-opacity" onClick={() => setMobileOpen(false)}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logos/logo-tw3.svg" alt="Institut TW3" className="w-9 h-9 lg:w-10 lg:h-10" />
+            <img src="/logos/logo-2026.png" alt="Institut TW3" className="w-9 h-9 lg:w-10 lg:h-10" />
             <span className="tracking-tight text-xl lg:text-3xl">
               <span className="font-sans font-extrabold">Institut </span>
               <span className="font-serif italic text-primary">TW3</span>
