@@ -77,7 +77,8 @@ export default function ContactPage() {
               const sujet = formData.get('sujet');
               const message = formData.get('message');
 
-              const mailtoUrl = `mailto:mail@tw3.fr?subject=${encodeURIComponent(`[Contact] ${sujet}`)}&body=${encodeURIComponent(
+              const destEmail = sujet === 'Partenariat' ? 'partenariat@tw3.fr' : 'mail@tw3.fr';
+              const mailtoUrl = `mailto:${destEmail}?subject=${encodeURIComponent(`[Contact] ${sujet}`)}&body=${encodeURIComponent(
                 `${message}\n${prenom} ${nom}`
               )}`;
 
