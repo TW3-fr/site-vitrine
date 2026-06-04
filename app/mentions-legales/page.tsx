@@ -187,6 +187,25 @@ export default function MentionsLegalesPage() {
               <p className="text-muted-foreground leading-relaxed">
                 Les documents et ressources pédagogiques fournis aux élèves par les mentors sont strictement réservés à un usage personnel. Toute diffusion ou partage de ces supports est interdite sans l&apos;accord préalable des enseignants concernés. <ArticleRef article="Art. 21" document="Règlement intérieur" />
               </p>
+
+              <div className="bg-amber-500/5 border border-amber-500/20 rounded-xl p-5 mt-6">
+                <h3 className="font-bold text-foreground text-sm mb-2 font-sans flex items-center gap-2">
+                  <AlertTriangle className="w-4 h-4 text-amber-500" />
+                  Logos et marques de tiers
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  Le site tw3.fr peut afficher des logos, noms, marques et signes distinctifs d&apos;établissements d&apos;enseignement supérieur, de grandes écoles, d&apos;universités et d&apos;autres institutions (ci-après « les Marques de tiers »). <strong className="text-foreground">Ces Marques de tiers sont la propriété exclusive de leurs titulaires respectifs</strong> et ne sont en aucun cas la propriété de l&apos;Association TA3ALAMA WA 3ALAMA.
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  Leur utilisation sur le présent site est effectuée <strong className="text-foreground">à titre strictement informatif et non commercial</strong>, dans le seul but d&apos;identifier les établissements partenaires, les formations intégrées par nos élèves ou les institutions d&apos;origine de nos mentors bénévoles. Cette utilisation s&apos;inscrit dans le cadre de l&apos;objet d&apos;intérêt général et non lucratif de l&apos;Association, conformément à l&apos;article L.713-6 du Code de la propriété intellectuelle qui autorise la référence à une marque aux fins d&apos;identification légitime.
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3">
+                  L&apos;Association ne revendique aucun droit de propriété sur ces Marques de tiers et n&apos;entend pas suggérer l&apos;existence d&apos;un partenariat institutionnel, d&apos;une affiliation, d&apos;un agrément ou d&apos;un quelconque lien de sponsoring avec les établissements concernés, sauf mention contraire expressément indiquée.
+                </p>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Si vous êtes titulaire de droits sur l&apos;un de ces éléments et souhaitez en demander le retrait ou la modification, vous pouvez nous contacter à l&apos;adresse <a href="mailto:mail@tw3.fr" className="text-primary hover:underline font-semibold">mail@tw3.fr</a>. Nous nous engageons à traiter votre demande dans les meilleurs délais.
+                </p>
+              </div>
             </section>
 
             {/* ══════════════════════════════════════════════════════
