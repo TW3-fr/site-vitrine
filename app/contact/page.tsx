@@ -68,26 +68,40 @@ export default function ContactPage() {
 
           <div className="bg-card rounded-2xl md:rounded-3xl p-5 md:p-6 border border-border shadow-xs">
             <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8 font-sans">Envoyez-nous un message</h2>
-            <form className="space-y-5 md:space-y-6">
+            <form className="space-y-5 md:space-y-6" onSubmit={(e) => {
+              e.preventDefault();
+              const formData = new FormData(e.currentTarget);
+              const prenom = formData.get('prenom');
+              const nom = formData.get('nom');
+              const email = formData.get('email');
+              const sujet = formData.get('sujet');
+              const message = formData.get('message');
+              
+              const mailtoUrl = `mailto:mail@tw3.fr?subject=${encodeURIComponent(`[Contact] ${sujet}`)}&body=${encodeURIComponent(
+                `Nom: ${prenom} ${nom}\nEmail: ${email}\n\nMessage:\n${message}`
+              )}`;
+              
+              window.location.href = mailtoUrl;
+            }}>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
                 <div>
-                  <label className="block text-sm font-bold text-foreground mb-2">Prénom</label>
-                  <input type="text" className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-foreground" placeholder="Jean" />
+                  <label htmlFor="prenom" className="block text-sm font-bold text-foreground mb-2">Prénom</label>
+                  <input type="text" id="prenom" name="prenom" required className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-foreground" placeholder="Jean" />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-foreground mb-2">Nom</label>
-                  <input type="text" className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-foreground" placeholder="Dupont" />
+                  <label htmlFor="nom" className="block text-sm font-bold text-foreground mb-2">Nom</label>
+                  <input type="text" id="nom" name="nom" required className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-foreground" placeholder="Dupont" />
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-foreground mb-2">Adresse email</label>
-                <input type="email" className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-foreground" placeholder="jean.dupont@exemple.com" />
+                <label htmlFor="email" className="block text-sm font-bold text-foreground mb-2">Adresse email</label>
+                <input type="email" id="email" name="email" required className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-foreground" placeholder="jean.dupont@exemple.com" />
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-foreground mb-2">Sujet</label>
-                <select className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none text-foreground">
+                <label htmlFor="sujet" className="block text-sm font-bold text-foreground mb-2">Sujet</label>
+                <select id="sujet" name="sujet" className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none text-foreground">
                   <option>Candidature élève</option>
                   <option>Devenir bénévole</option>
                   <option>Partenariat</option>
@@ -96,11 +110,11 @@ export default function ContactPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-bold text-foreground mb-2">Message</label>
-                <textarea rows={5} className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none text-foreground" placeholder="Comment pouvons-nous vous aider ?"></textarea>
+                <label htmlFor="message" className="block text-sm font-bold text-foreground mb-2">Message</label>
+                <textarea id="message" name="message" required rows={5} className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none text-foreground" placeholder="Comment pouvons-nous vous aider ?"></textarea>
               </div>
 
-              <Button type="button" size="lg" className="w-full rounded-xl py-6 text-base">
+              <Button type="submit" size="lg" className="w-full rounded-xl py-6 text-base">
                 Envoyer
               </Button>
             </form>
