@@ -58,6 +58,7 @@ export default function HomePage() {
 
   const integrationSchools = [
     { name: "École Polytechnique", url: "https://www.polytechnique.edu/", logo: "/logos/polytechnique.png" },
+    { name: "Lycée Sainte-Geneviève (Ginette)", url: "https://www.bginette.com/", logo: "/logos/ginette.jpeg", className: "h-20 md:h-28" },
     { name: "Lycée Henri-IV", url: "https://lycee-henri4.com/", logo: "/logos/henri-iv.png" },
     { name: "Sciences Po Paris", url: "https://www.sciencespo.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_Sciences_Po.svg?width=400" },
     { name: "Lycée Louis-le-Grand", url: "https://www.louislegrand.fr/", logo: "/logos/louis-le-grand.png" },

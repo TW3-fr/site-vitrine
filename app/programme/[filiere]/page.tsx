@@ -85,6 +85,7 @@ const FILIERE_CONTENT: Record<string, {
       { name: "Centrale", url: "https://www.centralesupelec.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Ecole_Centrale_Supelec_logo.svg?width=400" },
       { name: "IMT Atlantique", url: "https://www.imt-atlantique.fr/fr", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_IMT_Atlantique.svg?width=400" },
       { name: "Le Parc", url: "https://lyceeduparc.fr/", logo: "/logos/le-parc.png" },
+      { name: "Ginette", url: "https://www.bginette.com/", logo: "/logos/ginette.jpeg", className: "h-20 md:h-28" },
       { name: "LLG", url: "https://www.louislegrand.fr/", logo: "/logos/louis-le-grand.png" },
       { name: "H4", url: "https://lycee-henri4.com/", logo: "/logos/henri-iv.png" },
       { name: "Saint Louis", url: "https://pia.ac-paris.fr/serail/jcms/s1_2080084/fr/accueil", logo: "/logos/saint-louis.jpg" },
