@@ -31,7 +31,7 @@ const FILIERE_CONTENT: Record<string, {
       'Développer la méthodologie, l\'esprit d\'analyse et les automatismes',
       <span key="ast" className="inline-block bg-gradient-to-r from-primary/10 to-emerald-500/10 px-4 py-2 rounded-xl border border-primary/30 shadow-md shadow-primary/20 -mt-1.5">
         <span className="font-extrabold italic bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-600 mr-2 animate-pulse inline-block">
-          ✨ NOUVEAUTÉ SAISON 4 :
+          NOUVEAUTÉ SAISON 4 :
         </span>
         <span className="font-semibold text-foreground">
           Ouverture de la filière AST (Admissions Sur Titre) pour préparer aux concours GEI-Univ, CASTing (Centrale) et ENS.
