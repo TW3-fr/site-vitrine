@@ -28,6 +28,7 @@ const FILIERE_CONTENT: Record<string, {
       'Accompagnement de la Seconde à la Spé',
       'Intégrer les grandes écoles d\'ingénieurs (Polytechnique, Centrale, Mines)',
       'Développer la méthodologie, l\'esprit d\'analyse et les automatismes',
+      'Nouveau : Ouverture de la filière AST (Admissions Sur Titre) pour préparer aux concours GEI-Univ, CASTing (Centrale), Pass\'Ingénieur, INSA et ENS.',
     ],
     matieres: ['Mathématiques', 'Physique', 'Anglais', 'Arabe'],
     esprit: 'Rigueur scientifique, esprit d\'excellence et entraide. Formation dispensée par des professeurs agrégés, normaliens et polytechniciens.',
