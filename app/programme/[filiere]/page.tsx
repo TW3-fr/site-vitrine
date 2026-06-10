@@ -1,3 +1,4 @@
+import React from 'react'
 import Link from 'next/link'
 import { FILIERE_LABELS } from '@/lib/constants'
 import { PublicNavbar } from '@/components/PublicNavbar'
@@ -15,7 +16,7 @@ interface RessourceGroup {
 }
 
 const FILIERE_CONTENT: Record<string, {
-  objectives: string[];
+  objectives: (string | React.ReactNode)[];
   matieres: string[];
   esprit: string;
   deadline?: string;
@@ -28,7 +29,14 @@ const FILIERE_CONTENT: Record<string, {
       'Accompagnement de la Seconde à la Spé',
       'Intégrer les grandes écoles d\'ingénieurs (Polytechnique, Centrale, Mines)',
       'Développer la méthodologie, l\'esprit d\'analyse et les automatismes',
-      'Nouveau : Ouverture de la filière AST (Admissions Sur Titre) pour préparer aux concours GEI-Univ, CASTing (Centrale), Pass\'Ingénieur, INSA et ENS.',
+      <span key="ast" className="inline-block bg-gradient-to-r from-primary/10 to-emerald-500/10 px-4 py-2 rounded-xl border border-primary/30 shadow-md shadow-primary/20 -mt-1.5">
+        <span className="font-extrabold italic bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-600 mr-2 animate-pulse inline-block">
+          ✨ NOUVEAUTÉ SAISON 4 :
+        </span>
+        <span className="font-semibold text-foreground">
+          Ouverture de la filière AST (Admissions Sur Titre) pour préparer aux concours GEI-Univ, CASTing (Centrale), Pass'Ingénieur, INSA et ENS.
+        </span>
+      </span>,
     ],
     matieres: ['Mathématiques', 'Physique', 'Anglais', 'Arabe'],
     esprit: 'Rigueur scientifique, esprit d\'excellence et entraide. Formation dispensée par des professeurs agrégés, normaliens et polytechniciens.',
