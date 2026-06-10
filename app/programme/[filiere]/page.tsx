@@ -34,7 +34,7 @@ const FILIERE_CONTENT: Record<string, {
           ✨ NOUVEAUTÉ SAISON 4 :
         </span>
         <span className="font-semibold text-foreground">
-          Ouverture de la filière AST (Admissions Sur Titre) pour préparer aux concours GEI-Univ, CASTing (Centrale), Pass'Ingénieur, INSA et ENS.
+          Ouverture de la filière AST (Admissions Sur Titre) pour préparer aux concours GEI-Univ, CASTing (Centrale) et ENS.
         </span>
       </span>,
     ],
