@@ -70,7 +70,7 @@ export function Footer() {
           <p className="text-sm text-muted-foreground font-medium text-center md:text-left order-3 md:order-1">© Institut TW3 {new Date().getFullYear()}. Tous droits réservés.</p>
           
           <div className="flex items-center gap-5 md:gap-6 order-2 md:order-2">
-            <a href="https://www.instagram.com/ta3alamawa3alama/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
+            <a href="https://www.instagram.com/institut_tw3/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="Instagram">
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             </a>
             <a href="https://x.com/Ta3alamaWa3alam" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors" aria-label="X (Twitter)">
