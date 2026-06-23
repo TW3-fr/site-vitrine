@@ -293,27 +293,31 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
 
             {/* Plaquette - Desktop Only */}
             {content.plaquette && (
-              <Card className="hidden md:block border-border shadow-xs bg-card/50 overflow-hidden">
-                <CardHeader className="bg-primary/5 border-b border-border/50">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans">
-                      <div className="p-2 bg-primary/10 rounded-lg text-primary"><FileText className="w-6 h-6" /></div>
-                      Plaquette de présentation
-                    </CardTitle>
-                    <Button asChild variant="outline" size="sm" className="rounded-lg gap-2 border-primary/20 hover:bg-primary/10 text-primary">
+              <Card className="hidden md:block border-border shadow-xs bg-card/50">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans">
+                    <div className="p-2 bg-primary/10 rounded-lg text-primary"><FileText className="w-6 h-6" /></div>
+                    Plaquette de présentation
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                    {content.plaquette.description}
+                  </p>
+                  <div className="flex flex-wrap items-center gap-4">
+                    <Button asChild variant="default" className="rounded-xl py-6 px-6 gap-2 text-base">
                       <a href={content.plaquette.url} target="_blank" rel="noopener noreferrer">
-                        <Download className="w-4 h-4" />
-                        Télécharger PDF
+                        <FileText className="w-5 h-5" />
+                        Consulter la plaquette
+                      </a>
+                    </Button>
+                    <Button asChild variant="outline" className="rounded-xl py-6 px-6 gap-2 text-base">
+                      <a href={content.plaquette.url} download target="_blank" rel="noopener noreferrer">
+                        <Download className="w-5 h-5" />
+                        Télécharger
                       </a>
                     </Button>
                   </div>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <iframe 
-                    src={`${content.plaquette.url}#view=FitH`} 
-                    className="w-full h-[600px] border-0"
-                    title="Plaquette de la filière"
-                  />
                 </CardContent>
               </Card>
             )}
