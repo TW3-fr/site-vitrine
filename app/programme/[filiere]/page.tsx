@@ -7,7 +7,7 @@ import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { InfiniteScroller } from '@/components/InfiniteScroller'
-import { ArrowLeft, Target, BookOpen, Heart, Link as LinkIcon, CalendarDays, ArrowUpRight, CheckCircle2, Info, FileText, Download } from 'lucide-react'
+import { ArrowLeft, Target, BookOpen, Heart, Link as LinkIcon, CalendarDays, ArrowUpRight, CheckCircle2, Info } from 'lucide-react'
 import { CollapsibleLevel } from '@/components/CollapsibleLevel'
 
 interface RessourceGroup {
@@ -22,7 +22,6 @@ const FILIERE_CONTENT: Record<string, {
   deadline?: string;
   ressourceGroups?: RessourceGroup[];
   ressourceNote?: string;
-  plaquette?: { url: string; description: string };
   integrationSchools?: { name: string; url: string; logo: string; className?: string }[]
 }> = {
   scientifique: {
@@ -42,10 +41,6 @@ const FILIERE_CONTENT: Record<string, {
     matieres: ['Mathématiques', 'Physique', 'Anglais', 'Arabe'],
     esprit: 'Rigueur scientifique, esprit d\'excellence et entraide. Formation dispensée par des professeurs agrégés, normaliens et polytechniciens.',
     deadline: '15 Septembre',
-    plaquette: {
-      url: '/documents/plaquette-scientifique.pdf',
-      description: 'Découvrez en détail notre programme, le corps professoral et nos résultats.',
-    },
     ressourceGroups: [
       {
         niveau: 'Seconde',
@@ -227,41 +222,24 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
 
           {/* Candidature sidebar - shows FIRST on mobile */}
           <div className="order-first md:order-last md:col-span-1">
-            <div className="md:sticky md:top-32 flex flex-col gap-4 md:gap-6">
-              <div className="bg-card rounded-2xl md:rounded-3xl p-6 md:p-8 border border-border shadow-md">
-                <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 md:mb-6 font-sans">Candidature</h3>
+            <div className="md:sticky md:top-32 bg-card rounded-2xl md:rounded-3xl p-6 md:p-8 border border-border shadow-md">
+              <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 md:mb-6 font-sans">Candidature</h3>
 
-                <div className="mb-6 md:mb-8">
-                  <p className="text-sm text-muted-foreground mb-2">Date limite d&apos;envoi des dossiers</p>
-                  <div className="flex items-center gap-3 text-emerald-600 font-bold bg-emerald-600/10 p-3 md:p-4 rounded-xl border border-emerald-600/20">
-                    <CalendarDays className="w-5 h-5 md:w-6 md:h-6" />
-                    {content.deadline ? content.deadline : 'Prochainement'}
-                  </div>
-                  <p className="text-xs text-muted-foreground mt-2 md:mt-3 leading-relaxed">Après cette date, les candidatures ne seront plus prises en compte.</p>
+              <div className="mb-6 md:mb-8">
+                <p className="text-sm text-muted-foreground mb-2">Date limite d&apos;envoi des dossiers</p>
+                <div className="flex items-center gap-3 text-emerald-600 font-bold bg-emerald-600/10 p-3 md:p-4 rounded-xl border border-emerald-600/20">
+                  <CalendarDays className="w-5 h-5 md:w-6 md:h-6" />
+                  {content.deadline ? content.deadline : 'Prochainement'}
                 </div>
-
-                <Button asChild className="w-full rounded-xl py-5 md:py-6 text-base group">
-                  <a href="https://tw3projet.fillout.com/eleves" target="_blank" rel="noopener noreferrer">
-                    Candidater
-                    <ArrowUpRight className="ml-2 w-5 h-5 md:group-hover:rotate-45 transition-transform" />
-                  </a>
-                </Button>
+                <p className="text-xs text-muted-foreground mt-2 md:mt-3 leading-relaxed">Après cette date, les candidatures ne seront plus prises en compte.</p>
               </div>
 
-              {/* Plaquette - Mobile Only */}
-              {content.plaquette && (
-                <div className="md:hidden bg-gradient-to-br from-primary/10 to-emerald-500/10 rounded-2xl p-6 border border-primary/20 shadow-sm flex flex-col items-center text-center">
-                  <FileText className="w-8 h-8 text-primary mb-3" />
-                  <h3 className="text-lg font-bold text-foreground mb-2">Plaquette de la filière</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{content.plaquette.description}</p>
-                  <Button asChild variant="default" className="w-full rounded-xl gap-2">
-                    <a href={content.plaquette.url} target="_blank" rel="noopener noreferrer">
-                      <Download className="w-4 h-4" />
-                      Télécharger la plaquette
-                    </a>
-                  </Button>
-                </div>
-              )}
+              <Button asChild className="w-full rounded-xl py-5 md:py-6 text-base group">
+                <a href="https://tw3projet.fillout.com/eleves" target="_blank" rel="noopener noreferrer">
+                  Candidater
+                  <ArrowUpRight className="ml-2 w-5 h-5 md:group-hover:rotate-45 transition-transform" />
+                </a>
+              </Button>
             </div>
           </div>
 
@@ -290,37 +268,6 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                 </ul>
               </CardContent>
             </Card>
-
-            {/* Plaquette - Desktop Only */}
-            {content.plaquette && (
-              <Card className="hidden md:block border-border shadow-xs bg-card/50">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans">
-                    <div className="p-2 bg-primary/10 rounded-lg text-primary"><FileText className="w-6 h-6" /></div>
-                    Plaquette de présentation
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
-                    {content.plaquette.description}
-                  </p>
-                  <div className="flex flex-wrap items-center gap-4">
-                    <Button asChild variant="default" className="rounded-xl py-6 px-6 gap-2 text-base">
-                      <a href={content.plaquette.url} target="_blank" rel="noopener noreferrer">
-                        <FileText className="w-5 h-5" />
-                        Consulter la plaquette
-                      </a>
-                    </Button>
-                    <Button asChild variant="outline" className="rounded-xl py-6 px-6 gap-2 text-base">
-                      <a href={content.plaquette.url} download target="_blank" rel="noopener noreferrer">
-                        <Download className="w-5 h-5" />
-                        Télécharger
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            )}
 
             {content.ressourceGroups && (
               <Card className="border-border shadow-xs bg-card/50">
