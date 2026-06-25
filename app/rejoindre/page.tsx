@@ -26,106 +26,106 @@ export default function RejoindrePage() {
         </div>
       </header>
 
-      <section className="py-8 md:py-16 px-4 md:px-12 bg-background">
-        <div className="container mx-auto max-w-5xl flex flex-col gap-8 md:gap-12">
+      <section className="py-6 md:py-10 px-4 md:px-12 bg-background">
+        <div className="container mx-auto max-w-5xl flex flex-col gap-5 md:gap-8">
 
           {/* Section Bénévole */}
-          <div className="bg-card rounded-3xl p-6 md:p-10 border border-border shadow-sm flex flex-col hover:border-primary/50 transition-all duration-300 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
-            
-            <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 md:mb-8 gap-6">
+          <div className="bg-card rounded-2xl p-5 md:p-8 border border-border shadow-sm flex flex-col hover:border-primary/50 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-primary/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+
+            <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 md:mb-5 gap-4">
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 flex items-center gap-4 font-sans">
-                  <div className="p-3 bg-primary/10 rounded-xl text-primary shadow-inner"><Users2 className="w-7 h-7" /></div>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 flex items-center gap-3 font-sans">
+                  <div className="p-2 bg-primary/10 rounded-lg text-primary"><Users2 className="w-6 h-6" /></div>
                   Devenir Bénévole
                 </h3>
-                <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl">
+                <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-2xl">
                   Rejoignez une équipe dynamique et engagée pour avoir un impact direct sur la trajectoire d'élèves motivés.
                 </p>
               </div>
-              <Button asChild size="lg" className="rounded-xl px-8 py-6 text-base group whitespace-nowrap shrink-0 w-full md:w-auto">
+              <Button asChild size="default" className="rounded-xl px-6 py-5 text-sm group whitespace-nowrap shrink-0 w-full md:w-auto">
                 <a href="https://tw3projet.fillout.com/benevoles" target="_blank" rel="noopener noreferrer">
                   Je m'engage
-                  <ArrowUpRight className="ml-2 w-5 h-5 md:group-hover:rotate-45 transition-transform" />
+                  <ArrowUpRight className="ml-2 w-4 h-4 md:group-hover:rotate-45 transition-transform" />
                 </a>
               </Button>
             </div>
 
-            <div className="mt-2">
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Vos avantages en tant que mentor</h4>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-                <li className="flex items-start gap-3 bg-background/50 p-3 md:p-4 rounded-xl border border-border/50">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-foreground leading-relaxed"><strong>Réseau d’étudiants</strong> (opportunités pro et académiques)</span>
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3 font-sans">Vos avantages en tant que bénévole/mentor</h4>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-2.5">
+                <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm text-foreground"><strong>Réseau d'étudiants</strong> des meilleures écoles</span>
                 </li>
-                <li className="flex items-start gap-3 bg-background/50 p-3 md:p-4 rounded-xl border border-border/50">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-foreground leading-relaxed"><strong>Réseau professionnel</strong> très premium</span>
+                <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm text-foreground"><strong>Réseau professionnel</strong> (opportunités CDI/stages)</span>
                 </li>
-                <li className="flex items-start gap-3 bg-background/50 p-3 md:p-4 rounded-xl border border-border/50">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-foreground leading-relaxed"><strong>Cours d'arabe</strong> gratuits</span>
+                <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm text-foreground"><strong>Cours d'arabe</strong> gratuits</span>
                 </li>
-                <li className="flex items-start gap-3 bg-background/50 p-3 md:p-4 rounded-xl border border-border/50">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-foreground leading-relaxed"><strong>Possibilité de stage</strong> chez nous</span>
+                <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm text-foreground"><strong>Possibilité de stage</strong> au sein de la structure</span>
                 </li>
-                <li className="flex items-start gap-3 bg-background/50 p-3 md:p-4 rounded-xl border border-border/50">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-foreground leading-relaxed"><strong>Laymoon</strong> avec compte à 0€</span>
+                <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm text-foreground">Compte <a href="https://www.laymoon.fr" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 hover:text-primary/80 font-semibold">Laymoon</a> à 0€</span>
                 </li>
-                <li className="flex items-start gap-3 bg-background/50 p-3 md:p-4 rounded-xl border border-border/50">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-foreground leading-relaxed"><strong>Code promo</strong> exclusif Bayyinah</span>
+                <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm text-foreground"><strong>Code promo</strong> exclusif Al Bayyinah</span>
                 </li>
-                <li className="flex items-start gap-3 bg-background/50 p-3 md:p-4 rounded-xl border border-border/50">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-foreground leading-relaxed"><strong>Prêts étudiants</strong> à 0%</span>
+                <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm text-foreground"><strong>Prêts étudiants</strong> à 0%</span>
                 </li>
-                <li className="flex items-start gap-3 bg-background/50 p-3 md:p-4 rounded-xl border border-border/50">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-foreground leading-relaxed"><strong>Priorité</strong> à des événements exclusifs</span>
+                <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm text-foreground"><strong>Priorité</strong> à des événements exclusifs</span>
                 </li>
               </ul>
             </div>
           </div>
 
           {/* Section Élève */}
-          <div className="bg-card rounded-3xl p-6 md:p-10 border border-border shadow-sm flex flex-col hover:border-primary/50 transition-all duration-300 relative overflow-hidden">
-            <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -z-10 -translate-x-1/2 translate-y-1/2"></div>
-            
-            <div className="flex flex-col md:flex-row md:items-start justify-between mb-6 md:mb-8 gap-6">
+          <div className="bg-card rounded-2xl p-5 md:p-8 border border-border shadow-sm flex flex-col hover:border-primary/50 transition-all duration-300 relative overflow-hidden">
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-primary/5 rounded-full blur-3xl -z-10 -translate-x-1/2 translate-y-1/2"></div>
+
+            <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 md:mb-5 gap-4">
               <div>
-                <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 flex items-center gap-4 font-sans">
-                  <div className="p-3 bg-primary/10 rounded-xl text-primary shadow-inner"><GraduationCap className="w-7 h-7" /></div>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 flex items-center gap-3 font-sans">
+                  <div className="p-2 bg-primary/10 rounded-lg text-primary"><GraduationCap className="w-6 h-6" /></div>
                   Devenir Élève
                 </h3>
-                <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl">
-                  Vous êtes motivé, rigoureux et visez les meilleures écoles ? Rejoignez nos cursus pour bénéficier d'un accompagnement intensif (mathématiques, physique, méthodologie...) vers les concours et formations d'excellence.
+                <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-2xl">
+                  Vous êtes motivé, rigoureux et visez les meilleures écoles ? Rejoignez nos filières Scientifique, Commerce ou Droit &amp; Sciences Po pour bénéficier d'un accompagnement intensif par les étudiants des meilleures écoles vers les concours et formations d'excellence.
                 </p>
               </div>
-              <Button asChild size="lg" variant="outline" className="rounded-xl px-8 py-6 text-base group w-full md:w-auto border-primary/20 hover:bg-primary/5 shrink-0">
+              <Button asChild size="default" variant="outline" className="rounded-xl px-6 py-5 text-sm group w-full md:w-auto border-primary/20 hover:bg-primary/5 shrink-0">
                 <a href="https://tw3projet.fillout.com/eleves" target="_blank" rel="noopener noreferrer">
                   Candidater
-                  <ArrowUpRight className="ml-2 w-5 h-5 md:group-hover:rotate-45 transition-transform" />
+                  <ArrowUpRight className="ml-2 w-4 h-4 md:group-hover:rotate-45 transition-transform" />
                 </a>
               </Button>
             </div>
 
-            <div className="mt-2">
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground mb-4">Ce que nous vous offrons</h4>
-              <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-                <li className="flex items-start gap-3 bg-background/50 p-3 md:p-4 rounded-xl border border-border/50">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-foreground leading-relaxed">Formation approfondie inspirée des meilleures prépas</span>
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3 font-sans">Ce que nous vous offrons</h4>
+              <ul className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-2.5">
+                <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm text-foreground">Formation approfondie inspirée des meilleures prépas</span>
                 </li>
-                <li className="flex items-start gap-3 bg-background/50 p-3 md:p-4 rounded-xl border border-border/50">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-foreground leading-relaxed">Préparation concrète aux concours avec tests blancs et khôlles</span>
+                <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm text-foreground">Préparation concrète aux concours avec tests blancs et khôlles</span>
                 </li>
-                <li className="flex items-start gap-3 bg-background/50 p-3 md:p-4 rounded-xl border border-border/50">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                  <span className="text-sm md:text-base text-foreground leading-relaxed">Processus d'admission rigoureux (dossier, épreuve écrite, entretien)</span>
+                <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
+                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
+                  <span className="text-sm text-foreground">Processus d'admission rigoureux (dossier, épreuve écrite, entretien)</span>
                 </li>
               </ul>
             </div>
