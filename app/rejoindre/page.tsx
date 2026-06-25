@@ -66,19 +66,11 @@ export default function RejoindrePage() {
                 </li>
                 <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
                   <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                  <span className="text-sm text-foreground">Compte de paiement <a href="https://www.laymoon.fr" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 hover:text-primary/80 font-semibold">Laymoon</a> à 0€</span>
-                </li>
-                <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
-                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                  <span className="text-sm text-foreground"><strong>Code promo</strong> exclusif Al Bayyinah</span>
+                  <span className="text-sm text-foreground"><strong>Compte</strong> de paiement <a href="https://www.laymoon.fr" target="_blank" rel="noopener noreferrer" className="text-primary underline underline-offset-2 hover:text-primary/80 font-semibold">Laymoon</a> à 0€</span>
                 </li>
                 <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
                   <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
                   <span className="text-sm text-foreground"><strong>Bourses étudiantes</strong></span>
-                </li>
-                <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
-                  <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                  <span className="text-sm text-foreground"><strong>Places exclusives</strong> pour événements</span>
                 </li>
               </ul>
             </div>
@@ -114,15 +106,15 @@ export default function RejoindrePage() {
               <ul className="space-y-2">
                 <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
                   <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                  <span className="text-sm text-foreground">Formation approfondie inspirée des meilleures prépas</span>
+                  <span className="text-sm text-foreground"><strong>Formation approfondie</strong> inspirée des meilleures prépas</span>
                 </li>
                 <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
                   <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                  <span className="text-sm text-foreground">Préparation concrète aux concours avec tests blancs et khôlles</span>
+                  <span className="text-sm text-foreground"><strong>Préparation concrète</strong> aux concours avec tests blancs et khôlles</span>
                 </li>
                 <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
                   <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                  <span className="text-sm text-foreground">Processus d'admission rigoureux (dossier, épreuve écrite, entretien)</span>
+                  <span className="text-sm text-foreground"><strong>Processus d'admission rigoureux</strong> (dossier, épreuve écrite, entretien)</span>
                 </li>
                 <li className="flex items-start gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
                   <CheckCircle2 className="w-4 h-4 text-primary shrink-0 mt-0.5" />
@@ -131,12 +123,18 @@ export default function RejoindrePage() {
               </ul>
             </div>
             
-            <div className="mt-6 pt-4 border-t border-border/50">
-              <Button asChild size="default" variant="outline" className="rounded-xl px-6 py-5 text-sm group w-full border-primary/20 hover:bg-primary/5">
+            <div className="mt-6 pt-4 border-t border-border/50 flex flex-col sm:flex-row gap-3">
+              <Button asChild size="default" className="rounded-xl px-6 py-5 text-sm group w-full sm:w-1/2 bg-violet-600 hover:bg-violet-700 text-white border-0">
                 <a href="https://tw3projet.fillout.com/eleves" target="_blank" rel="noopener noreferrer">
                   Candidater
                   <ArrowUpRight className="ml-2 w-4 h-4 md:group-hover:rotate-45 transition-transform" />
                 </a>
+              </Button>
+              <Button asChild size="default" variant="outline" className="rounded-xl px-6 py-5 text-sm group w-full sm:w-1/2">
+                <Link href="/programme">
+                  Pour en savoir plus
+                  <ArrowUpRight className="ml-2 w-4 h-4 md:group-hover:rotate-45 transition-transform" />
+                </Link>
               </Button>
             </div>
           </div>
