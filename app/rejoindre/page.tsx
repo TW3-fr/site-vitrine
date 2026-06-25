@@ -55,7 +55,7 @@ export default function RejoindrePage() {
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="text-sm text-foreground leading-relaxed"><strong>Possibilité de stage</strong> chez nous (écoles demandant des stages en PME/asso : TSP, Centrale Lille...)</span>
+                <span className="text-sm text-foreground leading-relaxed"><strong>Possibilité de stage</strong> chez nous</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
