@@ -43,7 +43,7 @@ export default function RejoindrePage() {
             <ul className="space-y-3 mb-8 flex-grow">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="text-sm text-foreground leading-relaxed"><strong>Réseau d’étudiants</strong> (opportunités pro, académiques, et même conjugales)</span>
+                <span className="text-sm text-foreground leading-relaxed"><strong>Réseau d’étudiants</strong> (opportunités pro et académiques)</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
