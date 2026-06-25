@@ -124,7 +124,7 @@ export default function RejoindrePage() {
             </div>
             
             <div className="mt-6 pt-4 border-t border-border/50 flex flex-col sm:flex-row gap-3">
-              <Button asChild size="default" className="rounded-xl px-6 py-5 text-sm group w-full sm:w-1/2 bg-violet-600 hover:bg-violet-700 text-white border-0">
+              <Button asChild size="default" className="rounded-xl px-6 py-5 text-sm group w-full sm:w-1/2">
                 <a href="https://tw3projet.fillout.com/eleves" target="_blank" rel="noopener noreferrer">
                   Candidater
                   <ArrowUpRight className="ml-2 w-4 h-4 md:group-hover:rotate-45 transition-transform" />
@@ -132,7 +132,7 @@ export default function RejoindrePage() {
               </Button>
               <Button asChild size="default" variant="outline" className="rounded-xl px-6 py-5 text-sm group w-full sm:w-1/2">
                 <Link href="/programme">
-                  Pour en savoir plus
+                  Nos programmes
                   <ArrowUpRight className="ml-2 w-4 h-4 md:group-hover:rotate-45 transition-transform" />
                 </Link>
               </Button>
