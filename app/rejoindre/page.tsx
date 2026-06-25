@@ -40,18 +40,38 @@ export default function RejoindrePage() {
               Rejoignez une équipe dynamique et engagée pour avoir un impact direct sur la trajectoire d'élèves motivés. Il n'y a pas de poste spécifique recherché pour le moment, mais nous sommes toujours à l'écoute de profils passionnés pour enrichir nos pôles (filières, communication, événementiel...).
             </p>
 
-            <ul className="space-y-4 mb-8 flex-grow">
+            <ul className="space-y-3 mb-8 flex-grow">
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="text-sm text-foreground leading-relaxed">Transmettez votre savoir et votre expérience en encadrant les élèves</span>
+                <span className="text-sm text-foreground leading-relaxed"><strong>Réseau d’étudiants</strong> (opportunités pro, académiques, et même conjugales)</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="text-sm text-foreground leading-relaxed">Intégrez un réseau intergénérationnel d'excellence</span>
+                <span className="text-sm text-foreground leading-relaxed"><strong>Réseau professionnel</strong> très premium</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span className="text-sm text-foreground leading-relaxed">Participez à une aventure associative humaine et ambitieuse</span>
+                <span className="text-sm text-foreground leading-relaxed"><strong>Cours d'arabe</strong> gratuits</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <span className="text-sm text-foreground leading-relaxed"><strong>Possibilité de stage</strong> chez nous (écoles demandant des stages en PME/asso : TSP, Centrale Lille...)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <span className="text-sm text-foreground leading-relaxed"><strong>Laymoon</strong> avec compte à 0€</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <span className="text-sm text-foreground leading-relaxed"><strong>Code promo</strong> exclusif Bayyinah</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <span className="text-sm text-foreground leading-relaxed"><strong>Prêts étudiants</strong> à 0%</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <span className="text-sm text-foreground leading-relaxed"><strong>Priorité</strong> à des événements exclusifs</span>
               </li>
             </ul>
 
