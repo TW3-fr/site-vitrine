@@ -271,13 +271,13 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════════════════════
           IMPACT & RÉSULTATS
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-6 md:py-16 bg-card/50 border-t border-border overflow-hidden flex flex-col gap-8 md:gap-20">
+      <section className="py-6 md:py-10 bg-card/50 border-t border-border overflow-hidden flex flex-col gap-6 md:gap-10">
 
         {/* Mentor Origins - Scrolling RTL */}
-        <div className="w-full relative flex flex-col gap-6">
+        <div className="w-full relative flex flex-col gap-2 md:gap-4">
           <h3 className="text-center font-sans font-bold text-muted-foreground uppercase tracking-widest text-sm px-6">Nos mentors sont passés par</h3>
 
-          <div className="relative w-full overflow-hidden flex py-6">
+          <div className="relative w-full overflow-hidden flex py-2">
             <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-card/50 to-transparent z-10 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-card/50 to-transparent z-10 pointer-events-none"></div>
 
@@ -306,7 +306,7 @@ export default function HomePage() {
 
         {/* Center Stats */}
         <div className="container mx-auto px-4 md:px-6 text-center max-w-5xl">
-          <h2 className="text-xl md:text-3xl lg:text-4xl font-sans text-foreground leading-relaxed mb-8 md:mb-12">
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-sans text-foreground leading-relaxed mb-6 md:mb-8">
             Depuis 2023, l'Institut TW3 accompagne des élèves motivés vers les filières les plus prestigieuses.
           </h2>
 
@@ -339,10 +339,10 @@ export default function HomePage() {
         </div>
 
         {/* Integrations - Scrolling LTR */}
-        <div className="w-full relative flex flex-col gap-6">
+        <div className="w-full relative flex flex-col gap-2 md:gap-4">
           <h3 className="text-center font-sans font-bold text-muted-foreground uppercase tracking-widest text-sm px-6">Nos élèves ont intégré</h3>
 
-          <div className="relative w-full overflow-hidden flex py-6">
+          <div className="relative w-full overflow-hidden flex py-2">
             <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-card/50 to-transparent z-10 pointer-events-none"></div>
             <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-card/50 to-transparent z-10 pointer-events-none"></div>
 
