@@ -171,6 +171,14 @@ const FILIERE_CONTENT: Record<string, {
     matieres: ['Droit privé', 'Droit public', 'Sciences politiques', 'Anglais', 'Arabe'],
     esprit: 'Excellence humaniste, esprit critique et engagement. Formation par des professeurs de Sciences Po Paris, ENS et Panthéon-Sorbonne.',
     deadline: '22 Septembre',
+    ressourceGroups: [
+      {
+        niveau: 'Tous niveaux',
+        items: [
+          { label: 'Bibliographie TW3', url: '/ressources/Bibliographie_TW3.pdf' }
+        ]
+      }
+    ],
     integrationSchools: [
       { name: "Sciences Po Paris", url: "https://www.sciencespo.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_Sciences_Po.svg?width=400" },
       { name: "Panthéon-Sorbonne", url: "https://www.pantheonsorbonne.fr/", logo: "/logos/sorbonne.svg" },
