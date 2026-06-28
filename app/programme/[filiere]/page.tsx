@@ -148,7 +148,7 @@ const FILIERE_CONTENT: Record<string, {
         niveau: 'Sup',
         items: [
           { label: 'Finir entièrement le Poly LLG corrigé (WikiPrépa)', url: 'https://wikiprepa.fr/poly-llg-corrige/' },
-          { label: 'Finir entièrement le Poly ECG de LLG / Henri IV (WikiPrépa)', url: 'https://wikiprepa.fr/poly-llg-henri-iv-ecg-cours-et-corriges/' },
+          { label: 'Finir entièrement le Poly ECG de LLG', url: '/ressources/cahier_ecg llg.pdf' },
           { label: 'Finir entièrement le Poly Saint Louis corrigé (même pour ECG)', url: 'https://wikiprepa.fr/poly-saint-louis-corrige-transition-mpsi-pcsi-mp2i/' },
         ]
       },
