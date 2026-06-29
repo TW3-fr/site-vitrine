@@ -42,7 +42,7 @@ const FILIERE_CONTENT: Record<string, {
     matieres: ['Mathématiques', 'Physique', 'Anglais', 'Arabe'],
     esprit: 'Rigueur scientifique, esprit d\'excellence et entraide. Formation dispensée par des professeurs agrégés, normaliens et polytechniciens.',
     deadline: '15 Septembre',
-    plaquette: '/ressources/Plaquette filière Scientifique.pdf',
+    plaquette: '/ressources/Plaquette_filiere_Scientifique.pdf',
     ressourceGroups: [
       {
         niveau: 'Seconde',
