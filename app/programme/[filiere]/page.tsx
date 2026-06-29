@@ -20,6 +20,7 @@ const FILIERE_CONTENT: Record<string, {
   matieres: string[];
   esprit: string;
   deadline?: string;
+  plaquette?: string;
   ressourceGroups?: RessourceGroup[];
   ressourceNote?: string;
   integrationSchools?: { name: string; url: string; logo: string; className?: string }[]
@@ -41,6 +42,7 @@ const FILIERE_CONTENT: Record<string, {
     matieres: ['Mathématiques', 'Physique', 'Anglais', 'Arabe'],
     esprit: 'Rigueur scientifique, esprit d\'excellence et entraide. Formation dispensée par des professeurs agrégés, normaliens et polytechniciens.',
     deadline: '15 Septembre',
+    plaquette: '/ressources/Plaquette filière Scientifique.pdf',
     ressourceGroups: [
       {
         niveau: 'Seconde',
@@ -249,6 +251,14 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                   <ArrowUpRight className="ml-2 w-5 h-5 md:group-hover:rotate-45 transition-transform" />
                 </a>
               </Button>
+              {content.plaquette && (
+                <Button asChild variant="outline" className="w-full rounded-xl py-5 md:py-6 text-base group mt-3">
+                  <a href={content.plaquette} target="_blank" rel="noopener noreferrer">
+                    Consulter la plaquette
+                    <ArrowUpRight className="ml-2 w-5 h-5 md:group-hover:rotate-45 transition-transform" />
+                  </a>
+                </Button>
+              )}
             </div>
           </div>
 
