@@ -113,6 +113,7 @@ const FILIERE_CONTENT: Record<string, {
     matieres: ['Économie', 'Mathématiques', 'Anglais', 'Arabe', 'Géopolitique'],
     esprit: 'Ouverture sur le monde, esprit d\'analyse et de synthèse. Formation par des professeurs de l\'ESSEC et de l\'ENS.',
     deadline: '15 Septembre',
+    plaquette: '/a-venir',
     ressourceGroups: [
       {
         niveau: 'Seconde',
@@ -173,6 +174,7 @@ const FILIERE_CONTENT: Record<string, {
     matieres: ['Droit privé', 'Droit public', 'Sciences politiques', 'Anglais', 'Arabe'],
     esprit: 'Excellence humaniste, esprit critique et engagement. Formation par des professeurs de Sciences Po Paris, ENS et Panthéon-Sorbonne.',
     deadline: '22 Septembre',
+    plaquette: '/a-venir',
     ressourceGroups: [
       {
         niveau: 'Tous niveaux',
@@ -252,11 +254,19 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                 </a>
               </Button>
               {content.plaquette && (
-                <Button asChild variant="outline" className="w-full rounded-xl py-5 md:py-6 text-base group mt-3">
-                  <a href={content.plaquette} target="_blank" rel="noopener noreferrer">
-                    Consulter la plaquette
-                    <ArrowUpRight className="ml-2 w-5 h-5 md:group-hover:rotate-45 transition-transform" />
-                  </a>
+                <Button asChild variant="outline" className="w-full rounded-xl py-5 md:py-6 text-base group mt-3 relative overflow-hidden border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
+                  <Link 
+                    href={content.plaquette} 
+                    target={content.plaquette.includes('.pdf') ? "_blank" : undefined} 
+                    rel={content.plaquette.includes('.pdf') ? "noopener noreferrer" : undefined}
+                  >
+                    <BookOpen className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform text-primary" />
+                    <span className="relative z-10 flex items-center justify-center">
+                      Consulter la plaquette
+                      <ArrowUpRight className="ml-2 w-5 h-5 opacity-50 group-hover:opacity-100 md:group-hover:translate-x-1 md:group-hover:-translate-y-1 transition-all" />
+                    </span>
+                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                  </Link>
                 </Button>
               )}
             </div>
