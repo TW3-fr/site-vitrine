@@ -113,7 +113,7 @@ const FILIERE_CONTENT: Record<string, {
     matieres: ['Économie', 'Mathématiques', 'Anglais', 'Arabe', 'Géopolitique'],
     esprit: 'Ouverture sur le monde, esprit d\'analyse et de synthèse. Formation par des professeurs de l\'ESSEC et de l\'ENS.',
     deadline: '15 Septembre',
-    plaquette: '/a-venir',
+    plaquette: '/a-venir?filiere=commerce',
     ressourceGroups: [
       {
         niveau: 'Seconde',
@@ -174,7 +174,7 @@ const FILIERE_CONTENT: Record<string, {
     matieres: ['Droit privé', 'Droit public', 'Sciences politiques', 'Anglais', 'Arabe'],
     esprit: 'Excellence humaniste, esprit critique et engagement. Formation par des professeurs de Sciences Po Paris, ENS et Panthéon-Sorbonne.',
     deadline: '22 Septembre',
-    plaquette: '/a-venir',
+    plaquette: '/a-venir?filiere=droit-sciences-po',
     ressourceGroups: [
       {
         niveau: 'Tous niveaux',

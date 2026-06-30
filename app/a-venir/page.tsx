@@ -4,8 +4,21 @@ import { PublicNavbar } from '@/components/PublicNavbar'
 import { Footer } from '@/components/Footer'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft, Clock } from 'lucide-react'
+import { FILIERE_LABELS } from '@/lib/constants'
 
-export default function AVenirPage() {
+export default async function AVenirPage({ searchParams }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
+  const resolvedSearchParams = await searchParams;
+  const filiereSlug = typeof resolvedSearchParams?.filiere === 'string' ? resolvedSearchParams.filiere : null;
+  
+  let label = null;
+  if (filiereSlug) {
+    // Try both lower-cased and upper-cased with underscores to match the dictionary
+    label = FILIERE_LABELS[filiereSlug] || FILIERE_LABELS[filiereSlug.toUpperCase().replace(/-/g, '_')] || filiereSlug;
+  }
+
+  const backLink = filiereSlug ? `/programme/${filiereSlug}` : '/';
+  const buttonText = label ? `Filière ${label}` : "Retour à l'accueil";
+
   return (
     <div className="min-h-screen bg-background flex flex-col font-sans">
       <PublicNavbar />
@@ -28,9 +41,9 @@ export default function AVenirPage() {
 
           <div className="pt-8">
             <Button asChild size="lg" className="rounded-xl">
-              <Link href="/">
+              <Link href={backLink}>
                 <ArrowLeft className="mr-2 w-5 h-5" />
-                Retour à l'accueil
+                {buttonText}
               </Link>
             </Button>
           </div>
