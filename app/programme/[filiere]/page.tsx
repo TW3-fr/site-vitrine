@@ -21,6 +21,7 @@ const FILIERE_CONTENT: Record<string, {
   esprit: string;
   deadline?: string;
   plaquette?: string;
+  epreuve?: { url: string; dateARendre: string; label: string };
   ressourceGroups?: RessourceGroup[];
   ressourceNote?: string;
   integrationSchools?: { name: string; url: string; logo: string; className?: string }[]
@@ -175,6 +176,11 @@ const FILIERE_CONTENT: Record<string, {
     esprit: 'Excellence humaniste, esprit critique et engagement. Formation par des professeurs de Sciences Po Paris, ENS et Panthéon-Sorbonne.',
     deadline: '31 Juillet',
     plaquette: '/a-venir?filiere=droit-sciences-po',
+    epreuve: {
+      url: '/documents/epreuve-admissibilite-tw3.pdf',
+      dateARendre: 'À rendre avant le 31 Juillet',
+      label: 'Épreuve d\'admissibilité'
+    },
     ressourceGroups: [
       {
         niveau: 'Tous niveaux',
@@ -253,6 +259,32 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                   <ArrowUpRight className="ml-2 w-5 h-5 md:group-hover:rotate-45 transition-transform" />
                 </a>
               </Button>
+
+              {content.epreuve && (
+                <div className="mt-4 p-4 rounded-xl border border-blue-500/30 bg-blue-500/10 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-2 opacity-10">
+                    <BookOpen className="w-16 h-16" />
+                  </div>
+                  <h4 className="font-bold text-blue-600 dark:text-blue-400 mb-1">{content.epreuve.label}</h4>
+                  <p className="text-xs text-blue-600/80 dark:text-blue-400/80 mb-3 font-medium">
+                    {content.epreuve.dateARendre}
+                  </p>
+                  <Button asChild className="w-full rounded-xl py-4 bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg shadow-blue-600/20 group relative overflow-hidden transition-all duration-300">
+                    <Link 
+                      href={content.epreuve.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <BookOpen className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                      <span className="relative z-10 flex items-center justify-center">
+                        Accéder au document
+                        <ArrowUpRight className="ml-2 w-5 h-5 opacity-80 group-hover:opacity-100 md:group-hover:translate-x-1 md:group-hover:-translate-y-1 transition-all" />
+                      </span>
+                    </Link>
+                  </Button>
+                </div>
+              )}
+
               {content.plaquette && (
                 <Button asChild variant="outline" className="w-full rounded-xl py-5 md:py-6 text-base group mt-3 relative overflow-hidden border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
                   <Link 
