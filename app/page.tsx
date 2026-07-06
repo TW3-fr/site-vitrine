@@ -240,7 +240,7 @@ export default function HomePage() {
                         href: "/programme/commerce"
                       },
                       {
-                        title: "Droit & Sciences Po",
+                        title: "Droit & Sciences politiques",
                         desc: "Préparation aux licences et masters de Droit sélectifs, Sciences Po Paris et les autres IEP.",
                         icon: <Scale className="w-6 h-6" />,
                         href: "/programme/droit-sciences-po"

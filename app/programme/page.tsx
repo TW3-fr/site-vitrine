@@ -79,7 +79,7 @@ export default function ProgrammePage() {
                 <div className="w-16 h-16 bg-accent/30 rounded-2xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg>
                 </div>
-                <CardTitle className="text-2xl font-bold font-sans">Droit & Sciences Po</CardTitle>
+                <CardTitle className="text-2xl font-bold font-sans">Droit & Sciences politiques</CardTitle>
                 <CardDescription className="text-base mt-4">
                   Intégrer Sciences Po Paris ou les meilleures formations de droit. Pour lycéens et étudiants (facultés de droit et IEP).
                 </CardDescription>

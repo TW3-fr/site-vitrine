@@ -26,7 +26,7 @@ export function Footer() {
               <ul className="space-y-3 text-sm text-muted-foreground font-medium">
                 <li><Link href="/programme/scientifique" className="hover:text-primary transition-colors">Scientifique</Link></li>
                 <li><Link href="/programme/commerce" className="hover:text-primary transition-colors">Commerce</Link></li>
-                <li><Link href="/programme/droit-sciences-po" className="hover:text-primary transition-colors">Droit & Sciences Po</Link></li>
+                <li><Link href="/programme/droit-sciences-po" className="hover:text-primary transition-colors">Droit & Sciences politiques</Link></li>
               </ul>
             </div>
             

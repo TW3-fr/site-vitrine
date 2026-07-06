@@ -35,7 +35,7 @@ export function PublicNavbar({ currentPage = 'home' }: { currentPage?: string })
       subLinks: [
         { href: '/programme/scientifique', label: 'Scientifique' },
         { href: '/programme/commerce', label: 'Économie & Commerce' },
-        { href: '/programme/droit-sciences-po', label: 'Droit & Sciences Po' }
+        { href: '/programme/droit-sciences-po', label: 'Droit & Sciences politiques' }
       ]
     },
     { href: '/rejoindre', label: 'Candidater', id: 'rejoindre' },

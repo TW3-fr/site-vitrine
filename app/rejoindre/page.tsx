@@ -96,7 +96,7 @@ export default function RejoindrePage() {
                   Devenir Élève
                 </h3>
                 <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                  Vous êtes motivé, rigoureux et visez les meilleures écoles ? Rejoignez nos filières Scientifique, Commerce ou Droit &amp; Sciences Po pour bénéficier d'un accompagnement intensif par les étudiants des meilleures écoles vers les concours et formations d'excellence.
+                  Vous êtes motivé, rigoureux et visez les meilleures écoles ? Rejoignez nos filières Scientifique, Commerce ou Droit &amp; Sciences politiques pour bénéficier d'un accompagnement intensif par les étudiants des meilleures écoles vers les concours et formations d'excellence.
                 </p>
               </div>
             </div>

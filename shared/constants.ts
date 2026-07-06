@@ -30,8 +30,8 @@ export const FILIERES = {
 export const FILIERES_ARRAY = Object.values(FILIERES) as (keyof typeof FILIERES)[]
 
 export const FILIERE_LABELS: Record<string, string> = {
-  DROIT_SCIENCES_PO: 'Droit & Sciences Po',
-  'droit-sciences-po': 'Droit & Sciences Po',
+  DROIT_SCIENCES_PO: 'Droit & Sciences politiques',
+  'droit-sciences-po': 'Droit & Sciences politiques',
   COMMERCE: 'Commerce',
   commerce: 'Commerce',
   SCIENTIFIQUE: 'Scientifique',
