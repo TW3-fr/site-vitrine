@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Instrument_Serif, Inter_Tight } from 'next/font/google'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script'
 import './globals.css'
 
 const instrumentSerif = Instrument_Serif({
@@ -64,17 +64,18 @@ export default function RootLayout({
   return (
     <html lang="fr" className={`${instrumentSerif.variable} ${interTight.variable}`}>
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3E72FV0C3R"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-3E72FV0C3R');
-            `,
-          }}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-3E72FV0C3R"
+          strategy="beforeInteractive"
         />
+        <Script id="google-analytics" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-3E72FV0C3R');
+          `}
+        </Script>
       </head>
       <body className="font-sans antialiased">
         {children}
