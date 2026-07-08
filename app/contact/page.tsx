@@ -16,7 +16,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4 md:px-6 text-center max-w-4xl relative z-10">
           <h1 className="flex flex-col mb-4 md:mb-6 items-center">
             <TextGenerateEffect words="Nous" duration={0.2} />
-            <TextGenerateEffect words="contacter" delay={0.4} className="font-serif italic font-normal text-primary" />
+            <TextGenerateEffect words="contacter" delay={0.4} className="font-serif font-bold text-primary" />
           </h1>
           <p className="mt-3 md:mt-4 text-base md:text-xl text-muted-foreground leading-relaxed">Une question sur nos programmes ? Envie de devenir bénévole ? N'hésitez pas à nous écrire.</p>
         </div>

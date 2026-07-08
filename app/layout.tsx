@@ -63,10 +63,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${instrumentSerif.variable} ${interTight.variable}`}>
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3E72FV0C3R"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-3E72FV0C3R');
+            `,
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         {children}
       </body>
-      <GoogleAnalytics gaId="G-3E72FV0C3R" />
     </html>
   )
 }

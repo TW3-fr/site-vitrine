@@ -32,7 +32,7 @@ const FILIERE_CONTENT: Record<string, {
       'Intégrer les grandes écoles d\'ingénieurs (Polytechnique, Centrale, Mines)',
       'Développer la méthodologie, l\'esprit d\'analyse et les automatismes',
       <span key="ast" className="inline-block bg-gradient-to-r from-primary/10 to-emerald-500/10 px-4 py-2 rounded-xl border border-primary/30 shadow-md shadow-primary/20 -mt-1.5">
-        <span className="font-extrabold italic bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-600 mr-2 animate-pulse inline-block">
+        <span className="font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary to-emerald-600 mr-2 animate-pulse inline-block">
           NOUVEAUTÉ SAISON 4 :
         </span>
         <span className="font-semibold text-foreground">
@@ -229,7 +229,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
             </div>
             <h1 className="flex flex-col">
               <TextGenerateEffect words="Filière" duration={0.2} />
-              <TextGenerateEffect words={label} delay={0.4} className="font-serif italic font-normal text-primary" />
+              <TextGenerateEffect words={label} delay={0.4} className="font-serif font-bold text-primary" />
             </h1>
             <p className="mt-2 md:mt-4 text-base md:text-xl text-muted-foreground max-w-2xl leading-relaxed">100% gratuit – Formation d&apos;excellence</p>
           </div>

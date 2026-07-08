@@ -72,7 +72,7 @@ export default function MentionsLegalesPage() {
           </div>
           <h1 className="text-3xl md:text-5xl font-sans font-extrabold text-foreground leading-tight mb-4">
             Mentions légales &{' '}
-            <span className="font-serif italic font-normal text-primary">Confidentialité</span>
+            <span className="font-serif font-bold text-primary">Confidentialité</span>
           </h1>
           <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
             Conformément à la législation française et européenne en vigueur, vous trouverez ci-dessous l&apos;ensemble des informations relatives à l&apos;identité de l&apos;éditeur, à la protection de vos données personnelles et à vos droits.
