@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { TrackedDocumentLink } from './TrackedDocumentLink'
 
 export function Footer() {
   return (
@@ -33,9 +34,9 @@ export function Footer() {
             <div>
               <h4 className="font-sans font-bold text-foreground mb-5 tracking-tight text-lg">Documents</h4>
               <ul className="space-y-3 text-sm text-muted-foreground font-medium">
-                <li><a href="/documents/Statuts_2025_TW3.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Statuts TW3</a></li>
-                <li><a href="/documents/Reglement-interieur-TW3.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Règlement Intérieur</a></li>
-                <li><a href="/documents/Charte_TW3.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Charte Éthique</a></li>
+                <li><TrackedDocumentLink href="/documents/Statuts_2025_TW3.pdf" documentName="statuts" className="hover:text-primary transition-colors">Statuts TW3</TrackedDocumentLink></li>
+                <li><TrackedDocumentLink href="/documents/Reglement-interieur-TW3.pdf" documentName="reglement_interieur" className="hover:text-primary transition-colors">Règlement Intérieur</TrackedDocumentLink></li>
+                <li><TrackedDocumentLink href="/documents/Charte_TW3.pdf" documentName="charte_ethique" className="hover:text-primary transition-colors">Charte Éthique</TrackedDocumentLink></li>
               </ul>
             </div>
             

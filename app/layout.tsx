@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Instrument_Serif, Inter_Tight } from 'next/font/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import './globals.css'
 
 const instrumentSerif = Instrument_Serif({
@@ -65,6 +66,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         {children}
       </body>
+      <GoogleAnalytics gaId="G-3E72FV0C3R" />
     </html>
   )
 }

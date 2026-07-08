@@ -481,7 +481,7 @@ export default function HomePage() {
 
             {/* Donate */}
             <div className="flex-1 bg-card border border-border rounded-2xl md:rounded-3xl p-5 md:p-8 flex flex-col items-center text-center justify-center shadow-sm">
-              <h2 className="text-2xl md:text-4xl mb-3 md:mb-4">Soutenez l'excellence.</h2>
+              <h2 className="text-2xl md:text-4xl font-semibold mb-3 md:mb-4 text-foreground tracking-tight">Soutenez l'excellence.</h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Nos programmes sont 100% gratuits pour les étudiants. Votre générosité nous permet de maintenir et développer nos actions.
                 <br />
@@ -499,7 +499,7 @@ export default function HomePage() {
             <div className="flex-1 bg-accent/20 border border-border rounded-2xl md:rounded-3xl p-5 md:p-8 flex flex-col justify-center shadow-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10"></div>
 
-              <h2 className="text-2xl font-bold mb-3 font-sans text-foreground">Newsletter</h2>
+              <h2 className="text-2xl md:text-4xl font-semibold mb-3 md:mb-4 text-foreground tracking-tight">Newsletter</h2>
               <p className="text-muted-foreground leading-relaxed mb-6 text-sm md:text-base">
                 Restez informé(e) de nos actualités, de l'ouverture des inscriptions et de nos événements inspirants.
               </p>
