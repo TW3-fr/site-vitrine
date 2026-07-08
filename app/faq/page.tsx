@@ -26,7 +26,7 @@ export default function FAQPage() {
                 <TextGenerateEffect
                   words="Nous avons les réponses."
                   delay={0.5}
-                  className="font-serif font-bold text-primary"
+                  className="font-serif italic font-bold text-primary"
                 />
               </h2>
               <p className="text-muted-foreground mt-4 md:mt-6 text-base md:text-lg">Trouvez toutes les réponses à vos questions sur l'Institut, nos programmes et notre fonctionnement.</p>

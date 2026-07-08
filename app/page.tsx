@@ -116,7 +116,7 @@ export default function HomePage() {
                 <TextGenerateEffect
                   words="l'excellence."
                   delay={0.8}
-                  className="font-serif font-bold tracking-tight text-primary mt-2"
+                  className="font-serif italic font-bold tracking-tight text-primary mt-2"
                 />
               </h1>
               <motion.p {...bottomAnimation} className="max-w-2xl text-base md:text-xl text-muted-foreground mt-2">
@@ -150,7 +150,7 @@ export default function HomePage() {
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="flex flex-col justify-center items-center mb-10">
               <TextGenerateEffect words="L'éducation comme" duration={0.3} />
-              <TextGenerateEffect words="levier d'avenir." delay={0.5} className="font-serif font-bold text-primary" />
+              <TextGenerateEffect words="levier d'avenir." delay={0.5} className="font-serif italic font-bold text-primary" />
             </h2>
 
             <div className="relative max-w-3xl mx-auto">
@@ -166,7 +166,7 @@ export default function HomePage() {
                 <p className="text-xl md:text-3xl leading-relaxed text-foreground mb-4" dir="rtl" lang="ar">
                   « مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ »
                 </p>
-                <p className="text-lg md:text-xl leading-relaxed text-muted-foreground font-bold font-serif">
+                <p className="text-lg md:text-xl leading-relaxed text-muted-foreground italic font-bold font-serif">
                   « Celui qui emprunte un chemin à la recherche d'un savoir, Allah lui facilite par cela un chemin vers le Paradis. »
                 </p>
                 <div className="mt-8 pt-6 border-t border-border/50">
@@ -302,7 +302,7 @@ export default function HomePage() {
                     </div>
 
                     <h2 className="text-2xl md:text-4xl text-foreground leading-tight">
-                      Accès à <span className="font-bold text-primary font-serif">l'excellence</span>
+                      Accès à <span className="italic font-bold text-primary font-serif">l'excellence</span>
                     </h2>
 
                     <div className="space-y-5 text-muted-foreground leading-relaxed">
@@ -430,7 +430,7 @@ export default function HomePage() {
           <div className="text-center max-w-3xl mx-auto mb-10">
             <h2 className="flex flex-col justify-center items-center">
               <TextGenerateEffect words="Ils témoignent" duration={0.3} />
-              <TextGenerateEffect words="de leurs parcours." delay={0.5} className="font-serif font-bold text-primary" />
+              <TextGenerateEffect words="de leurs parcours." delay={0.5} className="font-serif italic font-bold text-primary" />
             </h2>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed mt-4 md:mt-6">
               Élèves et mentors partagent leur expérience au sein de l'Institut TW3.
@@ -485,7 +485,7 @@ export default function HomePage() {
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Nos programmes sont 100% gratuits pour les étudiants. Votre générosité nous permet de maintenir et développer nos actions.
                 <br />
-                <span className="text-sm font-bold mt-2 inline-block opacity-90">Vos dons sont déductibles des impôts à hauteur de 66%.</span>
+                <span className="text-sm italic font-bold mt-2 inline-block opacity-90">Vos dons sont déductibles des impôts à hauteur de 66%.</span>
               </p>
               <Button asChild size="lg" className="rounded-full h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-medium group">
                 <a href="https://www.helloasso.com/associations/ta3alamawa3alama/formulaires/1/" target="_blank" rel="noopener noreferrer">

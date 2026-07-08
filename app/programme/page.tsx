@@ -20,7 +20,7 @@ export default function ProgrammePage() {
             <TextGenerateEffect
               words="d'excellence."
               delay={0.5}
-              className="font-serif font-bold tracking-tight text-primary"
+              className="font-serif italic font-bold tracking-tight text-primary"
             />
           </h1>
           <p className="text-base md:text-xl text-muted-foreground leading-relaxed">

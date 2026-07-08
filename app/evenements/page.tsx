@@ -15,7 +15,7 @@ export default function EvenementsPage() {
         <div className="container mx-auto px-4 md:px-6 max-w-4xl relative z-10 text-center">
           <h1 className="flex flex-col mb-4 md:mb-6 items-center">
              <TextGenerateEffect words="Nos" duration={0.2} />
-             <TextGenerateEffect words="événements" delay={0.4} className="font-serif font-bold text-primary" />
+             <TextGenerateEffect words="événements" delay={0.4} className="font-serif italic font-bold text-primary" />
           </h1>
           <p className="mt-3 md:mt-4 text-base md:text-xl text-muted-foreground leading-relaxed">Découvrez nos événements inspirants et webinaires conçus pour vous guider vers l'excellence.</p>
         </div>

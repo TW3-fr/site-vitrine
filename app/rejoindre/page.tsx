@@ -20,7 +20,7 @@ export default function RejoindrePage() {
           </span>
           <h1 className="flex flex-col mb-4 md:mb-6 items-center">
             <TextGenerateEffect words="Rejoindre" duration={0.2} />
-            <TextGenerateEffect words="TW3" delay={0.4} className="font-serif font-bold text-primary" />
+            <TextGenerateEffect words="TW3" delay={0.4} className="font-serif italic font-bold text-primary" />
           </h1>
           <p className="mt-3 md:mt-4 text-base md:text-xl text-muted-foreground leading-relaxed">Rejoignez l'aventure TW3, que ce soit pour transmettre votre savoir ou pour viser l'excellence académique.</p>
         </div>
