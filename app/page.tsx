@@ -181,94 +181,6 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          ACCÈS À L'EXCELLENCE — Section enrichie & cliquable
-      ═══════════════════════════════════════════════════════════ */}
-      <section className="py-6 md:py-10 bg-background border-t border-border">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-6xl mx-auto group">
-            <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/40 transition-all duration-500">
-              <div className="p-5 md:p-8">
-                <div className="flex flex-col lg:flex-row gap-8 items-center">
-                  {/* Left column: Title & description */}
-                  <div className="lg:w-1/2 flex flex-col gap-6">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2.5 bg-primary/10 rounded-xl text-primary md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-500">
-                        <GraduationCap className="w-6 h-6" />
-                      </div>
-                      <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Nos programmes</span>
-                    </div>
-
-                    <h2 className="text-2xl md:text-4xl text-foreground leading-tight">
-                      Accès à <span className="italic text-primary font-serif">l'excellence</span>
-                    </h2>
-
-                    <div className="space-y-5 text-muted-foreground leading-relaxed">
-                      <p>
-                        L'Institut TW3 propose une formation <strong className="text-foreground">à distance et en présentiel à Paris, 100% gratuite</strong>, dispensée par des étudiants et diplômés issus des meilleures formations françaises.
-                      </p>
-                      <p>
-                        Nos élèves bénéficient d'un accompagnement pédagogique rigoureux qui représenterait <strong>environ 7 000 € de valeur</strong> s'il était commercialisé dans le secteur privé : cours particuliers, stages intensifs, entraînements aux concours et mentorat individuel inclus.
-                      </p>
-                      <div className="bg-accent/30 p-4 md:p-5 rounded-2xl border border-border/50">
-                        <h4 className="font-bold text-foreground font-sans mb-1.5 flex items-center gap-2">
-                          Pour qui ?
-                        </h4>
-                        <p className="text-sm md:text-base text-muted-foreground">
-                          Nos programmes s'adressent <strong>aux lycéens (de la Seconde à la Terminale)</strong> ainsi qu'aux <strong>étudiants du supérieur</strong> (prépas, universités) désireux d'intégrer les filières les plus sélectives.
-                        </p>
-                      </div>
-                    </div>
-
-                    <Link href="/programme" className="inline-flex items-center gap-2 text-primary font-semibold md:group-hover:gap-4 transition-all duration-300 mt-2 w-fit">
-                      Découvrir tous nos programmes <ChevronRight className="w-5 h-5" />
-                    </Link>
-                  </div>
-
-                  {/* Right column: 3 parcours */}
-                  <div className="lg:w-1/2 flex flex-col gap-5">
-                    {[
-                      {
-                        title: "Scientifique",
-                        desc: "Préparation aux concours des grandes écoles d'ingénieurs et aux filières scientifiques sélectives : MPSI, PCSI, MP*, ENS, Polytechnique, CentraleSupélec, etc.",
-                        icon: <Calculator className="w-6 h-6" />,
-                        href: "/programme/scientifique"
-                      },
-                      {
-                        title: "Économie & Commerce",
-                        desc: "Préparation aux concours des grandes écoles de commerce et aux filières économiques sélectives : HEC, ESSEC, Prépa ECG, etc.",
-                        icon: <TrendingUp className="w-6 h-6" />,
-                        href: "/programme/commerce"
-                      },
-                      {
-                        title: "Droit & Sciences politiques",
-                        desc: "Préparation aux licences et masters de Droit sélectifs, Sciences Po Paris et les autres IEP.",
-                        icon: <Scale className="w-6 h-6" />,
-                        href: "/programme/droit-sciences-po"
-                      },
-                    ].map((parcours, i) => (
-                      <Link
-                        key={i}
-                        href={parcours.href}
-                        className="flex items-start gap-5 bg-background p-6 rounded-2xl border border-border hover:border-primary/40 transition-colors duration-300 group/link block"
-                      >
-                        <div className="p-3 bg-accent/40 rounded-xl text-primary shrink-0 group-hover/link:bg-primary group-hover/link:text-primary-foreground transition-colors duration-300">
-                          {parcours.icon}
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-sans font-bold text-foreground mb-1 group-hover/link:text-primary transition-colors">{parcours.title}</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed">{parcours.desc}</p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════
           IMPACT & RÉSULTATS
       ═══════════════════════════════════════════════════════════ */}
       <section className="py-6 md:py-10 bg-card/50 border-t border-border overflow-hidden flex flex-col gap-6 md:gap-10">
@@ -369,6 +281,94 @@ export default function HomePage() {
           </div>
         </div>
 
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          ACCÈS À L'EXCELLENCE — Section enrichie & cliquable
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="py-6 md:py-10 bg-background border-t border-border">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-6xl mx-auto group">
+            <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/40 transition-all duration-500">
+              <div className="p-5 md:p-8">
+                <div className="flex flex-col lg:flex-row gap-8 items-center">
+                  {/* Left column: Title & description */}
+                  <div className="lg:w-1/2 flex flex-col gap-6">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 bg-primary/10 rounded-xl text-primary md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-500">
+                        <GraduationCap className="w-6 h-6" />
+                      </div>
+                      <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Nos programmes</span>
+                    </div>
+
+                    <h2 className="text-2xl md:text-4xl text-foreground leading-tight">
+                      Accès à <span className="italic text-primary font-serif">l'excellence</span>
+                    </h2>
+
+                    <div className="space-y-5 text-muted-foreground leading-relaxed">
+                      <p>
+                        L'Institut TW3 propose une formation <strong className="text-foreground">à distance et en présentiel à Paris, 100% gratuite</strong>, dispensée par des étudiants et diplômés issus des meilleures formations françaises.
+                      </p>
+                      <p>
+                        Nos élèves bénéficient d'un accompagnement pédagogique rigoureux qui représenterait <strong>environ 7 000 € de valeur</strong> s'il était commercialisé dans le secteur privé : cours particuliers, stages intensifs, entraînements aux concours et mentorat individuel inclus.
+                      </p>
+                      <div className="bg-accent/30 p-4 md:p-5 rounded-2xl border border-border/50">
+                        <h4 className="font-bold text-foreground font-sans mb-1.5 flex items-center gap-2">
+                          Pour qui ?
+                        </h4>
+                        <p className="text-sm md:text-base text-muted-foreground">
+                          Nos programmes s'adressent <strong>aux lycéens (de la Seconde à la Terminale)</strong> ainsi qu'aux <strong>étudiants du supérieur</strong> (prépas, universités) désireux d'intégrer les filières les plus sélectives.
+                        </p>
+                      </div>
+                    </div>
+
+                    <Link href="/programme" className="inline-flex items-center gap-2 text-primary font-semibold md:group-hover:gap-4 transition-all duration-300 mt-2 w-fit">
+                      Découvrir tous nos programmes <ChevronRight className="w-5 h-5" />
+                    </Link>
+                  </div>
+
+                  {/* Right column: 3 parcours */}
+                  <div className="lg:w-1/2 flex flex-col gap-5">
+                    {[
+                      {
+                        title: "Scientifique",
+                        desc: "Préparation aux concours des grandes écoles d'ingénieurs et aux filières scientifiques sélectives : MPSI, PCSI, MP*, ENS, Polytechnique, CentraleSupélec, etc.",
+                        icon: <Calculator className="w-6 h-6" />,
+                        href: "/programme/scientifique"
+                      },
+                      {
+                        title: "Économie & Commerce",
+                        desc: "Préparation aux concours des grandes écoles de commerce et aux filières économiques sélectives : HEC, ESSEC, Prépa ECG, etc.",
+                        icon: <TrendingUp className="w-6 h-6" />,
+                        href: "/programme/commerce"
+                      },
+                      {
+                        title: "Droit & Sciences politiques",
+                        desc: "Préparation aux licences et masters de Droit sélectifs, Sciences Po Paris et les autres IEP.",
+                        icon: <Scale className="w-6 h-6" />,
+                        href: "/programme/droit-sciences-po"
+                      },
+                    ].map((parcours, i) => (
+                      <Link
+                        key={i}
+                        href={parcours.href}
+                        className="flex items-start gap-5 bg-background p-6 rounded-2xl border border-border hover:border-primary/40 transition-colors duration-300 group/link block"
+                      >
+                        <div className="p-3 bg-accent/40 rounded-xl text-primary shrink-0 group-hover/link:bg-primary group-hover/link:text-primary-foreground transition-colors duration-300">
+                          {parcours.icon}
+                        </div>
+                        <div>
+                          <h3 className="text-lg font-sans font-bold text-foreground mb-1 group-hover/link:text-primary transition-colors">{parcours.title}</h3>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{parcours.desc}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
