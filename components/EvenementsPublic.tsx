@@ -98,7 +98,7 @@ export function EvenementsPublic() {
       {upcomingEvents.length > 0 && (
         <section>
           <div className="flex flex-col md:flex-row md:items-end gap-4 md:gap-8 mb-12">
-            <h2 className="text-3xl md:text-4xl font-serif text-foreground leading-none">À venir</h2>
+            <h2 className="text-3xl md:text-4xl text-foreground leading-none">À venir</h2>
             <div className="h-px bg-border flex-grow mb-2"></div>
           </div>
           <div className="flex flex-col gap-8 md:gap-12">

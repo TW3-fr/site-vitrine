@@ -51,27 +51,27 @@
   }
 
   h1 {
-    @apply font-serif lg:text-8xl md:text-7xl text-5xl leading-tight font-medium text-foreground;
+    @apply lg:text-8xl md:text-7xl text-5xl leading-tight font-medium text-foreground;
   }
 
   h2 {
-    @apply font-serif text-4xl md:text-5xl font-medium text-foreground;
+    @apply text-4xl md:text-5xl font-medium text-foreground;
   }
 
   h3 {
-    @apply font-serif text-5xl font-medium text-foreground;
+    @apply text-5xl font-medium text-foreground;
   }
 
   h4 {
-    @apply font-serif text-2xl font-medium text-foreground;
+    @apply text-2xl font-medium text-foreground;
   }
 
   h5 {
-    @apply font-serif text-xl font-medium;
+    @apply text-xl font-medium;
   }
 
   h6 {
-    @apply font-serif text-lg lg:text-xl font-medium;
+    @apply text-lg lg:text-xl font-medium;
   }
   
   .hero-mask {

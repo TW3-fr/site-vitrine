@@ -163,7 +163,7 @@ export default function HomePage() {
               </div>
 
               <div className="bg-background border border-border/60 rounded-2xl p-5 md:p-8 shadow-sm">
-                <p className="text-xl md:text-3xl leading-relaxed font-serif text-foreground mb-4" dir="rtl" lang="ar">
+                <p className="text-xl md:text-3xl leading-relaxed text-foreground mb-4" dir="rtl" lang="ar">
                   « مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ »
                 </p>
                 <p className="text-lg md:text-xl leading-relaxed text-muted-foreground italic font-serif">
@@ -198,8 +198,8 @@ export default function HomePage() {
                       <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Nos programmes</span>
                     </div>
 
-                    <h2 className="text-2xl md:text-4xl font-serif text-foreground leading-tight">
-                      Accès à <span className="italic text-primary">l'excellence</span>
+                    <h2 className="text-2xl md:text-4xl text-foreground leading-tight">
+                      Accès à <span className="italic text-primary font-serif">l'excellence</span>
                     </h2>
 
                     <div className="space-y-5 text-muted-foreground leading-relaxed">
@@ -318,7 +318,7 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-5xl md:text-7xl font-serif font-bold text-primary leading-none">+100</span>
+              <span className="text-5xl md:text-7xl font-bold text-primary leading-none">+100</span>
               <span className="text-base md:text-xl text-foreground font-semibold mt-2 md:mt-3">élèves accompagnés</span>
             </motion.div>
 
@@ -332,7 +332,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-col items-center"
             >
-              <span className="text-5xl md:text-7xl font-serif font-bold text-primary leading-none">+70</span>
+              <span className="text-5xl md:text-7xl font-bold text-primary leading-none">+70</span>
               <span className="text-base md:text-xl text-foreground font-semibold mt-2 md:mt-3">mentors engagés</span>
             </motion.div>
           </div>
@@ -481,7 +481,7 @@ export default function HomePage() {
 
             {/* Donate */}
             <div className="flex-1 bg-card border border-border rounded-2xl md:rounded-3xl p-5 md:p-8 flex flex-col items-center text-center justify-center shadow-sm">
-              <h2 className="text-2xl md:text-4xl font-serif mb-3 md:mb-4">Soutenez l'excellence.</h2>
+              <h2 className="text-2xl md:text-4xl mb-3 md:mb-4">Soutenez l'excellence.</h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
                 Nos programmes sont 100% gratuits pour les étudiants. Votre générosité nous permet de maintenir et développer nos actions.
                 <br />
