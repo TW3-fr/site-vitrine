@@ -231,7 +231,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
               <TextGenerateEffect words="Filière" duration={0.2} />
               <TextGenerateEffect words={label} delay={0.4} className="font-serif italic font-bold text-primary" />
             </h1>
-            <p className="mt-2 md:mt-4 text-base md:text-xl text-muted-foreground max-w-2xl leading-relaxed">100% gratuit – Formation d&apos;excellence</p>
+            <p className="mt-2 md:mt-4 text-base md:text-xl text-muted-foreground max-w-2xl leading-relaxed"><strong>100% gratuit</strong> – Formation d&apos;excellence</p>
           </div>
         </div>
       </header>

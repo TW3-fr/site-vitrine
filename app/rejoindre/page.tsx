@@ -58,7 +58,7 @@ export default function RejoindrePage() {
                 </li>
                 <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
                   <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />
-                  <span className="text-sm text-foreground"><strong>Cours d'arabe</strong> gratuits</span>
+                  <span className="text-sm text-foreground"><strong>Cours d'arabe</strong> <strong>gratuits</strong></span>
                 </li>
                 <li className="flex items-center gap-2.5 bg-background/50 px-3 py-2.5 rounded-lg border border-border/50">
                   <CheckCircle2 className="w-4 h-4 text-primary shrink-0" />

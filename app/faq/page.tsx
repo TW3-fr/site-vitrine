@@ -5,7 +5,7 @@ import { Footer } from '@/components/Footer'
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 const faqs = [
-  { question: "L'Institut TW3 est-il vraiment 100% gratuit ?", answer: "Oui, tous nos programmes, stages et accompagnements sont entièrement gratuits pour les étudiants sélectionnés. Notre mission est de lever les barrières financières à l'excellence." },
+  { question: "L'Institut TW3 est-il vraiment 100% gratuit ?", answer: <>Oui, tous nos programmes, stages et accompagnements sont entièrement <strong>gratuits</strong> pour les étudiants sélectionnés. Notre mission est de lever les barrières financières à l'excellence.</> },
   { question: "Qui peut postuler à vos programmes ?", answer: "Nos programmes s'adressent aux lycéens (de la Seconde à la Terminale) et aux étudiants du supérieur (Prépas, Universités) extrêmement motivés, travailleurs et souhaitant intégrer les filières les plus sélectives (Grandes Écoles d'ingénieurs, de commerce, Sciences Po)." },
   { question: "Comment se déroule le processus de sélection ?", answer: "La sélection se fait sur dossier puis entretien. Nous évaluons principalement la motivation, le sérieux, le potentiel de progression et l'adhésion aux valeurs d'entraide et d'excellence de l'Institut." },
   { question: "Où se déroulent les cours et événements ?", answer: "La plupart de nos événements, stages intensifs et forums se déroulent en présentiel à Paris ou en région parisienne. Un accompagnement en ligne (Discord, visioconférence) est également proposé de manière intensive." },

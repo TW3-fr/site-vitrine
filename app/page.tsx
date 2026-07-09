@@ -120,7 +120,7 @@ export default function HomePage() {
                 />
               </h1>
               <motion.p {...bottomAnimation} className="max-w-2xl text-base md:text-xl text-muted-foreground mt-2">
-                Une formation 100% gratuite pour accéder aux filières les plus prestigieuses.
+                Une formation <strong>100% gratuite</strong> pour accéder aux filières les plus prestigieuses.
               </motion.p>
             </div>
             <motion.div
@@ -483,7 +483,7 @@ export default function HomePage() {
             <div className="flex-1 bg-card border border-border rounded-2xl md:rounded-3xl p-5 md:p-8 flex flex-col items-center text-center justify-center shadow-sm">
               <h2 className="text-2xl md:text-4xl font-semibold mb-3 md:mb-4 text-foreground tracking-tight">Soutenez l'excellence.</h2>
               <p className="text-muted-foreground leading-relaxed mb-6">
-                Nos programmes sont 100% gratuits pour les étudiants. Votre générosité nous permet de maintenir et développer nos actions.
+                Nos programmes sont <strong>100% gratuits</strong> pour les étudiants. Votre générosité nous permet de maintenir et développer nos actions.
                 <br />
                 <span className="text-sm italic font-bold mt-2 inline-block opacity-90">Vos dons sont déductibles des impôts à hauteur de 66%.</span>
               </p>

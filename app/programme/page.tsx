@@ -24,7 +24,7 @@ export default function ProgrammePage() {
             />
           </h1>
           <p className="text-base md:text-xl text-muted-foreground leading-relaxed">
-            Cursus 100% gratuits pour accéder aux filières les plus prestigieuses. Un encadrement sur-mesure par des professeurs issus des meilleures écoles.
+            Cursus <strong>100% gratuits</strong> pour accéder aux filières les plus prestigieuses. Un encadrement sur-mesure par des professeurs issus des meilleures écoles.
           </p>
         </div>
       </section>
