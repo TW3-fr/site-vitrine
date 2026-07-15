@@ -276,9 +276,11 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                     <BookOpen className="w-16 h-16" />
                   </div>
                   <h4 className="font-bold text-blue-600 dark:text-blue-400 mb-1">{content.epreuve.label}</h4>
-                  <p className="text-xs text-blue-600/80 dark:text-blue-400/80 mb-3 font-medium">
-                    {content.epreuve.dateARendre}
-                  </p>
+                  {!content.epreuve.instructions && (
+                    <p className="text-xs text-blue-600/80 dark:text-blue-400/80 mb-3 font-medium">
+                      {content.epreuve.dateARendre}
+                    </p>
+                  )}
                   {content.epreuve.instructions && (
                     <div className="mb-4 relative z-10">
                       {content.epreuve.instructions}
