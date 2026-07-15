@@ -21,7 +21,7 @@ const FILIERE_CONTENT: Record<string, {
   esprit: string;
   deadline?: string;
   plaquette?: string;
-  epreuve?: { url: string; dateARendre: string; label: string };
+  epreuve?: { url: string; dateARendre: string; label: string; instructions?: React.ReactNode };
   ressourceGroups?: RessourceGroup[];
   ressourceNote?: string;
   integrationSchools?: { name: string; url: string; logo: string; className?: string }[]
@@ -179,7 +179,13 @@ const FILIERE_CONTENT: Record<string, {
     epreuve: {
       url: '/documents/epreuve-admissibilite-tw3.pdf',
       dateARendre: 'À rendre avant le 31 Juillet',
-      label: 'Épreuve d\'admissibilité'
+      label: 'Épreuve d\'admissibilité',
+      instructions: (
+        <div className="mt-2 text-xs md:text-sm text-blue-800 dark:text-blue-200 bg-blue-500/20 p-3 rounded-lg border border-blue-500/30 shadow-inner">
+          <span className="font-bold block mb-1">⚠️ Important :</span>
+          L&apos;épreuve est à rendre par mail à <a href="mailto:mail@tw3.fr" className="font-bold underline decoration-blue-500/50 hover:decoration-blue-500 transition-colors">mail@tw3.fr</a> avant le <strong>31 Juillet</strong> en respectant les conditions indiquées sur le document.
+        </div>
+      )
     },
     ressourceGroups: [
       {
@@ -269,6 +275,11 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                   <p className="text-xs text-blue-600/80 dark:text-blue-400/80 mb-3 font-medium">
                     {content.epreuve.dateARendre}
                   </p>
+                  {content.epreuve.instructions && (
+                    <div className="mb-4 relative z-10">
+                      {content.epreuve.instructions}
+                    </div>
+                  )}
                   <Button asChild className="w-full rounded-xl py-4 bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg shadow-blue-600/20 group relative overflow-hidden transition-all duration-300">
                     <Link 
                       href={content.epreuve.url} 
