@@ -183,7 +183,11 @@ const FILIERE_CONTENT: Record<string, {
       instructions: (
         <div className="mt-2 text-xs md:text-sm text-blue-800 dark:text-blue-200 bg-blue-500/20 p-3 rounded-lg border border-blue-500/30 shadow-inner">
           <span className="font-bold block mb-1">⚠️ Important :</span>
-          L&apos;épreuve est à rendre par mail à <a href="mailto:mail@tw3.fr" className="font-bold underline decoration-blue-500/50 hover:decoration-blue-500 transition-colors">mail@tw3.fr</a> avant le <strong>31 Juillet</strong> en respectant les conditions indiquées sur le document.
+          <p className="mb-2">L&apos;épreuve est à rendre par mail à <a href="mailto:mail@tw3.fr" className="font-bold underline decoration-blue-500/50 hover:decoration-blue-500 transition-colors">mail@tw3.fr</a> avant le <strong>31 Juillet</strong> en respectant les conditions indiquées sur le document.</p>
+          <ul className="list-disc pl-4 space-y-1">
+            <li>Le fichier doit <strong>obligatoirement</strong> être au format <strong>PDF</strong>.</li>
+            <li>L&apos;objet du mail doit être : <code className="font-mono bg-blue-500/20 px-1 py-0.5 rounded border border-blue-500/30">[EPREUVE ADMISSIBILITÉ DROITSCPO] NOM PRÉNOM CLASSE</code></li>
+          </ul>
         </div>
       )
     },
