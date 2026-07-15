@@ -184,9 +184,9 @@ const FILIERE_CONTENT: Record<string, {
         <div className="mt-2 text-sm md:text-base text-blue-900 dark:text-blue-100 bg-blue-500/10 p-4 rounded-xl border border-blue-500/20 shadow-inner">
           <span className="font-bold block mb-2 text-blue-700 dark:text-blue-300">⚠️ Important :</span>
           <p className="mb-2">L&apos;épreuve est à rendre par mail à <a href="mailto:mail@tw3.fr" className="font-bold underline decoration-blue-500/50 hover:decoration-blue-500 transition-colors">mail@tw3.fr</a> avant le <strong>31 Juillet</strong> en respectant les conditions indiquées sur le document.</p>
-          <ul className="list-disc pl-5 space-y-1">
+          <ul className="list-disc pl-5 space-y-2 mt-1">
             <li>Le fichier doit <strong>obligatoirement</strong> être au format <strong>PDF</strong>.</li>
-            <li>L&apos;objet du mail doit être : <span className="font-mono font-bold break-all">[EPREUVE ADMISSIBILITÉ DROITSCPO] NOM PRÉNOM CLASSE</span></li>
+            <li>L&apos;objet du mail doit être :<br/> <span className="inline-block mt-1 font-mono font-semibold text-xs md:text-sm text-blue-900 dark:text-blue-200 bg-blue-500/10 px-2 py-1 rounded break-words">[EPREUVE ADMISSIBILITÉ DROITSCPO] NOM PRÉNOM CLASSE</span></li>
           </ul>
         </div>
       )
@@ -263,27 +263,28 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                 <p className="text-xs text-muted-foreground mt-2 md:mt-3 leading-relaxed">Après cette date, les candidatures ne seront plus prises en compte.</p>
               </div>
 
-              <Button asChild className="w-full rounded-xl py-5 md:py-6 text-base group">
-                <a href="https://tw3projet.fillout.com/eleves" target="_blank" rel="noopener noreferrer">
-                  Candidater
-                  <ArrowUpRight className="ml-2 w-5 h-5 md:group-hover:rotate-45 transition-transform" />
+              <Button asChild className="w-full rounded-xl py-5 md:py-6 h-auto text-base group">
+                <a href="https://tw3projet.fillout.com/eleves" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                  <span className="text-center font-semibold leading-tight">Candidater</span>
+                  <ArrowUpRight className="w-5 h-5 shrink-0 md:group-hover:rotate-45 transition-transform" />
                 </a>
               </Button>
 
 
 
               {content.plaquette && (
-                <Button asChild variant="outline" className="w-full rounded-xl py-5 md:py-6 text-base group mt-3 relative overflow-hidden border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
+                <Button asChild variant="outline" className="w-full rounded-xl py-5 md:py-6 h-auto text-base group mt-3 relative overflow-hidden border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
                   <Link 
                     href={content.plaquette} 
                     target={content.plaquette.includes('.pdf') ? "_blank" : undefined} 
                     rel={content.plaquette.includes('.pdf') ? "noopener noreferrer" : undefined}
+                    className="flex items-center justify-center gap-2 px-2"
                   >
-                    <BookOpen className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform text-primary" />
-                    <span className="relative z-10 flex items-center justify-center">
+                    <BookOpen className="w-5 h-5 shrink-0 group-hover:scale-110 transition-transform text-primary" />
+                    <span className="relative z-10 text-center font-semibold leading-tight">
                       Consulter la plaquette
-                      <ArrowUpRight className="ml-2 w-5 h-5 opacity-50 group-hover:opacity-100 md:group-hover:translate-x-1 md:group-hover:-translate-y-1 transition-all" />
                     </span>
+                    <ArrowUpRight className="w-5 h-5 shrink-0 opacity-50 group-hover:opacity-100 md:group-hover:translate-x-1 md:group-hover:-translate-y-1 transition-all" />
                     <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                   </Link>
                 </Button>
