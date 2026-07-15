@@ -181,12 +181,12 @@ const FILIERE_CONTENT: Record<string, {
       dateARendre: 'À rendre avant le 31 Juillet',
       label: 'Épreuve d\'admissibilité',
       instructions: (
-        <div className="mt-2 text-xs md:text-sm text-blue-800 dark:text-blue-200 bg-blue-500/20 p-3 rounded-lg border border-blue-500/30 shadow-inner">
-          <span className="font-bold block mb-1">⚠️ Important :</span>
+        <div className="mt-2 text-sm md:text-base text-blue-900 dark:text-blue-100 bg-blue-500/10 p-4 rounded-xl border border-blue-500/20 shadow-inner">
+          <span className="font-bold block mb-2 text-blue-700 dark:text-blue-300">⚠️ Important :</span>
           <p className="mb-2">L&apos;épreuve est à rendre par mail à <a href="mailto:mail@tw3.fr" className="font-bold underline decoration-blue-500/50 hover:decoration-blue-500 transition-colors">mail@tw3.fr</a> avant le <strong>31 Juillet</strong> en respectant les conditions indiquées sur le document.</p>
-          <ul className="list-disc pl-4 space-y-1">
+          <ul className="list-disc pl-5 space-y-1">
             <li>Le fichier doit <strong>obligatoirement</strong> être au format <strong>PDF</strong>.</li>
-            <li>L&apos;objet du mail doit être : <code className="font-mono bg-blue-500/20 px-1 py-0.5 rounded border border-blue-500/30">[EPREUVE ADMISSIBILITÉ DROITSCPO] NOM PRÉNOM CLASSE</code></li>
+            <li>L&apos;objet du mail doit être : <span className="font-mono font-bold break-all">[EPREUVE ADMISSIBILITÉ DROITSCPO] NOM PRÉNOM CLASSE</span></li>
           </ul>
         </div>
       )
@@ -270,37 +270,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                 </a>
               </Button>
 
-              {content.epreuve && (
-                <div className="mt-4 p-4 rounded-xl border border-blue-500/30 bg-blue-500/10 relative overflow-hidden">
-                  <div className="absolute top-0 right-0 p-2 opacity-10">
-                    <BookOpen className="w-16 h-16" />
-                  </div>
-                  <h4 className="font-bold text-blue-600 dark:text-blue-400 mb-1">{content.epreuve.label}</h4>
-                  {!content.epreuve.instructions && (
-                    <p className="text-xs text-blue-600/80 dark:text-blue-400/80 mb-3 font-medium">
-                      {content.epreuve.dateARendre}
-                    </p>
-                  )}
-                  {content.epreuve.instructions && (
-                    <div className="mb-4 relative z-10">
-                      {content.epreuve.instructions}
-                    </div>
-                  )}
-                  <Button asChild className="w-full rounded-xl py-4 bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg shadow-blue-600/20 group relative overflow-hidden transition-all duration-300">
-                    <Link 
-                      href={content.epreuve.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <BookOpen className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                      <span className="relative z-10 flex items-center justify-center">
-                        Accéder au document
-                        <ArrowUpRight className="ml-2 w-5 h-5 opacity-80 group-hover:opacity-100 md:group-hover:translate-x-1 md:group-hover:-translate-y-1 transition-all" />
-                      </span>
-                    </Link>
-                  </Button>
-                </div>
-              )}
+
 
               {content.plaquette && (
                 <Button asChild variant="outline" className="w-full rounded-xl py-5 md:py-6 text-base group mt-3 relative overflow-hidden border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
@@ -326,6 +296,45 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
 
             {content.integrationSchools && (
               <InfiniteScroller schools={content.integrationSchools} />
+            )}
+
+            {content.epreuve && (
+              <Card className="border-blue-500/30 shadow-xs bg-blue-500/5 relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-5">
+                  <BookOpen className="w-32 h-32 text-blue-600" />
+                </div>
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans text-blue-700 dark:text-blue-400">
+                    <div className="p-2 bg-blue-500/20 rounded-lg text-blue-700 dark:text-blue-400"><BookOpen className="w-6 h-6" /></div>
+                    {content.epreuve.label}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="relative z-10">
+                  {!content.epreuve.instructions && (
+                    <p className="text-sm text-blue-700/80 dark:text-blue-400/80 mb-4 font-medium">
+                      {content.epreuve.dateARendre}
+                    </p>
+                  )}
+                  {content.epreuve.instructions && (
+                    <div className="mb-6">
+                      {content.epreuve.instructions}
+                    </div>
+                  )}
+                  <Button asChild className="rounded-xl py-6 px-8 bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg shadow-blue-600/20 group relative overflow-hidden transition-all duration-300 w-full md:w-auto">
+                    <Link 
+                      href={content.epreuve.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                    >
+                      <BookOpen className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                      <span className="relative z-10 flex items-center justify-center font-semibold text-base">
+                        Accéder au document
+                        <ArrowUpRight className="ml-2 w-5 h-5 opacity-80 group-hover:opacity-100 md:group-hover:translate-x-1 md:group-hover:-translate-y-1 transition-all" />
+                      </span>
+                    </Link>
+                  </Button>
+                </CardContent>
+              </Card>
             )}
 
             <Card className="border-border shadow-xs bg-card/50">
