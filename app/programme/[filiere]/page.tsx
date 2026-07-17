@@ -164,7 +164,7 @@ const FILIERE_CONTENT: Record<string, {
       { name: "Saint Louis", url: "https://pia.ac-paris.fr/serail/jcms/s1_2080084/fr/accueil", logo: "/logos/saint-louis.jpg" },
       { name: "Lycée Hoche", url: "https://lyc-hoche-versailles.ac-versailles.fr/", logo: "/logos/hoche.png" },
       { name: "Panthéon-Assas", url: "https://www.assas-universite.fr/", logo: "/logos/assas.webp" },
-      { name: "EM Lyon", url: "https://em-lyon.com/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Emlyon_Business_School_logo.svg?width=400" }
+      { name: "EM Lyon", url: "https://em-lyon.com/", logo: "/logos/em-lyon.png" }
     ]
   },
   'droit-sciences-po': {
