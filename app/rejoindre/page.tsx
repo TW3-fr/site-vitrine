@@ -7,6 +7,7 @@ import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 import { Button } from '@/components/ui/button'
 import { CheckCircle2, ArrowUpRight, Users2, GraduationCap } from 'lucide-react'
 import { FadeUp } from '@/components/ui/fade-up'
+import Image from 'next/image'
 
 export default function RejoindrePage() {
   return (
@@ -16,10 +17,12 @@ export default function RejoindrePage() {
       {/* Hero — Full-width photo with overlay */}
       <section className="relative z-10 pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src="/photos/STG4686.jpg" 
             alt="Mentors et élèves TW3" 
-            className="w-full h-full object-cover"
+            fill
+            priority
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#391457]/80 to-background"></div>
         </div>
@@ -91,7 +94,7 @@ export default function RejoindrePage() {
             
             {/* Photo accent strip */}
             <div className="mt-5 rounded-xl overflow-hidden h-32 md:h-40 relative">
-              <img src="/photos/STG4640.jpg" alt="Intervenants TW3" className="w-full h-full object-cover" />
+              <Image src="/photos/STG4640.jpg" alt="Intervenants TW3" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent"></div>
             </div>
 
@@ -147,7 +150,7 @@ export default function RejoindrePage() {
 
             {/* Photo accent strip */}
             <div className="mt-5 rounded-xl overflow-hidden h-32 md:h-40 relative">
-              <img src="/photos/IMG_4815.jpg" alt="Audience TW3 applaudissant" className="w-full h-full object-cover" />
+              <Image src="/photos/IMG_4815.jpg" alt="Audience TW3 applaudissant" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent"></div>
             </div>
             

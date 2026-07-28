@@ -6,6 +6,7 @@ import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 import { FadeUp } from '@/components/ui/fade-up'
 import { MessageCircleQuestion } from 'lucide-react'
+import Image from 'next/image'
 
 const faqs = [
   { question: "L'Institut TW3 est-il vraiment 100% gratuit ?", answer: <>Oui, tous nos programmes, stages et accompagnements sont entièrement <strong>gratuits</strong> pour les étudiants sélectionnés. Notre mission est de lever les barrières financières à l'excellence.</> },
@@ -23,10 +24,12 @@ export default function FAQPage() {
       {/* Hero — Full-width photo with overlay */}
       <section className="relative z-10 pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src="/photos/STG4706.jpg" 
             alt="Élève et mentor TW3" 
-            className="w-full h-full object-cover"
+            fill
+            priority
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#391457]/80 to-background"></div>
         </div>

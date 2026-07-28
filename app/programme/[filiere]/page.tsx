@@ -97,6 +97,7 @@ const FILIERE_CONTENT: Record<string, {
       { name: "X", url: "https://www.polytechnique.edu/", logo: "/logos/polytechnique.png" },
       { name: "ENS Lyon", url: "https://www.ens-lyon.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_ENS_de_Lyon_2010.png?width=400" },
       { name: "Mines", url: "https://minesparis.psl.eu/", logo: "/logos/mines-paris.png" },
+      { name: "Ponts", url: "https://ecoledesponts.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_Ecole_des_Ponts_ParisTech.svg?width=400" },
       { name: "Centrale", url: "https://www.centralesupelec.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Ecole_Centrale_Supelec_logo.svg?width=400" },
       { name: "Centrale Lyon", url: "https://www.ec-lyon.fr/", logo: "/logos/centrale-lyon.jpg" },
       { name: "Le Parc", url: "https://lyceeduparc.fr/", logo: "/logos/le-parc.png" },

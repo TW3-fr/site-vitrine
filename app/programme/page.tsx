@@ -7,6 +7,7 @@ import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 import { FadeUp } from '@/components/ui/fade-up'
 import { Card, CardHeader, CardTitle, CardContent, CardFooter, CardDescription } from '@/components/ui/card'
 import { ArrowUpRight, Calculator, TrendingUp, Scale } from 'lucide-react'
+import Image from 'next/image'
 
 export default function ProgrammePage() {
   const parcours = [
@@ -43,10 +44,12 @@ export default function ProgrammePage() {
       {/* Hero Header with photo background */}
       <section className="relative z-10 pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src="/photos/STG4638.jpg" 
-            alt="" 
-            className="w-full h-full object-cover"
+            alt="Nos programmes" 
+            fill
+            priority
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#391457]/80 to-background"></div>
         </div>
@@ -77,10 +80,12 @@ export default function ProgrammePage() {
               <div className={`grid grid-cols-1 md:grid-cols-5 bg-card border border-border rounded-2xl md:rounded-3xl overflow-hidden hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-md ${i % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
                 {/* Photo side */}
                 <div className={`md:col-span-2 relative min-h-[200px] md:min-h-[280px] overflow-hidden ${i % 2 === 1 ? 'md:col-start-4' : ''}`}>
-                  <img 
+                  <Image 
                     src={p.photo}
                     alt={`Programme ${p.title}`}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 40vw"
+                    className="object-cover transition-transform duration-700 md:group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent md:bg-none"></div>
                 </div>

@@ -6,6 +6,7 @@ import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 import { Button } from '@/components/ui/button'
 import { FadeUp } from '@/components/ui/fade-up'
 import { Mail, MapPin, ArrowUpRight } from 'lucide-react'
+import Image from 'next/image'
 
 export default function ContactPage() {
   return (
@@ -15,10 +16,12 @@ export default function ContactPage() {
       {/* Hero — Full-width photo with overlay */}
       <section className="relative z-10 pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src="/photos/STG4651.jpg" 
             alt="" 
-            className="w-full h-full object-cover"
+            fill
+            priority
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#391457]/80 to-background"></div>
         </div>
@@ -66,10 +69,12 @@ export default function ContactPage() {
 
             {/* Donate CTA card with photo background */}
             <div className="relative rounded-2xl md:rounded-3xl overflow-hidden group hover:border-primary/50 transition-colors min-h-[200px]">
-              <img 
+              <Image 
                 src="/photos/STG4640.jpg" 
                 alt="Intervenants TW3" 
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 md:group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-[#391457]/80 to-black/60"></div>
               <div className="relative z-10 p-6 md:p-8 flex flex-col h-full justify-end">

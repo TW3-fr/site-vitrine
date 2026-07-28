@@ -5,6 +5,7 @@ import { EvenementsPublic } from '@/components/EvenementsPublic'
 import { Footer } from '@/components/Footer'
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 import { FadeUp } from '@/components/ui/fade-up'
+import Image from 'next/image'
 
 export default function EvenementsPage() {
   return (
@@ -14,10 +15,12 @@ export default function EvenementsPage() {
       {/* Hero — Full-width photo with overlay */}
       <section className="relative z-10 pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src="/photos/IMG_4815.jpg" 
             alt="Audience lors d'un événement TW3" 
-            className="w-full h-full object-cover"
+            fill
+            priority
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#391457]/80 to-background"></div>
         </div>

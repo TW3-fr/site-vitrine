@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { CalendarDays, MapPin, ArrowUpRight, PlayCircle } from 'lucide-react'
 import { motion } from 'motion/react'
+import Image from 'next/image'
 
 export function EvenementsPublic() {
   
@@ -24,8 +25,7 @@ export function EvenementsPublic() {
           {/* Conteneur de l'Affiche (Poster) */}
           <div className={`relative w-full md:w-2/5 shrink-0 bg-muted/50 overflow-hidden min-h-[250px] md:min-h-[350px] flex items-center justify-center ${isImageRight ? 'md:order-2' : ''}`}>
             {event.image ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={event.image} alt={event.title} className="w-full h-full object-cover md:group-hover:scale-105 transition-transform duration-700" />
+              <Image src={event.image} alt={event.title} fill sizes="(max-width: 768px) 100vw, 40vw" className="object-cover md:group-hover:scale-105 transition-transform duration-700" />
             ) : (
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/10 flex items-center justify-center">
                 <CalendarDays className="w-20 h-20 text-primary/10 md:group-hover:scale-110 transition-transform duration-700" />

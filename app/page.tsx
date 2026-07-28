@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button'
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { ArrowUpRight, GraduationCap, Users, CalendarDays, BookOpen, Award, Sparkles, Quote, ChevronRight, Globe, Calculator, TrendingUp, Scale } from "lucide-react";
+import Image from "next/image";
 import { DraggableScroller } from '@/components/DraggableScroller'
 
 export default function HomePage() {
@@ -68,6 +69,7 @@ export default function HomePage() {
     { name: "CentraleSupélec", url: "https://www.centralesupelec.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Ecole_Centrale_Supelec_logo.svg?width=400" },
     { name: "Lycée Saint-Louis", url: "https://pia.ac-paris.fr/serail/jcms/s1_2080084/fr/accueil", logo: "/logos/saint-louis.jpg" },
     { name: "Mines ParisTech", url: "https://minesparis.psl.eu/", logo: "/logos/mines-paris.png" },
+    { name: "École des Ponts ParisTech", url: "https://ecoledesponts.fr/", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Logo_Ecole_des_Ponts_ParisTech.svg?width=400" },
     { name: "Lycée Le Parc", url: "https://lyceeduparc.fr/", logo: "/logos/le-parc.png" },
     { name: "Panthéon-Sorbonne", url: "https://www.pantheonsorbonne.fr/", logo: "/logos/sorbonne.svg" },
   ];
@@ -100,10 +102,12 @@ export default function HomePage() {
       <section ref={ref} className="relative w-full min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background image — audience in amphitheatre */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src="/photos/IMG_4791.jpg" 
-            alt="" 
-            className="w-full h-full object-cover"
+            alt="Audience TW3" 
+            fill
+            priority
+            className="object-cover"
           />
           {/* Dark overlay gradient — cinematic feel */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
@@ -179,7 +183,7 @@ export default function HomePage() {
                   <Quote className="w-14 h-14 rotate-180" />
                 </div>
                 <div className="bg-card border border-border/60 rounded-2xl p-6 md:p-8 shadow-sm relative overflow-hidden group">
-                  <img src="/photos/IMG_4815.jpg" alt="Communauté TW3" className="absolute inset-0 w-full h-full object-cover opacity-20 md:group-hover:scale-105 transition-transform duration-700" />
+                  <Image src="/photos/IMG_4815.jpg" alt="Communauté TW3" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover opacity-20 md:group-hover:scale-105 transition-transform duration-700" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent"></div>
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-primary/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/4 relative z-10"></div>
                   <div className="relative z-10">
@@ -229,11 +233,13 @@ export default function HomePage() {
                   className="inline-flex items-center justify-center shrink-0 group/logo mx-6 md:mx-10"
                   onDragStart={(e) => e.preventDefault()}
                 >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={school.logo}
                     alt={school.name}
                     className={`${(school as any).className || "h-12 md:h-16"} w-auto max-w-[120px] md:max-w-[160px] object-contain group-hover/logo:scale-110 transition-transform duration-300 opacity-90 hover:opacity-100`}
                     draggable={false}
+                    loading="lazy"
                   />
                 </a>
               ))}
@@ -292,11 +298,13 @@ export default function HomePage() {
                   className="inline-flex items-center justify-center shrink-0 group/logo mx-6 md:mx-10"
                   onDragStart={(e) => e.preventDefault()}
                 >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={school.logo}
                     alt={school.name}
                     className={`${(school as any).className || "h-12 md:h-16"} w-auto max-w-[120px] md:max-w-[160px] object-contain group-hover/logo:scale-110 transition-transform duration-300 opacity-90 hover:opacity-100`}
                     draggable={false}
+                    loading="lazy"
                   />
                 </a>
               ))}
@@ -331,10 +339,12 @@ export default function HomePage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-6">
               {/* Large feature photo — panel discussion */}
               <div className="lg:col-span-5 relative rounded-2xl md:rounded-3xl overflow-hidden min-h-[300px] md:min-h-[500px] group">
-                <img 
+                <Image 
                   src="/photos/IMG_4834.jpg" 
                   alt="Panel de conférenciers lors d'un événement TW3" 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 md:group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
@@ -423,7 +433,7 @@ export default function HomePage() {
             <div className="mb-5 md:mb-6">
               {/* Wide card — Réseau intergénérationnel (with photo background) */}
               <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-sm border border-border hover:border-primary/50 transition-all duration-300 flex flex-col group relative overflow-hidden min-h-[250px]">
-                <img src="/photos/STG4653.jpg" alt="Réseau intergénérationnel TW3" className="absolute inset-0 w-full h-full object-cover opacity-10 md:group-hover:opacity-20 transition-opacity duration-500" />
+                <Image src="/photos/STG4653.jpg" alt="Réseau intergénérationnel TW3" fill sizes="100vw" className="object-cover opacity-10 md:group-hover:opacity-20 transition-opacity duration-500" />
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 relative z-10 h-full">
                   <div className="flex flex-col h-full">
                     <div className="flex items-start gap-5 mb-4">
@@ -458,7 +468,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
               {/* Évènements */}
               <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-sm border border-border hover:border-primary/50 transition-all duration-300 flex flex-col group relative overflow-hidden">
-                <img src="/photos/STG4706.jpg" alt="Session apprentissage TW3" className="absolute inset-0 w-full h-full object-cover opacity-10 md:group-hover:opacity-20 transition-opacity duration-500" />
+                <Image src="/photos/STG4706.jpg" alt="Session apprentissage TW3" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover opacity-10 md:group-hover:opacity-20 transition-opacity duration-500" />
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-5 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
                     <CalendarDays className="w-6 h-6" />
@@ -475,7 +485,7 @@ export default function HomePage() {
 
               {/* Portée internationale */}
               <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-sm border border-border hover:border-primary/50 transition-all duration-300 flex flex-col group relative overflow-hidden">
-                <img src="/photos/STG4689.jpg" alt="Portée internationale TW3" className="absolute inset-0 w-full h-full object-cover opacity-10 md:group-hover:opacity-20 transition-opacity duration-500" />
+                <Image src="/photos/STG4689.jpg" alt="Portée internationale TW3" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover opacity-10 md:group-hover:opacity-20 transition-opacity duration-500" />
                 <div className="relative z-10 flex flex-col h-full">
                   <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-5 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
                     <Globe className="w-6 h-6" />
@@ -534,7 +544,9 @@ export default function HomePage() {
 
                   <div className="flex items-center gap-4 pt-6 border-t border-border/50 whitespace-normal mt-auto">
                     <div className="w-10 h-10 rounded-full overflow-hidden border border-border shrink-0">
-                      <img src={(testimonial as any).image} alt={testimonial.author} className="w-full h-full object-cover" draggable={false} />
+                      <div className="relative w-full h-full">
+                        <Image src={(testimonial as any).image} alt={testimonial.author} fill sizes="40px" className="object-cover" draggable={false} />
+                      </div>
                     </div>
                     <div>
                       <p className="font-semibold text-muted-foreground text-xs md:text-sm">{testimonial.author}</p>
@@ -553,10 +565,12 @@ export default function HomePage() {
       <section className="relative py-20 md:py-32 overflow-hidden">
         {/* Background photo — audience clapping */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image 
             src="/photos/IMG_4775.jpg" 
-            alt="" 
-            className="w-full h-full object-cover"
+            alt="Public TW3" 
+            fill
+            sizes="100vw"
+            className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#391457]/90 to-black/80"></div>
         </div>

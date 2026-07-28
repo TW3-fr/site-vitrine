@@ -29,10 +29,12 @@ export function InfiniteScroller({ schools }: { schools: School[] }) {
               title={school.name}
               className="inline-flex items-center justify-center shrink-0 group/logo"
             >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={school.logo}
                 alt={school.name}
                 className={`${school.className || "h-12 md:h-16"} w-auto max-w-[140px] md:max-w-[200px] object-contain group-hover/logo:scale-110 transition-transform duration-300 opacity-90 hover:opacity-100`}
+                loading="lazy"
               />
             </a>
           ))}
@@ -58,6 +60,7 @@ export function InfiniteScroller({ schools }: { schools: School[] }) {
                   alt={school.name}
                   className={`${school.className || "h-14 md:h-16"} w-auto max-w-[140px] md:max-w-[180px] object-contain group-hover/logo:scale-110 transition-transform duration-300 opacity-90 hover:opacity-100`}
                   draggable={false}
+                  loading="lazy"
                 />
               </a>
             ))}
