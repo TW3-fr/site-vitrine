@@ -228,7 +228,7 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
 
   return (
     <div className="min-h-screen bg-background font-sans">
-      <PublicNavbar currentPage="programme" />
+      <PublicNavbar currentPage="programme" theme={content.image ? "dark" : undefined} />
 
       <header className={`pt-28 md:pt-36 pb-12 md:pb-16 border-b border-border relative z-10 overflow-hidden ${content.image ? 'text-white' : ''}`}>
         {content.image ? (
