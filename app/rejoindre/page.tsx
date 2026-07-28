@@ -14,7 +14,7 @@ export default function RejoindrePage() {
       <PublicNavbar currentPage="rejoindre" theme="dark" />
 
       {/* Hero — Full-width photo with overlay */}
-      <section className="relative pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden">
+      <section className="relative z-10 pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/photos/STG4686.jpg" 

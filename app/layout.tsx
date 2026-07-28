@@ -80,8 +80,8 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="font-sans antialiased relative">
-        <CustomCursor />
         {children}
+        <CustomCursor />
       </body>
     </html>
   )
