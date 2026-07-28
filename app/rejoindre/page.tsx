@@ -10,39 +10,32 @@ import { CheckCircle2, ArrowUpRight, Users2, GraduationCap } from 'lucide-react'
 export default function RejoindrePage() {
   return (
     <div className="min-h-screen bg-background font-sans">
-      <PublicNavbar currentPage="rejoindre" />
+      <PublicNavbar currentPage="rejoindre" theme="dark" />
 
-      {/* Hero — Photo + content split */}
-      <section className="relative overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[50vh]">
-          {/* Left: Photo */}
-          <div className="relative min-h-[300px] lg:min-h-0 order-2 lg:order-1">
-            <img 
-              src="/photos/STG4686.jpg" 
-              alt="Mentors et élèves TW3" 
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 lg:bg-gradient-to-r lg:from-transparent lg:to-background/20"></div>
-            {/* Mobile overlay for text readability */}
-            <div className="absolute inset-0 bg-black/40 lg:hidden"></div>
-            <div className="absolute bottom-6 left-6 right-6 lg:hidden">
-              <p className="text-white/80 font-serif italic text-lg">"Transmettre pour construire l'avenir."</p>
-            </div>
-          </div>
-          {/* Right: Content */}
-          <div className="pt-24 pb-10 lg:pt-28 lg:pb-16 px-6 md:px-10 lg:px-16 flex flex-col justify-center order-1 lg:order-2 bg-gradient-to-br from-background via-background to-[#f5f3f5]">
-            <span className="inline-flex items-center gap-2 px-3 py-1 bg-accent/50 text-foreground text-xs font-bold uppercase tracking-wider rounded-full border border-border/50 mb-4 md:mb-6 w-fit">
-              Bénévolat & Engagement
-            </span>
-            <h1 className="flex flex-col mb-4 md:mb-6">
-              <TextGenerateEffect words="Rejoindre" duration={0.2} />
-              <TextGenerateEffect words="TW3" delay={0.4} className="font-serif italic font-bold text-primary" />
-            </h1>
-            <p className="mt-2 text-base md:text-xl text-muted-foreground leading-relaxed max-w-lg">
-              Rejoignez l'aventure TW3, que ce soit pour transmettre votre savoir ou pour viser l'excellence académique.
-            </p>
-          </div>
+      {/* Hero — Full-width photo with overlay */}
+      <section className="relative pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/photos/STG4686.jpg" 
+            alt="Mentors et élèves TW3" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#391457]/80 to-background"></div>
         </div>
+        <div className="container mx-auto px-4 md:px-6 text-center max-w-4xl relative z-10">
+          <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white/90 text-xs font-bold uppercase tracking-wider rounded-full border border-white/20 backdrop-blur-md mb-4 md:mb-6 w-fit">
+            Bénévolat & Engagement
+          </span>
+          <h1 className="flex flex-col mb-4 md:mb-6 items-center">
+            <TextGenerateEffect words="Rejoindre" duration={0.2} className="text-white" />
+            <TextGenerateEffect words="TW3" delay={0.4} className="font-serif italic font-bold text-tw3-accent" />
+          </h1>
+          <p className="mt-2 text-base md:text-xl text-white/80 leading-relaxed max-w-lg mx-auto">
+            Rejoignez l'aventure TW3, que ce soit pour transmettre votre savoir ou pour viser l'excellence académique.
+          </p>
+        </div>
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-10"></div>
       </section>
 
       <section className="py-10 md:py-16 px-4 md:px-12 bg-background">

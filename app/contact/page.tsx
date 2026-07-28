@@ -9,7 +9,7 @@ import { Mail, MapPin, ArrowUpRight } from 'lucide-react'
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-background font-sans">
-      <PublicNavbar currentPage="contact" />
+      <PublicNavbar currentPage="contact" theme="dark" />
 
       {/* Hero — Full-width photo with overlay */}
       <section className="relative pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden">
@@ -19,7 +19,7 @@ export default function ContactPage() {
             alt="" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#391457]/80 via-[#7a3477]/50 to-background"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#391457]/80 to-background"></div>
         </div>
         <div className="container mx-auto px-4 md:px-6 text-center max-w-4xl relative z-10">
           <h1 className="flex flex-col mb-4 md:mb-6 items-center">
@@ -70,7 +70,7 @@ export default function ContactPage() {
                 alt="Intervenants TW3" 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#391457]/90 via-[#391457]/70 to-[#391457]/40"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-[#391457]/80 to-black/60"></div>
               <div className="relative z-10 p-6 md:p-8 flex flex-col h-full justify-end">
                 <h3 className="text-xl font-bold mb-2 font-sans text-white">Soutenir TW3</h3>
                 <p className="text-white/80 text-sm leading-relaxed mb-5">Votre contribution nous permet d'organiser plus d'événements et d'accompagner plus d'élèves <strong className="text-white">gratuitement</strong>. Dons déductibles à 66%.</p>

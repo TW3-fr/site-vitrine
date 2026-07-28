@@ -37,7 +37,7 @@ export default function ProgrammePage() {
 
   return (
     <div className="min-h-screen bg-background font-sans">
-      <PublicNavbar currentPage="programme" />
+      <PublicNavbar currentPage="programme" theme="dark" />
       
       {/* Hero Header with photo background */}
       <section className="relative pt-24 md:pt-28 pb-16 md:pb-24 overflow-hidden">
@@ -47,7 +47,7 @@ export default function ProgrammePage() {
             alt="" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#391457]/80 via-[#7a3477]/60 to-background"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#391457]/80 to-background"></div>
         </div>
         <div className="container mx-auto px-4 md:px-6 text-center max-w-4xl relative z-10">
           <h1 className="flex flex-col mb-6 md:mb-8 items-center">

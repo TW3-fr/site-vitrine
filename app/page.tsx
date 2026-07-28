@@ -91,7 +91,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary/20 selection:text-foreground">
-      <PublicNavbar currentPage="home" />
+      <PublicNavbar currentPage="home" theme="dark" />
 
       {/* ═══════════════════════════════════════════════════════════
           HERO — Full-width immersive with photo background
@@ -603,7 +603,7 @@ export default function HomePage() {
             alt="" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#391457]/90 via-[#7a3477]/80 to-[#391457]/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#391457]/90 to-black/80"></div>
         </div>
 
         <div className="container relative z-10 mx-auto px-4 md:px-6">

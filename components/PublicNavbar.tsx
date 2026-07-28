@@ -2,10 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { ChevronDown } from 'lucide-react'
 
-export function PublicNavbar({ currentPage = 'home' }: { currentPage?: string }) {
+export function PublicNavbar({ currentPage = 'home', theme = 'light' }: { currentPage?: string, theme?: 'light' | 'dark' }) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -44,26 +43,30 @@ export function PublicNavbar({ currentPage = 'home' }: { currentPage?: string })
     { href: '/contact', label: 'Contact', id: 'contact' },
   ]
 
+  const isDark = !isScrolled && theme === 'dark';
+
   return (
     <>
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 border-b ${isScrolled ? 'bg-background/90 backdrop-blur-md border-border shadow-xs py-3' : 'bg-transparent border-transparent py-4 lg:py-6'}`}>
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-2.5 font-semibold text-xl text-foreground hover:opacity-80 transition-opacity" onClick={() => setMobileOpen(false)}>
+          <Link href="/" className="flex items-center gap-2.5 font-semibold text-xl hover:opacity-80 transition-opacity" onClick={() => setMobileOpen(false)}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/logos/logo-2026.png" alt="Institut TW3" className="w-9 h-9 lg:w-10 lg:h-10" />
-            <span className="tracking-tight text-xl lg:text-3xl">
+            <span className={`tracking-tight text-xl lg:text-3xl ${isDark ? 'text-white' : 'text-foreground'}`}>
               <span className="font-sans font-extrabold">Institut </span>
-              <span className="font-serif italic text-primary">TW3</span>
+              <span className={`font-serif italic ${isDark ? 'text-white' : 'text-primary'}`}>TW3</span>
             </span>
           </Link>
           
           {/* Desktop nav */}
-          <div className="hidden lg:flex gap-8 items-center bg-background/50 backdrop-blur-md px-6 py-2 rounded-full border border-border/50 shadow-xs">
+          <div className={`hidden lg:flex gap-8 items-center backdrop-blur-md px-6 py-2 rounded-full border shadow-xs transition-colors ${isDark ? 'bg-white/10 border-white/20' : 'bg-background/50 border-border/50'}`}>
             {navLinks.map((link) => (
               link.subLinks ? (
                 <div key={link.id} className="relative group/navitem py-2">
                   <Link href={link.href} className={`text-sm font-medium transition-colors cursor-pointer flex items-center gap-1 ${
-                    currentPage === link.id ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                    currentPage === link.id 
+                      ? (isDark ? 'text-white font-bold' : 'text-primary') 
+                      : (isDark ? 'text-white/80 hover:text-white' : 'text-muted-foreground hover:text-foreground')
                   }`}>
                     {link.label}
                     <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover/navitem:rotate-180" />
@@ -87,7 +90,9 @@ export function PublicNavbar({ currentPage = 'home' }: { currentPage?: string })
                   key={link.id}
                   href={link.href!}
                   className={`text-sm font-medium transition-colors ${
-                    currentPage === link.id ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                    currentPage === link.id 
+                      ? (isDark ? 'text-white font-bold' : 'text-primary') 
+                      : (isDark ? 'text-white/80 hover:text-white' : 'text-muted-foreground hover:text-foreground')
                   }`}
                 >
                   {link.label}
@@ -99,14 +104,14 @@ export function PublicNavbar({ currentPage = 'home' }: { currentPage?: string })
           
           {/* Mobile hamburger button */}
           <button
-            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-xl text-foreground hover:bg-accent/50 transition-colors relative z-[60]"
+            className={`lg:hidden flex items-center justify-center w-10 h-10 rounded-xl transition-colors relative z-[60] ${isDark ? 'text-white hover:bg-white/10' : 'text-foreground hover:bg-accent/50'}`}
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           >
             <div className="relative w-5 h-5">
-              <span className={`absolute left-0 block w-5 h-0.5 bg-current transition-all duration-300 ease-in-out ${mobileOpen ? 'top-[9px] rotate-45' : 'top-[3px] rotate-0'}`} />
-              <span className={`absolute left-0 top-[9px] block w-5 h-0.5 bg-current transition-all duration-300 ease-in-out ${mobileOpen ? 'opacity-0 translate-x-2' : 'opacity-100'}`} />
-              <span className={`absolute left-0 block w-5 h-0.5 bg-current transition-all duration-300 ease-in-out ${mobileOpen ? 'top-[9px] -rotate-45' : 'top-[15px] rotate-0'}`} />
+              <span className={`absolute left-0 block w-5 h-0.5 transition-all duration-300 ease-in-out ${isDark && !mobileOpen ? 'bg-white' : 'bg-current'} ${mobileOpen ? 'top-[9px] rotate-45 text-foreground' : 'top-[3px] rotate-0'}`} />
+              <span className={`absolute left-0 top-[9px] block w-5 h-0.5 transition-all duration-300 ease-in-out ${isDark && !mobileOpen ? 'bg-white' : 'bg-current'} ${mobileOpen ? 'opacity-0 translate-x-2' : 'opacity-100'}`} />
+              <span className={`absolute left-0 block w-5 h-0.5 transition-all duration-300 ease-in-out ${isDark && !mobileOpen ? 'bg-white' : 'bg-current'} ${mobileOpen ? 'top-[9px] -rotate-45 text-foreground' : 'top-[15px] rotate-0'}`} />
             </div>
           </button>
         </div>
