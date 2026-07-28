@@ -86,93 +86,111 @@ export default function HomePage() {
   const mentorsRef = useRef(null);
   const mentorsInView = useInView(mentorsRef, { once: true, margin: "-10% 0px" });
 
+  const photoGalleryRef = useRef(null);
+  const photoGalleryInView = useInView(photoGalleryRef, { once: true, margin: "-5% 0px" });
+
   return (
     <div className="min-h-screen bg-background font-sans selection:bg-primary/20 selection:text-foreground">
       <PublicNavbar currentPage="home" />
 
       {/* ═══════════════════════════════════════════════════════════
-          HERO SECTION
+          HERO — Full-width immersive with photo background
       ═══════════════════════════════════════════════════════════ */}
-      <section ref={ref} className="relative w-full pt-24 md:pt-28 2xl:pb-8 pb-6 md:pb-6 overflow-hidden">
-        {/* Animated Background Elements */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-          <div className="absolute -top-[10%] -left-[10%] w-[50vw] h-[50vw] bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute top-[20%] -right-[10%] w-[40vw] h-[40vw] bg-accent/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute -bottom-[20%] left-[20%] w-[60vw] h-[60vw] bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }}></div>
+      <section ref={ref} className="relative w-full min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden">
+        {/* Background image — audience in amphitheatre */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/photos/IMG_4791.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay gradient — cinematic feel */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
+          {/* Primary color overlay for brand identity */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#391457]/40 via-transparent to-[#7a3477]/20"></div>
         </div>
 
         <div className="container relative z-10 mx-auto px-4 md:px-6">
-          <div className="flex flex-col max-w-5xl mx-auto gap-6 md:gap-8">
-            <div className="relative flex flex-col text-center items-center gap-4 sm:gap-6">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/50 text-foreground text-sm font-semibold border border-border/50 backdrop-blur-sm">
+          <div className="flex flex-col max-w-4xl mx-auto gap-6 md:gap-8 text-center">
+            <div className="relative flex flex-col items-center gap-4 sm:gap-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white/90 text-sm font-semibold border border-white/20 backdrop-blur-md">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                 </span>
                 Inscriptions Ouvertes 2026
               </div>
-              <h1 className="flex flex-col text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold">
-                <TextGenerateEffect words="Apprendre et enseigner" />
+              <h1 className="flex flex-col text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-white">
+                <TextGenerateEffect words="Apprendre et enseigner" className="text-white" />
                 <TextGenerateEffect
                   words="l'excellence."
                   delay={0.8}
-                  className="font-serif italic font-bold tracking-tight text-primary mt-2"
+                  className="font-serif italic font-bold tracking-tight text-tw3-accent mt-2"
                 />
               </h1>
-              <motion.p {...bottomAnimation} className="max-w-2xl text-base md:text-xl text-muted-foreground mt-2">
-                Une formation <strong>100% gratuite</strong> pour accéder aux filières les plus prestigieuses.
+              <motion.p {...bottomAnimation} className="max-w-2xl text-base md:text-xl text-white/80 mt-2">
+                Une formation <strong className="text-white">100% gratuite</strong> pour accéder aux filières les plus prestigieuses.
               </motion.p>
             </div>
             <motion.div
               {...bottomAnimation}
-              className="flex items-center flex-col md:flex-row justify-center gap-8 mt-4"
+              className="flex items-center flex-col md:flex-row justify-center gap-4 mt-4"
             >
-              <Button asChild size="lg" className="relative rounded-full h-12 md:h-14 px-6 md:px-8 text-sm md:text-base group transition-all duration-500 overflow-hidden pr-14 md:pr-16">
+              <Button asChild size="lg" className="relative rounded-full h-12 md:h-14 px-6 md:px-8 text-sm md:text-base group transition-all duration-500 overflow-hidden pr-14 md:pr-16 bg-white text-[#391457] hover:bg-white/90">
                 <Link href="/programme">
                   <span className="relative z-10 transition-all duration-500">
                     Découvrir nos programmes
                   </span>
-                  <div className="absolute right-1.5 md:right-2 w-9 h-9 md:w-10 md:h-10 bg-background text-foreground rounded-full flex items-center justify-center transition-all duration-500 md:group-hover:right-[calc(100%-44px)] md:group-hover:rotate-45">
+                  <div className="absolute right-1.5 md:right-2 w-9 h-9 md:w-10 md:h-10 bg-[#391457] text-white rounded-full flex items-center justify-center transition-all duration-500 md:group-hover:right-[calc(100%-44px)] md:group-hover:rotate-45">
                     <ArrowUpRight size={18} />
                   </div>
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="rounded-full h-12 md:h-14 px-6 md:px-8 text-sm md:text-base border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
+                <Link href="/rejoindre">
+                  Nous rejoindre
                 </Link>
               </Button>
             </motion.div>
           </div>
         </div>
+
+        {/* Bottom fade to content */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          VISION — HADITH
+          VISION — HADITH — Minimal, editorial
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-6 md:py-10 bg-card/50 border-t border-border">
+      <section className="py-16 md:py-24 bg-background relative">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="flex flex-col justify-center items-center mb-10">
-              <TextGenerateEffect words="L'éducation comme" duration={0.3} />
-              <TextGenerateEffect words="levier d'avenir." delay={0.5} className="font-serif italic font-bold text-primary" />
-            </h2>
-
-            <div className="relative max-w-3xl mx-auto">
-              {/* Decorative quotes */}
-              <div className="absolute -top-8 -left-4 text-primary/15">
-                <Quote className="w-16 h-16 rotate-180" />
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr,1.5fr] gap-8 lg:gap-16 items-center">
+              {/* Left — Heading */}
+              <div>
+                <h2 className="flex flex-col mb-6 lg:mb-0">
+                  <TextGenerateEffect words="L'éducation comme" duration={0.3} />
+                  <TextGenerateEffect words="levier d'avenir." delay={0.5} className="font-serif italic font-bold text-primary" />
+                </h2>
               </div>
-              <div className="absolute -bottom-8 -right-4 text-primary/15">
-                <Quote className="w-16 h-16" />
-              </div>
-
-              <div className="bg-background border border-border/60 rounded-2xl p-5 md:p-8 shadow-sm">
-                <p className="text-xl md:text-3xl leading-relaxed text-foreground mb-4" dir="rtl" lang="ar">
-                  « مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ »
-                </p>
-                <p className="text-lg md:text-xl leading-relaxed text-muted-foreground italic font-bold font-serif">
-                  « Celui qui emprunte un chemin à la recherche d'un savoir, Allah lui facilite par cela un chemin vers le Paradis. »
-                </p>
-                <div className="mt-8 pt-6 border-t border-border/50">
-                  <p className="text-sm font-semibold text-primary tracking-wide uppercase">
-                    Hadith — Sahih Muslim (2699)
+              {/* Right — Quote card */}
+              <div className="relative">
+                <div className="absolute -top-6 -left-3 text-primary/10">
+                  <Quote className="w-14 h-14 rotate-180" />
+                </div>
+                <div className="bg-card border border-border/60 rounded-2xl p-6 md:p-8 shadow-sm relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-primary/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/4"></div>
+                  <p className="text-xl md:text-2xl leading-relaxed text-foreground mb-4" dir="rtl" lang="ar">
+                    « مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ »
                   </p>
+                  <p className="text-base md:text-lg leading-relaxed text-muted-foreground italic font-bold font-serif">
+                    « Celui qui emprunte un chemin à la recherche d'un savoir, Allah lui facilite par cela un chemin vers le Paradis. »
+                  </p>
+                  <div className="mt-6 pt-4 border-t border-border/50">
+                    <p className="text-sm font-semibold text-primary tracking-wide uppercase">
+                      Hadith — Sahih Muslim (2699)
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -181,17 +199,19 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          IMPACT & RÉSULTATS
+          IMPACT — Social proof with stats + logos
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-6 md:py-10 bg-card/50 border-t border-border overflow-hidden flex flex-col gap-6 md:gap-10">
+      <section className="py-12 md:py-20 relative overflow-hidden">
+        {/* Subtle gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-[#f5f3f5] to-background -z-10"></div>
 
         {/* Mentor Origins - Scrolling RTL */}
-        <div className="w-full relative flex flex-col gap-2 md:gap-4">
+        <div className="w-full relative flex flex-col gap-2 md:gap-4 mb-12 md:mb-16">
           <h3 className="text-center font-sans font-bold text-muted-foreground uppercase tracking-widest text-sm px-6">Nos mentors sont passés par</h3>
 
           <div className="relative w-full overflow-hidden flex py-2">
-            <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-card/50 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-card/50 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
             <DraggableScroller speed={0.77} reverse>
               {[...mentorsSchools, ...mentorsSchools].map((school, i) => (
@@ -216,36 +236,34 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Center Stats */}
-        <div className="container mx-auto px-4 md:px-6 text-center max-w-5xl">
-          <h2 className="text-xl md:text-3xl lg:text-4xl font-sans text-foreground leading-relaxed mb-6 md:mb-8">
+        {/* Center Stats — Prominent counter section */}
+        <div ref={impactRef} className="container mx-auto px-4 md:px-6 text-center max-w-5xl mb-12 md:mb-16">
+          <h2 className="text-xl md:text-3xl lg:text-4xl font-sans text-foreground leading-relaxed mb-10 md:mb-14">
             Depuis 2023, l'Institut TW3 accompagne des élèves motivés vers les filières les plus prestigieuses.
           </h2>
 
-          <div className="flex flex-row justify-center items-center gap-8 md:gap-16">
+          <div className="flex flex-row justify-center items-center gap-8 md:gap-20">
             <motion.div
-              ref={impactRef}
               initial={{ y: 20, opacity: 0 }}
               animate={impactInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-5xl md:text-7xl font-bold text-primary leading-none">+100</span>
-              <span className="text-base md:text-xl text-foreground font-semibold mt-2 md:mt-3">élèves accompagnés</span>
+              <span className="text-5xl md:text-8xl font-bold text-primary leading-none tracking-tight">+100</span>
+              <span className="text-base md:text-lg text-foreground font-semibold mt-3 md:mt-4">élèves accompagnés</span>
             </motion.div>
 
-            <div className="hidden md:block w-px h-20 bg-border"></div>
+            <div className="hidden md:block w-px h-24 bg-border"></div>
             <div className="md:hidden w-px h-16 bg-border"></div>
 
             <motion.div
-              ref={impactRef}
               initial={{ y: 20, opacity: 0 }}
               animate={impactInView ? { y: 0, opacity: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-col items-center"
             >
-              <span className="text-5xl md:text-7xl font-bold text-primary leading-none">+70</span>
-              <span className="text-base md:text-xl text-foreground font-semibold mt-2 md:mt-3">mentors engagés</span>
+              <span className="text-5xl md:text-8xl font-bold text-primary leading-none tracking-tight">+70</span>
+              <span className="text-base md:text-lg text-foreground font-semibold mt-3 md:mt-4">mentors engagés</span>
             </motion.div>
           </div>
         </div>
@@ -255,8 +273,8 @@ export default function HomePage() {
           <h3 className="text-center font-sans font-bold text-muted-foreground uppercase tracking-widest text-sm px-6">Nos élèves ont intégré</h3>
 
           <div className="relative w-full overflow-hidden flex py-2">
-            <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-card/50 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-card/50 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
             <DraggableScroller speed={0.77}>
               {[...integrationSchools, ...integrationSchools].map((school, i) => (
@@ -280,90 +298,99 @@ export default function HomePage() {
             </DraggableScroller>
           </div>
         </div>
-
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          ACCÈS À L'EXCELLENCE — Section enrichie & cliquable
+          PROGRAMMES — Editorial bento layout with photo
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-6 md:py-10 bg-background border-t border-border">
+      <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="max-w-6xl mx-auto group">
-            <div className="bg-card border border-border rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:border-primary/40 transition-all duration-500">
-              <div className="p-5 md:p-8">
-                <div className="flex flex-col lg:flex-row gap-8 items-center">
-                  {/* Left column: Title & description */}
-                  <div className="lg:w-1/2 flex flex-col gap-6">
-                    <div className="flex items-center gap-3">
-                      <div className="p-2.5 bg-primary/10 rounded-xl text-primary md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-500">
-                        <GraduationCap className="w-6 h-6" />
-                      </div>
-                      <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Nos programmes</span>
+          <div className="max-w-6xl mx-auto">
+            {/* Section header */}
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-10 md:mb-14">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3 block">Nos programmes</span>
+                <h2 className="text-3xl md:text-5xl text-foreground leading-tight">
+                  Accès à <span className="italic font-bold text-primary font-serif">l'excellence</span>
+                </h2>
+              </div>
+              <Link href="/programme" className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all duration-300 group whitespace-nowrap">
+                Voir tous les programmes <ChevronRight className="w-5 h-5" />
+              </Link>
+            </div>
+
+            {/* Bento grid: Photo left, cards right */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 md:gap-6">
+              {/* Large feature photo — panel discussion */}
+              <div className="lg:col-span-5 relative rounded-2xl md:rounded-3xl overflow-hidden min-h-[300px] md:min-h-[500px] group">
+                <img 
+                  src="/photos/IMG_4834.jpg" 
+                  alt="Panel de conférenciers lors d'un événement TW3" 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <p className="text-white/80 text-sm md:text-base leading-relaxed max-w-md">
+                    L'Institut TW3 propose une formation <strong className="text-white">à distance et en présentiel à Paris, 100% gratuite</strong>, dispensée par des étudiants et diplômés issus des meilleures formations françaises.
+                  </p>
+                  <p className="text-white/60 text-sm mt-3">
+                    Une valeur de <strong className="text-white/80">~7 000 €</strong> de formation offerte à chaque élève.
+                  </p>
+                </div>
+              </div>
+
+              {/* Right column — 3 parcours cards stacked */}
+              <div className="lg:col-span-7 flex flex-col gap-4 md:gap-5">
+                {[
+                  {
+                    title: "Scientifique",
+                    desc: "Préparation aux concours des grandes écoles d'ingénieurs et aux filières scientifiques sélectives : MPSI, PCSI, MP*, ENS, Polytechnique, CentraleSupélec…",
+                    icon: <Calculator className="w-6 h-6" />,
+                    href: "/programme/scientifique",
+                    gradient: "from-[#7a3477]/8 to-transparent"
+                  },
+                  {
+                    title: "Économie & Commerce",
+                    desc: "Préparation aux concours des grandes écoles de commerce et aux filières économiques sélectives : HEC, ESSEC, Prépa ECG…",
+                    icon: <TrendingUp className="w-6 h-6" />,
+                    href: "/programme/commerce",
+                    gradient: "from-[#391457]/8 to-transparent"
+                  },
+                  {
+                    title: "Droit & Sciences politiques",
+                    desc: "Préparation aux licences et masters de Droit sélectifs, Sciences Po Paris et les autres IEP.",
+                    icon: <Scale className="w-6 h-6" />,
+                    href: "/programme/droit-sciences-po",
+                    gradient: "from-[#7a3477]/5 to-transparent"
+                  },
+                ].map((parcours, i) => (
+                  <Link
+                    key={i}
+                    href={parcours.href}
+                    className="flex items-start gap-5 bg-card p-5 md:p-6 rounded-2xl border border-border hover:border-primary/40 transition-all duration-300 group/link relative overflow-hidden"
+                  >
+                    <div className={`absolute inset-0 bg-gradient-to-r ${parcours.gradient} opacity-0 group-hover/link:opacity-100 transition-opacity duration-500`}></div>
+                    <div className="p-3 bg-accent/40 rounded-xl text-primary shrink-0 group-hover/link:bg-primary group-hover/link:text-primary-foreground transition-colors duration-300 relative z-10">
+                      {parcours.icon}
                     </div>
-
-                    <h2 className="text-2xl md:text-4xl text-foreground leading-tight">
-                      Accès à <span className="italic font-bold text-primary font-serif">l'excellence</span>
-                    </h2>
-
-                    <div className="space-y-5 text-muted-foreground leading-relaxed">
-                      <p>
-                        L'Institut TW3 propose une formation <strong className="text-foreground">à distance et en présentiel à Paris, 100% gratuite</strong>, dispensée par des étudiants et diplômés issus des meilleures formations françaises.
-                      </p>
-                      <p>
-                        Nos élèves bénéficient d'un accompagnement pédagogique rigoureux qui représenterait <strong>environ 7 000 € de valeur</strong> s'il était commercialisé dans le secteur privé : cours particuliers, stages intensifs, entraînements aux concours et mentorat individuel inclus.
-                      </p>
-                      <div className="bg-accent/30 p-4 md:p-5 rounded-2xl border border-border/50">
-                        <h4 className="font-bold text-foreground font-sans mb-1.5 flex items-center gap-2">
-                          Pour qui ?
-                        </h4>
-                        <p className="text-sm md:text-base text-muted-foreground">
-                          Nos programmes s'adressent <strong>aux lycéens (de la Seconde à la Terminale)</strong> ainsi qu'aux <strong>étudiants du supérieur</strong> (prépas, universités) désireux d'intégrer les filières les plus sélectives.
-                        </p>
+                    <div className="relative z-10 flex-1">
+                      <div className="flex items-center justify-between">
+                        <h3 className="text-lg font-sans font-bold text-foreground mb-1 group-hover/link:text-primary transition-colors">{parcours.title}</h3>
+                        <ArrowUpRight className="w-5 h-5 text-muted-foreground md:group-hover/link:text-primary md:group-hover/link:rotate-45 transition-all shrink-0" />
                       </div>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{parcours.desc}</p>
                     </div>
-
-                    <Link href="/programme" className="inline-flex items-center gap-2 text-primary font-semibold md:group-hover:gap-4 transition-all duration-300 mt-2 w-fit">
-                      Découvrir tous nos programmes <ChevronRight className="w-5 h-5" />
-                    </Link>
-                  </div>
-
-                  {/* Right column: 3 parcours */}
-                  <div className="lg:w-1/2 flex flex-col gap-5">
-                    {[
-                      {
-                        title: "Scientifique",
-                        desc: "Préparation aux concours des grandes écoles d'ingénieurs et aux filières scientifiques sélectives : MPSI, PCSI, MP*, ENS, Polytechnique, CentraleSupélec, etc.",
-                        icon: <Calculator className="w-6 h-6" />,
-                        href: "/programme/scientifique"
-                      },
-                      {
-                        title: "Économie & Commerce",
-                        desc: "Préparation aux concours des grandes écoles de commerce et aux filières économiques sélectives : HEC, ESSEC, Prépa ECG, etc.",
-                        icon: <TrendingUp className="w-6 h-6" />,
-                        href: "/programme/commerce"
-                      },
-                      {
-                        title: "Droit & Sciences politiques",
-                        desc: "Préparation aux licences et masters de Droit sélectifs, Sciences Po Paris et les autres IEP.",
-                        icon: <Scale className="w-6 h-6" />,
-                        href: "/programme/droit-sciences-po"
-                      },
-                    ].map((parcours, i) => (
-                      <Link
-                        key={i}
-                        href={parcours.href}
-                        className="flex items-start gap-5 bg-background p-6 rounded-2xl border border-border hover:border-primary/40 transition-colors duration-300 group/link block"
-                      >
-                        <div className="p-3 bg-accent/40 rounded-xl text-primary shrink-0 group-hover/link:bg-primary group-hover/link:text-primary-foreground transition-colors duration-300">
-                          {parcours.icon}
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-sans font-bold text-foreground mb-1 group-hover/link:text-primary transition-colors">{parcours.title}</h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed">{parcours.desc}</p>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
+                  </Link>
+                ))}
+                {/* "Pour qui?" callout */}
+                <div className="bg-accent/30 p-5 md:p-6 rounded-2xl border border-border/50">
+                  <h4 className="font-bold text-foreground font-sans mb-1.5 flex items-center gap-2">
+                    <GraduationCap className="w-5 h-5 text-primary" />
+                    Pour qui ?
+                  </h4>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                    Nos programmes s'adressent <strong>aux lycéens (de la Seconde à la Terminale)</strong> ainsi qu'aux <strong>étudiants du supérieur</strong> (prépas, universités) désireux d'intégrer les filières les plus sélectives.
+                  </p>
                 </div>
               </div>
             </div>
@@ -372,62 +399,155 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          CARTES D'ACCUEIL — Réseau, Évènements, International
+          PHOTO GALLERY — Asymmetric masonry grid
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-4 md:py-8 bg-background border-t border-border">
+      <section ref={photoGalleryRef} className="py-12 md:py-20 bg-background overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-6xl mx-auto items-stretch">
-            {/* Réseau intergénérationnel */}
-            <div className="bg-card p-6 md:p-8 rounded-2xl shadow-xs border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col group">
-              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
-                <Users className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Réseau intergénérationnel</h3>
-              <p className="text-muted-foreground leading-relaxed flex-1">
-                Développement d'échanges et création de liens solides entre lycéens, étudiants et professionnels. Un réseau qui vous accompagne bien au-delà de vos études.
-              </p>
-              <Link href="/rejoindre" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
-                Rejoindre TW3 <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
-              </Link>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-10 md:mb-14">
+              <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3 block">Nos événements en images</span>
+              <h2 className="text-3xl md:text-5xl text-foreground">
+                Une communauté <span className="italic font-bold text-primary font-serif">vivante</span>
+              </h2>
             </div>
 
-            {/* Évènements inspirants */}
-            <div className="bg-card p-6 md:p-8 rounded-2xl shadow-xs border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col group">
-              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
-                <CalendarDays className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Évènements inspirants</h3>
-              <p className="text-muted-foreground leading-relaxed flex-1">
-                Fédérer la communauté autour de forums de l'orientation, stages intensifs et conférences thématiques animées par des professionnels d'excellence.
-              </p>
-              <Link href="/evenements" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
-                Voir les événements <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
-              </Link>
-            </div>
+            {/* Masonry-style photo grid */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+              {/* Row 1 */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} 
+                animate={photoGalleryInView ? { opacity: 1, y: 0 } : {}} 
+                transition={{ duration: 0.6, delay: 0 }}
+                className="col-span-2 row-span-2 rounded-2xl md:rounded-3xl overflow-hidden relative group"
+              >
+                <img src="/photos/IMG_4815.jpg" alt="Public applaudissant lors d'un événement TW3" className="w-full h-full object-cover min-h-[250px] md:min-h-[400px] transition-transform duration-700 md:group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} 
+                animate={photoGalleryInView ? { opacity: 1, y: 0 } : {}} 
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="rounded-2xl md:rounded-3xl overflow-hidden group"
+              >
+                <img src="/photos/STG4640.jpg" alt="Intervenant TW3" className="w-full h-full object-cover min-h-[120px] md:min-h-[190px] transition-transform duration-700 md:group-hover:scale-105" />
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} 
+                animate={photoGalleryInView ? { opacity: 1, y: 0 } : {}} 
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="rounded-2xl md:rounded-3xl overflow-hidden group"
+              >
+                <img src="/photos/STG4651.jpg" alt="Session de travail TW3" className="w-full h-full object-cover min-h-[120px] md:min-h-[190px] transition-transform duration-700 md:group-hover:scale-105" />
+              </motion.div>
 
-            {/* Portée internationale */}
-            <div className="bg-card p-6 md:p-8 rounded-2xl shadow-xs border border-border hover:border-primary/50 transition-all duration-300 h-full flex flex-col group">
-              <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-6 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
-                <Globe className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Portée internationale</h3>
-              <p className="text-muted-foreground leading-relaxed flex-1">
-                Une formation accessible à distance et en présentiel à Paris, qui rassemble des élèves et encadrants de France, du Maroc, de Suisse, du Luxembourg et d'ailleurs.
-              </p>
-              <Link href="/contact" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
-                Nous contacter <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
-              </Link>
+              {/* Row 2 */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} 
+                animate={photoGalleryInView ? { opacity: 1, y: 0 } : {}} 
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="rounded-2xl md:rounded-3xl overflow-hidden group"
+              >
+                <img src="/photos/STG4689.jpg" alt="Mentor TW3 en présentation" className="w-full h-full object-cover min-h-[120px] md:min-h-[190px] transition-transform duration-700 md:group-hover:scale-105" />
+              </motion.div>
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }} 
+                animate={photoGalleryInView ? { opacity: 1, y: 0 } : {}} 
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="rounded-2xl md:rounded-3xl overflow-hidden group"
+              >
+                <img src="/photos/STG4706.jpg" alt="Séance d'apprentissage TW3" className="w-full h-full object-cover min-h-[120px] md:min-h-[190px] transition-transform duration-700 md:group-hover:scale-105" />
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          TÉMOIGNAGES — Structure prête (contenu à fournir)
+          PILLARS — Asymmetric cards (NOT identical 3-column grid)
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-6 md:py-10 bg-card/50 border-t border-border overflow-hidden">
+      <section className="py-16 md:py-24 relative overflow-hidden">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#f5f3f5] via-background to-[#fffdd1]/20 -z-10"></div>
+        
         <div className="container mx-auto px-4 md:px-6">
-          <div className="text-center max-w-3xl mx-auto mb-10">
+          <div className="max-w-6xl mx-auto">
+            {/* Top row: one wide + one narrow */}
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-5 md:gap-6 mb-5 md:mb-6">
+              {/* Wide card — Réseau intergénérationnel (with photo) */}
+              <div className="md:col-span-3 bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-sm border border-border hover:border-primary/50 transition-all duration-300 flex flex-col group relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-primary/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/4 -z-[1]"></div>
+                <div className="flex items-start gap-5 mb-4">
+                  <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary shrink-0 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
+                    <Users className="w-6 h-6" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 font-sans">Réseau intergénérationnel</h3>
+                    <p className="text-muted-foreground leading-relaxed">
+                      Développement d'échanges et création de liens solides entre lycéens, étudiants et professionnels. Un réseau qui vous accompagne bien au-delà de vos études.
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-auto pt-4">
+                  <Link href="/rejoindre" className="inline-flex items-center gap-2 text-primary font-semibold md:group-hover:gap-4 transition-all duration-300 w-fit">
+                    Rejoindre TW3 <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Narrow card — Photo spotlight */}
+              <div className="md:col-span-2 rounded-2xl md:rounded-3xl overflow-hidden relative min-h-[250px] group">
+                <img 
+                  src="/photos/STG4653.jpg" 
+                  alt="Élèves TW3 en interaction" 
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#391457]/60 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
+                  <p className="text-white font-serif italic text-lg md:text-xl">"Apprendre, enseigner, exceller."</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom row: two equal cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+              {/* Évènements */}
+              <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-sm border border-border hover:border-primary/50 transition-all duration-300 flex flex-col group">
+                <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-5 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
+                  <CalendarDays className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Évènements inspirants</h3>
+                <p className="text-muted-foreground leading-relaxed flex-1">
+                  Fédérer la communauté autour de forums de l'orientation, stages intensifs et conférences thématiques animées par des professionnels d'excellence.
+                </p>
+                <Link href="/evenements" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
+                  Voir les événements <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
+                </Link>
+              </div>
+
+              {/* Portée internationale */}
+              <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-sm border border-border hover:border-primary/50 transition-all duration-300 flex flex-col group">
+                <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary mb-5 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
+                  <Globe className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-sans">Portée internationale</h3>
+                <p className="text-muted-foreground leading-relaxed flex-1">
+                  Une formation accessible à distance et en présentiel à Paris, qui rassemble des élèves et encadrants de France, du Maroc, de Suisse, du Luxembourg et d'ailleurs.
+                </p>
+                <Link href="/contact" className="inline-flex items-center gap-2 text-primary font-semibold mt-6 md:group-hover:gap-4 transition-all duration-300 w-fit">
+                  Nous contacter <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════════════════════
+          TÉMOIGNAGES — Floating cards
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="py-16 md:py-24 bg-background overflow-hidden">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
             <h2 className="flex flex-col justify-center items-center">
               <TextGenerateEffect words="Ils témoignent" duration={0.3} />
               <TextGenerateEffect words="de leurs parcours." delay={0.5} className="font-serif italic font-bold text-primary" />
@@ -439,8 +559,8 @@ export default function HomePage() {
 
           {/* Testimonials Marquee */}
           <div className="relative w-full overflow-hidden flex flex-col pt-4 pb-4">
-            <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-card/50 to-transparent z-10 pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-card/50 to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none"></div>
 
             <DraggableScroller speed={0.96} reverse className="py-6">
               {[...testimonials, ...testimonials].map((testimonial, i) => (
@@ -448,7 +568,7 @@ export default function HomePage() {
                   key={i}
                   animate={{ y: [0, -8, 0] }}
                   transition={{ repeat: Infinity, duration: 4 + (i % 3), ease: "easeInOut", delay: i * 0.2 }}
-                  className="w-[300px] md:w-[400px] bg-background border border-border rounded-2xl p-6 flex flex-col gap-5 shadow-xs hover:border-primary/40 transition-colors shrink-0 pointer-events-none"
+                  className="w-[300px] md:w-[400px] bg-card border border-border rounded-2xl p-6 flex flex-col gap-5 shadow-sm hover:border-primary/40 transition-colors shrink-0 pointer-events-none"
                 >
                   <div className="flex-1 whitespace-normal">
                     <Quote className="w-8 h-8 text-primary/20 mb-4 rotate-180" />
@@ -473,58 +593,77 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
-          CTA — Soutien & Newsletter
+          CTA — Full-width immersive with photo background
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-4 md:py-6 bg-background relative overflow-hidden border-t border-border">
-        <div className="container mx-auto px-4 md:px-6 relative z-10">
-          <div className="max-w-5xl mx-auto flex flex-col gap-5 md:flex-row md:gap-6 items-stretch">
+      <section className="relative py-20 md:py-32 overflow-hidden">
+        {/* Background photo — audience clapping */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="/photos/IMG_4775.jpg" 
+            alt="" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#391457]/90 via-[#7a3477]/80 to-[#391457]/90"></div>
+        </div>
 
-            {/* Donate */}
-            <div className="flex-1 bg-card border border-border rounded-2xl md:rounded-3xl p-5 md:p-8 flex flex-col items-center text-center justify-center shadow-sm">
-              <h2 className="text-2xl md:text-4xl font-semibold mb-3 md:mb-4 text-foreground tracking-tight">Soutenez l'excellence.</h2>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Nos programmes sont <strong>100% gratuits</strong> pour les étudiants. Votre générosité nous permet de maintenir et développer nos actions.
-                <br />
-                <span className="text-sm italic font-bold mt-2 inline-block opacity-90">Vos dons sont déductibles des impôts à hauteur de 66%.</span>
-              </p>
-              <Button asChild size="lg" className="rounded-full h-12 md:h-14 px-6 md:px-8 text-sm md:text-base font-medium group">
+        <div className="container relative z-10 mx-auto px-4 md:px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 leading-tight">
+              Soutenez <span className="font-serif italic text-tw3-accent">l'excellence.</span>
+            </h2>
+            <p className="text-white/80 leading-relaxed mb-3 text-base md:text-xl max-w-2xl mx-auto">
+              Nos programmes sont <strong className="text-white">100% gratuits</strong> pour les étudiants. Votre générosité nous permet de maintenir et développer nos actions.
+            </p>
+            <p className="text-white/60 text-sm italic font-bold mb-10">
+              Vos dons sont déductibles des impôts à hauteur de 66%.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button asChild size="lg" className="rounded-full h-12 md:h-14 px-8 md:px-10 text-sm md:text-base font-medium group bg-white text-[#391457] hover:bg-white/90">
                 <a href="https://www.helloasso.com/associations/ta3alamawa3alama/formulaires/1/" target="_blank" rel="noopener noreferrer">
                   Faire un don
                   <ArrowUpRight className="ml-2 w-5 h-5 md:group-hover:rotate-45 transition-transform" />
                 </a>
               </Button>
+              <Button asChild size="lg" variant="outline" className="rounded-full h-12 md:h-14 px-8 md:px-10 text-sm md:text-base border-white/30 text-white hover:bg-white/10">
+                <Link href="/contact">
+                  Nous contacter
+                </Link>
+              </Button>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Newsletter */}
-            <div className="flex-1 bg-accent/20 border border-border rounded-2xl md:rounded-3xl p-5 md:p-8 flex flex-col justify-center shadow-sm relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -z-10"></div>
+      {/* ═══════════════════════════════════════════════════════════
+          NEWSLETTER — Clean, focused section
+      ═══════════════════════════════════════════════════════════ */}
+      <section className="py-12 md:py-16 bg-background border-t border-border">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-3 md:mb-4 text-foreground tracking-tight">Restez informé</h2>
+            <p className="text-muted-foreground leading-relaxed mb-8 text-sm md:text-base">
+              Recevez nos actualités, l'ouverture des inscriptions et nos événements inspirants.
+            </p>
 
-              <h2 className="text-2xl md:text-4xl font-semibold mb-3 md:mb-4 text-foreground tracking-tight">Newsletter</h2>
-              <p className="text-muted-foreground leading-relaxed mb-6 text-sm md:text-base">
-                Restez informé(e) de nos actualités, de l'ouverture des inscriptions et de nos événements inspirants.
-              </p>
-
-              <form
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  const email = (e.currentTarget.elements.namedItem('email') as HTMLInputElement).value;
-                  window.location.href = `mailto:mail@tw3.fr?subject=Inscription%20Newsletter&body=Bonjour,%20merci%20de%20m'inscrire%20à%20la%20newsletter%20avec%20l'adresse%20:%20${email}`;
-                }}
-                className="flex flex-col sm:flex-row gap-3 mt-auto"
-              >
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="votre@email.com"
-                  className="flex h-12 w-full sm:flex-1 rounded-xl border border-input bg-background px-4 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 shadow-sm"
-                  required
-                />
-                <Button type="submit" className="h-12 rounded-xl px-6 font-medium shadow-sm">
-                  S'inscrire
-                </Button>
-              </form>
-            </div>
-
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const email = (e.currentTarget.elements.namedItem('email') as HTMLInputElement).value;
+                window.location.href = `mailto:mail@tw3.fr?subject=Inscription%20Newsletter&body=Bonjour,%20merci%20de%20m'inscrire%20à%20la%20newsletter%20avec%20l'adresse%20:%20${email}`;
+              }}
+              className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto"
+            >
+              <input
+                type="email"
+                name="email"
+                placeholder="votre@email.com"
+                className="flex h-12 w-full sm:flex-1 rounded-xl border border-input bg-card px-4 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 shadow-sm"
+                required
+              />
+              <Button type="submit" className="h-12 rounded-xl px-6 font-medium shadow-sm">
+                S'inscrire
+              </Button>
+            </form>
           </div>
         </div>
       </section>
