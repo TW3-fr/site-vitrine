@@ -422,25 +422,6 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
               </FadeUp>
             )}
 
-            <FadeUp delay={0.6}>
-            <Card className="border-border shadow-sm bg-card/50 hover:shadow-md hover:border-primary/30 transition-all duration-300 group">
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans group-hover:text-primary transition-colors duration-300">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"><BookOpen className="w-6 h-6" /></div>
-                  Matières enseignées
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-3">
-                  {content.matieres.map((m) => (
-                    <span key={m} className="bg-background border border-border text-foreground font-medium px-4 py-2 rounded-xl shadow-sm hover:border-primary/50 hover:text-primary hover:bg-primary/5 transition-colors duration-300 cursor-default">
-                      {m}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-            </FadeUp>
           </div>
         </div>
       </section>
