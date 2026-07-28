@@ -230,8 +230,16 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
     <div className="min-h-screen bg-background font-sans">
       <PublicNavbar currentPage="programme" />
 
-      <header className="pt-28 md:pt-32 pb-6 md:pb-8 border-b border-border bg-card/30 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background -z-10"></div>
+      <header className="pt-28 md:pt-36 pb-12 md:pb-16 border-b border-border relative overflow-hidden">
+        {content.image ? (
+          <>
+            <img src={content.image} alt="" className="absolute inset-0 w-full h-full object-cover -z-20" />
+            <div className="absolute inset-0 bg-background/80 backdrop-blur-[4px] -z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent -z-10"></div>
+          </>
+        ) : (
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background -z-10"></div>
+        )}
         <div className="container mx-auto px-4 md:px-6 max-w-4xl relative z-10 text-center">
           <Link href="/programme" className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-primary mb-6 md:mb-8 transition-colors group">
             <ArrowLeft className="w-4 h-4 md:group-hover:-translate-x-1 transition-transform" />
@@ -257,21 +265,12 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
         <div className="absolute top-1/4 -right-64 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
         <div className="container mx-auto max-w-5xl">
 
-          {/* Top Full-Width Blocks: Image and Schools */}
+          {/* Top Full-Width Blocks: Schools */}
           <div className="flex flex-col gap-5 md:gap-8 mb-5 md:mb-8">
-            {content.image && (
-              <FadeUp delay={0.1}>
-                <div className="rounded-2xl md:rounded-3xl overflow-hidden h-48 md:h-72 w-full relative shadow-sm border border-border group">
-                  <img src={content.image} alt={`Filière ${label}`} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
-                </div>
-              </FadeUp>
-            )}
 
             {content.integrationSchools && (
               <FadeUp delay={0.15}>
                 <div className="bg-card/50 border border-border rounded-2xl md:rounded-3xl p-5 md:p-6 shadow-sm overflow-hidden flex flex-col justify-center">
-                  <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-sans text-center">Nos élèves intègrent</h3>
                   <InfiniteScroller schools={content.integrationSchools} />
                 </div>
               </FadeUp>

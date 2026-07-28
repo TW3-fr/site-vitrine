@@ -24,15 +24,18 @@ export function CustomCursor() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed top-0 left-0 w-[400px] h-[400px] bg-primary/15 rounded-full blur-[100px] z-0"
+      className="pointer-events-none fixed top-0 left-0 w-[600px] h-[600px] rounded-full z-0"
+      style={{
+        background: 'radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, rgba(147, 51, 234, 0) 50%)',
+      }}
       animate={{
-        x: mousePosition.x - 200,
-        y: mousePosition.y - 200,
+        x: mousePosition.x - 300,
+        y: mousePosition.y - 300,
       }}
       transition={{
         type: "tween",
         ease: "backOut",
-        duration: 0.5
+        duration: 0.1
       }}
     />
   )
