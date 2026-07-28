@@ -63,7 +63,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className={`${instrumentSerif.variable} ${interTight.variable} overflow-x-hidden w-full`}>
+    <html lang="fr" className={`${instrumentSerif.variable} ${interTight.variable} overflow-x-hidden`}>
       <head>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-3E72FV0C3R"
@@ -78,7 +78,7 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="font-sans antialiased relative overflow-x-hidden w-full">
+      <body className="font-sans antialiased relative overflow-x-hidden">
         {children}
       </body>
     </html>
