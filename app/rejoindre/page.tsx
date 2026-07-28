@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer'
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 import { Button } from '@/components/ui/button'
 import { CheckCircle2, ArrowUpRight, Users2, GraduationCap } from 'lucide-react'
+import { FadeUp } from '@/components/ui/fade-up'
 
 export default function RejoindrePage() {
   return (
@@ -42,7 +43,8 @@ export default function RejoindrePage() {
         <div className="container mx-auto max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8 items-stretch">
 
           {/* Section Bénévole */}
-          <div className="bg-card rounded-2xl md:rounded-3xl p-5 md:p-8 border border-border shadow-sm flex flex-col hover:border-primary/50 transition-all duration-300 relative overflow-hidden">
+          <FadeUp delay={0.1} className="h-full">
+          <div className="bg-card rounded-2xl md:rounded-3xl p-5 md:p-8 border border-border shadow-sm flex flex-col hover:border-primary/50 transition-all duration-300 relative overflow-hidden h-full">
             <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-primary/5 to-transparent rounded-full -z-10 translate-x-1/2 -translate-y-1/2"></div>
 
             <div className="flex flex-col mb-4 md:mb-6 gap-4">
@@ -87,7 +89,13 @@ export default function RejoindrePage() {
               </ul>
             </div>
             
-            <div className="mt-6 pt-4 border-t border-border/50">
+            {/* Photo accent strip */}
+            <div className="mt-5 rounded-xl overflow-hidden h-32 md:h-40 relative">
+              <img src="/photos/STG4640.jpg" alt="Intervenants TW3" className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent"></div>
+            </div>
+
+            <div className="mt-4 pt-4 border-t border-border/50">
               <Button asChild size="default" className="rounded-xl px-6 py-5 text-sm group w-full">
                 <a href="https://tw3projet.fillout.com/benevoles" target="_blank" rel="noopener noreferrer">
                   Je m'engage
@@ -96,9 +104,11 @@ export default function RejoindrePage() {
               </Button>
             </div>
           </div>
+          </FadeUp>
 
           {/* Section Élève */}
-          <div className="bg-card rounded-2xl md:rounded-3xl p-5 md:p-8 border border-border shadow-sm flex flex-col hover:border-primary/50 transition-all duration-300 relative overflow-hidden">
+          <FadeUp delay={0.2} className="h-full">
+          <div className="bg-card rounded-2xl md:rounded-3xl p-5 md:p-8 border border-border shadow-sm flex flex-col hover:border-primary/50 transition-all duration-300 relative overflow-hidden h-full">
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-gradient-to-tr from-accent/20 to-transparent rounded-full -z-10 -translate-x-1/2 translate-y-1/2"></div>
 
             <div className="flex flex-col mb-4 md:mb-6 gap-4">
@@ -156,6 +166,7 @@ export default function RejoindrePage() {
               </Button>
             </div>
           </div>
+          </FadeUp>
 
         </div>
       </section>

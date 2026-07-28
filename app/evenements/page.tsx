@@ -4,6 +4,7 @@ import { PublicNavbar } from '@/components/PublicNavbar'
 import { EvenementsPublic } from '@/components/EvenementsPublic'
 import { Footer } from '@/components/Footer'
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
+import { FadeUp } from '@/components/ui/fade-up'
 
 export default function EvenementsPage() {
   return (
@@ -35,7 +36,9 @@ export default function EvenementsPage() {
       </section>
 
       <main className="container mx-auto py-8 md:py-16 px-4 md:px-6 max-w-5xl">
-        <EvenementsPublic />
+        <FadeUp delay={0.1}>
+          <EvenementsPublic />
+        </FadeUp>
       </main>
       
       <Footer />

@@ -4,6 +4,7 @@ import { PublicNavbar } from '@/components/PublicNavbar'
 import { Footer } from '@/components/Footer'
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion'
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
+import { FadeUp } from '@/components/ui/fade-up'
 import { MessageCircleQuestion } from 'lucide-react'
 
 const faqs = [
@@ -52,7 +53,7 @@ export default function FAQPage() {
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl -z-10 -translate-x-1/2 translate-y-1/2"></div>
         
         <div className="container mx-auto">
-          <div className="max-w-4xl mx-auto w-full">
+          <FadeUp delay={0.1} className="max-w-4xl mx-auto w-full">
             <div className="flex items-center gap-4 mb-8 md:mb-12">
               <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary flex-shrink-0">
                 <MessageCircleQuestion className="w-6 h-6" />
@@ -76,7 +77,7 @@ export default function FAQPage() {
                 </AccordionItem>
               ))}
             </Accordion>
-          </div>
+          </FadeUp>
         </div>
       </section>
 

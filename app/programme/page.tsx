@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { PublicNavbar } from '@/components/PublicNavbar'
 import { Footer } from '@/components/Footer'
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
+import { FadeUp } from '@/components/ui/fade-up'
 import { Card, CardHeader, CardTitle, CardContent, CardFooter, CardDescription } from '@/components/ui/card'
 import { ArrowUpRight, Calculator, TrendingUp, Scale } from 'lucide-react'
 
@@ -71,7 +72,8 @@ export default function ProgrammePage() {
         <div className="container mx-auto max-w-6xl flex flex-col gap-6 md:gap-8">
           
           {parcours.map((p, i) => (
-            <Link key={i} href={p.href} className="group block">
+            <FadeUp key={i} delay={0.1 * (i + 1)}>
+            <Link href={p.href} className="group block">
               <div className={`grid grid-cols-1 md:grid-cols-5 bg-card border border-border rounded-2xl md:rounded-3xl overflow-hidden hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-md ${i % 2 === 1 ? 'md:grid-flow-dense' : ''}`}>
                 {/* Photo side */}
                 <div className={`md:col-span-2 relative min-h-[200px] md:min-h-[280px] overflow-hidden ${i % 2 === 1 ? 'md:col-start-4' : ''}`}>
@@ -95,6 +97,7 @@ export default function ProgrammePage() {
                 </div>
               </div>
             </Link>
+            </FadeUp>
           ))}
 
         </div>

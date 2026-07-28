@@ -4,6 +4,7 @@ import { PublicNavbar } from '@/components/PublicNavbar'
 import { Footer } from '@/components/Footer'
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
 import { Button } from '@/components/ui/button'
+import { FadeUp } from '@/components/ui/fade-up'
 import { Mail, MapPin, ArrowUpRight } from 'lucide-react'
 
 export default function ContactPage() {
@@ -36,7 +37,7 @@ export default function ContactPage() {
         <div className="container mx-auto max-w-5xl grid md:grid-cols-5 gap-8 md:gap-10">
 
           {/* Left column — Info cards */}
-          <div className="md:col-span-2 space-y-6">
+          <FadeUp delay={0.1} className="md:col-span-2 space-y-6">
             <div>
               <h2 className="text-2xl font-bold text-foreground mb-6 font-sans">Coordonnées</h2>
               <div className="space-y-6">
@@ -74,17 +75,17 @@ export default function ContactPage() {
               <div className="relative z-10 p-6 md:p-8 flex flex-col h-full justify-end">
                 <h3 className="text-xl font-bold mb-2 font-sans text-white">Soutenir TW3</h3>
                 <p className="text-white/80 text-sm leading-relaxed mb-5">Votre contribution nous permet d'organiser plus d'événements et d'accompagner plus d'élèves <strong className="text-white">gratuitement</strong>. Dons déductibles à 66%.</p>
-                <Button asChild className="group/btn bg-white text-[#391457] hover:bg-white/90 w-fit">
+                <Button asChild className="group/btn bg-white text-primary hover:bg-white/90 hover:text-primary transition-colors w-fit">
                   <a href="https://www.helloasso.com/associations/ta3alamawa3alama/formulaires/1/" target="_blank" rel="noopener noreferrer">
                     Faire un don <ArrowUpRight className="ml-2 w-4 h-4 group-hover/btn:rotate-45 transition-transform" />
                   </a>
                 </Button>
               </div>
             </div>
-          </div>
+          </FadeUp>
 
           {/* Right column — Form */}
-          <div className="md:col-span-3 bg-card rounded-2xl md:rounded-3xl p-5 md:p-8 border border-border shadow-sm">
+          <FadeUp delay={0.2} className="md:col-span-3 bg-card rounded-2xl md:rounded-3xl p-5 md:p-8 border border-border shadow-sm h-full">
             <h2 className="text-xl md:text-2xl font-bold text-foreground mb-6 md:mb-8 font-sans">Envoyez-nous un message</h2>
             <form className="space-y-5 md:space-y-6" onSubmit={(e) => {
               e.preventDefault();
@@ -137,7 +138,7 @@ export default function ContactPage() {
                 Envoyer
               </Button>
             </form>
-          </div>
+          </FadeUp>
 
         </div>
       </section>
