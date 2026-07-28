@@ -418,40 +418,36 @@ export default function HomePage() {
         
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
-            {/* Top row: one wide + one narrow */}
+            {/* Top row: Full width card */}
             <FadeUp delay={0.1}>
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-5 md:gap-6 mb-5 md:mb-6">
-              {/* Wide card — Réseau intergénérationnel (with photo) */}
-              <div className="md:col-span-3 bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-sm border border-border hover:border-primary/50 transition-all duration-300 flex flex-col group relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-primary/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/4 -z-[1]"></div>
-                <div className="flex items-start gap-5 mb-4 relative z-10">
-                  <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary shrink-0 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
-                    <Users className="w-6 h-6" />
+            <div className="mb-5 md:mb-6">
+              {/* Wide card — Réseau intergénérationnel (with photo background) */}
+              <div className="bg-card p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-sm border border-border hover:border-primary/50 transition-all duration-300 flex flex-col group relative overflow-hidden min-h-[250px]">
+                <img src="/photos/STG4653.jpg" alt="Réseau intergénérationnel TW3" className="absolute inset-0 w-full h-full object-cover opacity-10 md:group-hover:opacity-20 transition-opacity duration-500" />
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 relative z-10 h-full">
+                  <div className="flex flex-col h-full">
+                    <div className="flex items-start gap-5 mb-4">
+                      <div className="w-12 h-12 bg-accent/30 rounded-xl flex items-center justify-center text-primary shrink-0 md:group-hover:bg-primary md:group-hover:text-primary-foreground transition-colors duration-300">
+                        <Users className="w-6 h-6" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 font-sans">Réseau intergénérationnel</h3>
+                        <p className="text-muted-foreground leading-relaxed max-w-2xl">
+                          Développement d'échanges et création de liens solides entre lycéens, étudiants et professionnels. Un réseau qui vous accompagne bien au-delà de vos études.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="mt-auto pt-4">
+                      <Link href="/rejoindre" className="inline-flex items-center gap-2 text-primary font-semibold md:group-hover:gap-4 transition-all duration-300 w-fit">
+                        Rejoindre TW3 <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
+                      </Link>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2 font-sans">Réseau intergénérationnel</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      Développement d'échanges et création de liens solides entre lycéens, étudiants et professionnels. Un réseau qui vous accompagne bien au-delà de vos études.
-                    </p>
+                  
+                  {/* The quote from the old photo card, placed elegantly on the right */}
+                  <div className="hidden md:flex items-end justify-end p-4 border-l border-primary/10 pl-6">
+                    <p className="text-foreground/60 font-serif italic text-lg lg:text-xl">"Apprendre, enseigner, exceller."</p>
                   </div>
-                </div>
-                <div className="mt-auto pt-4 relative z-10">
-                  <Link href="/rejoindre" className="inline-flex items-center gap-2 text-primary font-semibold md:group-hover:gap-4 transition-all duration-300 w-fit">
-                    Rejoindre TW3 <ArrowUpRight className="w-5 h-5 md:group-hover:rotate-45 transition-transform" />
-                  </Link>
-                </div>
-              </div>
-
-              {/* Narrow card — Photo spotlight */}
-              <div className="md:col-span-2 rounded-2xl md:rounded-3xl overflow-hidden relative min-h-[250px] group">
-                <img 
-                  src="/photos/STG4653.jpg" 
-                  alt="Élèves TW3 en interaction" 
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#391457]/60 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-5 md:p-6">
-                  <p className="text-white font-serif italic text-lg md:text-xl">"Apprendre, enseigner, exceller."</p>
                 </div>
               </div>
             </div>
