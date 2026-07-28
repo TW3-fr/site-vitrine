@@ -4,6 +4,7 @@ import { FILIERE_LABELS } from '@/lib/constants'
 import { PublicNavbar } from '@/components/PublicNavbar'
 import { Footer } from '@/components/Footer'
 import { TextGenerateEffect } from '@/components/ui/text-generate-effect'
+import { FadeUp } from '@/components/ui/fade-up'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { InfiniteScroller } from '@/components/InfiniteScroller'
@@ -247,11 +248,14 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
         </div>
       </header>
 
-      <section className="py-4 md:py-8 px-4 md:px-12 bg-background">
+      <section className="py-4 md:py-8 px-4 md:px-12 bg-background relative">
+        {/* Subtle decorative background */}
+        <div className="absolute top-1/4 -right-64 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
         <div className="container mx-auto max-w-5xl flex flex-col md:grid md:grid-cols-3 gap-5 md:gap-12">
 
           {/* Candidature sidebar - shows FIRST on mobile */}
           <div className="order-first md:order-last md:col-span-1">
+            <FadeUp delay={0.1}>
             <div className="md:sticky md:top-32 bg-card rounded-2xl md:rounded-3xl p-6 md:p-8 border border-border shadow-md">
               <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 md:mb-6 font-sans">Candidature</h3>
 
@@ -291,16 +295,23 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                 </Button>
               )}
             </div>
+            </FadeUp>
           </div>
 
           {/* Content cards */}
-          <div className="md:col-span-2 space-y-4 md:space-y-8">
+          <div className="md:col-span-2 space-y-5 md:space-y-8">
 
             {content.integrationSchools && (
-              <InfiniteScroller schools={content.integrationSchools} />
+              <FadeUp delay={0.2}>
+                <div className="mb-2">
+                  <h3 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-sans ml-2">Ils intègrent les meilleures écoles</h3>
+                  <InfiniteScroller schools={content.integrationSchools} />
+                </div>
+              </FadeUp>
             )}
 
             {content.epreuve && (
+              <FadeUp delay={0.25}>
               <Card className="border-blue-500/30 shadow-xs bg-blue-500/5 relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-4 opacity-5">
                   <BookOpen className="w-32 h-32 text-blue-600" />
@@ -337,12 +348,35 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                   </Button>
                 </CardContent>
               </Card>
+              </FadeUp>
             )}
 
-            <Card className="border-border shadow-xs bg-card/50">
+            {content.esprit && (
+              <FadeUp delay={0.3}>
+              <Card className="border-border shadow-sm bg-card/50 hover:shadow-md hover:border-primary/30 transition-all duration-300">
+                <CardHeader>
+                  <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans">
+                    <div className="p-2 bg-primary/10 rounded-lg text-primary"><Heart className="w-6 h-6" /></div>
+                    L'esprit de la filière
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="relative">
+                    <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary/60 to-primary/10 rounded-full"></div>
+                    <p className="text-foreground/90 leading-relaxed text-lg md:text-xl italic pl-6 py-2 font-serif">
+                      "{content.esprit}"
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+              </FadeUp>
+            )}
+
+            <FadeUp delay={0.4}>
+            <Card className="border-border shadow-sm bg-card/50 hover:shadow-md hover:border-primary/30 transition-all duration-300 group">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary"><Target className="w-6 h-6" /></div>
+                <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans group-hover:text-primary transition-colors duration-300">
+                  <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"><Target className="w-6 h-6" /></div>
                   Objectifs pédagogiques
                 </CardTitle>
               </CardHeader>
@@ -357,12 +391,14 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                 </ul>
               </CardContent>
             </Card>
+            </FadeUp>
 
             {content.ressourceGroups && (
-              <Card className="border-border shadow-xs bg-card/50">
+              <FadeUp delay={0.5}>
+              <Card className="border-border shadow-sm bg-card/50 hover:shadow-md hover:border-primary/30 transition-all duration-300 group">
                 <CardHeader>
-                  <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans">
-                    <div className="p-2 bg-primary/10 rounded-lg text-primary"><LinkIcon className="w-6 h-6" /></div>
+                  <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans group-hover:text-primary transition-colors duration-300">
+                    <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"><LinkIcon className="w-6 h-6" /></div>
                     Ressources de préparation
                   </CardTitle>
                 </CardHeader>
@@ -383,25 +419,28 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
                   </div>
                 </CardContent>
               </Card>
+              </FadeUp>
             )}
 
-            <Card className="border-border shadow-xs bg-card/50">
+            <FadeUp delay={0.6}>
+            <Card className="border-border shadow-sm bg-card/50 hover:shadow-md hover:border-primary/30 transition-all duration-300 group">
               <CardHeader>
-                <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary"><BookOpen className="w-6 h-6" /></div>
+                <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans group-hover:text-primary transition-colors duration-300">
+                  <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"><BookOpen className="w-6 h-6" /></div>
                   Matières enseignées
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-3">
                   {content.matieres.map((m) => (
-                    <span key={m} className="bg-background border border-border text-foreground font-medium px-4 py-2 rounded-xl shadow-xs">
+                    <span key={m} className="bg-background border border-border text-foreground font-medium px-4 py-2 rounded-xl shadow-sm hover:border-primary/50 hover:text-primary hover:bg-primary/5 transition-colors duration-300 cursor-default">
                       {m}
                     </span>
                   ))}
                 </div>
               </CardContent>
             </Card>
+            </FadeUp>
           </div>
         </div>
       </section>
