@@ -230,32 +230,32 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
     <div className="min-h-screen bg-background font-sans">
       <PublicNavbar currentPage="programme" />
 
-      <header className="pt-28 md:pt-36 pb-12 md:pb-16 border-b border-border relative overflow-hidden">
+      <header className={`pt-28 md:pt-36 pb-12 md:pb-16 border-b border-border relative overflow-hidden ${content.image ? 'text-white' : ''}`}>
         {content.image ? (
           <>
             <img src={content.image} alt="" className="absolute inset-0 w-full h-full object-cover -z-20" />
-            <div className="absolute inset-0 bg-background/80 backdrop-blur-[4px] -z-10"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent -z-10"></div>
+            <div className="absolute inset-0 bg-black/60 -z-10"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent -z-10 h-16 bottom-0 top-auto"></div>
           </>
         ) : (
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background -z-10"></div>
         )}
         <div className="container mx-auto px-4 md:px-6 max-w-4xl relative z-10 text-center">
-          <Link href="/programme" className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground hover:text-primary mb-6 md:mb-8 transition-colors group">
+          <Link href="/programme" className={`inline-flex items-center gap-2 text-sm font-semibold mb-6 md:mb-8 transition-colors group ${content.image ? 'text-white/80 hover:text-white' : 'text-muted-foreground hover:text-primary'}`}>
             <ArrowLeft className="w-4 h-4 md:group-hover:-translate-x-1 transition-transform" />
             Retour aux programmes
           </Link>
           <div className="flex flex-col items-center gap-3 md:gap-4">
             <div className="flex flex-wrap justify-center items-center gap-3">
-              <span className="inline-flex items-center gap-2 px-3 py-1 bg-accent/50 text-foreground text-xs font-bold uppercase tracking-wider rounded-full border border-border/50">
+              <span className={`inline-flex items-center gap-2 px-3 py-1 text-xs font-bold uppercase tracking-wider rounded-full border ${content.image ? 'bg-white/20 text-white border-white/30 backdrop-blur-md' : 'bg-accent/50 text-foreground border-border/50'}`}>
                 Cursus d&apos;excellence
               </span>
             </div>
             <h1 className="flex flex-col">
-              <TextGenerateEffect words="Filière" duration={0.2} />
-              <TextGenerateEffect words={label} delay={0.4} className="font-serif italic font-bold text-primary" />
+              <TextGenerateEffect words="Filière" duration={0.2} className={content.image ? 'text-white' : ''} />
+              <TextGenerateEffect words={label} delay={0.4} className={`font-serif italic font-bold ${content.image ? 'text-white' : 'text-primary'}`} />
             </h1>
-            <p className="mt-2 md:mt-4 text-base md:text-xl text-muted-foreground max-w-2xl leading-relaxed"><strong>100% gratuit</strong> – Formation d&apos;excellence</p>
+            <p className={`mt-2 md:mt-4 text-base md:text-xl max-w-2xl leading-relaxed ${content.image ? 'text-white/90' : 'text-muted-foreground'}`}><strong>100% gratuit</strong> – Formation d&apos;excellence</p>
           </div>
         </div>
       </header>

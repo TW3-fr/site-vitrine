@@ -24,7 +24,7 @@ export function CustomCursor() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed top-0 left-0 w-[600px] h-[600px] rounded-full z-0"
+      className="pointer-events-none fixed top-0 left-0 w-[600px] h-[600px] rounded-full z-[100]"
       style={{
         background: 'radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, rgba(147, 51, 234, 0) 50%)',
       }}
