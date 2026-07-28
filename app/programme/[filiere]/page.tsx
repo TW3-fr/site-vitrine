@@ -17,6 +17,7 @@ interface RessourceGroup {
 }
 
 const FILIERE_CONTENT: Record<string, {
+  image?: string;
   objectives: (string | React.ReactNode)[];
   matieres: string[];
   esprit: string;
@@ -28,6 +29,7 @@ const FILIERE_CONTENT: Record<string, {
   integrationSchools?: { name: string; url: string; logo: string; className?: string }[]
 }> = {
   scientifique: {
+    image: '/photos/STG4651.jpg',
     objectives: [
       'Accompagnement de la Seconde à la Spé',
       'Intégrer les grandes écoles d\'ingénieurs (Polytechnique, Centrale, Mines)',
@@ -107,6 +109,7 @@ const FILIERE_CONTENT: Record<string, {
     ]
   },
   commerce: {
+    image: '/photos/STG4689.jpg',
     objectives: [
       'Accompagnement de la Seconde à la Spé',
       'Intégrer HEC, ESSEC, ESCP et les grandes écoles de commerce',
@@ -169,6 +172,7 @@ const FILIERE_CONTENT: Record<string, {
     ]
   },
   'droit-sciences-po': {
+    image: '/photos/STG4706.jpg',
     objectives: [
       'Accompagnement de la 2nd à la L3',
       'Intégrer Sciences Po Paris et les IEP',
@@ -301,10 +305,18 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
           {/* Content cards */}
           <div className="md:col-span-2 space-y-5 md:space-y-8">
 
+            {content.image && (
+              <FadeUp delay={0.15}>
+                <div className="rounded-2xl md:rounded-3xl overflow-hidden h-48 md:h-64 relative shadow-sm border border-border group">
+                  <img src={content.image} alt={`Filière ${label}`} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
+                </div>
+              </FadeUp>
+            )}
+
             {content.integrationSchools && (
               <FadeUp delay={0.2}>
                 <div className="mb-2">
-                  <h3 className="text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-sans ml-2">Ils intègrent les meilleures écoles</h3>
                   <InfiniteScroller schools={content.integrationSchools} />
                 </div>
               </FadeUp>

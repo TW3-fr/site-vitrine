@@ -56,6 +56,8 @@ export const metadata: Metadata = {
   ],
 }
 
+import { CustomCursor } from '@/components/CustomCursor'
+
 export default function RootLayout({
   children,
 }: {
@@ -77,7 +79,8 @@ export default function RootLayout({
           `}
         </Script>
       </head>
-      <body className="font-sans antialiased">
+      <body className="font-sans antialiased relative">
+        <CustomCursor />
         {children}
       </body>
     </html>
