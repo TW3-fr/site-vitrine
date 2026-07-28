@@ -255,59 +255,13 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
       <section className="py-4 md:py-8 px-4 md:px-12 bg-background relative">
         {/* Subtle decorative background */}
         <div className="absolute top-1/4 -right-64 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10"></div>
-        <div className="container mx-auto max-w-5xl flex flex-col md:grid md:grid-cols-3 gap-5 md:gap-12">
+        <div className="container mx-auto max-w-5xl">
 
-          {/* Candidature sidebar - shows FIRST on mobile */}
-          <div className="order-first md:order-last md:col-span-1">
-            <FadeUp delay={0.1}>
-            <div className="md:sticky md:top-32 bg-card rounded-2xl md:rounded-3xl p-6 md:p-8 border border-border shadow-md">
-              <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 md:mb-6 font-sans">Candidature</h3>
-
-              <div className="mb-6 md:mb-8">
-                <p className="text-sm text-muted-foreground mb-2">Date limite d&apos;envoi des dossiers</p>
-                <div className="flex items-center gap-3 text-emerald-600 font-bold bg-emerald-600/10 p-3 md:p-4 rounded-xl border border-emerald-600/20">
-                  <CalendarDays className="w-5 h-5 md:w-6 md:h-6" />
-                  {content.deadline ? content.deadline : 'Prochainement'}
-                </div>
-                <p className="text-xs text-muted-foreground mt-2 md:mt-3 leading-relaxed">Après cette date, les candidatures ne seront plus prises en compte.</p>
-              </div>
-
-              <Button asChild className="w-full rounded-xl py-5 md:py-6 h-auto text-base group">
-                <a href="https://tw3projet.fillout.com/eleves" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
-                  <span className="text-center font-semibold leading-tight">Candidater</span>
-                  <ArrowUpRight className="w-5 h-5 shrink-0 md:group-hover:rotate-45 transition-transform" />
-                </a>
-              </Button>
-
-
-
-              {content.plaquette && (
-                <Button asChild variant="outline" className="w-full rounded-xl py-5 md:py-6 h-auto text-base group mt-3 relative overflow-hidden border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
-                  <Link 
-                    href={content.plaquette} 
-                    target={content.plaquette.includes('.pdf') ? "_blank" : undefined} 
-                    rel={content.plaquette.includes('.pdf') ? "noopener noreferrer" : undefined}
-                    className="flex items-center justify-center gap-2 px-2"
-                  >
-                    <BookOpen className="w-5 h-5 shrink-0 group-hover:scale-110 transition-transform text-primary" />
-                    <span className="relative z-10 text-center font-semibold leading-tight">
-                      Consulter la plaquette
-                    </span>
-                    <ArrowUpRight className="w-5 h-5 shrink-0 opacity-50 group-hover:opacity-100 md:group-hover:translate-x-1 md:group-hover:-translate-y-1 transition-all" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-                  </Link>
-                </Button>
-              )}
-            </div>
-            </FadeUp>
-          </div>
-
-          {/* Content cards */}
-          <div className="md:col-span-2 space-y-5 md:space-y-8">
-
+          {/* Top Full-Width Blocks: Image and Schools */}
+          <div className="flex flex-col gap-5 md:gap-8 mb-5 md:mb-8">
             {content.image && (
-              <FadeUp delay={0.15}>
-                <div className="rounded-2xl md:rounded-3xl overflow-hidden h-48 md:h-64 relative shadow-sm border border-border group">
+              <FadeUp delay={0.1}>
+                <div className="rounded-2xl md:rounded-3xl overflow-hidden h-48 md:h-72 w-full relative shadow-sm border border-border group">
                   <img src={content.image} alt={`Filière ${label}`} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 md:group-hover:scale-105" />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent"></div>
                 </div>
@@ -315,125 +269,173 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
             )}
 
             {content.integrationSchools && (
-              <FadeUp delay={0.2}>
-                <div className="mb-2">
+              <FadeUp delay={0.15}>
+                <div className="bg-card/50 border border-border rounded-2xl md:rounded-3xl p-5 md:p-6 shadow-sm overflow-hidden flex flex-col justify-center">
+                  <h3 className="text-xs md:text-sm font-bold uppercase tracking-widest text-muted-foreground mb-4 font-sans text-center">Nos élèves intègrent</h3>
                   <InfiniteScroller schools={content.integrationSchools} />
                 </div>
               </FadeUp>
             )}
+          </div>
 
-            {content.epreuve && (
-              <FadeUp delay={0.25}>
-              <Card className="border-blue-500/30 shadow-xs bg-blue-500/5 relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-4 opacity-5">
-                  <BookOpen className="w-32 h-32 text-blue-600" />
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans text-blue-700 dark:text-blue-400">
-                    <div className="p-2 bg-blue-500/20 rounded-lg text-blue-700 dark:text-blue-400"><BookOpen className="w-6 h-6" /></div>
-                    {content.epreuve.label}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="relative z-10">
-                  {!content.epreuve.instructions && (
-                    <p className="text-sm text-blue-700/80 dark:text-blue-400/80 mb-4 font-medium">
-                      {content.epreuve.dateARendre}
-                    </p>
-                  )}
-                  {content.epreuve.instructions && (
-                    <div className="mb-6">
-                      {content.epreuve.instructions}
+          {/* Main Grid: Content and Sidebar */}
+          <div className="flex flex-col md:grid md:grid-cols-3 gap-5 md:gap-8">
+            
+            {/* Sidebar (Right on Desktop, Top on Mobile) */}
+            <div className="order-first md:order-last md:col-span-1 space-y-5 md:space-y-6">
+              <FadeUp delay={0.2}>
+                <div className="bg-card rounded-2xl md:rounded-3xl p-6 md:p-8 border border-border shadow-md">
+                  <h3 className="text-lg md:text-xl font-bold text-foreground mb-4 md:mb-6 font-sans">Candidature</h3>
+
+                  <div className="mb-6 md:mb-8">
+                    <p className="text-sm text-muted-foreground mb-2">Date limite d&apos;envoi des dossiers</p>
+                    <div className="flex items-center gap-3 text-emerald-600 font-bold bg-emerald-600/10 p-3 md:p-4 rounded-xl border border-emerald-600/20">
+                      <CalendarDays className="w-5 h-5 md:w-6 md:h-6" />
+                      {content.deadline ? content.deadline : 'Prochainement'}
                     </div>
-                  )}
-                  <Button asChild className="rounded-xl py-6 px-8 bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg shadow-blue-600/20 group relative overflow-hidden transition-all duration-300 w-full md:w-auto">
-                    <Link 
-                      href={content.epreuve.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                    >
-                      <BookOpen className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-                      <span className="relative z-10 flex items-center justify-center font-semibold text-base">
-                        Accéder au document
-                        <ArrowUpRight className="ml-2 w-5 h-5 opacity-80 group-hover:opacity-100 md:group-hover:translate-x-1 md:group-hover:-translate-y-1 transition-all" />
-                      </span>
-                    </Link>
+                    <p className="text-xs text-muted-foreground mt-2 md:mt-3 leading-relaxed">Après cette date, les candidatures ne seront plus prises en compte.</p>
+                  </div>
+
+                  <Button asChild className="w-full rounded-xl py-5 md:py-6 h-auto text-base group">
+                    <a href="https://tw3projet.fillout.com/eleves" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2">
+                      <span className="text-center font-semibold leading-tight">Candidater</span>
+                      <ArrowUpRight className="w-5 h-5 shrink-0 md:group-hover:rotate-45 transition-transform" />
+                    </a>
                   </Button>
-                </CardContent>
-              </Card>
-              </FadeUp>
-            )}
 
-            {content.esprit && (
-              <FadeUp delay={0.3}>
-              <Card className="border-border shadow-sm bg-card/50 hover:shadow-md hover:border-primary/30 transition-all duration-300">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans">
-                    <div className="p-2 bg-primary/10 rounded-lg text-primary"><Heart className="w-6 h-6" /></div>
-                    L'esprit de la filière
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="relative">
-                    <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary/60 to-primary/10 rounded-full"></div>
-                    <p className="text-foreground/90 leading-relaxed text-lg md:text-xl italic pl-6 py-2 font-serif">
-                      "{content.esprit}"
-                    </p>
+                  {content.plaquette && (
+                    <Button asChild variant="outline" className="w-full rounded-xl py-5 md:py-6 h-auto text-base group mt-3 relative overflow-hidden border-primary/20 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
+                      <Link 
+                        href={content.plaquette} 
+                        target={content.plaquette.includes('.pdf') ? "_blank" : undefined} 
+                        rel={content.plaquette.includes('.pdf') ? "noopener noreferrer" : undefined}
+                        className="flex items-center justify-center gap-2 px-2"
+                      >
+                        <BookOpen className="w-5 h-5 shrink-0 group-hover:scale-110 transition-transform text-primary" />
+                        <span className="relative z-10 text-center font-semibold leading-tight">
+                          Consulter la plaquette
+                        </span>
+                        <ArrowUpRight className="w-5 h-5 shrink-0 opacity-50 group-hover:opacity-100 md:group-hover:translate-x-1 md:group-hover:-translate-y-1 transition-all" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-primary/0 via-primary/10 to-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
+                      </Link>
+                    </Button>
+                  )}
+                </div>
+              </FadeUp>
+
+              {content.esprit && (
+                <FadeUp delay={0.25}>
+                  <div className="md:sticky md:top-32 bg-card/50 rounded-2xl md:rounded-3xl p-6 md:p-8 border border-border shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2 bg-primary/10 rounded-lg text-primary"><Heart className="w-5 h-5" /></div>
+                      <h3 className="text-lg font-bold font-sans">L'esprit de la filière</h3>
+                    </div>
+                    <div className="relative">
+                      <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary/60 to-primary/10 rounded-full"></div>
+                      <p className="text-foreground/90 leading-relaxed text-base italic pl-5 py-1 font-serif">
+                        "{content.esprit}"
+                      </p>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
-              </FadeUp>
-            )}
+                </FadeUp>
+              )}
+            </div>
 
-            <FadeUp delay={0.4}>
-            <Card className="border-border shadow-sm bg-card/50 hover:shadow-md hover:border-primary/30 transition-all duration-300 group">
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans group-hover:text-primary transition-colors duration-300">
-                  <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"><Target className="w-6 h-6" /></div>
-                  Objectifs pédagogiques
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-4">
-                  {content.objectives.map((obj, i) => (
-                    <li key={i} className="flex items-start gap-3 text-muted-foreground leading-relaxed">
-                      <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                      {obj}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-            </FadeUp>
-
-            {content.ressourceGroups && (
-              <FadeUp delay={0.5}>
-              <Card className="border-border shadow-sm bg-card/50 hover:shadow-md hover:border-primary/30 transition-all duration-300 group">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans group-hover:text-primary transition-colors duration-300">
-                    <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"><LinkIcon className="w-6 h-6" /></div>
-                    Ressources de préparation
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    {content.ressourceGroups.map((group) => (
-                      <CollapsibleLevel key={group.niveau} niveau={group.niveau} items={group.items} />
-                    ))}
-
-                    {content.ressourceNote && (
-                      <div className="flex gap-3 bg-primary/5 border border-primary/20 rounded-xl p-4 mt-4">
-                        <Info className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                        <p className="text-sm text-muted-foreground leading-relaxed">
-                          {content.ressourceNote}
+            {/* Main Content (Left on Desktop, Bottom on Mobile) */}
+            <div className="md:col-span-2 space-y-5 md:space-y-8">
+              
+              {content.epreuve && (
+                <FadeUp delay={0.3}>
+                  <Card className="border-blue-500/30 shadow-xs bg-blue-500/5 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 p-4 opacity-5">
+                      <BookOpen className="w-32 h-32 text-blue-600" />
+                    </div>
+                    <CardHeader>
+                      <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans text-blue-700 dark:text-blue-400">
+                        <div className="p-2 bg-blue-500/20 rounded-lg text-blue-700 dark:text-blue-400"><BookOpen className="w-6 h-6" /></div>
+                        {content.epreuve.label}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="relative z-10">
+                      {!content.epreuve.instructions && (
+                        <p className="text-sm text-blue-700/80 dark:text-blue-400/80 mb-4 font-medium">
+                          {content.epreuve.dateARendre}
                         </p>
-                      </div>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-              </FadeUp>
-            )}
+                      )}
+                      {content.epreuve.instructions && (
+                        <div className="mb-6">
+                          {content.epreuve.instructions}
+                        </div>
+                      )}
+                      <Button asChild className="rounded-xl py-6 px-8 bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg shadow-blue-600/20 group relative overflow-hidden transition-all duration-300 w-full md:w-auto">
+                        <Link 
+                          href={content.epreuve.url} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
+                          <BookOpen className="mr-2 w-5 h-5 group-hover:scale-110 transition-transform" />
+                          <span className="relative z-10 flex items-center justify-center font-semibold text-base">
+                            Accéder au document
+                            <ArrowUpRight className="ml-2 w-5 h-5 opacity-80 group-hover:opacity-100 md:group-hover:translate-x-1 md:group-hover:-translate-y-1 transition-all" />
+                          </span>
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </FadeUp>
+              )}
 
+              <FadeUp delay={0.35}>
+                <Card className="border-border shadow-sm bg-card/50 hover:shadow-md hover:border-primary/30 transition-all duration-300 group">
+                  <CardHeader>
+                    <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans group-hover:text-primary transition-colors duration-300">
+                      <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"><Target className="w-6 h-6" /></div>
+                      Objectifs pédagogiques
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-4">
+                      {content.objectives.map((obj, i) => (
+                        <li key={i} className="flex items-start gap-3 text-muted-foreground leading-relaxed">
+                          <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                          {obj}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </FadeUp>
+
+              {content.ressourceGroups && (
+                <FadeUp delay={0.4}>
+                  <Card className="border-border shadow-sm bg-card/50 hover:shadow-md hover:border-primary/30 transition-all duration-300 group">
+                    <CardHeader>
+                      <CardTitle className="text-2xl font-bold flex items-center gap-3 font-sans group-hover:text-primary transition-colors duration-300">
+                        <div className="p-2 bg-primary/10 rounded-lg text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300"><LinkIcon className="w-6 h-6" /></div>
+                        Ressources de préparation
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        {content.ressourceGroups.map((group) => (
+                          <CollapsibleLevel key={group.niveau} niveau={group.niveau} items={group.items} />
+                        ))}
+
+                        {content.ressourceNote && (
+                          <div className="flex gap-3 bg-primary/5 border border-primary/20 rounded-xl p-4 mt-4">
+                            <Info className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                              {content.ressourceNote}
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </FadeUp>
+              )}
+
+            </div>
           </div>
         </div>
       </section>
