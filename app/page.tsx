@@ -141,15 +141,15 @@ export default function HomePage() {
               {...bottomAnimation}
               className="flex items-center flex-col md:flex-row justify-center gap-4 mt-4"
             >
-              <Button asChild size="lg" className="rounded-full px-8 py-6 text-base group bg-white text-primary hover:bg-white/90 hover:text-primary transition-colors">
+              <Button asChild size="lg" className="rounded-full px-5 py-4 md:px-8 md:py-6 text-xs sm:text-sm md:text-base group bg-white text-primary hover:bg-white/90 hover:text-primary transition-colors">
                 <Link href="/programme">
                   DÉCOUVRIR NOS PROGRAMMES
-                  <div className="ml-3 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <ArrowUpRight className="w-4 h-4" />
+                  <div className="ml-2 md:ml-3 w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                    <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4" />
                   </div>
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full px-8 py-6 text-base bg-transparent border border-white text-white hover:bg-white/10 hover:text-white transition-colors">
+              <Button asChild size="lg" variant="outline" className="rounded-full px-5 py-4 md:px-8 md:py-6 text-sm md:text-base bg-transparent border border-white text-white hover:bg-white/10 hover:text-white transition-colors">
                 <Link href="/rejoindre">
                   Candidater
                 </Link>
