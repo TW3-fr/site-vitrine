@@ -231,12 +231,12 @@ export default async function FilierePage({ params }: { params: Promise<{ filier
     <div className="min-h-screen bg-background font-sans">
       <PublicNavbar currentPage="programme" theme={content.image ? "dark" : undefined} />
 
-      <header className={`pt-28 md:pt-36 pb-12 md:pb-16 border-b border-border relative z-10 overflow-hidden ${content.image ? 'text-white' : ''}`}>
+      <header className={`pt-28 md:pt-36 pb-12 md:pb-16 relative z-10 overflow-hidden ${content.image ? 'text-white' : ''}`}>
         {content.image ? (
           <>
             <img src={content.image} alt="" className="absolute inset-0 w-full h-full object-cover -z-20" />
-            <div className="absolute inset-0 bg-black/60 -z-10"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent -z-10 h-16 bottom-0 top-auto"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#391457]/80 to-background -z-10"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none"></div>
           </>
         ) : (
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background -z-10"></div>

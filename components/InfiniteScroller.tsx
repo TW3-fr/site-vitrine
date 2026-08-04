@@ -15,7 +15,7 @@ export function InfiniteScroller({ schools }: { schools: School[] }) {
   const isStatic = schools.length <= 3;
 
   return (
-    <div className="w-full relative flex flex-col gap-6 pt-4 pb-4 border-b border-border/50">
+    <div className="w-full relative flex flex-col gap-6 pt-4 pb-4">
       <h3 className="text-center font-sans font-bold text-muted-foreground uppercase tracking-widest text-sm px-6">Nos élèves ont intégré</h3>
       
       {isStatic ? (
