@@ -109,10 +109,8 @@ export default function HomePage() {
             priority
             className="object-cover"
           />
-          {/* Dark overlay gradient — cinematic feel */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
-          {/* Primary color overlay for brand identity */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[#391457]/40 via-transparent to-[#7a3477]/20"></div>
+          {/* Dark overlay gradient — cinematic feel with smooth fade into background */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#391457]/80 to-background"></div>
         </div>
 
         <div className="container relative z-10 mx-auto px-4 md:px-6">
@@ -159,7 +157,7 @@ export default function HomePage() {
         </div>
 
         {/* Bottom fade to content */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none"></div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
@@ -572,7 +570,7 @@ export default function HomePage() {
             sizes="100vw"
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-[#391457]/90 to-black/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-[#391457]/80 to-background"></div>
         </div>
 
         <div className="container relative z-10 mx-auto px-4 md:px-6">
@@ -603,12 +601,14 @@ export default function HomePage() {
           </div>
           </FadeUp>
         </div>
+        {/* Bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background to-transparent z-10 pointer-events-none"></div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════
           NEWSLETTER — Clean, focused section
       ═══════════════════════════════════════════════════════════ */}
-      <section className="py-12 md:py-16 bg-background border-t border-border">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4 md:px-6">
           <FadeUp delay={0.1}>
           <div className="max-w-2xl mx-auto text-center">
