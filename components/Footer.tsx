@@ -34,7 +34,13 @@ export function Footer() {
             <div>
               <h4 className="font-sans font-bold text-foreground mb-5 tracking-tight text-lg">Documents</h4>
               <ul className="space-y-3 text-sm text-muted-foreground font-medium">
-                <li><TrackedDocumentLink href="/documents/Statuts_2025_TW3.pdf" documentName="statuts" className="hover:text-primary transition-colors">Statuts TW3</TrackedDocumentLink></li>
+                <li>
+                  <TrackedDocumentLink href="/documents/Plaquette-presentation-TW3.pdf" documentName="plaquette_presentation" className="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 transition-colors font-semibold">
+                    <svg className="w-3.5 h-3.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                    Plaquette de présentation
+                  </TrackedDocumentLink>
+                </li>
+                <li className="pt-1 border-t border-border/30"><TrackedDocumentLink href="/documents/Statuts_2025_TW3.pdf" documentName="statuts" className="hover:text-primary transition-colors">Statuts TW3</TrackedDocumentLink></li>
                 <li><TrackedDocumentLink href="/documents/Reglement-interieur-TW3.pdf" documentName="reglement_interieur" className="hover:text-primary transition-colors">Règlement Intérieur</TrackedDocumentLink></li>
                 <li><TrackedDocumentLink href="/documents/Charte_TW3.pdf" documentName="charte_ethique" className="hover:text-primary transition-colors">Charte Éthique</TrackedDocumentLink></li>
               </ul>
