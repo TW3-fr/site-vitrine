@@ -137,21 +137,32 @@ export default function HomePage() {
             </div>
             <motion.div
               {...bottomAnimation}
-              className="flex items-center flex-col md:flex-row justify-center gap-4 mt-4"
+              className="flex items-center flex-col justify-center gap-4 mt-4"
             >
-              <Button asChild size="lg" className="rounded-full px-5 py-4 md:px-8 md:py-6 text-xs sm:text-sm md:text-base group bg-white text-primary hover:bg-white/90 hover:text-primary transition-colors">
-                <Link href="/programme">
-                  DÉCOUVRIR NOS PROGRAMMES
-                  <div className="ml-2 md:ml-3 w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-                    <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4" />
-                  </div>
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline" className="rounded-full px-5 py-4 md:px-8 md:py-6 text-sm md:text-base bg-transparent border border-white text-white hover:bg-white/10 hover:text-white transition-colors">
-                <Link href="/rejoindre">
-                  Candidater
-                </Link>
-              </Button>
+              <div className="flex items-center flex-col md:flex-row justify-center gap-4">
+                <Button asChild size="lg" className="rounded-full px-5 py-4 md:px-8 md:py-6 text-xs sm:text-sm md:text-base group bg-white text-primary hover:bg-white/90 hover:text-primary transition-colors">
+                  <Link href="/programme">
+                    DÉCOUVRIR NOS PROGRAMMES
+                    <div className="ml-2 md:ml-3 w-6 h-6 md:w-8 md:h-8 rounded-full bg-primary text-white flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                      <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4" />
+                    </div>
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="rounded-full px-5 py-4 md:px-8 md:py-6 text-sm md:text-base bg-transparent border border-white text-white hover:bg-white/10 hover:text-white transition-colors">
+                  <Link href="/rejoindre">
+                    Candidater
+                  </Link>
+                </Button>
+              </div>
+              <a
+                href="/documents/Plaquette-presentation-TW3.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/90 hover:bg-white/20 hover:text-white transition-all text-sm font-medium group/plaq"
+              >
+                <svg className="w-4 h-4 shrink-0 group-hover/plaq:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                Télécharger notre plaquette de présentation
+              </a>
             </motion.div>
           </div>
         </div>
@@ -407,6 +418,15 @@ export default function HomePage() {
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                     Nos programmes s'adressent <strong>aux lycéens (de la Seconde à la Terminale)</strong> ainsi qu'aux <strong>étudiants du supérieur</strong> (prépas, universités) désireux d'intégrer les filières les plus sélectives.
                   </p>
+                  <a
+                    href="/documents/Plaquette-presentation-TW3.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group/dl"
+                  >
+                    <svg className="w-4 h-4 shrink-0 group-hover/dl:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+                    Télécharger notre plaquette
+                  </a>
                 </div>
               </div>
             </div>
@@ -602,10 +622,10 @@ export default function HomePage() {
               href="/documents/Plaquette-presentation-TW3.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-white/50 hover:text-white/80 transition-colors text-sm mt-6 mx-auto group/plaq"
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/25 text-white hover:bg-white/20 transition-all text-sm font-medium mt-8 mx-auto group/plaq"
             >
-              <svg className="w-4 h-4 shrink-0 group-hover/plaq:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-              Découvrir notre plaquette de présentation
+              <svg className="w-4 h-4 shrink-0 group-hover/plaq:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+              Télécharger notre plaquette de présentation
             </a>
           </div>
           </FadeUp>
