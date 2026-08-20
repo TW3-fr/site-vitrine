@@ -119,7 +119,7 @@ const FILIERE_CONTENT: Record<string, {
     matieres: ['Économie', 'Mathématiques', 'Anglais', 'Arabe', 'Géopolitique'],
     esprit: 'Ouverture sur le monde, esprit d\'analyse et de synthèse. Formation par des professeurs de l\'ESSEC et de l\'ENS.',
     deadline: '15 Septembre',
-    plaquette: '/a-venir?filiere=commerce',
+    plaquette: '/ressources/Plaquette_filiere_Commerce.pdf',
     ressourceGroups: [
       {
         niveau: 'Seconde',
