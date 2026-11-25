@@ -117,7 +117,7 @@ export function GalaClient() {
 
           <h1 className="leading-none text-[#fffdd1]">
             <span className="sr-only">Gala TW3</span>
-            <span aria-hidden className="flex items-baseline justify-center gap-3 px-4 sm:gap-5">
+            <span aria-hidden className="flex flex-wrap items-baseline justify-center gap-x-4 px-4 sm:gap-x-6">
               <motion.span
                 className="gala-script text-[5.5rem] sm:text-[8.5rem] md:text-[10.5rem]"
                 initial={reduce ? false : { opacity: 0, clipPath: 'inset(0 100% 0 0)', filter: 'blur(6px)' }}
@@ -127,7 +127,7 @@ export function GalaClient() {
                 Gala
               </motion.span>
               <motion.span
-                className="font-serif text-4xl uppercase tracking-[0.18em] text-[#fffdd1]/95 sm:text-6xl md:text-7xl"
+                className="gala-script text-[5.5rem] sm:text-[8.5rem] md:text-[10.5rem]"
                 initial={reduce ? false : { opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.1, delay: 1.7, ease: EASE }}
