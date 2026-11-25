@@ -4,10 +4,10 @@ import { GalaClient } from './GalaClient'
 export const metadata: Metadata = {
   title: 'Gala 2026',
   description:
-    "Gala de l'Institut TW3, samedi 28 novembre 2026 au Salon Blanqui (Paris 13e). Soutenez l'ouverture d'Escale, la maison étudiante.",
+    "Gala de l'Institut TW3, samedi 28 novembre 2026 au Salon Blanqui (Paris 13e). Découvrez l'Escale, la première maison étudiante qui vous correspond.",
   openGraph: {
     title: 'Gala TW3 · samedi 28 novembre 2026',
-    description: "Soutenez l'ouverture d'Escale, la maison étudiante.",
+    description: "Découvrez l'Escale, la première maison étudiante qui vous correspond.",
     images: ['/gala/bg-01.jpg'],
   },
 }

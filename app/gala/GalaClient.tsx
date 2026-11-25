@@ -116,15 +116,15 @@ export function GalaClient() {
           </motion.p>
 
           <h1 className="leading-none text-[#fffdd1]">
-            <span className="sr-only">Le Gala</span>
+            <span className="sr-only">Gala TW3</span>
             <motion.span
               aria-hidden
-              className="gala-script block px-4 text-[5.5rem] sm:text-[8.5rem] md:text-[10.5rem]"
+              className="gala-script block px-4 text-[4.75rem] sm:text-[7.5rem] md:text-[9.5rem]"
               initial={reduce ? false : { opacity: 0, clipPath: 'inset(0 100% 0 0)', filter: 'blur(6px)' }}
               animate={{ opacity: 1, clipPath: 'inset(0 0% 0 0)', filter: 'blur(0px)' }}
               transition={{ duration: 1.8, delay: 0.5, ease: EASE }}
             >
-              Le Gala
+              Gala TW3
             </motion.span>
           </h1>
 
@@ -135,7 +135,7 @@ export function GalaClient() {
           </motion.div>
 
           <motion.p variants={item} className="mt-6 max-w-2xl font-serif text-2xl italic text-[#fffdd1]/90 sm:text-3xl">
-            Une soirée pour ouvrir Escale, la maison étudiante au rythme des prières.
+            Découvrez l&apos;Escale, la première maison étudiante qui vous correspond.
           </motion.p>
 
           <motion.div variants={item} className="mt-8 flex flex-col items-center gap-1 font-sans text-base text-[#fffdd1]/85 sm:text-lg">
