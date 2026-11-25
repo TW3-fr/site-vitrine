@@ -103,7 +103,7 @@ export function GalaClient() {
       >
         <motion.header variants={item} className="flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 opacity-90 transition-opacity duration-300 hover:opacity-100">
-            <img src="/logos/logo-2026.png" alt="Institut TW3" className="h-11 w-11 rounded-full bg-[#fffdd1] p-1" />
+            <img src="/logos/logo-2027.png" alt="Institut TW3" className="h-14 w-auto drop-shadow-[0_2px_12px_rgba(20,6,32,0.5)]" />
           </Link>
           <span className="rounded-full border border-[#fffdd1]/30 px-4 py-1 font-sans text-xs uppercase tracking-[0.25em] text-[#fffdd1]/80">
             Gala 2026
