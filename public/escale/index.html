@@ -146,7 +146,17 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 .tm .v{font-weight:800;letter-spacing:-.02em}
 .tm-loy{background:var(--ink)}.tm-sal{background:var(--plum)}.tm-fon{background:#b39bc8;color:var(--ink)}.tm-tax{background:var(--lav);color:var(--ink)}
 .tm-for{background:#3a1757}.tm-soi{background:var(--plum)}.tm-acc{background:var(--lemon);color:var(--ink)}
-.tm-exc{background:var(--lemon);color:var(--ink);border:3px dashed var(--gold);padding:10px 20px}
+.tm-exc{background:linear-gradient(160deg,#f3dc95,#d9b65f);color:var(--ink);border-radius:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-shadow:0 18px 40px -16px rgba(190,169,131,.9)}
+.s7c{position:absolute;top:232px;height:798px}
+.s7c h3{font-size:43px;font-weight:720;height:76px;line-height:1.15;white-space:nowrap}
+.s7c .op{color:var(--gold);font-weight:800;margin-right:6px}
+.tm.row1{display:flex;align-items:center;justify-content:space-between;padding-top:0;padding-bottom:0}
+.s7-link{position:absolute;height:0;border-top:3px dashed var(--gold)}
+.exc-why{position:absolute;left:0;right:0;display:flex;flex-direction:column;gap:14px;padding:0 4px 26px}
+.exc-why p{font-size:32px;line-height:1.28;text-wrap:pretty}
+.exc-why .ok{font-size:44px;font-weight:760;color:var(--ink)}
+.exc-why .ok::before{content:'✓';display:inline-grid;place-items:center;width:52px;height:52px;margin-right:14px;border-radius:50%;background:var(--gold);color:#fff;font-size:30px;vertical-align:6px}
+.exc-why .mute{color:var(--muted);font-size:30px}
 .s7-note{position:absolute;left:100px;top:1036px;font-size:31px;color:var(--muted)}
 
 /* 8 — levée de fonds */
@@ -325,24 +335,32 @@ body.mv #hud{opacity:1}
   <h2 class="title" data-m="title">Un modèle économique pérenne</h2>
   <p class="sub">Budget mensuel en rythme de croisière, sans aucun don</p>
   <div class="hair"></div>
-  <!-- hauteurs proportionnelles : 10 400 € = 700 px -->
-  <div class="s7-col" style="left:100px;width:800px" data-b="wipe-up" data-d="900" data-o="1">
-    <h3>Charges · ≈&nbsp;7&nbsp;750&nbsp;€/mois</h3>
-    <div class="tm tm-loy fit" style="top:258px;height:392px;width:400px"><b style="font-size:34px;font-weight:600">Loyer HT</b><span style="font-size:34px;display:block">Corvisart, 105&nbsp;m²</span><b class="v" style="font-size:49px;margin-top:10px">3&nbsp;000&nbsp;€</b></div>
-    <div class="tm tm-sal fit" style="top:258px;height:392px;width:400px;left:400px"><b style="font-size:34px;font-weight:600">2 salariés</b><span style="font-size:34px;display:block">temps plein en semaine, temps partiel le week&#8209;end</span><b class="v" style="font-size:49px;margin-top:10px">3&nbsp;000&nbsp;€</b></div>
-    <div class="tm tm-fon fit" style="top:650px;height:118px;width:460px"><span style="font-size:34px;display:block">Fonctionnement</span><b class="v" style="font-size:37px">1&nbsp;000&nbsp;€</b></div>
-    <div class="tm tm-tax fit" style="top:650px;height:118px;width:340px;left:460px"><span style="font-size:34px;display:block">Taxes et énergie</span><b class="v" style="font-size:37px">750&nbsp;€</b></div>
+  <!-- cascade : Recettes − Charges = Excédent ; hauteurs proportionnelles (10 400 € = 700 px) -->
+  <div class="s7c" style="left:100px;width:600px" data-b="wipe-up" data-d="900" data-o="1">
+    <h3>Recettes · ≈&nbsp;10&nbsp;400&nbsp;€</h3>
+    <div class="tm tm-for fit" style="top:88px;height:606px"><span style="font-size:37px;display:block">300 forfaits illimités à <b>30&nbsp;€/mois</b></span><span style="font-size:31px;display:block;opacity:.82;margin-top:4px">≈&nbsp;1&nbsp;€ par jour pour réviser, prier et se retrouver</span><b class="v" style="font-size:77px;margin-top:16px">9&nbsp;000&nbsp;€</b></div>
+    <div class="tm tm-soi fit" style="top:694px;height:94px;width:300px;padding:6px 18px"><span style="font-size:34px;display:block;line-height:1.1">Soirées privées</span><b class="v" style="font-size:37px;line-height:1.1">600&nbsp;€</b></div>
+    <div class="tm tm-acc fit" style="top:694px;height:94px;width:300px;left:300px;padding:6px 18px"><span style="font-size:34px;display:block;line-height:1.1">Accès à l’heure</span><b class="v" style="font-size:37px;line-height:1.1">800&nbsp;€</b></div>
   </div>
-  <div class="s7-col" style="left:100px;width:800px;pointer-events:none" data-b="zoom" data-d="700" data-t="click" data-o="3">
-    <div class="tm tm-exc fit" style="top:82px;height:170px"><b class="v" style="font-size:67px;line-height:1.02">+2&nbsp;650&nbsp;€</b><span style="font-size:34px;display:block">d’excédent par mois, sans aucun don</span><span style="font-size:31px;display:block;color:var(--muted)">Équilibre dès ≈&nbsp;<b style="display:inline;color:var(--ink)">210&nbsp;forfaits</b> sur&nbsp;300</span></div>
+  <i class="s7-link" style="left:700px;top:320px;width:50px" data-b="fade" data-d="300" data-o="2" data-t="click"></i>
+  <div class="s7c" style="left:750px;width:600px" data-b="wipe-down" data-d="900" data-o="3" data-w="1">
+    <h3><span class="op">−</span> Charges · ≈&nbsp;7&nbsp;750&nbsp;€</h3>
+    <div class="tm tm-loy fit" style="top:88px;height:404px;width:300px"><b style="font-size:34px;font-weight:600">Loyer HT</b><span style="font-size:34px;display:block">Corvisart, 105&nbsp;m²</span><b class="v" style="font-size:49px;margin-top:10px">3&nbsp;000&nbsp;€</b></div>
+    <div class="tm tm-sal fit" style="top:88px;height:404px;width:300px;left:300px"><b style="font-size:34px;font-weight:600">2 salariés</b><span style="font-size:34px;display:block">temps plein en semaine, temps partiel le week&#8209;end</span><b class="v" style="font-size:49px;margin-top:10px">3&nbsp;000&nbsp;€</b></div>
+    <div class="tm tm-fon fit row1" style="top:492px;height:67px"><span style="font-size:34px">Fonctionnement</span><b class="v" style="font-size:37px">1&nbsp;000&nbsp;€</b></div>
+    <div class="tm tm-tax fit row1" style="top:559px;height:51px"><span style="font-size:34px">Taxes et énergie</span><b class="v" style="font-size:37px">750&nbsp;€</b></div>
   </div>
-  <div class="s7-col" style="left:980px;width:840px" data-b="wipe-up" data-d="900" data-t="click" data-o="2">
-    <h3>Recettes · ≈&nbsp;10&nbsp;400&nbsp;€/mois</h3>
-    <div class="tm tm-for fit" style="top:76px;height:606px"><span style="font-size:37px;display:block">300 forfaits illimités à 30&nbsp;€/mois</span><span style="font-size:31px;display:block;opacity:.82;margin-top:4px">≈&nbsp;1&nbsp;€ par jour pour réviser, prier et se retrouver</span><b class="v" style="font-size:77px;margin-top:16px">9&nbsp;000&nbsp;€</b></div>
-    <div class="tm tm-soi fit" style="top:682px;height:94px;width:400px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:34px">Soirées privées</span><b class="v" style="font-size:37px;display:inline">600&nbsp;€</b></div>
-    <div class="tm tm-acc fit" style="top:682px;height:94px;width:440px;left:400px;display:flex;align-items:center;justify-content:space-between"><span style="font-size:34px">Accès à l’heure</span><b class="v" style="font-size:37px;display:inline">800&nbsp;€</b></div>
+  <i class="s7-link" style="left:1350px;top:842px;width:50px" data-b="fade" data-d="300" data-o="4" data-t="click"></i>
+  <div class="s7c s7-exc" style="left:1400px;width:420px" data-b="zoom" data-d="800" data-o="5" data-w="1">
+    <h3><span class="op">=</span> Excédent</h3>
+    <div class="exc-why fit" style="bottom:238px">
+      <p class="ok">Sans aucun don</p>
+      <p>Équilibre atteint dès ≈&nbsp;<b>210&nbsp;forfaits</b> sur&nbsp;300</p>
+      <p class="mute">L’excédent prépare l’ouverture des locaux suivants.</p>
+    </div>
+    <div class="tm tm-exc fit" style="top:610px;height:178px"><b class="v" style="font-size:67px;line-height:1.05">+2&nbsp;650&nbsp;€</b><span style="font-size:31px;display:block">par mois</span></div>
   </div>
-  <p class="s7-note">Hauteur des blocs proportionnelle aux montants · l’excédent prépare l’ouverture des locaux suivants</p>
+  <p class="s7-note">Hauteur des blocs proportionnelle aux montants</p>
 </section>
 
 <section class="slide s8">
