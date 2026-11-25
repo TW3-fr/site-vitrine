@@ -117,15 +117,24 @@ export function GalaClient() {
 
           <h1 className="leading-none text-[#fffdd1]">
             <span className="sr-only">Gala TW3</span>
-            <motion.span
-              aria-hidden
-              className="gala-script block px-4 text-[4.75rem] sm:text-[7.5rem] md:text-[9.5rem]"
-              initial={reduce ? false : { opacity: 0, clipPath: 'inset(0 100% 0 0)', filter: 'blur(6px)' }}
-              animate={{ opacity: 1, clipPath: 'inset(0 0% 0 0)', filter: 'blur(0px)' }}
-              transition={{ duration: 1.8, delay: 0.5, ease: EASE }}
-            >
-              Gala TW3
-            </motion.span>
+            <span aria-hidden className="flex items-baseline justify-center gap-3 px-4 sm:gap-5">
+              <motion.span
+                className="gala-script text-[5.5rem] sm:text-[8.5rem] md:text-[10.5rem]"
+                initial={reduce ? false : { opacity: 0, clipPath: 'inset(0 100% 0 0)', filter: 'blur(6px)' }}
+                animate={{ opacity: 1, clipPath: 'inset(0 0% 0 0)', filter: 'blur(0px)' }}
+                transition={{ duration: 1.8, delay: 0.5, ease: EASE }}
+              >
+                Gala
+              </motion.span>
+              <motion.span
+                className="font-serif text-4xl uppercase tracking-[0.18em] text-[#fffdd1]/95 sm:text-6xl md:text-7xl"
+                initial={reduce ? false : { opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.1, delay: 1.7, ease: EASE }}
+              >
+                TW3
+              </motion.span>
+            </span>
           </h1>
 
           <motion.div variants={item} aria-hidden className="mt-2 flex items-center gap-4 text-[#e9c6e6]/70">
@@ -135,7 +144,7 @@ export function GalaClient() {
           </motion.div>
 
           <motion.p variants={item} className="mt-6 max-w-2xl font-serif text-2xl italic text-[#fffdd1]/90 sm:text-3xl">
-            Découvrez l&apos;Escale, la première maison étudiante qui vous correspond.
+            Découvrez l&apos;Escale, la première maison étudiante qui nous correspond.
           </motion.p>
 
           <motion.div variants={item} className="mt-8 flex flex-col items-center gap-1 font-sans text-base text-[#fffdd1]/85 sm:text-lg">
@@ -204,7 +213,7 @@ export function GalaClient() {
         .gala-script {
           font-family: var(--font-gala-script), 'Instrument Serif', serif;
           font-weight: 400;
-          padding-bottom: 0.08em;
+          padding: 0 0.12em 0.12em 0;
           text-shadow: 0 2px 30px rgba(20, 6, 32, 0.45);
         }
         .gala-photo {
