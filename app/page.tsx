@@ -269,7 +269,7 @@ export default function HomePage() {
               transition={{ duration: 0.8 }}
               className="flex flex-col items-center"
             >
-              <span className="text-5xl md:text-8xl font-bold text-primary leading-none tracking-tight">+100</span>
+              <span className="text-5xl md:text-8xl font-bold text-primary leading-none tracking-tight">+150</span>
               <span className="text-base md:text-lg text-foreground font-semibold mt-3 md:mt-4">élèves accompagnés</span>
             </motion.div>
 
@@ -282,7 +282,7 @@ export default function HomePage() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-col items-center"
             >
-              <span className="text-5xl md:text-8xl font-bold text-primary leading-none tracking-tight">+70</span>
+              <span className="text-5xl md:text-8xl font-bold text-primary leading-none tracking-tight">+80</span>
               <span className="text-base md:text-lg text-foreground font-semibold mt-3 md:mt-4">mentors engagés</span>
             </motion.div>
           </div>
