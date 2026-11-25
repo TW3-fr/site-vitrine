@@ -8,7 +8,7 @@ import { galaScript } from './fonts'
 const GALA_START = new Date('2026-11-28T18:00:00+01:00').getTime()
 const GALA_END = new Date('2026-11-28T23:00:00+01:00').getTime()
 const DONATION_URL = 'https://www.helloasso.com/associations/ta3alamawa3alama/collectes/maison-etudiante'
-const PROJECT_URL = '/escale/'
+const PROJECT_URL = 'https://tw3.fr/escale/'
 
 // Anciennes (01-14) et nouvelles (15-29) photos alternées pour varier les ambiances.
 const PHOTO_ORDER = [1, 15, 5, 16, 2, 17, 6, 18, 4, 19, 12, 20, 3, 21, 9, 22, 13, 23, 10, 24, 7, 25, 11, 26, 8, 27, 14, 28, 29]

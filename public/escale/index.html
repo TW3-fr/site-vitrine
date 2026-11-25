@@ -14,6 +14,7 @@ html,body{margin:0;height:100%;background:#0d0716;overflow:hidden;cursor:default
 .slide>img.base{inset:0;width:100%;height:100%}
 .ly{visibility:hidden}
 .ly.on{visibility:visible}
+.slide:not(.on) .ly{visibility:hidden}
 .wheel{--a:360deg;-webkit-mask-image:conic-gradient(#000 var(--a),transparent var(--a));mask-image:conic-gradient(#000 var(--a),transparent var(--a))}
 #bar{position:fixed;left:0;bottom:0;height:3px;background:#C5A779;transition:width 500ms;z-index:2}
 #hud{position:fixed;right:14px;bottom:10px;color:#ddd;font:13px system-ui,sans-serif;background:rgba(0,0,0,.45);padding:5px 10px;border-radius:6px;opacity:0;transition:opacity 300ms;z-index:2}
@@ -92,16 +93,69 @@ function transition(from, to, kind, back) {
   A[0].onfinish = done; trAnims = A.map(a => ({a, done}));
   return opt.duration;
 }
+
+// ---- Morph : les blocs proches d'une diapo à l'autre glissent et se redimensionnent vers leur nouvelle place
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+function leadAuto(i) { const L = S[i].layers; let k = 0; while (k < L.length && L[k].t === 'auto') k++; return k; }
+function centre(b) { return [b[0] + b[2] / 2, b[1] + b[3] / 2]; }
+const MORPH = {'0>1': [[1, 0], [2, 1], [3, 2]]};   // paires choisies à la main : [calque diapo d'avant, calque diapo d'après]
+function matchLayers(from, to, k) {
+  const oL = layersOf(from), pairs = [];
+  const X = MORPH[from + '>' + to];
+  if (X) return X.filter(([o, n]) => oL[o] && oL[o].classList.contains('on') && n < k).map(([o, n]) => ({o, n}));
+  S[from].layers.forEach((a, i) => {
+    if (a.fx === 'wheel' || !oL[i].classList.contains('on')) return;
+    S[to].layers.slice(0, k).forEach((b, j) => {
+      if (b.fx === 'wheel') return;
+      const [ax, ay] = centre(a.box), [bx, by] = centre(b.box);
+      const cost = Math.abs(ax - bx) + Math.abs(ay - by) + 0.5 * (Math.abs(a.box[2] - b.box[2]) + Math.abs(a.box[3] - b.box[3]));
+      if (cost < 28) pairs.push({o: i, n: j, cost});
+    });
+  });
+  pairs.sort((x, y) => x.cost - y.cost);
+  const uo = new Set(), un = new Set(), M = [];
+  pairs.forEach(p => { if (!uo.has(p.o) && !un.has(p.n)) { uo.add(p.o); un.add(p.n); M.push(p); } });
+  return M;
+}
+function flip(src, dst) {             // transform qui pose la boîte dst sur la boîte src
+  const W = stage.clientWidth, H = stage.clientHeight, [sx, sy] = centre(src), [dx, dy] = centre(dst);
+  const k = Math.sqrt((src[2] * src[3]) / (dst[2] * dst[3])) || 1;
+  return `translate(${(sx - dx) * W / 100}px, ${(sy - dy) * H / 100}px) scale(${k})`;
+}
+function morph(from, to) {
+  const D = 1100, E = 'cubic-bezier(.65,0,.35,1)', opt = {duration: D, easing: E, fill: 'both'};
+  const o = els[from], oL = layersOf(from), nL = layersOf(to), k = step;
+  const M = matchLayers(from, to, k), mo = new Set(M.map(m => m.o)), mn = new Set(M.map(m => m.n));
+  const A = [];
+  o.style.zIndex = 1;
+  A.push(o.querySelector('img.base').animate([{opacity: 1}, {opacity: 1, offset: .15}, {opacity: 0, offset: .7}, {opacity: 0}], opt));
+  M.forEach(m => {
+    const ob = S[from].layers[m.o].box, nb = S[to].layers[m.n].box;
+    A.push(oL[m.o].animate([{transform: 'none', opacity: 1}, {opacity: 0, offset: .65}, {transform: flip(nb, ob), opacity: 0}], opt));
+    A.push(nL[m.n].animate([{transform: flip(ob, nb), opacity: 0}, {opacity: 1, offset: .4}, {transform: 'none', opacity: 1}], opt));
+  });
+  oL.forEach((im, j) => { if (!mo.has(j) && im.classList.contains('on')) A.push(im.animate([{opacity: 1, filter: 'blur(0)'}, {opacity: 0, filter: 'blur(4px)'}], {...opt, duration: D * .5})); });
+  let t = D * .5;
+  for (let j = 0; j < k; j++) if (!mn.has(j)) {
+    const l = S[to].layers[j];
+    nL[j].animate(effect(l), {duration: l.d, delay: t, easing: l.fx === 'wheel' ? 'ease-in-out' : EASE, fill: 'backwards'});
+    t += Math.min(l.d, 300);
+  }
+  const done = () => { A.forEach(a => a.cancel()); o.classList.remove('on'); o.style.zIndex = ''; trAnims = []; };
+  A[0].onfinish = done; trAnims = A.map(a => ({a, done}));
+  return D;
+}
 function go(i, atEnd, back) {
   if (i < 0 || i >= S.length || i === cur) return;
   clear();
   if (trAnims.length) trAnims[0].done();
   const prevIdx = cur; cur = i;
-  step = atEnd ? S[i].layers.length : 0;
+  const useMorph = prevIdx >= 0 && !back && !atEnd && !RM;
+  step = atEnd ? S[i].layers.length : (useMorph ? leadAuto(i) : 0);
   setState(i, step);
   els[i].classList.add('on');
   let t = 300;
-  if (prevIdx >= 0) t = transition(prevIdx, i, S[i].tr, back) * 0.8;
+  if (prevIdx >= 0) t = (useMorph ? morph(prevIdx, i) : transition(prevIdx, i, RM ? 'fade' : S[i].tr, back)) * 0.8;
   if (!atEnd) runAuto(t);
   update();
 }
