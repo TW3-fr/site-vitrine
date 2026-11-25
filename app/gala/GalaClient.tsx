@@ -127,7 +127,7 @@ export function GalaClient() {
                 Gala
               </motion.span>
               <motion.span
-                className="gala-script text-[5.5rem] sm:text-[8.5rem] md:text-[10.5rem]"
+                className="font-serif text-6xl italic tracking-wide text-[#fffdd1] sm:text-8xl md:text-[6.5rem]"
                 initial={reduce ? false : { opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.1, delay: 1.7, ease: EASE }}
