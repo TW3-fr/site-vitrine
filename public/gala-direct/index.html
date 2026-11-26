@@ -82,7 +82,7 @@ button,input,textarea,select{font:inherit;color:inherit}
 .pie-wrap{box-sizing:border-box;position:relative;margin-top:18px;height:370px;border-radius:26px;background:var(--panel);border:1.5px solid var(--line);padding:20px 24px}
 .pie-wrap h3{margin:0;font-size:22px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
 .pie{position:absolute;left:20px;top:60px;width:290px;height:290px}
-.legend{position:absolute;left:326px;top:62px;right:16px;display:flex;flex-direction:column;gap:9px;margin:0;padding:0;list-style:none}
+.legend{position:absolute;left:326px;top:62px;right:16px;display:flex;flex-direction:column;gap:6px;margin:0;padding:0;list-style:none}
 .legend li{display:grid;grid-template-columns:18px 1fr;gap:9px;align-items:start}
 .legend i{width:18px;height:18px;border-radius:5px;margin-top:4px}
 .legend b{display:block;font-size:20px;line-height:1.15}
@@ -350,16 +350,17 @@ const DEF = {
   objectif: 100000,
   // ordre de priorité : ce qui permet d'ouvrir d'abord, puis la sécurité de la 1ère année
   postes: [
-    {nom: 'Dépôt et loyers', sous: 'garantie + 1ers loyers', montant: 17000, c: '#e5c77c'},
-    {nom: 'Travaux', sous: 'ablutions, cloisons, mise aux normes', montant: 15000, c: '#c7aee3'},
-    {nom: 'Équipement', sous: 'mobilier, badges', montant: 8000, c: '#f4ecd6'},
-    {nom: 'Réserve de sécurité', sous: '3 mois de charges', montant: 30000, c: '#9a78c4'},
-    {nom: 'Démarrage de la 1ère année', sous: 'le temps que les adhésions décollent', montant: 30000, c: '#e59ab6'}],
+    {nom: 'Dépôt et loyers', sous: 'garantie + loyers des travaux', montant: 17000, c: '#e5c77c'},
+    {nom: 'Frais et imprévus', sous: 'agence, bail, marge de 10 %', montant: 10000, c: '#86c5a8'},
+    {nom: 'Travaux', sous: 'ablutions, cloisons, normes ERP', montant: 17000, c: '#c7aee3'},
+    {nom: 'Équipement', sous: 'mobilier, réseau, badges', montant: 10000, c: '#f4ecd6'},
+    {nom: 'Réserve de sécurité', sous: '3 mois de charges', montant: 23000, c: '#9a78c4'},
+    {nom: 'Montée en charge', sous: '6 mois pour atteindre 210 adhérents', montant: 23000, c: '#e59ab6'}],
   paliers: [
-    {montant: 17000, nom: 'Le bail peut être signé'},
-    {montant: 32000, nom: 'Les travaux sont financés'},
-    {montant: 40000, nom: 'L’Escale peut ouvrir'},
-    {montant: 70000, nom: 'La réserve de sécurité est constituée'},
+    {montant: 27000, nom: 'Le bail peut être signé'},
+    {montant: 44000, nom: 'Les travaux sont financés'},
+    {montant: 54000, nom: 'L’Escale peut ouvrir'},
+    {montant: 77000, nom: 'La réserve de sécurité est constituée'},
     {montant: 100000, nom: 'La première année est sécurisée'}],
   montrer: 'tous', seuil: 0, celebrations: true,
   lien: 'https://www.helloasso.com/associations/ta3alamawa3alama/collectes/maison-etudiante',
