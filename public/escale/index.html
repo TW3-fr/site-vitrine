@@ -79,28 +79,22 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 .s4 .title{left:100px;top:56px}
 .s4 .sub{left:100px;top:160px}
 .s4-cols{position:absolute;left:0;top:262px;width:1920px;height:818px;display:grid;grid-template-columns:repeat(3,1fr)}
-.s4-col{padding:56px 54px 40px 100px}
+.s4-col{padding:48px 54px 50px 100px;display:flex;flex-direction:column}
 .s4-col:nth-child(2),.s4-col:nth-child(3){padding-left:56px}
 .s4-col:nth-child(1){background:var(--lav2)}.s4-col:nth-child(2){background:var(--lav)}.s4-col:nth-child(3){background:var(--lemon)}
 .s4-col h3{font-size:52px;font-weight:720;letter-spacing:-.008em;line-height:1.1}
-.s4-col .rule{width:70px;height:3px;margin:26px 0 30px}
-.s4-col li{list-style:none;font-size:37px;line-height:1.3;padding-left:32px;position:relative;margin-bottom:24px;text-wrap:pretty}
+.s4-col .rule{width:70px;height:3px;margin:22px 0 26px}
+.s4-col ul{margin:0;padding:0}
+.s4-col li{list-style:none;font-size:33px;line-height:1.27;padding-left:30px;position:relative;margin-bottom:16px;text-wrap:pretty}
+.s4-col .who{margin-top:auto;height:248px;flex:none;padding-top:22px;border-top:2px solid rgba(56,21,87,.22)}
+.s4-col .who .k{font-size:22px;font-weight:720;letter-spacing:.12em;text-transform:uppercase;color:var(--plum);margin:0 0 8px}
+.s4-col .who h4{margin:0;font-size:35px;font-weight:740;line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
+.s4-col .who p:not(.k){font-size:29px;line-height:1.3;margin:10px 0 0;text-wrap:pretty}
+.s4-col .who b{font-weight:760}
 .s4-col li b{font-weight:760}
 .s4-col li::before{content:'';position:absolute;left:4px;top:.6em;width:9px;height:9px;border-radius:50%;background:var(--plum)}
 
-/* 5 — pour qui / comment */
-.s5 .title{left:100px;top:56px}
-.s5-panel{position:absolute;left:960px;top:228px;width:960px;height:852px;background:var(--lav)}
-.s5-block{position:absolute;top:262px;width:770px}
-.s5-block h3{font-size:61px;font-weight:720;letter-spacing:-.01em;line-height:1.1;padding-bottom:26px;border-bottom:2px solid var(--line);margin-bottom:6px}
-.s5-item{display:grid;grid-template-columns:160px 1fr;padding:26px 0 24px}
-.s5-item+.s5-item .txt{border-top:1.5px solid var(--line);padding-top:24px;margin-top:-24px}
-.s5-item .n{font-size:98px;font-weight:800;color:var(--plum);line-height:.86;letter-spacing:-.03em}
-.s5-item h4{margin:0;font-size:43px;font-weight:720;line-height:1.15;letter-spacing:-.01em}
-.s5-item p{font-size:32px;line-height:1.33;margin-top:12px;text-wrap:pretty}
-.s5-item p b{font-weight:760}
-
-/* 6 — le local */
+/* 5 — le local */
 .s6-panel{position:absolute;left:0;top:0;width:660px;height:1080px;background:linear-gradient(90deg,#3a1757,#735883)}
 .s6-left{position:absolute;left:76px;top:78px;width:548px;height:960px;color:#fff}
 .s6-left .k{font-size:35px;font-weight:700;color:var(--lemon)}
@@ -136,7 +130,7 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 .plan-leg i.g{border-color:var(--gold)}
 .s6-note{position:absolute;left:720px;top:908px;width:1120px;height:150px;background:var(--lav2);border-left:7px solid var(--gold);padding:16px 26px;font-size:32px;line-height:1.3;text-wrap:pretty}
 
-/* 7 — modèle économique */
+/* 6 — modèle économique */
 .s7 .title{left:100px;top:46px}
 .s7 .sub{left:100px;top:148px}
 .s7 .hair{left:100px;top:212px;width:1720px}
@@ -160,7 +154,7 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 .exc-why .mute{color:var(--muted);font-size:30px}
 .s7-note{position:absolute;left:100px;top:1036px;font-size:31px;color:var(--muted)}
 
-/* 8 — levée de fonds */
+/* 7 — levée de fonds */
 .s8-panel{position:absolute;left:0;top:0;width:780px;height:1080px}
 .s8-left{position:absolute;left:86px;top:120px;width:560px;height:700px;color:#fff}
 .s8-left .k{font-size:38px;font-weight:700;color:var(--lemon)}
@@ -178,7 +172,7 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 .legend b{display:block;font-size:37px;font-weight:720;line-height:1.15;white-space:nowrap}
 .legend span{display:block;font-size:31px;color:var(--muted);line-height:1.2}
 
-/* 9 — roadmap */
+/* 8 — roadmap */
 .s9{background:radial-gradient(1200px 600px at 50% 62%,#f3edf6 0%,var(--cream) 70%)}
 .s9::before{content:'';position:absolute;inset:0;background-image:radial-gradient(#d9cfe2 1.4px,transparent 1.6px);background-size:34px 34px;opacity:.55;
   -webkit-mask-image:radial-gradient(900px 420px at 50% 62%,#000,transparent);mask-image:radial-gradient(900px 420px at 50% 62%,#000,transparent)}
@@ -206,11 +200,10 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 
 /* photos en fondu : toujours effacées sous le texte */
 .fade-photo{position:absolute;object-fit:cover;pointer-events:none}
-.s4-col,.s5-panel{position:relative;overflow:hidden}
+.s4-col{position:relative;overflow:hidden}
 .s4-col > *:not(.ph){position:relative}
-.s4-col .ph,.s5-panel .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;mix-blend-mode:multiply;filter:grayscale(1) contrast(.9)}
+.s4-col .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;mix-blend-mode:multiply;filter:grayscale(1) contrast(.9)}
 .s4-col .ph{opacity:.2;-webkit-mask-image:linear-gradient(transparent 18%,#000 75%);mask-image:linear-gradient(transparent 18%,#000 75%)}
-.s5-panel .ph{opacity:.13}
 .s6-panel{overflow:hidden}
 .s6-panel .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.2;mix-blend-mode:luminosity}
 .s9 .fade-photo{inset:0;width:1920px;height:1080px;opacity:.12;-webkit-mask-image:radial-gradient(1100px 700px at 60% 55%,#000 30%,transparent 80%);mask-image:radial-gradient(1100px 700px at 60% 55%,#000 30%,transparent 80%)}
@@ -226,7 +219,7 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 .access b{font-size:33px;font-weight:680}
 .access li > span:last-child{font-size:30px;color:var(--muted);white-space:nowrap}
 
-/* 10 — appel au don */
+/* 9 — appel au don */
 .s10{background:#1b0a2b}
 .s10 .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .s10-veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(27,10,43,.92) 0%,rgba(42,15,64,.78) 55%,rgba(42,15,64,.55) 100%)}
@@ -293,31 +286,17 @@ body.mv #hud{opacity:1}
 
 <section class="slide s4">
   <h2 class="title" data-m="title">Le local, à quoi il ressemble&nbsp;?</h2>
-  <p class="sub">Trois usages complémentaires dans un même lieu</p>
+  <p class="sub">Trois usages complémentaires dans un même lieu, et qui en bénéficie</p>
   <div class="s4-cols">
     <div class="s4-col fit" data-b="wipe-down" data-d="700"><img class="ph" src="assets/col-etude.jpg" alt=""><h3>Espace d’étude</h3><div class="rule"></div><ul>
-      <li><b>60&nbsp;places</b>, dont un open space de <b>48&nbsp;places</b></li><li><b>2&nbsp;salles</b> de travail en groupe de <b>6&nbsp;places</b></li><li>Ouvert <b>7j/7</b>, de <b>9&nbsp;h à 22&nbsp;h</b></li><li>Mentorat et accompagnement académique portés par&nbsp;TW3</li></ul></div>
+      <li><b>60&nbsp;places</b>, dont un open space de <b>48&nbsp;places</b></li><li><b>2&nbsp;salles</b> de groupe de <b>6&nbsp;places</b>, réservées en priorité au mentorat et aux colles</li><li>Ouvert <b>7j/7</b>, de <b>9&nbsp;h à 22&nbsp;h</b></li></ul>
+      <div class="who" data-b="rise" data-d="500"><p class="k">Pour qui · comment</p><h4>Étudiants et mentorés de TW3</h4><p>Mentorat, colles et accompagnement académique portés par TW3, là où l’on révise et prie.</p></div></div>
     <div class="s4-col fit" data-b="wipe-down" data-d="700"><img class="ph" src="assets/col-vie.jpg" alt=""><h3>Lieu de vie</h3><div class="rule"></div><ul>
-      <li>Point d’ancrage de la communauté étudiante musulmane</li><li>Espace d’ablutions et de prière de <b>10&nbsp;m²</b></li><li>Foyer détente et coin café</li><li>Rencontres, entraide et émulation entre étudiants</li></ul></div>
+      <li>Point d’ancrage de la communauté étudiante musulmane</li><li>Espace d’ablutions et de prière de <b>10&nbsp;m²</b></li><li>Foyer détente et coin café</li><li>Rencontres, entraide et émulation entre étudiants</li></ul>
+      <div class="who" data-b="rise" data-d="500"><p class="k">Pour qui · comment</p><h4>Étudiants musulmans d’Île&#8209;de&#8209;France</h4><p>Pour réviser, prier et se retrouver&nbsp;: forfait illimité à <b>30&nbsp;€/mois</b> ou accès ponctuel à <b>3&nbsp;€/heure</b>.</p></div></div>
     <div class="s4-col fit" data-b="wipe-down" data-d="700"><img class="ph" src="assets/col-event.jpg" alt=""><h3>Site événementiel</h3><div class="rule"></div><ul>
-      <li>Conférences, événements étudiants et associatifs</li><li>Jusqu’à <b>60&nbsp;personnes</b> assises sur <b>88&nbsp;m²</b> modulables</li><li>Formations et networking</li><li>Réservation à partir de <b>300&nbsp;€</b> la&nbsp;soirée</li></ul></div>
-  </div>
-</section>
-
-<section class="slide s5">
-  <div class="s5-panel" data-m="panel"><img class="ph" src="assets/bg-s5.jpg" alt=""></div>
-  <h2 class="title" data-m="title">Qui en bénéficie et comment&nbsp;?</h2>
-  <div class="s5-block fit" style="left:100px">
-    <h3 data-b="wipe" data-d="500">Pour qui&nbsp;?</h3>
-    <div class="s5-item" data-b="rise" data-d="500"><span class="n">01</span><div class="txt"><h4>Étudiants et mentorés de TW3</h4><p>Mentorat, colles et accompagnement, là où l’on révise et prie.</p></div></div>
-    <div class="s5-item" data-b="rise" data-d="500"><span class="n">02</span><div class="txt"><h4>Étudiants musulmans d’Île&#8209;de&#8209;France</h4><p>Un espace pour réviser, prier et se&nbsp;retrouver.</p></div></div>
-    <div class="s5-item" data-b="rise" data-d="500"><span class="n">03</span><div class="txt"><h4>Associations et entreprises</h4><p>Conférences, formations et événements, ouverts aussi aux particuliers.</p></div></div>
-  </div>
-  <div class="s5-block fit" style="left:1056px">
-    <h3 data-b="wipe" data-d="500">Comment&nbsp;?</h3>
-    <div class="s5-item" data-b="rise" data-d="500"><span class="n">01</span><div class="txt"><h4>Accompagnement TW3</h4><p>Salles de groupe réservées en priorité au mentorat et aux&nbsp;colles.</p></div></div>
-    <div class="s5-item" data-b="rise" data-d="500"><span class="n">02</span><div class="txt"><h4>Adhésion mensuelle</h4><p>Forfait illimité à <b>30&nbsp;€/mois</b> ou accès ponctuel à <b>3&nbsp;€/heure</b>.</p></div></div>
-    <div class="s5-item" data-b="rise" data-d="500"><span class="n">03</span><div class="txt"><h4>Réservation d’espaces</h4><p>Soirées et conférences à la demande, <b>300&nbsp;€</b> la&nbsp;soirée.</p></div></div>
+      <li>Conférences, événements étudiants et associatifs</li><li>Jusqu’à <b>60&nbsp;personnes</b> assises sur <b>88&nbsp;m²</b> modulables</li><li>Formations et networking</li></ul>
+      <div class="who" data-b="rise" data-d="500"><p class="k">Pour qui · comment</p><h4>Associations, entreprises et particuliers</h4><p>Réservation à la demande, à partir de <b>300&nbsp;€</b> la&nbsp;soirée.</p></div></div>
   </div>
 </section>
 
