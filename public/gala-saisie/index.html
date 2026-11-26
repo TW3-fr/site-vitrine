@@ -187,7 +187,7 @@ details.sub > * + *{margin-top:12px}
 .note{margin:0;font-size:13px;color:var(--muted)}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.grid3{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:10px}
 @media (max-width:480px){.grid2,.grid3{grid-template-columns:1fr}}
-input[type=email],input[type=tel],input[type=date],input[type=search]{background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:17px;width:100%;box-sizing:border-box;color:var(--cream)}
+input[type=email],input[type=tel],input[type=date],input[type=search],input[type=password]{background:rgba(0,0,0,.28);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:17px;width:100%;box-sizing:border-box;color:var(--cream)}
 .chipline{display:flex;gap:6px;flex-wrap:wrap}
 .mini{font-size:12px;padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--muted)}
 .mini.late{background:rgba(255,179,122,.16);color:var(--warn)}.mini.ok{background:rgba(159,224,180,.14);color:var(--ok)}
@@ -760,7 +760,7 @@ $('csv').onclick = async () => {
   const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([data], {type: 'text/csv;charset=utf-8'}));
   a.download = 'gala-tw3-dons-' + new Date().toISOString().slice(0, 10) + '.csv'; document.body.append(a); a.click(); a.remove();
 };
-function applyRO() { $('ro').hidden = canWrite !== false; ['form', 'annCard'].forEach(i => $(i).querySelectorAll('button,input,textarea,select').forEach(x => x.disabled = canWrite === false)); renderSaisie(); }
+function applyRO() { $('ro').hidden = canWrite !== false || !!(store && store.auth && !store.auth.currentUser); ['form', 'annCard'].forEach(i => $(i).querySelectorAll('button,input,textarea,select').forEach(x => x.disabled = canWrite === false)); renderSaisie(); }
 setType('don');
 
 // ------------------------------------------------------------ routes
