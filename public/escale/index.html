@@ -42,10 +42,9 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 
 /* 2 — vision */
 .s2-photo{position:absolute;left:1138px;top:0;width:782px;height:672px;object-fit:cover}
-.s2-left{position:absolute;left:100px;top:62px;width:990px;height:590px;display:flex;flex-direction:column}
-.s2-left .title{position:static;font-size:74px;line-height:1.07}
-.s2-left .rule{margin:34px 0 30px}
-.s2-vision{font-size:40px;line-height:1.34;text-wrap:pretty}
+.s2-left{position:absolute;left:100px;top:62px;width:990px;height:590px;display:flex;flex-direction:column;justify-content:center}
+.s2-left .title{position:static;font-size:150px;line-height:1;letter-spacing:-.03em}
+.s2-left .rule{margin:44px 0 0}
 .s2-band{position:absolute;left:0;top:672px;width:1920px;height:408px;background:var(--lav)}
 .s2-cols{position:absolute;left:100px;right:90px;top:712px;height:350px;display:grid;grid-template-columns:1fr 1fr 1fr}
 .s2-col{padding:0 34px 0 46px;border-left:3px solid var(--ink)}
@@ -75,26 +74,7 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 .s3-note{position:absolute;left:100px;bottom:26px;font-size:28px;color:var(--muted)}
 @keyframes pulse{from{transform:scale(1);opacity:.32}to{transform:scale(3.2);opacity:0}}
 
-/* 4 — trois usages */
-.s4 .title{left:100px;top:56px}
-.s4 .sub{left:100px;top:160px}
-.s4-cols{position:absolute;left:0;top:262px;width:1920px;height:818px;display:grid;grid-template-columns:repeat(3,1fr)}
-.s4-col{padding:56px 54px 64px 100px;display:flex;flex-direction:column}
-.s4-col:nth-child(2),.s4-col:nth-child(3){padding-left:56px}
-.s4-col:nth-child(1){background:var(--lav2)}.s4-col:nth-child(2){background:var(--lav)}.s4-col:nth-child(3){background:var(--lemon)}
-.s4-col h3{font-size:52px;font-weight:720;letter-spacing:-.008em;line-height:1.1}
-.s4-col .rule{width:70px;height:3px;margin:22px 0 26px}
-.s4-col ul{margin:0;padding:0}
-.s4-col li{list-style:none;font-size:37px;line-height:1.3;padding-left:32px;position:relative;margin-bottom:22px;text-wrap:pretty}
-.s4-col .who{margin-top:auto;height:236px;flex:none;padding-top:26px;border-top:2px solid rgba(56,21,87,.22)}
-.s4-col .who .k{font-size:22px;font-weight:720;letter-spacing:.12em;text-transform:uppercase;color:var(--plum);margin:0 0 8px}
-.s4-col .who h4{margin:0;font-size:38px;font-weight:740;line-height:1.15;letter-spacing:-.01em;text-wrap:balance}
-.s4-col .who p:not(.k){font-size:31px;line-height:1.3;margin:10px 0 0;text-wrap:pretty}
-.s4-col .who b{font-weight:760}
-.s4-col li b{font-weight:760}
-.s4-col li::before{content:'';position:absolute;left:4px;top:.6em;width:9px;height:9px;border-radius:50%;background:var(--plum)}
-
-/* 5 — le local */
+/* 4 — le local */
 .s6-panel{position:absolute;left:0;top:0;width:660px;height:1080px;background:linear-gradient(90deg,#3a1757,#735883)}
 .s6-left{position:absolute;left:76px;top:78px;width:548px;height:960px;color:#fff}
 .s6-left .k{font-size:35px;font-weight:700;color:var(--lemon)}
@@ -130,7 +110,7 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 .plan-leg i.g{border-color:var(--gold)}
 .s6-note{position:absolute;left:720px;top:908px;width:1120px;height:150px;background:var(--lav2);border-left:7px solid var(--gold);padding:16px 26px;font-size:32px;line-height:1.3;text-wrap:pretty}
 
-/* 6 — modèle économique */
+/* 5 — modèle économique */
 .s7 .title{left:100px;top:46px}
 .s7 .sub{left:100px;top:148px}
 .s7 .hair{left:100px;top:212px;width:1720px}
@@ -154,7 +134,7 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 .exc-why .mute{color:var(--muted);font-size:30px}
 .s7-note{position:absolute;left:100px;top:1036px;font-size:31px;color:var(--muted)}
 
-/* 7 — levée de fonds */
+/* 6 — levée de fonds */
 .s8-panel{position:absolute;left:0;top:0;width:780px;height:1080px}
 .s8-left{position:absolute;left:86px;top:120px;width:560px;height:700px;color:#fff}
 .s8-left .k{font-size:38px;font-weight:700;color:var(--lemon)}
@@ -172,7 +152,7 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 .legend b{display:block;font-size:37px;font-weight:720;line-height:1.15;white-space:nowrap}
 .legend span{display:block;font-size:31px;color:var(--muted);line-height:1.2}
 
-/* 8 — roadmap */
+/* 7 — roadmap */
 .s9{background:radial-gradient(1200px 600px at 50% 62%,#f3edf6 0%,var(--cream) 70%)}
 .s9::before{content:'';position:absolute;inset:0;background-image:radial-gradient(#d9cfe2 1.4px,transparent 1.6px);background-size:34px 34px;opacity:.55;
   -webkit-mask-image:radial-gradient(900px 420px at 50% 62%,#000,transparent);mask-image:radial-gradient(900px 420px at 50% 62%,#000,transparent)}
@@ -200,10 +180,6 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 
 /* photos en fondu : toujours effacées sous le texte */
 .fade-photo{position:absolute;object-fit:cover;pointer-events:none}
-.s4-col{position:relative;overflow:hidden}
-.s4-col > *:not(.ph){position:relative}
-.s4-col .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;mix-blend-mode:multiply;filter:grayscale(1) contrast(.9)}
-.s4-col .ph{opacity:.2;-webkit-mask-image:linear-gradient(transparent 18%,#000 75%);mask-image:linear-gradient(transparent 18%,#000 75%)}
 .s6-panel{overflow:hidden}
 .s6-panel .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.2;mix-blend-mode:luminosity}
 .s9 .fade-photo{inset:0;width:1920px;height:1080px;opacity:.12;-webkit-mask-image:radial-gradient(1100px 700px at 60% 55%,#000 30%,transparent 80%);mask-image:radial-gradient(1100px 700px at 60% 55%,#000 30%,transparent 80%)}
@@ -219,7 +195,7 @@ svg [data-b],svg g{transform-box:fill-box;transform-origin:center}
 .access b{font-size:33px;font-weight:680}
 .access li > span:last-child{font-size:30px;color:var(--muted);white-space:nowrap}
 
-/* 9 — appel au don */
+/* 8 — appel au don */
 .s10{background:#1b0a2b}
 .s10 .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .s10-veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(27,10,43,.92) 0%,rgba(42,15,64,.78) 55%,rgba(42,15,64,.55) 100%)}
@@ -259,14 +235,13 @@ body.mv #hud{opacity:1}
   <img class="s2-photo" src="assets/s2-photo.jpg" alt="Étudiants de l’Institut TW3">
   <div class="s2-band" data-m="panel"></div>
   <div class="s2-left fit">
-    <h2 class="title" data-m="title" data-b="wipe" data-d="800">Créer un lieu de vie étudiant musulman durable en&nbsp;Île&#8209;de&#8209;France</h2>
+    <h2 class="title" data-m="title" data-b="wipe" data-d="800">Pourquoi l’Escale&nbsp;?</h2>
     <div class="rule" data-m="rule" data-b="wipe" data-d="400"></div>
-    <p class="s2-vision" data-m="lead" data-b="fade" data-d="700"><b>Vision&nbsp;:</b> offrir aux étudiants et mentorés de TW3, et à tous les étudiants musulmans d’Île&#8209;de&#8209;France, un lieu 3&nbsp;en&nbsp;1 pour réviser, prier et être accompagnés. Première ouverture en&nbsp;<b>2027.</b></p>
   </div>
   <div class="s2-cols">
-    <div class="s2-col fit" data-b="rise" data-d="600"><p class="k">Pour TW3</p><p class="big">Mentorat</p><p>Nos étudiants et mentorés ont besoin d’un lieu fixe pour le mentorat, les colles et l’accompagnement.</p></div>
-    <div class="s2-col fit" data-b="rise" data-d="600"><p class="k">Pourquoi&nbsp;?</p><p class="big">~40&nbsp;000</p><p>Étudiants musulmans à Paris (≈&nbsp;10&nbsp;% des 403&nbsp;000 étudiants parisiens)&nbsp;: une vraie demande.</p></div>
-    <div class="s2-col fit" data-b="rise" data-d="600"><p class="k">Impact</p><p class="big">Réussite</p><p>Créer un cluster d’excellence au service de la réussite des étudiants de TW3 et de toute la communauté.</p></div>
+    <div class="s2-col fit" data-b="rise" data-d="600"><p class="k">Pour TW3</p><p class="big">Mentorat</p><p>Nos étudiants et mentorés ont besoin d’un lieu fixe pour les séances et les&nbsp;colles.</p></div>
+    <div class="s2-col fit" data-b="rise" data-d="600"><p class="k">La demande</p><p class="big">~40&nbsp;000</p><p>Étudiants musulmans à Paris (≈&nbsp;10&nbsp;% des 403&nbsp;000 étudiants parisiens)&nbsp;: une vraie demande.</p></div>
+    <div class="s2-col fit" data-b="rise" data-d="600"><p class="k">L’impact</p><p class="big">Réussite</p><p>Un cluster d’excellence au service des étudiants de TW3 et de toute la communauté.</p></div>
   </div>
 </section>
 
@@ -284,32 +259,13 @@ body.mv #hud{opacity:1}
   </div>
 </section>
 
-<section class="slide s4">
-  <h2 class="title" data-m="title">Qui en bénéficie et comment&nbsp;?</h2>
-  <p class="sub">Trois usages complémentaires dans un même lieu</p>
-  <div class="s4-cols">
-    <div class="s4-col fit" data-b="wipe-down" data-d="700"><img class="ph" src="assets/col-etude.jpg" alt=""><h3>Espace d’étude</h3><div class="rule"></div><ul>
-      <li>Mentorat et accompagnement académique par&nbsp;TW3</li></ul>
-      <div class="who" data-b="rise" data-d="500"><p class="k">Pour qui · comment</p><h4>Étudiants et mentorés de TW3</h4><p>Accès <b>prioritaire</b> aux salles de groupe.</p></div></div>
-    <div class="s4-col fit" data-b="wipe-down" data-d="700"><img class="ph" src="assets/col-vie.jpg" alt=""><h3>Lieu de vie</h3><div class="rule"></div><ul>
-      <li>Point d’ancrage de la communauté étudiante musulmane</li><li>Espace d’ablutions</li><li>Rencontres, entraide et émulation entre étudiants</li></ul>
-      <div class="who" data-b="rise" data-d="500"><p class="k">Pour qui · comment</p><h4>Étudiants musulmans d’Île&#8209;de&#8209;France</h4><p>Forfait mensuel illimité ou accès ponctuel à <b>3&nbsp;€/heure</b>.</p></div></div>
-    <div class="s4-col fit" data-b="wipe-down" data-d="700"><img class="ph" src="assets/col-event.jpg" alt=""><h3>Site événementiel</h3><div class="rule"></div><ul>
-      <li>Événements étudiants et associatifs</li><li>Formations et networking</li></ul>
-      <div class="who" data-b="rise" data-d="500"><p class="k">Pour qui · comment</p><h4>Associations, entreprises et particuliers</h4><p>Réservation à la demande, à partir de <b>300&nbsp;€</b> la&nbsp;soirée.</p></div></div>
-  </div>
-</section>
-
 <section class="slide s6">
   <div class="s6-panel" data-m="panel"><img class="ph" src="assets/bg-s6.jpg" alt=""></div>
   <div class="s6-left fit">
-    <p class="k" data-b="rise" data-d="500">Corvisart · Paris 13e</p>
+    <p class="k" data-b="rise" data-d="500">Capacité</p>
     <div data-b="zoom" data-d="700"><p class="s6-60">60</p><p>places d’étude</p></div>
     <div class="rule" data-b="wipe" data-d="300"></div>
     <ul class="s6-stats" data-b="rise" data-d="600">
-      <li><b>105&nbsp;m²</b><span>de surface totale</span></li>
-      <li><b>2 salles de 9&nbsp;m²</b><span>cours et colles, 6&nbsp;places chacune</span></li>
-      <li><b>10&nbsp;m²</b><span>de prière, avec rideau acoustique</span></li>
       <li><b>7j/7</b><span>de 9&nbsp;h à 22&nbsp;h, badge après 18&nbsp;h</span></li>
     </ul>
   </div>
@@ -319,7 +275,7 @@ body.mv #hud{opacity:1}
     <div class="room ra fit"><b>Salle A</b><span class="m" style="color:inherit;font-weight:760;font-size:34px">9&nbsp;m²</span><span>6&nbsp;places</span></div>
     <div class="room rb fit"><b>Salle B</b><span class="m" style="color:inherit;font-weight:760;font-size:34px">9&nbsp;m²</span><span>6&nbsp;places</span></div>
     <div class="room open fit"><b>Étude ouverte</b><span class="m" style="color:inherit;font-weight:780;font-size:40px">52&nbsp;m²</span><span>48&nbsp;places</span></div>
-    <div class="room pri fit"><b>Espace de prière</b><span class="m" style="color:inherit;font-weight:760;font-size:34px">10&nbsp;m²</span><span>rideau acoustique</span></div>
+    <div class="room pri fit"><b>Espace de prière</b><span class="m" style="color:inherit;font-weight:760;font-size:34px">10&nbsp;m²</span></div>
     <div class="room acc fit"><b>Accueil · café</b><span class="m" style="color:inherit;font-weight:760;font-size:34px">10&nbsp;m²</span><span>casiers</span></div>
     <div class="room foy fit"><b>Le Foyer</b><span class="m" style="color:inherit;font-weight:760;font-size:34px">8&nbsp;m²</span><span>babyfoot</span><span>détente</span></div>
     <div class="room san fit"><b>Sanitaires</b><span class="m" style="color:inherit;font-weight:760;font-size:34px">7&nbsp;m²</span><span>2&nbsp;WC</span><span>dont 1&nbsp;PMR</span></div>
@@ -327,24 +283,24 @@ body.mv #hud{opacity:1}
   </div>
   <div class="plan-foot fit" data-b="wipe" data-d="600"><span class="entry">▲&nbsp;Entrée</span><span class="scale">0<i></i>3&nbsp;m</span><span class="tot">Total 105&nbsp;m²</span></div>
   <div class="plan-leg fit" data-b="wipe" data-d="600" data-w="1"><span><i></i>cloison amovible</span><span><i class="g"></i>rideau acoustique</span></div>
-  <p class="s6-note fit" data-b="wipe" data-d="600"><b>Le soir&nbsp;:</b> cloisons et rideau acoustique repliés, un seul espace de <b>88&nbsp;m²</b> pour conférences et événements, jusqu’à <b>60&nbsp;personnes assises.</b></p>
+  <p class="s6-note fit" data-b="wipe" data-d="600"><b>Le soir</b>, tout se replie en <b>88&nbsp;m²</b> pour <b>60&nbsp;personnes assises</b>&nbsp;: conférences, formations et networking, ouverts aux associations, entreprises et&nbsp;particuliers.</p>
 </section>
 
 <section class="slide s7">
   <h2 class="title" data-m="title">Un modèle économique pérenne</h2>
-  <p class="sub">Budget mensuel en rythme de croisière, sans aucun don</p>
+  <p class="sub">Budget mensuel en rythme de croisière</p>
   <div class="hair"></div>
   <!-- cascade : Recettes − Charges = Excédent ; hauteurs proportionnelles (10 400 € = 700 px) -->
   <div class="s7c" style="left:100px;width:600px" data-b="wipe-up" data-d="900" data-o="1">
     <h3>Recettes · ≈&nbsp;10&nbsp;400&nbsp;€</h3>
-    <div class="tm tm-for fit" style="top:88px;height:606px"><span style="font-size:37px;display:block">300 forfaits illimités à <b>30&nbsp;€/mois</b></span><span style="font-size:31px;display:block;opacity:.82;margin-top:4px">≈&nbsp;1&nbsp;€ par jour pour réviser, prier et se retrouver</span><b class="v" style="font-size:77px;margin-top:16px">9&nbsp;000&nbsp;€</b></div>
-    <div class="tm tm-soi fit" style="top:694px;height:94px;width:300px;padding:6px 18px"><span style="font-size:34px;display:block;line-height:1.1">Soirées privées</span><b class="v" style="font-size:37px;line-height:1.1">600&nbsp;€</b></div>
-    <div class="tm tm-acc fit" style="top:694px;height:94px;width:300px;left:300px;padding:6px 18px"><span style="font-size:34px;display:block;line-height:1.1">Accès à l’heure</span><b class="v" style="font-size:37px;line-height:1.1">800&nbsp;€</b></div>
+    <div class="tm tm-for fit" style="top:88px;height:606px"><span style="font-size:37px;display:block">300 forfaits illimités à <b>30&nbsp;€/mois</b></span><span style="font-size:31px;display:block;opacity:.82;margin-top:4px">≈&nbsp;1&nbsp;€ par jour</span><b class="v" style="font-size:77px;margin-top:16px">9&nbsp;000&nbsp;€</b></div>
+    <div class="tm tm-soi fit" style="top:694px;height:94px;width:300px;padding:6px 18px"><span style="font-size:34px;display:block;line-height:1.1">Soirées à 300&nbsp;€</span><b class="v" style="font-size:37px;line-height:1.1">600&nbsp;€</b></div>
+    <div class="tm tm-acc fit" style="top:694px;height:94px;width:300px;left:300px;padding:6px 18px"><span style="font-size:34px;display:block;line-height:1.1">Accès à 3&nbsp;€/h</span><b class="v" style="font-size:37px;line-height:1.1">800&nbsp;€</b></div>
   </div>
   <i class="s7-link" style="left:700px;top:320px;width:50px" data-b="fade" data-d="300" data-o="2" data-t="click"></i>
   <div class="s7c" style="left:750px;width:600px" data-b="wipe-down" data-d="900" data-o="3" data-w="1">
     <h3><span class="op">−</span> Charges · ≈&nbsp;7&nbsp;750&nbsp;€</h3>
-    <div class="tm tm-loy fit" style="top:88px;height:404px;width:300px"><b style="font-size:34px;font-weight:600">Loyer HT</b><span style="font-size:34px;display:block">Corvisart, 105&nbsp;m²</span><b class="v" style="font-size:49px;margin-top:10px">3&nbsp;000&nbsp;€</b></div>
+    <div class="tm tm-loy fit" style="top:88px;height:404px;width:300px"><b style="font-size:34px;font-weight:600">Loyer HT</b><b class="v" style="font-size:49px;margin-top:10px">3&nbsp;000&nbsp;€</b></div>
     <div class="tm tm-sal fit" style="top:88px;height:404px;width:300px;left:300px"><b style="font-size:34px;font-weight:600">2 salariés</b><span style="font-size:34px;display:block">temps plein en semaine, temps partiel le week&#8209;end</span><b class="v" style="font-size:49px;margin-top:10px">3&nbsp;000&nbsp;€</b></div>
     <div class="tm tm-fon fit row1" style="top:492px;height:67px"><span style="font-size:34px">Fonctionnement</span><b class="v" style="font-size:37px">1&nbsp;000&nbsp;€</b></div>
     <div class="tm tm-tax fit row1" style="top:559px;height:51px"><span style="font-size:34px">Taxes et énergie</span><b class="v" style="font-size:37px">750&nbsp;€</b></div>
@@ -355,7 +311,6 @@ body.mv #hud{opacity:1}
     <div class="exc-why fit" style="bottom:238px">
       <p class="ok">Sans aucun don</p>
       <p>Équilibre atteint dès ≈&nbsp;<b>210&nbsp;forfaits</b> sur&nbsp;300</p>
-      <p class="mute">L’excédent prépare l’ouverture des locaux suivants.</p>
     </div>
     <div class="tm tm-exc fit" style="top:610px;height:178px"><b class="v" style="font-size:67px;line-height:1.05">+2&nbsp;650&nbsp;€</b><span style="font-size:31px;display:block">par mois</span></div>
   </div>
@@ -396,7 +351,7 @@ body.mv #hud{opacity:1}
   <div class="s10-left fit">
     <p class="s10-k" data-b="rise" data-d="700">Ce soir, tout commence</p>
     <h2 class="s10-h" data-b="fade" data-d="1000">Chaque don pose une pierre de l’Escale.</h2>
-    <p class="s10-p" data-b="rise" data-d="700">Offrons aux étudiants de Paris un lieu pour réviser et grandir ensemble. Avec vous, l’Escale ouvre ses portes en&nbsp;2027.</p>
+    <p class="s10-p" data-b="rise" data-d="700">Offrons aux étudiants de quoi grandir ensemble. Avec vous, l’Escale devient réalité.</p>
     <div class="s10-motto" data-b="fade" data-d="800"><img src="assets/logo-2027.png" alt="Institut TW3"><span class="s10-slogan">Apprendre, Enseigner, Exceller</span></div>
   </div>
   <div class="s10-card fit" data-b="zoom" data-d="900">
