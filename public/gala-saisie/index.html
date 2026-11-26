@@ -350,17 +350,17 @@ const DEF = {
   objectif: 100000,
   // ordre de priorité : ce qui permet d'ouvrir d'abord, puis la sécurité de la 1ère année
   postes: [
-    {nom: 'Dépôt et loyers', sous: 'garantie + loyers des travaux', montant: 17000, c: '#e5c77c'},
-    {nom: 'Frais et imprévus', sous: 'agence, bail, marge de 10 %', montant: 10000, c: '#86c5a8'},
-    {nom: 'Travaux', sous: 'ablutions, cloisons, normes ERP', montant: 17000, c: '#c7aee3'},
-    {nom: 'Équipement', sous: 'mobilier, réseau, badges', montant: 10000, c: '#f4ecd6'},
-    {nom: 'Réserve de sécurité', sous: '3 mois de charges', montant: 23000, c: '#9a78c4'},
-    {nom: 'Montée en charge', sous: '6 mois pour atteindre 210 adhérents', montant: 23000, c: '#e59ab6'}],
+    {nom: 'Dépôt et loyers', sous: 'garantie + loyers des travaux', montant: 20000, c: '#e5c77c'},
+    {nom: 'Frais et imprévus', sous: 'agence, bail, marge', montant: 15000, c: '#86c5a8'},
+    {nom: 'Travaux', sous: 'ablutions, électricité, normes', montant: 30000, c: '#c7aee3'},
+    {nom: 'Équipement', sous: 'mobilier, réseau, badges', montant: 15000, c: '#f4ecd6'},
+    {nom: 'Réserve de sécurité', sous: 'plus d’un mois de charges', montant: 10000, c: '#9a78c4'},
+    {nom: 'Montée en charge', sous: 'les premiers mois, avant l’équilibre', montant: 10000, c: '#e59ab6'}],
   paliers: [
-    {montant: 27000, nom: 'Le bail peut être signé'},
-    {montant: 44000, nom: 'Les travaux sont financés'},
-    {montant: 54000, nom: 'L’Escale peut ouvrir'},
-    {montant: 77000, nom: 'La réserve de sécurité est constituée'},
+    {montant: 35000, nom: 'Le bail peut être signé'},
+    {montant: 65000, nom: 'Les travaux sont financés'},
+    {montant: 80000, nom: 'L’Escale peut ouvrir'},
+    {montant: 90000, nom: 'La réserve de sécurité est constituée'},
     {montant: 100000, nom: 'La première année est sécurisée'}],
   montrer: 'tous', seuil: 0, celebrations: true,
   lien: 'https://www.helloasso.com/associations/ta3alamawa3alama/collectes/maison-etudiante',
@@ -421,7 +421,8 @@ function paintMarks() {
     const dn = document.createElement('div'); dn.className = 'dotn'; dn.textContent = i + 1;
     const tk = document.createElement('div'); tk.className = 'tick';
     const am = document.createElement('div'); am.className = 'amt'; am.textContent = keur(p.montant);
-    if (p.montant / max > .96) am.style.transform = 'translateX(-100%)';
+    const nx = cfg.paliers[i + 1];   // étiquette trop proche du dernier palier : alignée à droite pour ne pas le chevaucher
+    if (p.montant / max > .96 || (nx && nx.montant / max > .96 && (nx.montant - p.montant) / max < .14)) am.style.transform = 'translateX(-100%)';
     m.append(dn, tk, am); box.append(m);
   });
 }
