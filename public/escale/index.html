@@ -550,7 +550,7 @@ function next() {
   if (timers.length) { clear(); setState(cur, step); return; }   // passe l'animation en cours
   const L = steps[cur];
   if (step < L.length) { const el = L[step++]; play(el); runAuto(dur(el), 0); update(); }
-  else if (cur === slides.length - 1) return;
+  else if (cur === slides.length - 1) goLive();
   else go(cur + 1);
 }
 // après la dernière diapo : fondu puis page du direct
