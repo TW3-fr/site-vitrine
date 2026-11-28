@@ -112,6 +112,22 @@ button,input,textarea,select{font:inherit;color:inherit}
 .mk.bonus.on .dotn{background:var(--lemon);border-color:var(--lemon);color:var(--ink)}
 .mk.goal .dotn{background:var(--gold);border-color:var(--gold);color:var(--ink);font-size:18px}
 .mk.goal .amt{color:var(--gold)}
+.merci{position:absolute;inset:0;z-index:6;background:radial-gradient(1400px 900px at 30% 30%,#43206a 0%,#1b0a2b 68%);opacity:0;pointer-events:none;transition:opacity 1.2s ease}
+.merci.show{opacity:1}
+.merci p{margin:0}
+.merci .mlogo{position:absolute;left:120px;top:90px;height:120px}
+.merci .mk2{position:absolute;left:120px;top:250px;font-size:32px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.merci h2{position:absolute;left:112px;top:318px;margin:0;font-family:var(--display);font-style:italic;font-weight:400;font-size:230px;line-height:1;color:var(--lemon)}
+.merci .mlead{position:absolute;left:120px;top:590px;width:1000px;font-size:42px;line-height:1.3;color:var(--cream)}
+.merci .mtot{position:absolute;left:116px;top:660px;font-size:150px;font-weight:800;letter-spacing:-.035em;line-height:1;color:var(--cream);white-space:nowrap}
+.merci .mn{position:absolute;left:120px;top:836px;font-size:38px;color:var(--muted)}
+.merci .mn b{color:var(--cream)}
+.merci .mpart{position:absolute;left:120px;bottom:80px;display:flex;align-items:center;gap:34px;font-size:24px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.merci .mpart img.abtal{height:50px}.merci .mpart img.syla{height:82px}
+.merci .mcard{position:absolute;right:120px;top:250px;width:540px;padding:40px;border-radius:34px;text-align:center;background:linear-gradient(160deg,rgba(229,199,124,.24),rgba(229,199,124,.06));border:2px solid rgba(229,199,124,.7)}
+.merci .mcard h3{margin:0;font-family:var(--display);font-style:italic;font-weight:400;font-size:62px;line-height:1.05;color:var(--lemon)}
+.merci .mcard .qr{width:340px;height:340px;margin:28px auto 0}
+.merci .mcard p{margin:24px 0 0;font-size:28px;line-height:1.3;color:var(--cream)}
 .bonus-pg{position:absolute;inset:0;background:radial-gradient(1300px 800px at 50% 40%,#3d1a5c 0%,#1b0a2b 70%);opacity:0;pointer-events:none;transition:opacity .9s ease;z-index:4}
 .bonus-pg.show{opacity:1}
 .bonus-pg .bk{position:absolute;left:0;right:0;top:72px;text-align:center;font-size:32px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
@@ -259,6 +275,20 @@ input[type=email],input[type=tel],input[type=date],input[type=search],input[type
     </aside>
 
     <div class="celeb" id="celeb" aria-live="polite"><canvas id="confetti" width="1920" height="1080"></canvas><div class="ccard"><small id="celebK">Palier atteint</small><h2 id="celebH"></h2><p id="celebP" class="num"></p></div></div>
+    <div class="merci" id="merci" aria-live="polite" aria-hidden="true">
+      <img class="mlogo" id="lgTw3c" alt="Institut TW3">
+      <p class="mk2">Fin de soirée</p>
+      <h2>Merci</h2>
+      <p class="mlead">Ensemble, nous avons réuni ce soir</p>
+      <p class="mtot num" id="mTot">0&nbsp;€</p>
+      <p class="mn num" id="mN"></p>
+      <div class="mpart">Avec le soutien de <img class="abtal" id="lgAbtalc" alt="Abtal"><img class="syla" id="lgSylac" alt="Syla Invest"></div>
+      <div class="mcard">
+        <h3>La collecte continue</h3>
+        <div class="qr" id="qr2" role="img" aria-label="QR code pour faire un don"></div>
+        <p>Chaque don pose une pierre de l’Escale.<br>Merci pour votre générosité.</p>
+      </div>
+    </div>
     <div class="bonus-pg" id="bonusPg" aria-live="polite">
       <p class="bk">Objectif atteint… et ce n’est pas fini</p>
       <h2>Et si l’on allait encore plus&nbsp;loin&nbsp;?</h2>
@@ -284,6 +314,11 @@ input[type=email],input[type=tel],input[type=date],input[type=search],input[type
         <p class="warn" id="lgErr" hidden></p>
       </form></section>
     <p class="ro" id="ro" hidden>Ce compte n’a pas le droit de saisir les dons. Connectez-vous avec le compte de l’équipe.</p>
+
+    <section class="card" id="finCard"><h2>Fin de soirée</h2>
+      <p class="note">Quel que soit le montant atteint, appuyez sur ce bouton au moment des remerciements : l’écran du direct affiche « Merci », le total réuni, le nombre de donateurs, les partenaires et le QR code de la collecte.</p>
+      <button type="button" class="btn" id="finBtn">Afficher les remerciements</button>
+    </section>
 
     <section class="card"><h2>Ce soir</h2>
       <div class="recap num"><div><b id="rT">0 €</b><span>Total</span></div><div><b id="rD">0 €</b><span>Dons</span></div><div><b id="rP">0 €</b><span>Promesses</span></div></div>
@@ -398,7 +433,7 @@ const DEF = {
     {montant: 200000, nom: 'Un nouveau local', sous: 'Horizon 2028 : l’ouverture d’un deuxième lieu, forte de la réussite du premier.', hz: true}],
   montrer: 'tous', seuil: 0, celebrations: true,
   lien: 'https://www.helloasso.com/associations/ta3alamawa3alama/collectes/maison-etudiante',
-  annonce: ''
+  annonce: '', fin: false
 };
 const NB = ' ';
 const eur = n => Math.round(n).toLocaleString('fr-FR').replace(/ |\s/g, NB) + NB + '€';
@@ -407,7 +442,7 @@ const $ = id => document.getElementById(id);
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 let cfg = structuredClone(DEF), entries = [], canWrite = null, store = null, local = false;
 
-['lgTw3', 'lgTw3b'].forEach(i => $(i).src = LOGO_TW3); $('lgAbtal').src = LOGO_ABTAL; $('lgSyla').src = LOGO_SYLA;
+['lgTw3', 'lgTw3b', 'lgTw3c'].forEach(i => $(i).src = LOGO_TW3); ['lgAbtal', 'lgAbtalc'].forEach(i => $(i).src = LOGO_ABTAL); ['lgSyla', 'lgSylac'].forEach(i => $(i).src = LOGO_SYLA);
 
 // ------------------------------------------------------------ calculs
 function sums() {
@@ -588,8 +623,8 @@ function paintStats() {
 let qrFor = '';
 function paintQR() {
   if (qrFor === cfg.lien || typeof qrcode !== 'function') return; qrFor = cfg.lien;
-  try { const q = qrcode(0, 'M'); q.addData(cfg.lien); q.make(); $('qr').innerHTML = q.createSvgTag({cellSize: 8, margin: 0, scalable: true}); }
-  catch { $('qr').textContent = ''; }
+  try { const q = qrcode(0, 'M'); q.addData(cfg.lien); q.make(); $('qr').innerHTML = $('qr2').innerHTML = q.createSvgTag({cellSize: 8, margin: 0, scalable: true}); }
+  catch { $('qr').textContent = $('qr2').textContent = ''; }
 }
 // célébrations
 let celebQueue = [], celebOn = false;
@@ -614,6 +649,15 @@ function confetti() {
 }
 let toastT = 0;
 function toast(txt) { const t = $('toast'); t.textContent = txt; t.classList.remove('show'); void t.offsetWidth; t.classList.add('show'); }
+// écran de remerciements, piloté depuis la saisie (bouton « Afficher les remerciements »)
+function paintMerci() {
+  const s = sums(), on = !!cfg.fin;
+  $('mTot').textContent = eur(s.t);
+  $('mN').textContent = s.n ? `grâce à ${s.n} donateur${s.n > 1 ? 's' : ''}` : '';
+  $('merci').classList.toggle('show', on); $('merci').setAttribute('aria-hidden', on ? 'false' : 'true');
+  if (on && !paintMerci.was && !RM) confetti();
+  paintMerci.was = on;
+}
 function renderEcran(fresh) {
   const s = sums();
   if (booted && prevTotal !== null && cfg.celebrations) {
@@ -630,7 +674,7 @@ function renderEcran(fresh) {
     if (e) toast(`+${eur(e.montant)} · ${e.type === 'promesse' ? 'Promesse de ' : 'Merci '}${e.anonyme || !e.nom ? (e.type === 'promesse' ? 'un donateur' : 'à vous') : e.nom}`);
   }
   prevTotal = s.t;
-  paintMarks(); paintStats(); paintMessages(fresh); paintQR(); tween(s);
+  paintMarks(); paintStats(); paintMessages(fresh); paintQR(); tween(s); paintMerci();
 }
 setInterval(() => { if (!$('ecran').hidden) paintStats(); }, 20000);
 let idleT; addEventListener('mousemove', () => { document.body.classList.remove('idle'); clearTimeout(idleT); idleT = setTimeout(() => document.body.classList.add('idle'), 3000); });
@@ -811,6 +855,7 @@ function renderSaisie() {
 function fillSettings() {
   $('sObj').value = cfg.objectif; $('sShow').value = cfg.montrer; $('sSeuil').value = cfg.seuil || 0; $('sCel').checked = cfg.celebrations; $('sLien').value = cfg.lien;
   $('aTxt').value = cfg.annonce || ''; const box = $('sPal'); box.textContent = '';
+  $('finBtn').textContent = cfg.fin ? 'Retirer les remerciements' : 'Afficher les remerciements'; $('finBtn').className = cfg.fin ? 'btn sec' : 'btn';
   cfg.paliers.forEach(p => addPalRow(p));
 }
 function addPalRow(p) {
@@ -830,6 +875,7 @@ $('sSave').onclick = () => {
     celebrations: chk('sCel'), lien: /^https:\/\//.test(lien) ? lien : DEF.lien}, 'Réglages enregistrés');
 };
 $('aPub').onclick = () => saveCfg({annonce: val('aTxt')}, 'Annonce affichée');
+$('finBtn').onclick = () => saveCfg({fin: !cfg.fin}, cfg.fin ? 'Remerciements retirés de l’écran' : 'Remerciements affichés à l’écran');
 $('aClr').onclick = () => { $('aTxt').value = ''; saveCfg({annonce: ''}, 'Annonce retirée'); };
 $('rst').onclick = () => { $('rstConf').hidden = false; };
 $('rstNo').onclick = () => { $('rstConf').hidden = true; };
@@ -849,7 +895,7 @@ $('csv').onclick = async () => {
   const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([data], {type: 'text/csv;charset=utf-8'}));
   a.download = 'gala-tw3-dons-' + new Date().toISOString().slice(0, 10) + '.csv'; document.body.append(a); a.click(); a.remove();
 };
-function applyRO() { $('ro').hidden = canWrite !== false || !!(store && store.auth && !store.auth.currentUser); ['form', 'annCard'].forEach(i => $(i).querySelectorAll('button,input,textarea,select').forEach(x => x.disabled = canWrite === false)); renderSaisie(); }
+function applyRO() { $('ro').hidden = canWrite !== false || !!(store && store.auth && !store.auth.currentUser); ['form', 'annCard', 'finCard'].forEach(i => $(i).querySelectorAll('button,input,textarea,select').forEach(x => x.disabled = canWrite === false)); renderSaisie(); }
 setType('don');
 
 // ------------------------------------------------------------ routes
@@ -922,7 +968,7 @@ function setAuthUI(user) {
   const ok = !!user && STAFF.includes((user.email || '').toLowerCase());
   canWrite = ok; me = user ? user.uid : null;
   $('login').hidden = !!user; $('who').hidden = !user; $('whoTxt').textContent = user ? 'Connecté : ' + user.email : '';
-  $('form').hidden = !ok; $('annCard').hidden = !ok;
+  $('form').hidden = !ok; $('annCard').hidden = !ok; $('finCard').hidden = !ok;
   applyRO(); if (ok) watchPrive();
 }
 async function start() {
@@ -931,7 +977,7 @@ async function start() {
   if (!store) { store = localStore(); local = true; canWrite = true; }
   if (MODE === 'saisie') {
     if (store.auth) {
-      $('form').hidden = true; $('annCard').hidden = true; canWrite = false; applyRO();
+      $('form').hidden = true; $('annCard').hidden = true; $('finCard').hidden = true; canWrite = false; applyRO();
       store.au.onAuthStateChanged(store.auth, setAuthUI);
       $('loginForm').onsubmit = async ev => { ev.preventDefault(); $('lgErr').hidden = true; $('lgBtn').disabled = true;
         try { await store.au.signInWithEmailAndPassword(store.auth, $('lgMail').value.trim(), $('lgPwd').value); $('lgPwd').value = ''; }
