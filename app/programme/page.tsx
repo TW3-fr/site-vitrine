@@ -24,7 +24,8 @@ export default function ProgrammePage() {
       desc: "Intégrer le top écoles de commerce. Pour lycéens (2nde à Tle) et étudiants (prépas ECG, ECT et D2). Destiné aux élèves motivés et travailleurs.",
       icon: <TrendingUp className="w-8 h-8" />,
       href: "/programme/commerce",
-      photo: "/photos/STG4716.jpg",
+      photo: "/photos/IMG_4841.jpg",
+      photoPosition: "center 48%",
       svgIcon: <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg>,
     },
     {
@@ -86,6 +87,7 @@ export default function ProgrammePage() {
                     fill
                     sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover transition-transform duration-700 md:group-hover:scale-105"
+                    style={'photoPosition' in p ? { objectPosition: p.photoPosition } : undefined}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent md:bg-none"></div>
                 </div>
