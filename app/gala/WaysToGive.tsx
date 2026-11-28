@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Banknote, Check, Copy, CreditCard, HandHeart, Landmark } from 'lucide-react'
+import { Banknote, Check, Copy, CreditCard, Landmark } from 'lucide-react'
 
 // Coordonnées bancaires de l'association (virement SEPA)
 const RIB = [
@@ -59,33 +59,17 @@ function CopyButton({ text, label, children }: { text: string; label: string; ch
 
 const card = 'rounded-3xl border border-[#fffdd1]/15 bg-[#391457]/50 p-5 text-left backdrop-blur-md sm:p-6'
 
-export function WaysToGive({ donationUrl }: { donationUrl: string }) {
+export function WaysToGive() {
   return (
-    <section aria-labelledby="donner" className="mx-auto mt-16 w-full max-w-4xl pb-6">
-      <h2 id="donner" className="text-center font-serif text-3xl italic text-[#fffdd1] sm:text-4xl">
-        Comment donner&nbsp;?
+    <section id="donner" aria-labelledby="donner-titre" className="mx-auto mt-14 w-full max-w-5xl scroll-mt-6">
+      <h2 id="donner-titre" className="text-center font-serif text-3xl italic text-[#fffdd1] sm:text-4xl">
+        Toutes les façons de donner
       </h2>
       <p className="mt-2 text-center font-sans text-sm text-[#fffdd1]/70">
-        Quatre façons de soutenir l&apos;Escale, ce soir ou plus tard.
+        En ligne, par carte sur place, en espèces ou par virement.
       </p>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
-        <div className={card}>
-          <HandHeart className="h-7 w-7 text-[#e9c6e6]" aria-hidden />
-          <h3 className="mt-3 font-sans text-lg font-semibold text-[#fffdd1]">Cagnotte en ligne</h3>
-          <p className="mt-1 font-sans text-sm text-[#fffdd1]/75">
-            Par carte, en quelques secondes, avec votre reçu fiscal envoyé automatiquement.
-          </p>
-          <a
-            href={donationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#fffdd1] px-5 py-2.5 font-sans text-sm font-semibold text-[#391457] transition-shadow duration-300 hover:shadow-[0_6px_28px_rgba(255,253,209,0.35)]"
-          >
-            Ouvrir la cagnotte <span aria-hidden>→</span>
-          </a>
-        </div>
-
+      <div className="mt-8 grid gap-4 sm:grid-cols-3">
         <div className={card}>
           <CreditCard className="h-7 w-7 text-[#e9c6e6]" aria-hidden />
           <h3 className="mt-3 font-sans text-lg font-semibold text-[#fffdd1]">Carte bancaire sur place</h3>
@@ -106,14 +90,8 @@ export function WaysToGive({ donationUrl }: { donationUrl: string }) {
           <Landmark className="h-7 w-7 text-[#e9c6e6]" aria-hidden />
           <h3 className="mt-3 font-sans text-lg font-semibold text-[#fffdd1]">Virement bancaire</h3>
           <p className="mt-1 font-sans text-sm text-[#fffdd1]/75">
-            Copiez chaque information puis collez-la dans votre application bancaire.
+            Copiez chaque information ci-dessous puis collez-la dans votre application bancaire.
           </p>
-          <a
-            href="#rib"
-            className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#fffdd1]/30 px-5 py-2.5 font-sans text-sm font-semibold text-[#fffdd1] transition-colors duration-300 hover:bg-[#fffdd1]/10"
-          >
-            Voir les coordonnées <span aria-hidden>↓</span>
-          </a>
         </div>
       </div>
 

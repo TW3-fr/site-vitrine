@@ -3,11 +3,14 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { AnimatePresence, motion, useReducedMotion, type Variants } from 'motion/react'
+import { ArrowRight, Presentation } from 'lucide-react'
 import { galaScript } from './fonts'
 import { WaysToGive } from './WaysToGive'
 
 const GALA_START = new Date('2026-11-28T18:00:00+01:00').getTime()
 const GALA_END = new Date('2026-11-28T23:00:00+01:00').getTime()
+// aperçu des états de la page : ?apercu=direct ou ?apercu=apres
+const PREVIEW: Record<string, number> = { direct: GALA_START + 3_600_000, apres: GALA_END + 3_600_000 }
 const DONATION_URL = 'https://www.helloasso.com/associations/ta3alamawa3alama/collectes/maison-etudiante'
 // présentation détaillée pour le public (les slides simplifiées sont projetées en salle)
 const PROJECT_URL = 'https://tw3.fr/escale-complet/'
@@ -41,7 +44,7 @@ function remaining(now: number) {
 function Digit({ value, ready }: { value: number; ready: boolean }) {
   const text = ready ? String(value).padStart(2, '0') : '--'
   return (
-    <span className="grid font-serif text-4xl tabular-nums leading-tight sm:text-6xl">
+    <span className="grid font-serif text-3xl tabular-nums leading-tight sm:text-5xl">
       <AnimatePresence initial={false}>
         <motion.span
           key={text}
@@ -64,8 +67,10 @@ export function GalaClient() {
   const reduce = useReducedMotion()
 
   useEffect(() => {
-    setNow(Date.now())
-    const tick = setInterval(() => setNow(Date.now()), 1000)
+    const p = new URLSearchParams(window.location.search).get('apercu')
+    const offset = p && PREVIEW[p] ? PREVIEW[p] - Date.now() : 0
+    setNow(Date.now() + offset)
+    const tick = setInterval(() => setNow(Date.now() + offset), 1000)
     const rotate = setInterval(() => setSlide((s) => (s + 1) % PHOTOS.length), SLIDE_MS)
     return () => {
       clearInterval(tick)
@@ -112,8 +117,8 @@ export function GalaClient() {
           </span>
         </motion.header>
 
-        <section className="flex flex-1 flex-col items-center justify-center py-12 text-center">
-          <motion.p variants={item} className="mb-2 font-sans text-xs uppercase tracking-[0.4em] text-[#e9c6e6] sm:text-sm">
+        <section className="flex flex-col items-center pt-8 text-center sm:pt-10">
+          <motion.p variants={item} className="mb-1 font-sans text-xs uppercase tracking-[0.4em] text-[#e9c6e6] sm:text-sm">
             Institut TW3 présente
           </motion.p>
 
@@ -121,7 +126,7 @@ export function GalaClient() {
             <span className="sr-only">Gala TW3</span>
             <span aria-hidden className="flex flex-wrap items-baseline justify-center gap-x-4 px-4 sm:gap-x-6">
               <motion.span
-                className="gala-script text-[5.5rem] sm:text-[8.5rem] md:text-[10.5rem]"
+                className="gala-script text-[4.5rem] sm:text-[7rem] md:text-[8rem]"
                 initial={reduce ? false : { opacity: 0, clipPath: 'inset(0 100% 0 0)', filter: 'blur(6px)' }}
                 animate={{ opacity: 1, clipPath: 'inset(0 0% 0 0)', filter: 'blur(0px)' }}
                 transition={{ duration: 1.8, delay: 0.5, ease: EASE }}
@@ -129,7 +134,7 @@ export function GalaClient() {
                 Gala
               </motion.span>
               <motion.span
-                className="font-serif text-6xl italic tracking-wide text-[#fffdd1] sm:text-8xl md:text-[6.5rem]"
+                className="font-serif text-5xl italic tracking-wide text-[#fffdd1] sm:text-7xl md:text-[5.5rem]"
                 initial={reduce ? false : { opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1.1, delay: 1.7, ease: EASE }}
@@ -139,84 +144,98 @@ export function GalaClient() {
             </span>
           </h1>
 
-          <motion.div variants={item} aria-hidden className="mt-2 flex items-center gap-4 text-[#e9c6e6]/70">
-            <span className="h-px w-12 bg-current sm:w-20" />
-            <span className="font-serif text-lg italic">2026</span>
-            <span className="h-px w-12 bg-current sm:w-20" />
-          </motion.div>
-
-          <motion.p variants={item} className="mt-6 max-w-2xl font-serif text-2xl italic text-[#fffdd1]/90 sm:text-3xl">
+          <motion.p variants={item} className="mt-3 max-w-2xl font-serif text-xl italic text-[#fffdd1]/90 sm:text-2xl">
             Découvrez l&apos;Escale, la première maison étudiante qui nous correspond.
           </motion.p>
 
-          <motion.div variants={item} className="mt-8 flex flex-col items-center gap-1 font-sans text-base text-[#fffdd1]/85 sm:text-lg">
+          <motion.p variants={item} className="mt-3 font-sans text-sm text-[#fffdd1]/80 sm:text-base">
             <span className="font-semibold">Samedi 28 novembre 2026 · 18h - 23h</span>
-            <span>Salon Blanqui · 94 boulevard Auguste Blanqui, Paris 13e</span>
-          </motion.div>
+            <span className="mx-2 opacity-50">·</span>
+            Salon Blanqui, Paris 13e
+          </motion.p>
 
-          {/* Compte à rebours */}
-          <motion.div variants={item} className="mt-10 min-h-[132px]">
-            {live ? (
-              <p className="font-serif text-4xl sm:text-5xl">C&apos;est ce soir, le gala a commencé.</p>
-            ) : over ? (
-              <p className="font-serif text-4xl sm:text-5xl">Merci d&apos;avoir été là. La collecte continue.</p>
+          {/* Statut : compte à rebours avant le gala, puis simple bandeau (la place libérée profite aux dons) */}
+          <motion.div variants={item} className="mt-6">
+            {live || over ? (
+              <span className="inline-flex items-center gap-3 rounded-full border border-[#fffdd1]/25 bg-[#391457]/60 px-5 py-2 font-sans text-sm font-semibold backdrop-blur-md sm:text-base">
+                <span className="relative flex h-2.5 w-2.5" aria-hidden>
+                  {live && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#ff8fa3] opacity-75" />}
+                  <span className={`relative inline-flex h-2.5 w-2.5 rounded-full ${live ? 'bg-[#ff8fa3]' : 'bg-[#e9c6e6]'}`} />
+                </span>
+                {live ? 'En direct : le gala a commencé' : 'Merci d’avoir été là. La collecte continue.'}
+              </span>
             ) : (
-              <div className="grid grid-cols-4 gap-3 sm:gap-5" role="timer" aria-live="off">
+              <div className="grid grid-cols-4 gap-2 sm:gap-3" role="timer" aria-live="off">
                 {(Object.entries(t) as [string, number][]).map(([label, value]) => (
                   <div
                     key={label}
-                    className="flex w-[72px] flex-col items-center rounded-2xl border border-[#fffdd1]/15 bg-[#391457]/45 px-2 py-4 backdrop-blur-md sm:w-28 sm:py-5"
+                    className="flex w-[66px] flex-col items-center rounded-2xl border border-[#fffdd1]/15 bg-[#391457]/45 px-2 py-2.5 backdrop-blur-md sm:w-24 sm:py-3"
                   >
                     <Digit value={value} ready={now !== null} />
-                    <span className="mt-2 font-sans text-[10px] uppercase tracking-[0.2em] text-[#e9c6e6] sm:text-xs">{label}</span>
+                    <span className="mt-1 font-sans text-[10px] uppercase tracking-[0.2em] text-[#e9c6e6] sm:text-xs">{label}</span>
                   </div>
                 ))}
               </div>
             )}
           </motion.div>
+        </section>
 
-          {/* Don */}
-          <motion.div variants={item} className="flex flex-col items-center">
+        {/* Les deux actions principales : donner, puis découvrir le projet */}
+        <motion.div variants={item} className="mt-8 grid gap-4 md:grid-cols-5">
+          <div className="flex flex-col items-center justify-center rounded-3xl border border-[#fffdd1]/30 bg-gradient-to-br from-[#fffdd1]/[0.14] to-[#391457]/40 p-6 text-center shadow-[0_20px_60px_-25px_rgba(255,253,209,0.35)] backdrop-blur-md sm:p-8 md:col-span-3">
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.3em] text-[#e9c6e6]">Faire un don</p>
+            <h2 className="mt-2 font-serif text-3xl italic leading-tight text-[#fffdd1] sm:text-4xl">Chaque don pose une pierre de l&apos;Escale</h2>
             <a
               href={DONATION_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-10 inline-flex max-w-full items-center justify-center gap-3 rounded-full bg-[#fffdd1] px-7 py-4 text-center font-sans text-base font-semibold text-[#391457] shadow-[0_0_30px_rgba(255,253,209,0.25)] transition-[box-shadow,transform] duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(255,253,209,0.4)] sm:px-9 sm:text-lg"
+              className="group mt-6 inline-flex w-full max-w-sm items-center justify-center gap-3 rounded-full bg-[#fffdd1] px-7 py-4 font-sans text-base font-semibold text-[#391457] shadow-[0_0_30px_rgba(255,253,209,0.25)] transition-[box-shadow,transform] duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(255,253,209,0.4)] sm:text-lg"
             >
-              Faire un don pour la maison étudiante
-              <span aria-hidden className="transition-transform duration-500 ease-out group-hover:translate-x-1">
-                →
-              </span>
+              Donner en ligne
+              <ArrowRight className="h-5 w-5 transition-transform duration-500 ease-out group-hover:translate-x-1" aria-hidden />
             </a>
-            <p className="mt-4 font-sans text-sm text-[#fffdd1]/70">
-              Votre don ouvre droit à une réduction d'impôt de 66 % : un don de 100 € vous revient à 34 €.
-            </p>
-
-            <a
-              href={PROJECT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group mt-6 inline-flex items-center gap-2 rounded-full border border-[#fffdd1]/30 px-6 py-3 font-sans text-sm font-semibold text-[#fffdd1] transition-colors duration-300 hover:bg-[#fffdd1]/10 sm:text-base"
-            >
-              Voir la présentation détaillée de l&apos;Escale
-              <span aria-hidden className="transition-transform duration-500 ease-out group-hover:translate-x-1">
-                →
-              </span>
-            </a>
+            <p className="mt-3 font-sans text-sm text-[#fffdd1]/75">Un don de 100&nbsp;€ vous revient à 34&nbsp;€ après réduction d&apos;impôt.</p>
             <a
               href="#donner"
-              className="mt-4 font-sans text-sm text-[#e9c6e6] underline decoration-[#e9c6e6]/40 underline-offset-4 transition-colors duration-300 hover:text-[#fffdd1]"
+              className="mt-4 font-sans text-sm font-medium text-[#e9c6e6] underline decoration-[#e9c6e6]/40 underline-offset-4 transition-colors duration-300 hover:text-[#fffdd1]"
             >
-              Autres moyens de donner : carte, virement, espèces
+              Aussi par carte sur place, virement ou espèces
             </a>
-          </motion.div>
+          </div>
 
-          <motion.div variants={item} className="w-full">
-            <WaysToGive donationUrl={DONATION_URL} />
-          </motion.div>
-        </section>
+          <a
+            href={PROJECT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex flex-col overflow-hidden rounded-3xl border border-[#e5c77c]/60 bg-[#391457]/60 text-left shadow-[0_20px_60px_-25px_rgba(229,199,124,0.45)] backdrop-blur-md transition-[transform,border-color] duration-500 ease-out hover:-translate-y-0.5 hover:border-[#e5c77c] md:col-span-2"
+          >
+            <div className="relative aspect-[5/2] overflow-hidden md:aspect-[16/9]">
+              <img src="/escale/assets/s1-bg.jpg" alt="" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+              <div className="absolute inset-0 bg-[#2a0f40]/60" />
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <span className="font-serif text-5xl italic text-[#fffdd1]">L&apos;Escale</span>
+                <span className="mt-1 font-sans text-[11px] uppercase tracking-[0.25em] text-[#e9c6e6]">Maison étudiante · Paris</span>
+              </div>
+            </div>
+            <div className="flex flex-1 flex-col p-5 sm:p-6">
+              <p className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#e5c77c]">
+                <Presentation className="h-4 w-4" aria-hidden /> La présentation
+              </p>
+              <h2 className="mt-2 font-sans text-xl font-semibold text-[#fffdd1]">Le projet en détail</h2>
+              <p className="mt-1 font-sans text-sm text-[#fffdd1]/70">Le besoin, le local, le budget et la feuille de route.</p>
+              <span className="mt-4 inline-flex items-center gap-2 self-start rounded-full bg-[#e5c77c] px-5 py-2.5 font-sans text-sm font-semibold text-[#2a0f40]">
+                Feuilleter la présentation
+                <ArrowRight className="h-4 w-4 transition-transform duration-500 ease-out group-hover:translate-x-1" aria-hidden />
+              </span>
+            </div>
+          </a>
+        </motion.div>
 
-        <motion.footer variants={item} className="text-center font-sans text-xs text-[#fffdd1]/55">
+        <motion.div variants={item} className="flex-1">
+          <WaysToGive />
+        </motion.div>
+
+        <motion.footer variants={item} className="mt-12 text-center font-sans text-xs text-[#fffdd1]/55">
           Institut TW3 · association loi 1901 · <Link href="/" className="underline underline-offset-2">tw3.fr</Link>
         </motion.footer>
       </motion.div>
