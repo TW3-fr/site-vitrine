@@ -265,7 +265,7 @@ input[type=email],input[type=tel],input[type=date],input[type=search],input[type
       <div class="give">
         <h3>Faites un don ce soir</h3>
         <div class="qwrap"><div class="qr" id="qr" role="img" aria-label="QR code pour faire un don"></div></div>
-        <p>Scannez avec l’appareil photo de votre téléphone<small>Un don de 100&nbsp;€ ne vous coûte que 34&nbsp;€ après réduction d’impôt.</small></p>
+        <p>Scannez avec l’appareil photo de votre téléphone<small>Un don de 100&nbsp;€ vous revient à 34&nbsp;€ après réduction d’impôt.</small></p>
       </div>
       <div class="pie-wrap">
         <h3>Ce que vos dons financent</h3>
@@ -290,10 +290,10 @@ input[type=email],input[type=tel],input[type=date],input[type=search],input[type
       </div>
     </div>
     <div class="bonus-pg" id="bonusPg" aria-live="polite">
-      <p class="bk">Objectif atteint… et ce n’est pas fini</p>
+      <p class="bk">Objectif atteint… et l’aventure continue</p>
       <h2>Et si l’on allait encore plus&nbsp;loin&nbsp;?</h2>
       <div class="bl" id="bonusList"></div>
-      <p class="bf">Chaque don compte toujours : la jauge continue jusqu’à 200&nbsp;000&nbsp;€</p>
+      <p class="bf">Chaque don compte : la jauge s’étend jusqu’à 200&nbsp;000&nbsp;€</p>
     </div>
     <div class="status" id="status">Connexion…</div>
   </div>
@@ -418,13 +418,13 @@ const DEF = {
     {nom: 'Frais d’entrée', sous: 'agence, avocat, dossier, assurance', montant: 18000, c: '#86c5a8'},
     {nom: 'Travaux', sous: 'ablutions, électricité, normes', montant: 27000, c: '#c7aee3'},
     {nom: 'Équipement', sous: '60 postes, foyer, réseau, badges', montant: 16000, c: '#f4ecd6'},
-    {nom: 'Réserve et imprévus', sous: '10 % travaux + 1 mois de charges', montant: 10000, c: '#9a78c4'},
+    {nom: 'Réserve et marge', sous: '10 % travaux + 1 mois de charges', montant: 10000, c: '#9a78c4'},
     {nom: 'Montée en charge', sous: 'les premiers mois, été compris', montant: 13000, c: '#e59ab6'}],
   paliers: [
-    {montant: 34000, nom: 'Le bail peut être signé'},
+    {montant: 34000, nom: 'L’acquisition du bail est financée'},
     {montant: 61000, nom: 'Les travaux sont financés'},
-    {montant: 77000, nom: 'L’Escale peut ouvrir'},
-    {montant: 87000, nom: 'La réserve et les imprévus sont couverts'},
+    {montant: 77000, nom: 'L’Escale est prête à ouvrir'},
+    {montant: 87000, nom: 'La réserve et la marge sont constituées'},
     {montant: 100000, nom: 'La première année est sécurisée'}],
   // paliers surprise : révélés seulement quand l'objectif est atteint (non modifiables depuis la saisie)
   bonus: [
@@ -943,7 +943,7 @@ function watchPrive() {           // coordonnées : chargées seulement quand on
 function onCfg(snap) {
   const c = snap.exists ? snap.data() : null;
   cfg = {...structuredClone(DEF), ...(c || {})};
-  const OLD = ['35000,65000,80000,90000,100000', '31000,58000,75000,85000,100000'];
+  const OLD = ['35000,65000,80000,90000,100000', '31000,58000,75000,85000,100000', '34000,61000,77000,87000,100000'];
   if (!Array.isArray(cfg.paliers) || !cfg.paliers.length || OLD.includes(cfg.paliers.map(x => x.montant).join())) cfg.paliers = structuredClone(DEF.paliers);
   cfg.postes = structuredClone(DEF.postes); cfg.bonus = structuredClone(DEF.bonus);
   fillSettings(); if ($('ecran').hidden) renderSaisie(); else { prevTotal = sums().t; msgSig = ''; renderEcran(); }
