@@ -275,6 +275,7 @@ input[type=email],input[type=tel],input[type=date],input[type=search],input[type
     <div class="top"><img id="lgTw3b" alt=""><h1>Saisie des dons</h1><a href="/gala-direct/" target="_blank" rel="noopener">Voir l’écran</a></div>
     <div class="row" id="who" hidden><span class="sync" id="whoTxt"></span><button type="button" class="linkbtn" id="logout">Se déconnecter</button></div>
     <div class="sync" id="sync"><i></i><span>Connexion…</span></div>
+    <p class="note">Sur l’écran du direct, la touche <b>B</b> rejoue la page surprise des paliers bonus (105&nbsp;k€, 120&nbsp;k€, 200&nbsp;k€), pour la répétition. Elle s’affiche seule quand le total atteint 100&nbsp;000&nbsp;€.</p>
     <section class="card" id="login" hidden><h2>Connexion de l’équipe</h2>
       <form id="loginForm" class="edit" autocomplete="on">
         <label class="f" for="lgMail">Email<input id="lgMail" type="email" autocomplete="username" required></label>
@@ -378,17 +379,17 @@ const DEF = {
   objectif: 100000,
   // ordre de priorité : ce qui permet d'ouvrir d'abord, puis la sécurité de la 1ère année
   postes: [
-    {nom: 'Dépôt et loyers', sous: 'garantie + loyers des travaux', montant: 20000, c: '#e5c77c'},
-    {nom: 'Frais et imprévus', sous: 'agence, bail, marge', montant: 15000, c: '#86c5a8'},
-    {nom: 'Travaux', sous: 'ablutions, électricité, normes', montant: 30000, c: '#c7aee3'},
-    {nom: 'Équipement', sous: 'mobilier, réseau, badges', montant: 15000, c: '#f4ecd6'},
-    {nom: 'Réserve de sécurité', sous: 'plus d’un mois de charges', montant: 10000, c: '#9a78c4'},
-    {nom: 'Montée en charge', sous: 'les premiers mois, avant l’équilibre', montant: 10000, c: '#e59ab6'}],
+    {nom: 'Dépôt et loyers', sous: 'garantie + loyers avant ouverture', montant: 16000, c: '#e5c77c'},
+    {nom: 'Frais d’entrée', sous: 'agence, avocat, assurance', montant: 15000, c: '#86c5a8'},
+    {nom: 'Travaux', sous: 'ablutions, électricité, normes', montant: 27000, c: '#c7aee3'},
+    {nom: 'Équipement', sous: '60 postes, foyer, réseau, badges', montant: 17000, c: '#f4ecd6'},
+    {nom: 'Réserve et imprévus', sous: 'aléas du chantier, trésorerie', montant: 10000, c: '#9a78c4'},
+    {nom: 'Montée en charge', sous: 'les premiers mois, été compris', montant: 15000, c: '#e59ab6'}],
   paliers: [
-    {montant: 35000, nom: 'Le bail peut être signé'},
-    {montant: 65000, nom: 'Les travaux sont financés'},
-    {montant: 80000, nom: 'L’Escale peut ouvrir'},
-    {montant: 90000, nom: 'La réserve de sécurité est constituée'},
+    {montant: 31000, nom: 'Le bail peut être signé'},
+    {montant: 58000, nom: 'Les travaux sont financés'},
+    {montant: 75000, nom: 'L’Escale peut ouvrir'},
+    {montant: 85000, nom: 'La réserve et les imprévus sont couverts'},
     {montant: 100000, nom: 'La première année est sécurisée'}],
   // paliers surprise : révélés seulement quand l'objectif est atteint (non modifiables depuis la saisie)
   bonus: [
@@ -896,7 +897,8 @@ function watchPrive() {           // coordonnées : chargées seulement quand on
 function onCfg(snap) {
   const c = snap.exists ? snap.data() : null;
   cfg = {...structuredClone(DEF), ...(c || {})};
-  if (!Array.isArray(cfg.paliers) || !cfg.paliers.length) cfg.paliers = structuredClone(DEF.paliers);
+  const OLD = '35000,65000,80000,90000,100000';
+  if (!Array.isArray(cfg.paliers) || !cfg.paliers.length || cfg.paliers.map(x => x.montant).join() === OLD) cfg.paliers = structuredClone(DEF.paliers);
   cfg.postes = structuredClone(DEF.postes); cfg.bonus = structuredClone(DEF.bonus);
   fillSettings(); if ($('ecran').hidden) renderSaisie(); else { prevTotal = sums().t; msgSig = ''; renderEcran(); }
 }
