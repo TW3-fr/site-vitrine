@@ -107,6 +107,28 @@ button,input,textarea,select{font:inherit;color:inherit}
 .celeb h2{margin:14px 0 0;font-family:var(--display);font-style:italic;font-weight:400;font-size:150px;line-height:1.02;color:var(--lemon);text-wrap:balance;max-width:1500px}
 .celeb p{margin:18px 0 0;font-size:40px;color:var(--cream)}
 #confetti{position:absolute;inset:0;width:1920px;height:1080px;pointer-events:none}
+/* paliers bonus au-delà de l'objectif : marques de la jauge + page surprise */
+.mk.bonus .dotn{border-color:var(--gold);color:var(--gold);font-size:17px}
+.mk.bonus.on .dotn{background:var(--lemon);border-color:var(--lemon);color:var(--ink)}
+.mk.goal .dotn{background:var(--gold);border-color:var(--gold);color:var(--ink);font-size:18px}
+.mk.goal .amt{color:var(--gold)}
+.bonus-pg{position:absolute;inset:0;background:radial-gradient(1300px 800px at 50% 40%,#3d1a5c 0%,#1b0a2b 70%);opacity:0;pointer-events:none;transition:opacity .9s ease;z-index:4}
+.bonus-pg.show{opacity:1}
+.bonus-pg .bk{position:absolute;left:0;right:0;top:72px;text-align:center;font-size:32px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.bonus-pg h2{position:absolute;left:160px;right:160px;top:150px;margin:0;text-align:center;font-family:var(--display);font-style:italic;font-weight:400;font-size:112px;line-height:1.02;color:var(--lemon);text-wrap:balance}
+.bonus-pg .bl{position:absolute;left:140px;right:140px;top:350px;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.bcard{box-sizing:border-box;height:590px;border-radius:32px;padding:36px 40px;background:rgba(255,255,255,.06);border:2px solid var(--line);display:flex;flex-direction:column;opacity:0;transform:translateY(40px)}
+.bcard .bi{font-family:var(--display);font-style:italic;font-size:46px;color:var(--lav);line-height:1}
+.bcard .bv{margin-top:18px;font-size:88px;font-weight:800;letter-spacing:-.035em;line-height:1;color:var(--cream);white-space:nowrap}
+.bcard .bv small{display:block;margin-top:10px;font-size:28px;font-weight:600;letter-spacing:.02em;color:var(--muted)}
+.bcard b{display:block;margin-top:30px;font-size:42px;font-weight:760;line-height:1.12;letter-spacing:-.01em;color:var(--lemon);text-wrap:balance}
+.bcard p{margin:14px 0 0;font-size:30px;line-height:1.3;color:var(--cream);text-wrap:pretty}
+.bcard.hz{background:linear-gradient(160deg,rgba(229,199,124,.26),rgba(229,199,124,.07));border:2.5px dashed var(--gold)}
+.bcard.hz .bi{color:var(--gold)}
+.bonus-pg.show .bcard{animation:bcard 1s cubic-bezier(.2,.8,.2,1) forwards}
+.bonus-pg.show .bcard:nth-child(1){animation-delay:1.6s}.bonus-pg.show .bcard:nth-child(2){animation-delay:3.4s}.bonus-pg.show .bcard:nth-child(3){animation-delay:5.2s}
+@keyframes bcard{to{opacity:1;transform:none}}
+.bonus-pg .bf{position:absolute;left:0;right:0;bottom:62px;text-align:center;font-size:30px;color:var(--muted)}
 .status{position:absolute;right:80px;top:12px;font-size:15px;color:var(--muted);opacity:.7}
 .status.bad{color:var(--warn);opacity:1}
 .corner{position:fixed;right:max(14px,env(safe-area-inset-right,0px));top:calc(14px + env(safe-area-inset-top,0px));display:flex;gap:8px;opacity:0;transition:opacity .3s;z-index:5}
@@ -192,7 +214,7 @@ input[type=email],input[type=tel],input[type=date],input[type=search],input[type
 .mini{font-size:12px;padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--muted)}
 .mini.late{background:rgba(255,179,122,.16);color:var(--warn)}.mini.ok{background:rgba(159,224,180,.14);color:var(--ok)}
 .entry .contact{font-size:14px;color:var(--muted);overflow-wrap:anywhere}
-@media (prefers-reduced-motion:reduce){.shine,.msg.fresh,.toast.show{animation:none}.toast.show{opacity:1}}
+@media (prefers-reduced-motion:reduce){.shine,.msg.fresh,.toast.show{animation:none}.toast.show{opacity:1}.bonus-pg.show .bcard{animation:none;opacity:1;transform:none}}
 </style>
 
 <div id="ecran" hidden>
@@ -237,6 +259,12 @@ input[type=email],input[type=tel],input[type=date],input[type=search],input[type
     </aside>
 
     <div class="celeb" id="celeb" aria-live="polite"><canvas id="confetti" width="1920" height="1080"></canvas><div class="ccard"><small id="celebK">Palier atteint</small><h2 id="celebH"></h2><p id="celebP" class="num"></p></div></div>
+    <div class="bonus-pg" id="bonusPg" aria-live="polite">
+      <p class="bk">Objectif atteint… et ce n’est pas fini</p>
+      <h2>Et si l’on allait encore plus&nbsp;loin&nbsp;?</h2>
+      <div class="bl" id="bonusList"></div>
+      <p class="bf">Chaque don compte toujours : la jauge continue jusqu’à 200&nbsp;000&nbsp;€</p>
+    </div>
     <div class="status" id="status">Connexion…</div>
   </div>
   <div class="corner"><button type="button" id="fsBtn">Plein écran</button><a href="#" id="toSaisie" hidden></a></div>
@@ -362,6 +390,11 @@ const DEF = {
     {montant: 80000, nom: 'L’Escale peut ouvrir'},
     {montant: 90000, nom: 'La réserve de sécurité est constituée'},
     {montant: 100000, nom: 'La première année est sécurisée'}],
+  // paliers surprise : révélés seulement quand l'objectif est atteint (non modifiables depuis la saisie)
+  bonus: [
+    {montant: 105000, nom: '10 étudiants parrainés', sous: 'Les donateurs offrent l’abonnement annuel de 10 étudiants à l’Escale.'},
+    {montant: 120000, nom: 'L’espace événements équipé', sous: 'Écran, sono et captation vidéo pour les conférences et formations de l’Escale.'},
+    {montant: 200000, nom: 'Un nouveau local', sous: 'Horizon 2028 : l’ouverture d’un deuxième lieu, forte de la réussite du premier.', hz: true}],
   montrer: 'tous', seuil: 0, celebrations: true,
   lien: 'https://www.helloasso.com/associations/ta3alamawa3alama/collectes/maison-etudiante',
   annonce: ''
@@ -402,29 +435,75 @@ function tween(to) {
   };
   anim = requestAnimationFrame(step);
 }
-function scaleMax() { return Math.max(cfg.objectif, shown.t, 1); }
+// mode bonus : 0 = jauge sur l'objectif, 1 = jauge redimensionnée jusqu'au dernier palier bonus (transition animée entre les deux)
+let bonusK = 0, bonusOn = false, bonusAnim = null;
+const bonusList = () => (cfg.bonus || []).filter(b => b.montant > cfg.objectif).sort((a, b) => a.montant - b.montant);
+function posLin(v) { return Math.min(1, v / Math.max(cfg.objectif, sums().t, shown.t, 1)); }
+function posBonus(v) {          // objectif à 40 %, puis chaque palier bonus à intervalle régulier jusqu'à 100 %
+  const L = bonusList(); if (!L.length) return posLin(v);
+  const stops = [0, cfg.objectif, ...L.map(b => b.montant)], fr = [0, .4, ...L.map((b, i) => .4 + .6 * (i + 1) / L.length)];
+  if (v >= stops[stops.length - 1]) return 1;
+  for (let i = 1; i < stops.length; i++) if (v <= stops[i]) return fr[i - 1] + (fr[i] - fr[i - 1]) * (v - stops[i - 1]) / (stops[i] - stops[i - 1]);
+  return 1;
+}
+const pos = v => (1 - bonusK) * posLin(v) + bonusK * posBonus(v);
+function setBonus(on, animate) {
+  if (on === bonusOn && bonusK === (on ? 1 : 0)) return; bonusOn = on;
+  cancelAnimationFrame(bonusAnim);
+  const from = bonusK, to = on ? 1 : 0, t0 = performance.now(), D = animate && !RM ? 1800 : 1;
+  const f = now => { const k = Math.min(1, (now - t0) / D), e = k < .5 ? 4 * k * k * k : 1 - Math.pow(-2 * k + 2, 3) / 2;
+    bonusK = from + (to - from) * e; paintNumbers(); paintMarks(); if (k < 1) bonusAnim = requestAnimationFrame(f); };
+  bonusAnim = requestAnimationFrame(f);
+}
 function paintNumbers() {
-  const max = scaleMax();
   $('total').textContent = eur(shown.t);
-  const pc = Math.floor(100 * shown.t / cfg.objectif);
-  $('pct').textContent = `sur ${eur(cfg.objectif)} · ${pc}${NB}%`;
+  const pc = Math.floor(100 * shown.t / cfg.objectif), nx = bonusList().find(b => b.montant > shown.t);
+  $('pct').textContent = bonusOn && shown.t >= cfg.objectif
+    ? `Objectif atteint ✓ · ${pc}${NB}%`
+    : `sur ${eur(cfg.objectif)} · ${pc}${NB}%`;
   $('sumD').textContent = eur(shown.d); $('sumP').textContent = eur(shown.p);
-  $('fillD').style.width = (100 * shown.d / max) + '%';
-  $('fillP').style.left = (100 * shown.d / max) + '%'; $('fillP').style.width = (100 * shown.p / max) + '%';
+  const xd = pos(shown.d), xt = pos(shown.t);
+  $('fillD').style.width = (100 * xd) + '%';
+  $('fillP').style.left = (100 * xd) + '%'; $('fillP').style.width = (100 * Math.max(0, xt - xd)) + '%';
   paintPie();
 }
 function paintMarks() {
-  const max = Math.max(cfg.objectif, sums().t, 1), box = $('marks'); box.textContent = '';
-  cfg.paliers.forEach((p, i) => {
-    const m = document.createElement('div'); m.className = 'mk' + (sums().t >= p.montant ? ' on' : '');
-    m.style.left = Math.min(100, 100 * p.montant / max) + '%';
-    const dn = document.createElement('div'); dn.className = 'dotn'; dn.textContent = i + 1;
+  const t = sums().t, box = $('marks'); box.textContent = '';
+  // paliers d'origine (s'effacent quand la jauge passe en mode bonus) puis objectif + paliers bonus (apparaissent)
+  const base = cfg.paliers.map((p, i) => ({v: p.montant, txt: i + 1, cls: '', op: 1 - bonusK, at: posLin(p.montant)}));
+  const extra = bonusK > 0 ? [{v: cfg.objectif, txt: '✓', cls: ' goal', op: bonusK, at: posBonus(cfg.objectif)},
+    ...bonusList().map((b, i) => ({v: b.montant, txt: '+' + (i + 1), cls: ' bonus', op: bonusK, at: posBonus(b.montant)}))] : [];
+  [base, extra].forEach(L => L.forEach((p, i) => {
+    if (p.op <= 0.01) return;
+    const x = pos(p.v);
+    const m = document.createElement('div'); m.className = 'mk' + p.cls + (t >= p.v ? ' on' : ''); m.style.opacity = p.op;
+    m.style.left = (100 * x) + '%';
+    const dn = document.createElement('div'); dn.className = 'dotn'; dn.textContent = p.txt;
     const tk = document.createElement('div'); tk.className = 'tick';
-    const am = document.createElement('div'); am.className = 'amt'; am.textContent = keur(p.montant);
-    const nx = cfg.paliers[i + 1];   // étiquette trop proche du dernier palier : alignée à droite pour ne pas le chevaucher
-    if (p.montant / max > .96 || (nx && nx.montant / max > .96 && (nx.montant - p.montant) / max < .14)) am.style.transform = 'translateX(-100%)';
+    const am = document.createElement('div'); am.className = 'amt'; am.textContent = keur(p.v);
+    const nx = L[i + 1];   // étiquette trop proche du dernier palier : alignée à droite pour ne pas le chevaucher
+    if (p.at > .96 || (nx && nx.at > .96 && nx.at - p.at < .14)) am.style.transform = 'translateX(-100%)';
     m.append(dn, tk, am); box.append(m);
+  }));
+}
+// page surprise : apparaît quand l'objectif est atteint, puis la jauge se redimensionne
+function paintBonusPage() {
+  const box = $('bonusList'); box.textContent = '';
+  bonusList().forEach((b, i) => {
+    const c = document.createElement('div'); c.className = 'bcard' + (b.hz ? ' hz' : '');
+    const bi = document.createElement('span'); bi.className = 'bi'; bi.textContent = 'Palier bonus ' + (i + 1);
+    const bv = document.createElement('div'); bv.className = 'bv num'; bv.textContent = keur(b.montant);
+    const sm = document.createElement('small'); sm.textContent = `soit ${eur(b.montant - cfg.objectif)} de plus`; bv.append(sm);
+    const nb = document.createElement('b'); nb.textContent = b.nom;
+    const ps = document.createElement('p'); ps.textContent = b.sous || '';
+    c.append(bi, bv, nb, ps); box.append(c);
   });
+}
+function revealBonus(done) {
+  if (!bonusList().length) { setBonus(true, true); return done && done(); }
+  paintBonusPage(); const pg = $('bonusPg');
+  pg.classList.remove('show'); void pg.offsetWidth; pg.classList.add('show');
+  setTimeout(() => { pg.classList.remove('show'); setTimeout(() => { setBonus(sums().t >= cfg.objectif, true); done && done(); }, 900); }, RM ? 9000 : 15000);
 }
 function paintPaliers() {
   const t = sums().t, box = $('paliers'); box.textContent = '';
@@ -516,6 +595,7 @@ let celebQueue = [], celebOn = false;
 function celebrate(k, h, p) { celebQueue.push([k, h, p]); if (!celebOn) nextCeleb(); }
 function nextCeleb() {
   const c = celebQueue.shift(); if (!c) { celebOn = false; return; } celebOn = true;
+  if (c[0] === 'bonus') return revealBonus(() => setTimeout(nextCeleb, 400));
   $('celebK').textContent = c[0]; $('celebH').textContent = c[1]; $('celebP').textContent = c[2];
   $('celeb').classList.add('show'); if (!RM) confetti();
   setTimeout(() => { $('celeb').classList.remove('show'); setTimeout(nextCeleb, 700); }, 6500);
@@ -537,8 +617,13 @@ function renderEcran(fresh) {
   const s = sums();
   if (booted && prevTotal !== null && cfg.celebrations) {
     cfg.paliers.forEach((p, i) => { if (prevTotal < p.montant && s.t >= p.montant) celebrate(`Palier ${i + 1} atteint`, p.nom, `${eur(p.montant)} réunis`); });
-    if (s.t >= cfg.objectif && prevTotal < cfg.objectif) celebrate('Objectif atteint', 'Merci à tous !', `${eur(s.t)} réunis ce soir`);
+    if (s.t >= cfg.objectif && prevTotal < cfg.objectif) { celebrate('Objectif atteint', 'Merci à tous !', `${eur(s.t)} réunis ce soir`); celebQueue.push(['bonus']); if (!celebOn) nextCeleb(); }
+    bonusList().forEach((b, i) => { if (prevTotal < b.montant && s.t >= b.montant) celebrate(`Palier bonus ${i + 1} atteint`, b.nom, `${eur(b.montant)} réunis`); });
   }
+  // sans célébration (chargement de la page, réglage désactivé, total revenu sous l'objectif) : la jauge suit directement
+  const revealPending = celebQueue.some(c => c[0] === 'bonus') || $('bonusPg').classList.contains('show');
+  if (s.t < cfg.objectif) setBonus(false, booted);
+  else if (!booted || !cfg.celebrations || prevTotal >= cfg.objectif) { if (!revealPending) setBonus(true, booted && !bonusOn); }
   if (booted && fresh && fresh.size && cfg.celebrations) {
     const e = entries.filter(x => fresh.has(x.id)).sort((a, b) => b.t - a.t)[0];
     if (e) toast(`+${eur(e.montant)} · ${e.type === 'promesse' ? 'Promesse de ' : 'Merci '}${e.anonyme || !e.nom ? (e.type === 'promesse' ? 'un donateur' : 'à vous') : e.nom}`);
@@ -548,6 +633,7 @@ function renderEcran(fresh) {
 }
 setInterval(() => { if (!$('ecran').hidden) paintStats(); }, 20000);
 let idleT; addEventListener('mousemove', () => { document.body.classList.remove('idle'); clearTimeout(idleT); idleT = setTimeout(() => document.body.classList.add('idle'), 3000); });
+addEventListener('keydown', e => { if ((e.key === 'b' || e.key === 'B') && !$('ecran').hidden && !celebOn) { celebQueue.push(['bonus']); nextCeleb(); } });
 $('fsBtn').onclick = () => { (document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen?.())?.catch?.(() => {}); };
 let wake = null; async function keepAwake() { try { wake = await navigator.wakeLock?.request('screen'); } catch {} }
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && !$('ecran').hidden) keepAwake(); });
@@ -733,7 +819,7 @@ function addPalRow(p) {
 }
 $('sPalAdd').onclick = () => addPalRow({montant: '', nom: ''});
 async function saveCfg(patch, msg) {
-  const next = {...cfg, ...patch}; delete next.postes;
+  const next = {...cfg, ...patch}; delete next.postes; delete next.bonus;
   try { await store.doc('gala/config').set(JSON.parse(JSON.stringify(next))); flash(msg); } catch (e) { writeError(e); }
 }
 $('sSave').onclick = () => {
@@ -811,7 +897,7 @@ function onCfg(snap) {
   const c = snap.exists ? snap.data() : null;
   cfg = {...structuredClone(DEF), ...(c || {})};
   if (!Array.isArray(cfg.paliers) || !cfg.paliers.length) cfg.paliers = structuredClone(DEF.paliers);
-  cfg.postes = structuredClone(DEF.postes);
+  cfg.postes = structuredClone(DEF.postes); cfg.bonus = structuredClone(DEF.bonus);
   fillSettings(); if ($('ecran').hidden) renderSaisie(); else { prevTotal = sums().t; msgSig = ''; renderEcran(); }
 }
 const FIREBASE = {"apiKey": "AIzaSyDTLlvFOVV36lMTtCIroiDAxHoD5XaHlNI", "authDomain": "tw3-gala-escale-2026.firebaseapp.com", "projectId": "tw3-gala-escale-2026", "storageBucket": "tw3-gala-escale-2026.firebasestorage.app", "messagingSenderId": "698661094188", "appId": "1:698661094188:web:c9469b51a5d19bbc522289"};
