@@ -4,11 +4,13 @@ import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { AnimatePresence, motion, useReducedMotion, type Variants } from 'motion/react'
 import { galaScript } from './fonts'
+import { WaysToGive } from './WaysToGive'
 
 const GALA_START = new Date('2026-11-28T18:00:00+01:00').getTime()
 const GALA_END = new Date('2026-11-28T23:00:00+01:00').getTime()
 const DONATION_URL = 'https://www.helloasso.com/associations/ta3alamawa3alama/collectes/maison-etudiante'
-const PROJECT_URL = 'https://tw3.fr/escale/'
+// présentation détaillée pour le public (les slides simplifiées sont projetées en salle)
+const PROJECT_URL = 'https://tw3.fr/escale-complet/'
 
 // Anciennes (01-14) et nouvelles (15-29) photos alternées pour varier les ambiances.
 const PHOTO_ORDER = [1, 15, 5, 16, 2, 17, 6, 18, 4, 19, 12, 20, 3, 21, 9, 22, 13, 23, 10, 24, 7, 25, 11, 26, 8, 27, 14, 28, 29]
@@ -194,10 +196,23 @@ export function GalaClient() {
               href={PROJECT_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 font-sans text-sm text-[#e9c6e6] underline decoration-[#e9c6e6]/40 underline-offset-4 transition-colors duration-300 hover:text-[#fffdd1]"
+              className="group mt-6 inline-flex items-center gap-2 rounded-full border border-[#fffdd1]/30 px-6 py-3 font-sans text-sm font-semibold text-[#fffdd1] transition-colors duration-300 hover:bg-[#fffdd1]/10 sm:text-base"
             >
-              Découvrir le projet Escale
+              Voir la présentation détaillée de l&apos;Escale
+              <span aria-hidden className="transition-transform duration-500 ease-out group-hover:translate-x-1">
+                →
+              </span>
             </a>
+            <a
+              href="#donner"
+              className="mt-4 font-sans text-sm text-[#e9c6e6] underline decoration-[#e9c6e6]/40 underline-offset-4 transition-colors duration-300 hover:text-[#fffdd1]"
+            >
+              Autres moyens de donner : carte, virement, espèces
+            </a>
+          </motion.div>
+
+          <motion.div variants={item} className="w-full">
+            <WaysToGive donationUrl={DONATION_URL} />
           </motion.div>
         </section>
 
